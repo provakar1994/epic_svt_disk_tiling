@@ -99,15 +99,20 @@ reopen the ROOT files. Use a distinct reduction output directory for each cut.
 - `plot_disk_acceptance.py`: makes integrated, hit/missing, and 2D maps.
 - `plot_hit_eta_phi_acceptance.py`: maps generated `(eta, phi)` hit counts and
   fractions by disk and momentum interval, without projection.
+- `plot_disk_hit_r_phi_counts.py`: maps measured hit-associated primary counts
+  in `(R, phi)` without projection; it does not form a fraction map.
 - `disk_acceptance_analysis.ipynb`: interactive steering and visualization.
 - `disk_hit_eta_phi_analysis.ipynb`: interactive steering for the hit-based
   angular-acceptance scan.
+- `disk_hit_r_phi_counts.ipynb`: interactive steering for measured-hit
+  `(R, phi)` count maps.
 - `run_disk_acceptance_analysis.sh`: recorded full workflow.
 - `run_disk_acceptance_smoke.sh`: recorded 2,000-event end-to-end check.
 - `run_disk_acceptance_cut_smoke.sh`: recorded eta/momentum-selection check.
 - `run_disk_acceptance_two_stage_smoke.sh`: two reductions from one extraction.
 - `run_disk_acceptance_equivalence_check.sh`: exact late-cut/reference comparison.
 - `run_disk_hit_eta_phi_scan.sh`: recorded generated-`(eta, phi)` momentum scan.
+- `run_disk_hit_r_phi_counts.sh`: recorded measured-hit `(R, phi)` count scan.
 
 The extractor never concatenates the campaign's raw events. It reads one ROOT
 file in bounded event blocks and writes one independently recoverable shard.
@@ -148,6 +153,33 @@ Only the `z=0` sample has been extracted so far. The notebook can be set to
 `[-10, 0, 10]` after those vertex shards are available. Use the hit-count maps
 to assess statistics and the masked fraction maps to locate the populated
 acceptance region and possible local gaps.
+
+## Measured hit counts in radius and azimuth
+
+The count-only `(R, phi)` scan uses the per-particle mean measured hit
+coordinates retained in each extracted shard:
+
+```text
+R = hypot(mean_hit_x, mean_hit_y)
+phi = atan2(mean_hit_y, mean_hit_x)
+```
+
+Each generated primary with at least one associated hit contributes once per
+disk at this mean hit position. It is not a raw hit-multiplicity map. The
+default common range is `0 <= R <= 450 mm`, with 10 mm radial bins and 64 bins
+in azimuth. Particles with mean hit radius outside the plotted range are
+reported in the CSV summary.
+
+Run the recorded count scan with:
+
+```bash
+./run_disk_hit_r_phi_counts.sh
+```
+
+The results are count maps only. A missed particle has no measured hit position,
+so these bins cannot supply a denominator for a measured-position fraction map.
+Use `disk_hit_r_phi_counts.ipynb` to steer the vertices, momentum intervals,
+and output tag.
 
 ## Interactive notebook
 

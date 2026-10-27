@@ -165,3 +165,12 @@ in the smoke test, because some saved collections depend on those producers.
   57.0% for ED3; the maps show angular boundaries and their momentum
   dependence. The `-10` and `+10 mm` vertex samples have not yet been extracted,
   so those scans remain to be run after their cached shards are available.
+- 2026-10-27: Added a separate measured-hit `(R, phi)` count-only scan using
+  each extracted primary's mean associated-hit `(x, y)` per disk. Each primary
+  contributes once per disk, independent of raw hit multiplicity; no
+  straight-line projection is used. Generated maps for the same five momentum
+  intervals at `z=0` with a shared `0–450 mm` radial range and `10 mm` bins.
+  All observed mean hit radii were inside the range (maximum 419.7 mm). The
+  binned counts exactly match the number of hit-associated primaries placed in
+  the maps. A dedicated notebook and recorded runner were added. These maps
+  locate recorded hits only and do not provide missing-particle denominators.
