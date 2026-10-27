@@ -97,16 +97,57 @@ reopen the ROOT files. Use a distinct reduction output directory for each cut.
 - `validate_disk_acceptance.py`: checks count and shape invariants.
 - `validate_reduction_equivalence.py`: compares extracted and ROOT-direct results.
 - `plot_disk_acceptance.py`: makes integrated, hit/missing, and 2D maps.
+- `plot_hit_eta_phi_acceptance.py`: maps generated `(eta, phi)` hit counts and
+  fractions by disk and momentum interval, without projection.
 - `disk_acceptance_analysis.ipynb`: interactive steering and visualization.
+- `disk_hit_eta_phi_analysis.ipynb`: interactive steering for the hit-based
+  angular-acceptance scan.
 - `run_disk_acceptance_analysis.sh`: recorded full workflow.
 - `run_disk_acceptance_smoke.sh`: recorded 2,000-event end-to-end check.
 - `run_disk_acceptance_cut_smoke.sh`: recorded eta/momentum-selection check.
 - `run_disk_acceptance_two_stage_smoke.sh`: two reductions from one extraction.
 - `run_disk_acceptance_equivalence_check.sh`: exact late-cut/reference comparison.
+- `run_disk_hit_eta_phi_scan.sh`: recorded generated-`(eta, phi)` momentum scan.
 
 The extractor never concatenates the campaign's raw events. It reads one ROOT
 file in bounded event blocks and writes one independently recoverable shard.
 The reducer then streams these substantially smaller shards.
+
+## Hit acceptance in generated eta and phi
+
+The first spatial acceptance scan bins generated primary particles in
+`(eta, phi)` instead of projecting them to a disk plane. For each disk and
+momentum interval it computes
+
+```text
+hit fraction(eta, phi) = generated primaries with a disk hit in the bin
+                         ---------------------------------------------- .
+                         all generated primaries in the bin
+```
+
+A primary with one or more directly associated hits counts once in that disk's
+numerator. The denominator includes all selected primary pions in the same
+generated `(eta, phi)` and momentum bin. `phi` is in radians; momentum
+intervals are half-open. These maps show the disk's angular coverage without
+the straight-line disk-plane projection.
+
+Run the recorded scan on the existing extracted `z=0` sample:
+
+```bash
+./run_disk_hit_eta_phi_scan.sh
+```
+
+It writes per-momentum count and hit-fraction PNGs, multipage PDFs, compressed
+histogram NPZ files, and a CSV summary. The first interval, `0.5 <= p < 1.5
+GeV`, gives an initial view around 1 GeV; subsequent intervals cover 1.5–3,
+3–5, 5–10, and 10–20 GeV. Each shard is read once for all requested momentum
+intervals. Existing output directories are never overwritten; change the
+output tag for another scan.
+
+Only the `z=0` sample has been extracted so far. The notebook can be set to
+`[-10, 0, 10]` after those vertex shards are available. Use the hit-count maps
+to assess statistics and the masked fraction maps to locate the populated
+acceptance region and possible local gaps.
 
 ## Interactive notebook
 

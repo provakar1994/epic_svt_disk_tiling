@@ -151,3 +151,17 @@ in the smoke test, because some saved collections depend on those producers.
   comparison at `0.9 <= |eta| < 1.2`. The cached-particle result reproduced the
   direct ROOT result exactly for integrated counts, 2D histograms, and
   projection diagnostics (478 negative-side and 498 positive-side primaries).
+- 2026-10-27: Implemented the hit-based generated `(eta, phi)` scan suggested
+  in the acceptance discussion. It bins each generated primary by momentum and
+  direction, counts it at most once per disk when its hit mask is set, and
+  divides by all generated primaries in the same angular bin. This requires no
+  disk-plane projection. Added a recorded runner and a dedicated steering
+  notebook with count and hit-fraction maps for all ten disks.
+- 2026-10-27: Ran the scan over all 100 existing extracted `z=0` shards
+  (5,000,000 generated primaries per eta side) in five momentum intervals from
+  0.5 to 20 GeV. No ROOT files were reread. For `0.5 <= p < 1.5 GeV`, all
+  2,048 `(eta, phi)` bins per disk passed the 20-particle plotting threshold.
+  The generated-sample integrated hit fractions ranged from 37.7% for HD0 to
+  57.0% for ED3; the maps show angular boundaries and their momentum
+  dependence. The `-10` and `+10 mm` vertex samples have not yet been extracted,
+  so those scans remain to be run after their cached shards are available.
