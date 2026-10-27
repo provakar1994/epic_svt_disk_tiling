@@ -2888,3 +2888,12 @@ thicknesses. These display changes are temporary and should be reverted
 together after the RSU tiling inspection. The changed C++ component vis name
 requires a rebuild, and the updated display XMLs require installation before
 the viewer reflects this follow-up.
+
+### Repository separation (2026-10-27)
+
+Detached `proj_svt_disk_tiling/` from EPIC top-level Git tracking in EPIC
+commit `7cb35391f`. All project files remain in the working tree; previously
+EPIC-tracked project files and the acceptance-study source, documentation,
+scripts, discussion transcript, and task manifest are now tracked by the
+standalone local repository, initialized at `397a259`. Generated ROOT and
+analysis output directories remain local and are excluded from that repository.
