@@ -1,0 +1,22 @@
+# Local/generated project content that should stay outside the project repo.
+__pycache__/
+*.py[cod]
+/ES_material/
+/disk_layout/
+/matscan/
+/out/
+/tmp/
+/npsim
+/simrec/*
+!/simrec/acc_study/
+
+# Acceptance-study outputs and caches; keep the scripts, notebooks, and logs.
+/simrec/acc_study/extracted/
+/simrec/acc_study/results/
+/simrec/acc_study/tmp/
+/simrec/acc_study/acceptance_v1
+/simrec/acc_study/__pycache__/
+/simrec/acc_study/**/__pycache__/
+/simrec/acc_study/**/*.pyc
+/simrec/acc_study/*.root
+/simrec/acc_study/*.npz
