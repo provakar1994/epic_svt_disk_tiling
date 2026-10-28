@@ -2897,3 +2897,131 @@ EPIC-tracked project files and the acceptance-study source, documentation,
 scripts, discussion transcript, and task manifest are now tracked by the
 standalone local repository, initialized at `397a259`. Generated ROOT and
 analysis output directories remain local and are excluded from that repository.
+
+### Retained material-map runner changes, discarded from EPIC (2026-10-28)
+
+At the user's request, the uncommitted changes to
+`scripts/material_map/run_material_map_validation.sh` were discarded from the
+EPIC worktree. The exact 160-line unified diff was retained at
+`proj_svt_disk_tiling/logs/run_material_map_validation_discarded_20261028.patch`
+(SHA-256 `58eddd0b581f5124c725023c08bfd6ff3eea0e42f4030893357ca22acd3aacc6`).
+The patch is relative to the EPIC repository root and contains only this one
+script. It can be reapplied to the same baseline if the material-map workflow
+needs the NERSC workarounds again.
+
+The retained patch implements three changes:
+
+1. `patch_acts` first checks whether each downloaded ACTS patch is already
+   applied. If not, it checks whether the patch applies cleanly, copies its
+   `Examples/*` targets into a temporary directory, patches those copies,
+   then copies the patched bytes onto the existing ACTS files. This avoids
+   `patch` replacing a NERSC file inode and failing while setting its owner
+   (`Invalid argument`). Original and patched scratch copies are retained in
+   `proj_svt_disk_tiling/tmp/retained/<UTC date>/material_map_patches/`, with
+   an action entry in `proj_svt_disk_tiling/tmp/file_actions.log`. It fails
+   explicitly if a patch target is missing or the patch is incompatible.
+2. `--skip-current-map-validation` skips propagation with the existing
+   `calibrations/materials-map` CBOR and all associated `Validation/current`
+   and `Surfaces/current` plots. Propagation and plots for the regenerated
+   map still run. Without the flag, both maps are validated as before. This
+   option was used because the older calibration map's material-axis binning
+   was incompatible with the ACTS version in the EIC shell.
+3. Material-map output formats are passed as a Bash array (`cbor`, `root`),
+   and the runner checks that both `<prefix>material-map<suffix>_map.cbor`
+   and `.root` exist and are nonempty before validation. Missing output now
+   fails explicitly at the mapping stage.
+
+To reproduce the script changes from the EPIC repository root, after
+checking that the script still matches the baseline used here:
+
+```bash
+git apply --check proj_svt_disk_tiling/logs/run_material_map_validation_discarded_20261028.patch
+git apply proj_svt_disk_tiling/logs/run_material_map_validation_discarded_20261028.patch
+bash -n scripts/material_map/run_material_map_validation.sh
+git diff --check -- scripts/material_map/run_material_map_validation.sh
+```
+
+This records the original script edit, not a request to regenerate a map.
+No material-map run was performed as part of this discard. Other uncommitted
+and untracked EPIC files were left untouched.
+
+### Branch-scope audit against main (2026-10-28)
+
+The checkout has no `master` ref. Local `main` is at `c56bfbb0f` (2026-07-07),
+so the PR-oriented audit used `git diff origin/main...si_disk_hole` against
+the shared ancestor of `origin/main` (`77329e16b`, 2026-10-25) and
+`si_disk_hole` (`98f51521d`). This is a local remote-tracking snapshot; no
+fetch was performed. The branch-side diff has 60 files.
+
+Files not required to construct the delivered SVT disk geometry:
+
+- `scripts/subdetector_tests/material_scan.py` changes plot margins, ticks,
+  labels, legend, and PDF cropping only. It belongs to analysis/plotting,
+  not the geometry PR.
+- `scripts/generate_endcap_modules.py` is an older regular-grid CSV generator.
+  It is not referenced by the current compact, build, or tiling package and
+  still defaults to a `disk_layout/...` XML path. The provided Ernst placement
+  CSVs are the geometry source instead.
+- The `visible="false"` settings for Cu, inactive Si, and RSU film in the
+  three `compact/display*.xml` files are temporary tiling-inspection choices.
+  The new visualization names themselves are needed by the builder, but
+  these hidden defaults should be reconsidered before a production PR.
+- The `/proj_svt_disk_tiling/` `.gitignore` entry serves the separate local
+  project repository, not geometry. The `archived/` ignore entry is also
+  local data hygiene. Keep or omit these based on repository policy.
+- `configurations/craterlake_tracking_only_disk_modules.yml` is a reduced
+  geometry-validation configuration. Historic project check scripts reference
+  its generated XML; it is not required by the standard tracking-only or
+  material-map configurations. Decide whether to keep it as a supported test
+  configuration.
+- `compact/tracking/silicon_disks.xml` only removes two legacy thickness
+  constants. This merits a separate compatibility check before deciding
+  whether to restore them; it does not implement the new tiling.
+
+Core branch changes are the module builder and XML, Ernst placement and
+corrugation data, disk positions/openings and ACTS assembly ordering,
+`SVT_Endcap_Glue`, CMake installation of CSV/metadata, visualization names,
+and switches from `silicon_disks` to `silicon_disks_modules` in the standard
+tracking-only and material-map configurations. There is **no committed diff**
+under `scripts/material_map/`; the local runner edit was separately discarded
+and retained above. Untracked `install/`, hit-map plots/code, and local setup
+files are absent from the branch diff and should not be conflated with the PR.
+
+This was a read-only EPIC audit; no branch files were removed or rewritten.
+
+### Remove non-geometry branch changes and reconcile remote (2026-10-28)
+
+Following the audit, restored `.gitignore`, the two legacy thickness
+constants in `compact/tracking/silicon_disks.xml`, and the plotting-only
+changes in `scripts/subdetector_tests/material_scan.py` to `origin/main`.
+Removed `scripts/generate_endcap_modules.py` and
+`configurations/craterlake_tracking_only_disk_modules.yml` from the EPIC
+branch. Exact branch-side changes were retained in
+`logs/non_geometry_branch_changes_retained_20261028.patch` (SHA-256
+`9001b4b094ecef8bcc93c2eb348e8fc3c4e6fb6f20ab55c55fc82c8edddec7ce`).
+Copies of the two removed files are under
+`tmp/retained/2026-10-28/non_geometry_branch_files/`; the copy/removal
+actions were logged in `tmp/file_actions.log`. Local-only ignore patterns
+for this nested project and the archived tiling data were placed in EPIC's
+`.git/info/exclude`, keeping them out of the branch diff.
+
+Cleanup commit: `58aab52e9` (`Remove auxiliary SVT tiling development
+changes`). The five cleanup candidates now match `origin/main`; only the
+three `compact/display*.xml` files from the audit remain changed on the
+branch. The geometry builder, placement data, materials, and standard
+configurations were untouched. Python and XML parse checks and
+`git diff --check` passed. No Geant overlap or simulation rerun was needed
+for this source-scope cleanup.
+
+Fetched `origin/si_disk_hole` and `origin/main`. At fetch time,
+`origin/si_disk_hole` was `a8ba9f7d3`, an ancestor of the local branch, so
+integrating the local changes requires only a fast-forward push, not a
+merge commit. `origin/main` remained `77329e16b`; it was not merged into
+the feature branch as part of this step.
+
+The first HTTPS push could not read GitHub credentials in this shell. The
+existing SSH agent authenticated as `provakar1994`, so the same remote
+repository was pushed over SSH without changing `origin` configuration:
+`git push git@github.com:eic/epic.git HEAD:refs/heads/si_disk_hole`.
+GitHub fast-forwarded `si_disk_hole` from `a8ba9f7d3` to `58aab52e9`.
+A subsequent HTTPS fetch refreshed `origin/si_disk_hole` to that same tip.

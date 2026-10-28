@@ -1,0 +1,160 @@
+diff --git a/scripts/material_map/run_material_map_validation.sh b/scripts/material_map/run_material_map_validation.sh
+index 6814dbb8e..02dc5c440 100755
+--- a/scripts/material_map/run_material_map_validation.sh
++++ b/scripts/material_map/run_material_map_validation.sh
+@@ -53,13 +53,53 @@ EOF
+     fi
+   fi
+ done
+-# Patch function is possibly unused but retained for future use
++# A downloaded patch file does not imply that its source changes were applied.
++# Patch on local scratch space, then overwrite the existing NERSC inode so its
++# owner and collaboration group remain unchanged.
+ function patch_acts() {
+   local url="$1"
+   local file="$(basename "$1")"
++  local patch_file
++  local patch_workdir
++  local archive_dir
++  local target
++  local targets=()
+   if [ ! -e "$file" ]; then
+     wget "$url"
+-    patch -p1 --forward --input="$file" || git apply --whitespace=nowarn "$file"
++  fi
++  if patch --dry-run --reverse -p1 --input="$file" </dev/null >/dev/null 2>&1; then
++    echo "ACTS patch $file is already applied."
++  elif patch --dry-run --forward -p1 --input="$file" </dev/null >/dev/null 2>&1; then
++    patch_file="$(realpath "$file")"
++    patch_workdir="$(mktemp -d "${TMPDIR:-/tmp}/acts-material-map-patch.XXXXXX")"
++    archive_dir="../../proj_svt_disk_tiling/tmp/retained/$(date -u '+%Y-%m-%d')/material_map_patches"
++    mapfile -t targets < <(sed -n 's|^--- a/||p' "$file")
++    if [[ "${#targets[@]}" -eq 0 ]]; then
++      echo "ERROR: ACTS patch $file has no recognized source files." >&2
++      exit 1
++    fi
++    for target in "${targets[@]}"; do
++      if [[ "$target" != Examples/* || "$target" == *../* || ! -f "$target" ]]; then
++        echo "ERROR: invalid or missing ACTS patch target: $target" >&2
++        exit 1
++      fi
++      mkdir -p "$patch_workdir/$(dirname "$target")"
++      mkdir -p "$patch_workdir/original/$(dirname "$target")"
++      cp "$target" "$patch_workdir/$target"
++      cp "$target" "$patch_workdir/original/$target"
++    done
++    (cd "$patch_workdir" && patch --forward -p1 --input="$patch_file" </dev/null)
++    for target in "${targets[@]}"; do
++      cp "$patch_workdir/$target" "$target"
++    done
++    mkdir -p "$archive_dir"
++    mv "$patch_workdir" "$archive_dir/"
++    printf '%s | %s | %s/%s | retained scratch | apply ACTS patch without replacing NERSC file ownership\n' \
++      "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" "$file" "$archive_dir" "$(basename "$patch_workdir")" \
++      >> ../../proj_svt_disk_tiling/tmp/file_actions.log
++  else
++    echo "ERROR: ACTS patch $file cannot be applied cleanly." >&2
++    exit 1
+   fi
+ }
+ patch_acts https://github.com/acts-project/acts/pull/6010.diff  # geo_id encoding
+@@ -84,6 +124,7 @@ export ACTS_SEQUENCER_DISABLE_FPEMON=1
+ nevents=1000
+ nparticles=5000
+ verbose=0
++validateCurrentMap=1
+ prefix=""
+ suffix=""
+ 
+@@ -95,6 +136,7 @@ function print_the_help {
+   echo "          --prefix        Prefix for generated filenames (default: empty)"
+   echo "          --suffix        Suffix for generated filenames (default: empty)"
+   echo "          -v,--verbose    Enable verbose output"
++  echo "          --skip-current-map-validation    Skip validation and plots using the existing calibration map"
+   echo "          -h,--help       Print this message"
+   echo ""
+   echo "  Run material map validation."
+@@ -132,6 +174,10 @@ do
+       verbose=1
+       shift
+       ;;
++    --skip-current-map-validation)
++      validateCurrentMap=0
++      shift
++      ;;
+     *)    # unknown option
+       #POSITIONAL+=("$1") # save it in an array for later
+       echo "unknown option $1"
+@@ -145,7 +191,7 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
+ recordingFile="${prefix}geant4_material_tracks${suffix}.root"
+ geoFile="${prefix}geometry-map${suffix}.json"
+ matFileBase="${prefix}material-map${suffix}"
+-matFileFormats="cbor root"  # Generate both CBOR and ROOT output formats
++matFileFormats=(cbor root)  # Generate both CBOR and ROOT output formats
+ trackFile="${prefix}material-map${suffix}_mapped.root"
+ propFile="${prefix}propagation_material${suffix}"
+ 
+@@ -198,8 +244,13 @@ if [[ "$verbose" -eq 1 ]]; then
+ fi
+ 
+ echo "::group::----MAPPING------------"
+-matFormatArgs=$(echo ${matFileFormats} | sed 's/\([^ ]*\)/--matFileFormat \1/g')
+-python material_mapping_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --geoFile ${geoFile} --matFileBase ${matFileBase} --inputRootFile ${recordingFile} ${matFormatArgs}
++python material_mapping_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --geoFile ${geoFile} --matFileBase ${matFileBase} --inputRootFile ${recordingFile} --matFileFormat "${matFileFormats[@]}"
++for format in "${matFileFormats[@]}"; do
++  if [[ ! -s "${matFileBase}_map.${format}" ]]; then
++    echo "ERROR: material mapping did not produce ${matFileBase}_map.${format}" >&2
++    exit 1
++  fi
++done
+ echo "::endgroup::"
+ 
+ echo "::group::----Prepare validation rootfile--------"
+@@ -207,29 +258,39 @@ echo "::group::----Prepare validation rootfile--------"
+ # Use the generated material map (Acts appends _map to the base name during generation,
+ # so we need to use matFileBase_map for validation)
+ python material_validation_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --outputName ${propFile}_regenerated --matFileBase ${matFileBase}_map -n ${nevents}  -t ${nparticles}
+-python material_validation_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --outputName ${propFile}_current --matFileBase calibrations/materials-map -n ${nevents} -t ${nparticles}
++if [[ "$validateCurrentMap" -eq 1 ]]; then
++  python material_validation_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --outputName ${propFile}_current --matFileBase calibrations/materials-map -n ${nevents} -t ${nparticles}
++else
++  echo "Skipping validation with the existing calibration map."
++fi
+ echo "::endgroup::"
+ 
+ echo "::group::-------Comparison plots---------"
+ rm -rf Validation/regenerated
+ mkdir -p Validation/regenerated
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map.C'("'${propFile}_regenerated'.root","'${trackFile}'","Validation/regenerated")'
+-rm -rf Validation/current
+-mkdir -p Validation/current
+-root -l -b -q Examples/Scripts/MaterialMapping/Mat_map.C'("'${propFile}_current'.root","'${trackFile}'","Validation/current")'
++if [[ "$validateCurrentMap" -eq 1 ]]; then
++  rm -rf Validation/current
++  mkdir -p Validation/current
++  root -l -b -q Examples/Scripts/MaterialMapping/Mat_map.C'("'${propFile}_current'.root","'${trackFile}'","Validation/current")'
++fi
+ 
+ rm -rf Surfaces
+ mkdir -p Surfaces/regenerated/ratio_plot
+ mkdir -p Surfaces/regenerated/prop_plot
+ mkdir -p Surfaces/regenerated/map_plot
+-mkdir -p Surfaces/current/ratio_plot
+-mkdir -p Surfaces/current/prop_plot
+-mkdir -p Surfaces/current/map_plot
++if [[ "$validateCurrentMap" -eq 1 ]]; then
++  mkdir -p Surfaces/current/ratio_plot
++  mkdir -p Surfaces/current/prop_plot
++  mkdir -p Surfaces/current/map_plot
++fi
+ mkdir -p Surfaces/dist_plot
+ mkdir -p Surfaces/1D_plot
+ 
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C'("'${propFile}_regenerated'.root","'${trackFile}'",-1,"Surfaces/regenerated/ratio_plot","Surfaces/regenerated/prop_plot","Surfaces/regenerated/map_plot","'${geoFile}'")'
+-root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C'("'${propFile}_current'.root","'${trackFile}'",-1,"Surfaces/current/ratio_plot","Surfaces/current/prop_plot","Surfaces/current/map_plot","'${geoFile}'")'
++if [[ "$validateCurrentMap" -eq 1 ]]; then
++  root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C'("'${propFile}_current'.root","'${trackFile}'",-1,"Surfaces/current/ratio_plot","Surfaces/current/prop_plot","Surfaces/current/map_plot","'${geoFile}'")'
++fi
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_dist.C'("'${trackFile}'",-1,"Surfaces/dist_plot","'${geoFile}'")'
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_1D.C'("'${trackFile}'",-1,"Surfaces/1D_plot","'${geoFile}'")'
+ echo "::endgroup::"
