@@ -3047,9 +3047,11 @@ tracking-only and material-map configurations load `silicon_disks_modules`.
 
 The source-level cause is a shared coordinate dependency:
 
-- `definitions_craterlake.xml` moved `InnerTrackerEndcapP_zmin` from
-  25.5 cm on main to 25.0 cm on this branch. `InnerTrackerEndcapN_zmin`
-  follows the same value.
+- `definitions_craterlake.xml` moved the positive-z HD0 reference
+  (`InnerTrackerEndcapP_zmin`) from +255 mm on main to +250 mm on this
+  branch. `InnerTrackerEndcapN_zmin` follows the same magnitude, placing
+  negative-z ED0 at -250 mm instead of -255 mm. The supplied metadata
+  specifies ED0/HD0 centers of -250/+250 mm.
 - `support_service_craterlake.xml` defines `InnerSupportCone_zmin` as
   `InnerTrackerEndcapP_zmin + 5 mm`, so both support cones now start at
   |z| = 255 mm instead of the previous 260 mm.
@@ -3062,11 +3064,12 @@ The source-level cause is a shared coordinate dependency:
   intervals intersect as well. These numbers explain the roughly 3 mm
   Geant4 penetrations.
 
-Recommended targeted fix: retain the delivered ED0 position at 250 mm and
-restore the support cone's previous absolute start at 260 mm, independently
+Recommended targeted fix: retain the delivered ED0/HD0 positions at
+-250/+250 mm and restore the support cone's previous absolute start at
+260 mm, independently
 of the disk z constant. This preserves the support cone geometry used by
 main and restores the 2 mm barrel clearance. The resulting support-cone to
-ED0 reference separation is 10 mm instead of 5 mm; that mechanical gap
+first-disk reference separation is 10 mm instead of 5 mm; that mechanical gap
 should be reviewed when updating the support design. The correction has
 **not** been applied. Rebuild the CI-tested branch and rerun the full
 `epic_craterlake` ROOT and Geant4 overlap checks, plus the inner-detector
