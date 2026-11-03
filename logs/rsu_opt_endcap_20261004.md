@@ -3025,3 +3025,57 @@ repository was pushed over SSH without changing `origin` configuration:
 `git push git@github.com:eic/epic.git HEAD:refs/heads/si_disk_hole`.
 GitHub fast-forwarded `si_disk_hole` from `a8ba9f7d3` to `58aab52e9`.
 A subsequent HTTPS fetch refreshed `origin/si_disk_hole` to that same tip.
+
+### PR 1073 CI support-cone overlap investigation (2026-11-03)
+
+Investigated the failed `check-overlap-geant4 (epic_craterlake, 0.1)` job in
+GitHub Actions run `40934715156`, job `123677578664`, on PR head
+`b94a8f339` (2026-10-29). The user's pasted 361-line job transcript is
+preserved as `logs/ci_overlap_geant4_craterlake_20261029.txt` (SHA-256
+`c2ead64d9ecc92e9ab38d57b73170e4491c156da5ac014aae332f8f474b6afb0`).
+The three `GeomVol1002` warnings are the same physical conflict reported in
+both directions: `SagittaSiBarrel_layer1_0` (`G4Tubs`) intersects
+`InnerSupportConeEndcapN` and `InnerSupportConeEndcapP` (`G4Cons`). Sampled
+penetrations are 2.7308, 2.92502, and 2.9752 mm. None names an SVT disk
+module, RSU, or corrugation component. The CI job fails because it counts any
+`GeomVol1002` warning, even though Geant4 labels it a warning. Other failed
+PR checks include ROOT overlap on `epic_craterlake` and fast Geant4 overlap
+on `epic_inner_detector`; the matching main commit `ce6514c6c` passed all
+six overlap checks. The full craterlake and inner-detector configurations
+still load the legacy `silicon_disks` XML, whereas the dedicated
+tracking-only and material-map configurations load `silicon_disks_modules`.
+
+The source-level cause is a shared coordinate dependency:
+
+- `definitions_craterlake.xml` moved `InnerTrackerEndcapP_zmin` from
+  25.5 cm on main to 25.0 cm on this branch. `InnerTrackerEndcapN_zmin`
+  follows the same value.
+- `support_service_craterlake.xml` defines `InnerSupportCone_zmin` as
+  `InnerTrackerEndcapP_zmin + 5 mm`, so both support cones now start at
+  |z| = 255 mm instead of the previous 260 mm.
+- `silicon_barrel.xml` defines `SiBarrelLayer1_length` as
+  `51.3 cm + 0.3 cm = 516 mm`; its centered envelope ends at |z| = 258 mm.
+  The prior cone had a 2 mm axial gap; the new cone extends 3 mm into the
+  barrel envelope. `SiBarrelLayer1_rmin` is 257 mm. At the new cone start,
+  the cone inner radius is 252 mm, and its normal thickness projects to
+  outer radii of about 260.19 mm (P) and 259.82 mm (N), so the radial
+  intervals intersect as well. These numbers explain the roughly 3 mm
+  Geant4 penetrations.
+
+Recommended targeted fix: retain the delivered ED0 position at 250 mm and
+restore the support cone's previous absolute start at 260 mm, independently
+of the disk z constant. This preserves the support cone geometry used by
+main and restores the 2 mm barrel clearance. The resulting support-cone to
+ED0 reference separation is 10 mm instead of 5 mm; that mechanical gap
+should be reviewed when updating the support design. The correction has
+**not** been applied. Rebuild the CI-tested branch and rerun the full
+`epic_craterlake` ROOT and Geant4 overlap checks, plus the inner-detector
+fast check, after any change.
+
+A local EIC-shell comparison was prepared, but the stable shell's startup
+check timed out before the diagnostic script ran. The superseded script
+testing a different hypothesis was moved to
+`tmp/retained/2026-11-03/ci_diagnostics/` and logged in
+`tmp/file_actions.log`. The conclusion above rests on the attached CI
+volume names, exact CI commit XML expressions, and explicit dimensional
+calculation; it is not presented as a local overlap rerun.
