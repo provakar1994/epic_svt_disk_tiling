@@ -3033,7 +3033,7 @@ GitHub Actions run `40934715156`, job `123677578664`, on PR head
 `b94a8f339` (2026-10-29). The user's pasted 361-line job transcript is
 preserved as `logs/ci_overlap_geant4_craterlake_20261029.txt` (SHA-256
 `c2ead64d9ecc92e9ab38d57b73170e4491c156da5ac014aae332f8f474b6afb0`).
-The three `GeomVol1002` warnings are the same physical conflict reported in
+The three `GeomVol1002` warnings are the same geometry conflict reported in
 both directions: `SagittaSiBarrel_layer1_0` (`G4Tubs`) intersects
 `InnerSupportConeEndcapN` and `InnerSupportConeEndcapP` (`G4Cons`). Sampled
 penetrations are 2.7308, 2.92502, and 2.9752 mm. None names an SVT disk
@@ -3074,6 +3074,14 @@ should be reviewed when updating the support design. The correction has
 **not** been applied. Rebuild the CI-tested branch and rerun the full
 `epic_craterlake` ROOT and Geant4 overlap checks, plus the inner-detector
 fast check, after any change.
+
+Clarification from the barrel builder: `SagittaSiBarrel_layer1_0` is an
+air-filled cylindrical mother volume containing the silicon barrel staves.
+The reported overlap establishes that this envelope and the support cone
+cannot coexist as non-overlapping siblings. It does **not** alone establish
+that silicon material intersects cone material; that requires a daughter
+volume or direct solid check. The support-cone z dependency remains the cause
+of the CI warning.
 
 A local EIC-shell comparison was prepared, but the stable shell's startup
 check timed out before the diagnostic script ran. The superseded script
