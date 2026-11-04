@@ -396,3 +396,8 @@ in the smoke test, because some saved collections depend on those producers.
   * Geometry caveat: ±100 mm uses the v2 install (c5da03dcf; disks
     unchanged, support cone +5 mm), so v1 vs v2 differences below ~0.1-0.2
     point are not interpretable.
+
+- 2026-11-04: summary PDF reduced to vz = -100, 0, +100 mm
+  (results/fiducial_summary_all_vertices_v8_vz_m100_0_p100.pdf); the +/-10 mm
+  pages were dropped at the user's request (within 0.15 point of z=0). The
+  5-page version was moved to tmp/retained/2026-11-04/.
