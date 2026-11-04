@@ -278,3 +278,9 @@ in the smoke test, because some saved collections depend on those producers.
   +10 mm), redrawn from the v8 fiducial CSVs with the same plotting function
   (`make_fiducial_summary_all_vertices.py`, runner
   `run_fiducial_summary_all_vertices.sh`); pypdf is not available in the env.
+- 2026-11-04: Verified the displaced-vertex samples are +/-10 mm (1 cm), not
+  +/-10 cm: run_sim.sh passes `--gun.position "0 0 ${vertex_z_mm}*mm"`, the
+  task list gives 10 / -10, and the primaries' MCParticles.vertex.z in the sim
+  ROOT files and the extracted shards are exactly +/-10.000 mm. The mm
+  convention came from the original submission command (`-10*mm`, see the
+  2026-10-26 notes). The user intended +/-10 cm; that needs a new campaign.
