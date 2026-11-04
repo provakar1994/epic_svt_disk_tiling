@@ -301,3 +301,48 @@ in the smoke test, because some saved collections depend on those producers.
   Downstream: VERTEX_LABELS gains +/-100 (m100/p100); run_extract_vertex.sh and
   both plotting runners accept -100/100 (extraction roots
   extracted/acceptance_v2_vz_{m100,p100}mm).
+- 2026-11-04: Submitted the +/-10 cm campaign as Slurm job `60805090`
+  (`sbatch --nodes=3 --time=03:30:00 submit_premium_packed.sh
+  task_lists/acceptance_v2_vz100mm/tasks.txt`; premium QOS, 200 tasks in one
+  wave, ~67 per node, image eic_xl:26.09.0-stable from CVMFS). Time limit
+  raised from 3:00 to 3:30 because acceptance_v1 needed 2:41 at 75 tasks/node.
+  Task logs: /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/slurm_tasks/60805090/;
+  job log: .../acc_study/slurm/svt-acceptance-60805090.out.
+
+  Important notes for comparing acceptance_v2_vz100mm with acceptance_v1:
+  * Vertex units: acceptance_v1's displaced samples are +/-10 mm (1 cm), not
+    the intended +/-10 cm; acceptance_v2_vz100mm is the intended +/-10 cm
+    (run_sim.sh argument 100 = 100 mm). Configuration names: vz_p100mm, vz_m100mm.
+  * Geometry differs from acceptance_v1. v1 used the 2026-10-26 install (branch
+    si_disk_hole, before the 10-29 main merge, with the craterlake_tracking_only
+    configuration already selecting silicon_disks_modules: npsim log shows six
+    epic_SiEndcapModuleTracker disks). v2 uses the install built 2026-11-03 from
+    c5da03dcf. Differences in what epic_craterlake_tracking_only.xml loads
+    (git diff d8864c1a6..c5da03dcf plus the v1 working-tree state):
+      - support_service_craterlake.xml: InnerSupportCone_zmin =
+        InnerTrackerEndcapP_zmin + 10 mm (was + 5 mm), i.e. both inner support
+        cones start at |z| = 260 mm instead of 255 mm (Step 8p overlap fix).
+      - ecal/bic: BIC layer-1 update from main (#1200, flat imaging staves,
+        carbon side walls); file moved to compact/ecal/bic/bic_layer1_only.xml.
+        Outside the tracker volume.
+      - calibrations.xml: newer bic_edepToNpe_layer.lut URL (BIC readout only).
+      - definitions_craterlake.xml: adds the constant material-map =
+        calibrations/materials-map.cbor (reconstruction input naming only;
+        run_sim.sh still passes the step8m material map explicitly).
+    Disk positions, openings, outer radii and module tiling are unchanged.
+    The support-cone shift adds or removes a little material in front of D1+
+    at small radii; expected effect on disk hit efficiency is negligible, but
+    a z=0 rerun on the v2 geometry would be the clean check if v1 and v2
+    numbers are ever compared at the 0.1-point level.
+  * eta coverage at +/-10 cm: the gun is still 0.6 <= |eta| <= 3.8 about the
+    displaced vertex. All fiducial annuli stay inside it (tightest: ED0/HD0
+    from the near vertex, 150 mm away, where R = 190 mm is eta ~ 0.72), but
+    the innermost silicon edge of the far disks is sampled less (e.g. HD4 from
+    vz = -100 mm: R = 53 mm is eta ~ 3.89, beyond 3.8). Outside the fiducial
+    region, so the summary numbers are unaffected; the inner-edge maps of
+    HD4/ED4 from the far vertex are truncated.
+  * Pending after the job: audit (200 sim + 200 rec ROOT files, no task
+    errors), then `./run_extract_vertex.sh +/-100`,
+    `./run_disk_hit_efficiency_eta_phi.sh +/-100`,
+    `./run_disk_edge_margin_study.sh +/-100`, and extend
+    make_fiducial_summary_all_vertices.py to the +/-100 mm pages.
