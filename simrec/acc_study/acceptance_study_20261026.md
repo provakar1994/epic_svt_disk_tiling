@@ -268,3 +268,8 @@ in the smoke test, because some saved collections depend on those producers.
   -10/0/+10 mm show the largest, mirror-symmetric shifts); 0.5-2.5 GeV values
   agree within 0.2 points. Edge-study inner margins are unchanged (<= 28.2 mm);
   outer margins show the same D0/D1 pattern as z=0.
+- 2026-11-04: Disk views now draw the fiducial annulus (magenta dashed
+  circles at XML r_in + 30 mm and rmax - 40 mm) next to the red XML circles.
+  Regenerated all three vertices with parallel agents:
+  `results/disk_hit_efficiency_v8/`, `..._v8_vz_m010mm/`, `..._v8_vz_p010mm/`.
+  Fiducial and map summary CSVs are identical to v7 for every vertex.

@@ -12,6 +12,7 @@
 # v7: first PDF page = cross-disk fiducial summary; first page per disk = fiducial
 #     efficiency vs momentum. Fiducial annulus: XML r_in + 30 mm <= R < rmax - 40 mm
 #     (margins from results/disk_edge_margins_v2, run_disk_edge_margin_study.sh).
+# v8: disk views also draw the fiducial annulus (magenta dashed circles).
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -23,7 +24,7 @@ case "$vertex" in
   10)  vertex_label="_vz_p010mm";    extracted_root="$script_dir/extracted/acceptance_v1_vz_p010mm" ;;
   *)   echo "ERROR: vertex must be 0, -10 or 10" >&2; exit 2 ;;
 esac
-output_dir="$script_dir/results/disk_hit_efficiency_v7${vertex_label}"
+output_dir="$script_dir/results/disk_hit_efficiency_v8${vertex_label}"
 geometry_xml="$script_dir/../../../compact/tracking/definitions_craterlake.xml"
 
 module load conda

@@ -239,7 +239,7 @@ def plot_disk(label: str, numerator: np.ndarray, denominator: np.ndarray,
 def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
                    eta_edges: np.ndarray, phi_edges: np.ndarray, region: tuple[int, int],
                    disk_z_mm: float, vertex_z_mm: float, title_extra: str,
-                   minimum_bin_denominator: int, boundary_circles=None):
+                   minimum_bin_denominator: int, boundary_circles=None, fiducial_radii=None):
     """Same (eta, phi) bins as plot_disk, drawn on the disk plane.
 
     Only the bin EDGES are transformed: an eta edge becomes the radius where a
@@ -281,10 +281,16 @@ def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
         for x_centre, y_centre, radius in (boundary_circles or []):
             axis.plot(x_centre + radius * np.cos(circle_angle),
                       y_centre + radius * np.sin(circle_angle), "r-", lw=0.9)
+        # Fiducial annulus used for the summary efficiencies (centred on the axis).
+        for radius in (fiducial_radii or []):
+            axis.plot(radius * np.cos(circle_angle), radius * np.sin(circle_angle),
+                      color="magenta", ls="--", lw=1.3)
     fig.colorbar(image, ax=[full_axis, zoom_axis], shrink=0.8, label="Hit efficiency [%]")
     zoom_axis.set_title(f"inner-edge zoom, |x|,|y| <= {r_zoom:.0f} mm"
                         + ("\nred: geometry openings (incl. 5 mm bakeout buffer) and outer radius"
-                           if boundary_circles else ""))
+                           if boundary_circles else "")
+                        + (f"\nmagenta dashed: fiducial annulus {fiducial_radii[0]:.1f}-"
+                           f"{fiducial_radii[1]:.0f} mm" if fiducial_radii else ""))
     region_efficiency = 100.0 * num.sum() / den.sum()
     full_axis.set_title(f"{label} hit efficiency, disk view ({title_extra})\n"
                         f"z_disk={disk_z_mm:g} mm, region {edges[0]:.1f} <= eta < {edges[-1]:.1f}: "
@@ -489,7 +495,8 @@ def main() -> None:
                         fig = plot_disk_view(label, num, den, eta_edges[side], phi_edges, region,
                                              disk_z_mm, vertex_z_mm, title_extra,
                                              args.minimum_bin_denominator,
-                                             boundaries.get(label) if boundaries else None)
+                                             boundaries.get(label) if boundaries else None,
+                                             fiducial_annuli.get(label) if fiducial_annuli else None)
                         disk_view_pages.savefig(fig)
                         if m == ALL_MOMENTA:
                             fig.savefig(args.output_dir / f"{label}_disk_view_{vertex_tag}_pall.png",
