@@ -273,3 +273,8 @@ in the smoke test, because some saved collections depend on those producers.
   Regenerated all three vertices with parallel agents:
   `results/disk_hit_efficiency_v8/`, `..._v8_vz_m010mm/`, `..._v8_vz_p010mm/`.
   Fiducial and map summary CSVs are identical to v7 for every vertex.
+- 2026-11-04: Combined the cross-disk fiducial summary of all three vertices
+  into `results/fiducial_summary_all_vertices_v8.pdf` (pages vz = -10, 0,
+  +10 mm), redrawn from the v8 fiducial CSVs with the same plotting function
+  (`make_fiducial_summary_all_vertices.py`, runner
+  `run_fiducial_summary_all_vertices.sh`); pypdf is not available in the env.
