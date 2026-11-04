@@ -35,6 +35,51 @@ from reduce_disk_acceptance import DISKS, VERTEX_LABELS, configuration_name
 ALL_MOMENTA = (0.5, 20.01)  # include the gun's 20 GeV endpoint
 SIDE_ETA_RANGE = {"negative": (-3.8, -0.6), "positive": (0.6, 3.8)}
 
+# Constant-name prefix of each disk in compact/tracking/definitions_craterlake.xml.
+DISK_XML_PREFIX = {
+    "ED0": "InnerTrackerEndcapN", "ED1": "TrackerEndcapNDisk1", "ED2": "TrackerEndcapNDisk2",
+    "ED3": "TrackerEndcapNDisk3", "ED4": "TrackerEndcapNDisk4",
+    "HD0": "InnerTrackerEndcapP", "HD1": "TrackerEndcapPDisk1", "HD2": "TrackerEndcapPDisk2",
+    "HD3": "TrackerEndcapPDisk3", "HD4": "TrackerEndcapPDisk4",
+}
+
+
+def read_disk_boundaries(xml_path: Path) -> dict:
+    """Return {disk: [(x_centre_mm, y_centre_mm, radius_mm), ...]} from the geometry XML.
+
+    Circles per disk: lepton and hadron beam-pipe openings (radius already
+    includes the 5 mm bakeout buffer) and the outer radius rmax. These are the
+    design envelope; the RSU tiling places silicon inside it, so the active
+    edge sits somewhat outside the openings and inside rmax. Centres are in
+    global x, y (checked against measured hit edges on ED3, ED4 and HD4).
+    """
+    import re
+    text = xml_path.read_text()
+    raw = dict(re.findall(r'<constant\s+name="([^"]+)"\s+value="([^"]+)"', text))
+    cache: dict = {}
+
+    def value_mm(name: str) -> float:
+        # Resolve a constant recursively; units mm=1, cm=10. Only names, numbers,
+        # + - * / ( ) and max/abs appear in the expressions used here.
+        if name not in cache:
+            expression = raw[name]
+            names = set(re.findall(r"[A-Za-z_]\w*", expression)) - {"mm", "cm", "max", "abs"}
+            namespace = {n: value_mm(n) for n in names}
+            namespace.update(mm=1.0, cm=10.0, max=max, abs=abs)
+            cache[name] = float(eval(expression, {"__builtins__": {}}, namespace))
+        return cache[name]
+
+    boundaries = {}
+    for disk, prefix in DISK_XML_PREFIX.items():
+        boundaries[disk] = [
+            (value_mm(f"{prefix}_lepton_center_x"), value_mm(f"{prefix}_lepton_center_y"),
+             value_mm(f"{prefix}_lepton_radius")),
+            (value_mm(f"{prefix}_hadron_center_x"), value_mm(f"{prefix}_hadron_center_y"),
+             value_mm(f"{prefix}_hadron_radius")),
+            (0.0, 0.0, value_mm(f"{prefix}_rmax")),
+        ]
+    return boundaries
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__,
@@ -51,6 +96,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--phi-bin-width-deg", type=float, default=10.0)
     parser.add_argument("--minimum-bin-denominator", type=int, default=20,
                         help="Mask bins with fewer generated particles; default 20.")
+    parser.add_argument("--geometry-xml", type=Path, default=None,
+                        help="definitions_craterlake.xml; if given, draw the disk openings "
+                             "and outer radius as red circles on the disk views.")
     parser.add_argument("--region-min-row-efficiency", type=float, default=0.01,
                         help="An eta row joins the disk region if its phi-integrated, "
                              "all-momentum hit fraction is at least this; default 0.01.")
@@ -160,7 +208,7 @@ def plot_disk(label: str, numerator: np.ndarray, denominator: np.ndarray,
 def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
                    eta_edges: np.ndarray, phi_edges: np.ndarray, region: tuple[int, int],
                    disk_z_mm: float, vertex_z_mm: float, title_extra: str,
-                   minimum_bin_denominator: int):
+                   minimum_bin_denominator: int, boundary_circles=None):
     """Same (eta, phi) bins as plot_disk, drawn on the disk plane.
 
     Only the bin EDGES are transformed: an eta edge becomes the radius where a
@@ -187,7 +235,8 @@ def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
 
     # Left: full disk. Right: zoom on the inner edge, where eta bins are narrow.
     fig, (full_axis, zoom_axis) = plt.subplots(1, 2, figsize=(19, 9.5), constrained_layout=True)
-    r_full = radius_edges.max() * 1.05
+    circle_extent = max((np.hypot(xc, yc) + r for xc, yc, r in (boundary_circles or [])), default=0.0)
+    r_full = max(radius_edges.max(), circle_extent) * 1.05
     r_zoom = 3.0 * radius_edges.min()
     for axis, r_lim in ((full_axis, r_full), (zoom_axis, r_zoom)):
         image = axis.pcolormesh(x_grid, y_grid, fine_values, vmin=0, vmax=100, cmap="viridis")
@@ -196,8 +245,15 @@ def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
         axis.set_aspect("equal")
         axis.set_xlabel("x [mm]  (straight-line radius of generated direction)")
         axis.set_ylabel("y [mm]")
+        # Geometry envelope from the XML: beam-pipe openings (+5 mm buffer) and rmax.
+        circle_angle = np.linspace(0.0, 2.0 * np.pi, 400)
+        for x_centre, y_centre, radius in (boundary_circles or []):
+            axis.plot(x_centre + radius * np.cos(circle_angle),
+                      y_centre + radius * np.sin(circle_angle), "r-", lw=0.9)
     fig.colorbar(image, ax=[full_axis, zoom_axis], shrink=0.8, label="Hit efficiency [%]")
-    zoom_axis.set_title(f"inner-edge zoom, |x|,|y| <= {r_zoom:.0f} mm")
+    zoom_axis.set_title(f"inner-edge zoom, |x|,|y| <= {r_zoom:.0f} mm"
+                        + ("\nred: geometry openings (incl. 5 mm bakeout buffer) and outer radius"
+                           if boundary_circles else ""))
     region_efficiency = 100.0 * num.sum() / den.sum()
     full_axis.set_title(f"{label} hit efficiency, disk view ({title_extra})\n"
                         f"z_disk={disk_z_mm:g} mm, region {edges[0]:.1f} <= eta < {edges[-1]:.1f}: "
@@ -246,6 +302,11 @@ def main() -> None:
     eta_edges = {side: make_edges(*SIDE_ETA_RANGE[side], args.eta_bin_width)
                  for side in ("negative", "positive")}
     phi_edges = make_edges(0.0, 360.0, args.phi_bin_width_deg)
+    boundaries = read_disk_boundaries(args.geometry_xml) if args.geometry_xml else None
+    if boundaries:
+        for disk, circles in boundaries.items():
+            print(f"{disk} boundary circles (x_c, y_c, r) [mm]: "
+                  + ", ".join(f"({x:.2f}, {y:.2f}, {r:.2f})" for x, y, r in circles))
     args.output_dir.mkdir(parents=True)
 
     summary_rows = []
@@ -276,7 +337,8 @@ def main() -> None:
 
                         fig = plot_disk_view(label, num, den, eta_edges[side], phi_edges, region,
                                              disk_z_mm, vertex_z_mm, title_extra,
-                                             args.minimum_bin_denominator)
+                                             args.minimum_bin_denominator,
+                                             boundaries.get(label) if boundaries else None)
                         disk_view_pages.savefig(fig)
                         if m == ALL_MOMENTA:
                             fig.savefig(args.output_dir / f"{label}_disk_view_{vertex_tag}_pall.png",

@@ -201,3 +201,13 @@ in the smoke test, because some saved collections depend on those producers.
   the innermost display radius) and print the rounded bin efficiency where
   the bin is large enough on the page for the text. Output:
   `results/disk_hit_efficiency_v4/`; summary CSV identical to v3.
+- 2026-11-04: Disk views now draw the geometry envelope in red: lepton and
+  hadron beam-pipe openings (radius incl. 5 mm bakeout buffer) and the outer
+  radius, read from the parent checkout's `definitions_craterlake.xml` (these
+  constants are unchanged since the 2026-10-26 campaign). Opening centres are
+  in global x: the measured inner hit edges of HD4 (+x 53, -x 78 mm) and ED4
+  (+x 57, -x 50 mm) shift the same way as the hadron openings
+  (-12.24 and +25.63 mm). The active edge lies ~10-15 mm outside the
+  openings. Caveat: the gun stops at |eta| = 3.8, i.e. R ~ 53 mm on HD4, so
+  the HD4 +x inner edge may be truncated by the sample, not the silicon.
+  Output: `results/disk_hit_efficiency_v5/`; summary CSV identical to v4.
