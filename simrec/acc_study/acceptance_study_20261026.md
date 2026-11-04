@@ -244,3 +244,27 @@ in the smoke test, because some saved collections depend on those producers.
   annulus covers ~80% of the XML disk area (61% for ED0/HD0). Map pages and
   their summary CSV are unchanged from v6. Two v7 reruns that only differed in
   summary-page label placement were moved to `tmp/retained/`.
+- 2026-11-04: Correction to the margin choice above: the "27.5-37.5 mm outer"
+  statement was based on three momentum bins only. Across all ten bins at z=0
+  the v2 outer band end lies further in than rmax - 40 mm on ED1 (up to 57.5),
+  HD1 (up to 75), ED0 (47.5, one bin) and HD0 (50, one bin). In those bins the
+  50% edge is unchanged (381.5-383 mm on D1, 205.5-205.7 mm on D0) while the
+  band end wanders (330-362 mm on D1), i.e. the plateau - 3 pt threshold is
+  catching the lower-efficiency (~92-93%) outer ring and interior dips, not
+  the edge fall-off. The 30/40 mm fiducial cut still excludes the edge
+  fall-off on every disk and is kept.
+- 2026-11-04: Extracted and processed the vz = -10 and +10 mm samples (two
+  parallel agents). Runners now take an optional vertex argument
+  (`run_disk_hit_efficiency_eta_phi.sh [vz]`, `run_disk_edge_margin_study.sh [vz]`;
+  default 0 keeps the z=0 paths). New `run_extract_vertex.sh <vz>` writes each
+  displaced vertex to its own root (`extracted/acceptance_v1_vz_m010mm/`,
+  `extracted/acceptance_v1_vz_p010mm/`) because the extractor rewrites
+  `extraction_manifest.csv` with only the current run's rows. Each: 100 shards,
+  5,000,000 events per side, no temporary files. Outputs:
+  `results/disk_hit_efficiency_v7_vz_{m010,p010}mm/`,
+  `results/disk_edge_margins_v2_vz_{m010,p010}mm/`, same 30/40 mm fiducial
+  annulus. All-momentum fiducial efficiencies agree with z=0 within 0.15
+  points on every disk (ED0 96.48/96.61/96.73 and HD0 96.38/96.25/96.10 for
+  -10/0/+10 mm show the largest, mirror-symmetric shifts); 0.5-2.5 GeV values
+  agree within 0.2 points. Edge-study inner margins are unchanged (<= 28.2 mm);
+  outer margins show the same D0/D1 pattern as z=0.

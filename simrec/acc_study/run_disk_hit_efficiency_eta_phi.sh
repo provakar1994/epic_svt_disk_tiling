@@ -15,8 +15,15 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-extracted_root="$script_dir/extracted/acceptance_v1"
-output_dir="$script_dir/results/disk_hit_efficiency_v7"
+# Usage: <runner> [vertex_mm]   (0 default; -10 or 10 for the displaced-vertex samples)
+vertex="${1:-0}"
+case "$vertex" in
+  0)   vertex_label="";              extracted_root="$script_dir/extracted/acceptance_v1" ;;
+  -10) vertex_label="_vz_m010mm";    extracted_root="$script_dir/extracted/acceptance_v1_vz_m010mm" ;;
+  10)  vertex_label="_vz_p010mm";    extracted_root="$script_dir/extracted/acceptance_v1_vz_p010mm" ;;
+  *)   echo "ERROR: vertex must be 0, -10 or 10" >&2; exit 2 ;;
+esac
+output_dir="$script_dir/results/disk_hit_efficiency_v7${vertex_label}"
 geometry_xml="$script_dir/../../../compact/tracking/definitions_craterlake.xml"
 
 module load conda
@@ -25,7 +32,7 @@ conda activate tracking
 python3 "$script_dir/plot_disk_hit_efficiency_eta_phi.py" \
   --extracted-root "$extracted_root" \
   --output-dir "$output_dir" \
-  --vertices 0 \
+  --vertices "$vertex" \
   --momentum-bin 0.5 2.5 \
   --momentum-bin 2.5 4.5 \
   --momentum-bin 4.5 6.5 \
