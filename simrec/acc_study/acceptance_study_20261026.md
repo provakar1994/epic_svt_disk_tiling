@@ -231,3 +231,16 @@ in the smoke test, because some saved collections depend on those producers.
   As % of XML width the margins are not uniform (5-8% on large disks, 12-18% on
   ED0/HD0), so a fixed mm margin from the XML edges is preferred. Margin choice
   pending the user's decision.
+- 2026-11-04: Added fiducial summaries (`results/disk_hit_efficiency_v7/`).
+  Fiducial annulus per disk: XML r_in + 30 mm <= R < rmax - 40 mm, with R the
+  per-particle straight-line radius at the nominal disk z; margins chosen from
+  `results/disk_edge_margins_v2/`, fixed for all momenta. First page of both
+  PDFs: per-disk fiducial efficiency for 0.5-2.5, 10.5-12.5 and 18.5-20 GeV
+  (also `fiducial_summary_vz_000mm.png`); first page of each disk: fiducial
+  efficiency vs momentum (`*_fiducial_vs_p_*.png`); numbers in
+  `fiducial_efficiency_vz_000mm.csv`. At z=0 the all-momentum fiducial
+  efficiencies are 96.05-96.63% (binomial errors ~0.01%); 18.5-20 GeV gives
+  96.2-96.9%, 0.5-2.5 GeV gives 94.3-96.2% (largest drop on HD4 and ED4). The
+  annulus covers ~80% of the XML disk area (61% for ED0/HD0). Map pages and
+  their summary CSV are unchanged from v6. Two v7 reruns that only differed in
+  summary-page label placement were moved to `tmp/retained/`.

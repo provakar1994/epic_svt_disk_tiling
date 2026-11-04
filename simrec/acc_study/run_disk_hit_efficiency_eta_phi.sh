@@ -9,11 +9,14 @@
 #     unchanged since the 2026-10-26 simulation campaign.
 # v6: pages ordered ED4..ED0, HD0..HD4; uniform 2 GeV momentum bins from 0.5 GeV,
 #     last bin 18.5-20 GeV (20.01 includes the gun endpoint).
+# v7: first PDF page = cross-disk fiducial summary; first page per disk = fiducial
+#     efficiency vs momentum. Fiducial annulus: XML r_in + 30 mm <= R < rmax - 40 mm
+#     (margins from results/disk_edge_margins_v2, run_disk_edge_margin_study.sh).
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 extracted_root="$script_dir/extracted/acceptance_v1"
-output_dir="$script_dir/results/disk_hit_efficiency_v6"
+output_dir="$script_dir/results/disk_hit_efficiency_v7"
 geometry_xml="$script_dir/../../../compact/tracking/definitions_craterlake.xml"
 
 module load conda
@@ -37,4 +40,6 @@ python3 "$script_dir/plot_disk_hit_efficiency_eta_phi.py" \
   --phi-bin-width-deg 10 \
   --minimum-bin-denominator 20 \
   --region-min-row-efficiency 0.01 \
-  --geometry-xml "$geometry_xml"
+  --geometry-xml "$geometry_xml" \
+  --fiducial-inner-margin-mm 30 \
+  --fiducial-outer-margin-mm 40

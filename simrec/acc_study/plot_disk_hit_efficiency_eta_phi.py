@@ -14,6 +14,19 @@ Definitions (one generated primary pi+ counts at most once per disk):
 
 eta and phi are the generated momentum direction; no projection is used.
 phi is shown in degrees in [0, 360). Reads the extracted particle shards only.
+
+Fiducial average (summary pages; needs --geometry-xml):
+  R per particle    = |z_disk - z_vertex| / sinh(|eta|), the straight-line
+                      radius of the generated direction at the nominal disk z
+  fiducial annulus  = XML r_in + inner margin <= R < XML r_out - outer margin,
+                      r_in = largest axis distance of the beam-pipe openings
+                      (incl. 5 mm bakeout buffer), r_out = XML rmax.
+                      Default margins 30 / 40 mm, chosen from the edge study
+                      (study_disk_edge_margins.py: measured margins 20-28 mm
+                      inner, 27.5-37.5 mm outer). Same annulus for every
+                      momentum bin, so the cut does not depend on efficiency.
+  fiducial efficiency = hit / generated for particles in the annulus (pooled),
+                      binomial error.
 """
 
 from __future__ import annotations
@@ -99,6 +112,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--geometry-xml", type=Path, default=None,
                         help="definitions_craterlake.xml; if given, draw the disk openings "
                              "and outer radius as red circles on the disk views.")
+    parser.add_argument("--fiducial-inner-margin-mm", type=float, default=30.0,
+                        help="Fiducial annulus starts this far outside XML r_in; default 30.")
+    parser.add_argument("--fiducial-outer-margin-mm", type=float, default=40.0,
+                        help="Fiducial annulus ends this far inside XML rmax; default 40.")
     parser.add_argument("--region-min-row-efficiency", type=float, default=0.01,
                         help="An eta row joins the disk region if its phi-integrated, "
                              "all-momentum hit fraction is at least this; default 0.01.")
@@ -113,12 +130,15 @@ def make_edges(low: float, high: float, width: float) -> np.ndarray:
 
 
 def accumulate(extracted_root: Path, vertex_z_mm: int, momentum_bins: list[tuple[float, float]],
-               eta_edges: dict, phi_edges: np.ndarray) -> dict:
-    """Return numerator/denominator histograms [momentum bin][disk] -> (eta, phi) arrays."""
+               eta_edges: dict, phi_edges: np.ndarray, fiducial_annuli: dict | None = None) -> dict:
+    """Return numerator/denominator histograms [momentum bin][disk] -> (eta, phi) arrays,
+    and, if fiducial_annuli {disk: (r_low, r_high)} is given, fiducial
+    [momentum bin][disk] -> [generated, hit] counts in that straight-line R annulus."""
     labels = [row[0] for side in ("negative", "positive") for row in DISKS[side]]
     shape = lambda side: (len(eta_edges[side]) - 1, len(phi_edges) - 1)
     numerator = {m: {} for m in momentum_bins}
     denominator = {m: {} for m in momentum_bins}
+    fiducial = {m: {label: [0, 0] for label in labels} for m in momentum_bins}
     for side in ("negative", "positive"):
         for m in momentum_bins:
             for row in DISKS[side]:
@@ -136,6 +156,13 @@ def accumulate(extracted_root: Path, vertex_z_mm: int, momentum_bins: list[tuple
                 eta = stored["eta"]
                 phi_deg = np.degrees(stored["phi_rad"]) % 360.0  # (-180,180] -> [0,360)
                 hit_mask = stored["hit_mask"]
+                vertex_z = stored["vertex_z_mm"].astype(float)
+            in_annulus = {}
+            if fiducial_annuli:
+                for row in DISKS[side]:
+                    radius = np.abs(row[3] - vertex_z) / np.sinh(np.abs(eta.astype(float)))
+                    r_low, r_high = fiducial_annuli[row[0]]
+                    in_annulus[row[0]] = (radius >= r_low) & (radius < r_high)
             for m in momentum_bins:
                 selected = (momentum >= m[0]) & (momentum < m[1])
                 generated = np.histogram2d(eta[selected], phi_deg[selected],
@@ -146,12 +173,16 @@ def accumulate(extracted_root: Path, vertex_z_mm: int, momentum_bins: list[tuple
                         eta[has_hit], phi_deg[has_hit], bins=(eta_edges[side], phi_edges)
                     )[0].astype(np.int64)
                     denominator[m][row[0]] += generated
+                    if fiducial_annuli:
+                        fiducial[m][row[0]][0] += int((selected & in_annulus[row[0]]).sum())
+                        fiducial[m][row[0]][1] += int((has_hit & in_annulus[row[0]]).sum())
 
     for m in momentum_bins:
         for label in labels:
             if np.any(numerator[m][label] > denominator[m][label]):
                 raise AssertionError(f"numerator exceeds denominator for {label}, {m}")
-    return {"numerator": numerator, "denominator": denominator, "labels": labels}
+    return {"numerator": numerator, "denominator": denominator, "labels": labels,
+            "fiducial": fiducial}
 
 
 def hit_region(numerator_all_momenta: np.ndarray, denominator_all_momenta: np.ndarray,
@@ -285,6 +316,70 @@ def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
     return fig
 
 
+def momentum_centre(m: tuple[float, float]) -> float:
+    return 0.5 * (m[0] + min(m[1], 20.0))  # the gun stops at 20 GeV
+
+
+def plot_fiducial_vs_momentum(label: str, table: pd.DataFrame, vertex_z_mm: int):
+    """Per-disk summary: fiducial-annulus hit efficiency vs momentum bin centre."""
+    rows = table[(table.disk == label) & ~table.all_momenta]
+    everything = table[(table.disk == label) & table.all_momenta].iloc[0]
+    centre = rows.momentum_centre_GeV.to_numpy()
+    half_width = 0.5 * (np.minimum(rows.momentum_max_GeV_exclusive, 20.0) - rows.momentum_min_GeV)
+    fig, axis = plt.subplots(figsize=(9, 5.5), constrained_layout=True)
+    axis.errorbar(centre, 100 * rows.fiducial_efficiency, xerr=half_width,
+                  yerr=100 * rows.binomial_error, fmt="o", color="tab:blue", capsize=2)
+    axis.axhline(100 * everything.fiducial_efficiency, color="gray", ls="--", lw=0.8,
+                 label=f"all momenta: {100 * everything.fiducial_efficiency:.2f}%")
+    for c, e in zip(centre, rows.fiducial_efficiency):
+        axis.annotate(f"{100 * e:.1f}", (c, 100 * e), textcoords="offset points", xytext=(0, 7),
+                      ha="center", fontsize=8)
+    low = 100 * (rows.fiducial_efficiency - rows.binomial_error).min()
+    axis.set_ylim(min(low - 1.0, 100 * everything.fiducial_efficiency - 2.0), 100.0)
+    axis.set_xlim(0, 20.5)
+    axis.set_xlabel("generated momentum, bin centre [GeV]")
+    axis.set_ylabel("hit efficiency in fiducial annulus [%]")
+    axis.grid(ls=":")
+    axis.legend(loc="lower right")
+    axis.set_title(f"{label}: fiducial hit efficiency vs momentum (z_vtx={vertex_z_mm} mm)\n"
+                   f"{everything.fiducial_r_low_mm:.1f} <= R < {everything.fiducial_r_high_mm:.0f} mm "
+                   f"(XML r_in + {everything.inner_margin_mm:g}, rmax - {everything.outer_margin_mm:g}); "
+                   f"{100 * everything.fiducial_area_fraction:.0f}% of the XML disk area")
+    return fig
+
+
+def plot_fiducial_overview(table: pd.DataFrame, disk_order: list, shown_bins: list, vertex_z_mm: int):
+    """First page: fiducial efficiency per disk for the lowest, middle and highest momentum bin."""
+    fig, axis = plt.subplots(figsize=(13, 6.5), constrained_layout=True)
+    x = np.arange(len(disk_order))
+    colors = ["tab:red", "tab:green", "tab:blue"]
+    lowest = 100.0
+    for k, (m, color) in enumerate(zip(shown_bins, colors)):
+        rows = [table[(table.disk == d) & (table.momentum_min_GeV == m[0])
+                      & (table.momentum_max_GeV_exclusive == m[1])].iloc[0] for d in disk_order]
+        values = np.array([100 * r.fiducial_efficiency for r in rows])
+        errors = np.array([100 * r.binomial_error for r in rows])
+        lowest = min(lowest, (values - errors).min())
+        axis.errorbar(x + 0.15 * (k - 1), values, yerr=errors, fmt="o", color=color, capsize=2,
+                      label=f"{m[0]:g} <= p < {min(m[1], 20.0):g} GeV")
+        label_offset = (0, -12) if k == 1 else (0, 6)  # middle bin below, so labels do not collide
+        for xi, v in zip(x + 0.15 * (k - 1), values):
+            axis.annotate(f"{v:.1f}", (xi, v), textcoords="offset points", xytext=label_offset,
+                          ha="center", fontsize=7, color=color)
+    area = {r.disk: r.fiducial_area_fraction for r in table[table.all_momenta].itertuples()}
+    axis.set_xticks(x, [f"{d}\n({100 * area[d]:.0f}% area)" for d in disk_order])
+    axis.set_ylim(np.floor(lowest - 1.5), 100.0)
+    axis.set_ylabel("hit efficiency in fiducial annulus [%]")
+    axis.grid(axis="y", ls=":")
+    axis.legend(loc="lower left")
+    first = table.iloc[0]
+    axis.set_title(f"Disk hit efficiency away from the edges (z_vtx={vertex_z_mm} mm): "
+                   f"XML r_in + {first.inner_margin_mm:g} mm <= R < rmax - {first.outer_margin_mm:g} mm\n"
+                   "simulated hits only (no sensor inefficiency); "
+                   "% area = fiducial share of the XML disk area")
+    return fig
+
+
 def momentum_text(m: tuple[float, float]) -> str:
     return "all momenta" if m == ALL_MOMENTA else f"{m[0]:g} <= p < {m[1]:g} GeV"
 
@@ -303,25 +398,79 @@ def main() -> None:
                  for side in ("negative", "positive")}
     phi_edges = make_edges(0.0, 360.0, args.phi_bin_width_deg)
     boundaries = read_disk_boundaries(args.geometry_xml) if args.geometry_xml else None
+    fiducial_annuli, xml_edges = None, {}
     if boundaries:
+        fiducial_annuli = {}
         for disk, circles in boundaries.items():
             print(f"{disk} boundary circles (x_c, y_c, r) [mm]: "
                   + ", ".join(f"({x:.2f}, {y:.2f}, {r:.2f})" for x, y, r in circles))
+            r_in = max(np.hypot(xc, yc) + r for xc, yc, r in circles[:2])  # = XML *_rmin
+            r_out = circles[2][2]
+            xml_edges[disk] = (r_in, r_out)
+            fiducial_annuli[disk] = (r_in + args.fiducial_inner_margin_mm,
+                                     r_out - args.fiducial_outer_margin_mm)
+            print(f"{disk} fiducial annulus: {fiducial_annuli[disk][0]:.1f} <= R < "
+                  f"{fiducial_annuli[disk][1]:.1f} mm")
     args.output_dir.mkdir(parents=True)
 
     summary_rows = []
     for vertex_z_mm in args.vertices:
         vertex_tag = f"vz_{VERTEX_LABELS[vertex_z_mm]}mm"
-        result = accumulate(args.extracted_root, vertex_z_mm, momentum_bins, eta_edges, phi_edges)
+        result = accumulate(args.extracted_root, vertex_z_mm, momentum_bins, eta_edges, phi_edges,
+                            fiducial_annuli)
+        disk_order = [row[0] for row in DISKS["negative"][::-1]] + [row[0] for row in DISKS["positive"]]
+
+        # Fiducial-annulus efficiencies (only with the geometry XML).
+        fiducial_table = None
+        if fiducial_annuli:
+            fiducial_rows = []
+            for label in disk_order:
+                r_low, r_high = fiducial_annuli[label]
+                r_in, r_out = xml_edges[label]
+                for m in momentum_bins:
+                    generated, hit = result["fiducial"][m][label]
+                    efficiency = hit / generated
+                    fiducial_rows.append({
+                        "vertex_z_mm": vertex_z_mm, "disk": label,
+                        "momentum_min_GeV": m[0], "momentum_max_GeV_exclusive": m[1],
+                        "momentum_centre_GeV": momentum_centre(m), "all_momenta": m == ALL_MOMENTA,
+                        "xml_r_in_mm": r_in, "xml_r_out_mm": r_out,
+                        "inner_margin_mm": args.fiducial_inner_margin_mm,
+                        "outer_margin_mm": args.fiducial_outer_margin_mm,
+                        "fiducial_r_low_mm": r_low, "fiducial_r_high_mm": r_high,
+                        "fiducial_area_fraction": (r_high**2 - r_low**2) / (r_out**2 - r_in**2),
+                        "generated_in_fiducial": generated, "hit_in_fiducial": hit,
+                        "fiducial_efficiency": efficiency,
+                        "binomial_error": np.sqrt(efficiency * (1 - efficiency) / generated),
+                    })
+            fiducial_table = pd.DataFrame(fiducial_rows)
+            fiducial_table.to_csv(args.output_dir / f"fiducial_efficiency_{vertex_tag}.csv", index=False)
+            binned = [m for m in momentum_bins if m != ALL_MOMENTA]
+            shown_bins = [binned[0], binned[len(binned) // 2], binned[-1]]
+
         pdf_path = args.output_dir / f"disk_hit_efficiency_{vertex_tag}.pdf"
         disk_view_pdf_path = args.output_dir / f"disk_hit_efficiency_disk_view_{vertex_tag}.pdf"
         with PdfPages(pdf_path) as pages, PdfPages(disk_view_pdf_path) as disk_view_pages:
+            # First page of both PDFs: cross-disk fiducial summary.
+            if fiducial_table is not None:
+                fig = plot_fiducial_overview(fiducial_table, disk_order, shown_bins, vertex_z_mm)
+                pages.savefig(fig)
+                disk_view_pages.savefig(fig)
+                fig.savefig(args.output_dir / f"fiducial_summary_{vertex_tag}.png", dpi=150)
+                plt.close(fig)
             # Pages run in z order: ED4, ED3, ..., ED0, HD0, ..., HD4.
             for side, side_rows in (("negative", DISKS["negative"][::-1]),
                                     ("positive", DISKS["positive"])):
                 for row in side_rows:
                     label = row[0]
                     disk_z_mm = row[3]  # nominal disk centre z from definitions_craterlake.xml
+                    # First page of each disk: fiducial efficiency vs momentum.
+                    if fiducial_table is not None:
+                        fig = plot_fiducial_vs_momentum(label, fiducial_table, vertex_z_mm)
+                        pages.savefig(fig)
+                        disk_view_pages.savefig(fig)
+                        fig.savefig(args.output_dir / f"{label}_fiducial_vs_p_{vertex_tag}.png", dpi=150)
+                        plt.close(fig)
                     region = hit_region(result["numerator"][ALL_MOMENTA][label],
                                         result["denominator"][ALL_MOMENTA][label],
                                         args.region_min_row_efficiency)
