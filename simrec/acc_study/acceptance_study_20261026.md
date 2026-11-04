@@ -211,3 +211,23 @@ in the smoke test, because some saved collections depend on those producers.
   openings. Caveat: the gun stops at |eta| = 3.8, i.e. R ~ 53 mm on HD4, so
   the HD4 +x inner edge may be truncated by the sample, not the silicon.
   Output: `results/disk_hit_efficiency_v5/`; summary CSV identical to v4.
+- 2026-11-04: Map pages now run ED4..ED0, HD0..HD4 and use uniform 2 GeV
+  momentum bins from 0.5 GeV (last bin 18.5-20 GeV); output
+  `results/disk_hit_efficiency_v6/`.
+- 2026-11-04: Edge-margin study (`study_disk_edge_margins.py`, runner
+  `run_disk_edge_margin_study.sh`, output `results/disk_edge_margins_v2/`):
+  phi-integrated efficiency vs per-particle straight-line radius at the disk,
+  2.5 mm bins. A v1 criterion (1 pt below plateau, scanned from the XML edges)
+  was tripped by narrow interior dips (92-93%) and a slow radial decline;
+  `results/disk_edge_margins_v1/` is kept as the record of that attempt. v2
+  locates each active edge by its 50% crossing and the band end at
+  plateau - 3 pt (3 consecutive bins). Findings at z=0: active edges are
+  ~14-29 mm outside XML r_in (r_in = largest opening extent incl. 5 mm
+  buffer) and ~24 mm inside XML rmax; edge bands are 6-12 mm wide and almost
+  momentum independent. Measured from the XML edges, the needed margins are
+  20-28 mm (inner) and 27.5-37.5 mm (outer) for all disks; exceptions are the
+  HD1 outer edge (45-60 mm) and ED1 at low p (42.5 mm), where a lower-efficiency
+  outer annulus (~92-93%) rather than the edge itself trips the threshold.
+  As % of XML width the margins are not uniform (5-8% on large disks, 12-18% on
+  ED0/HD0), so a fixed mm margin from the XML edges is preferred. Margin choice
+  pending the user's decision.

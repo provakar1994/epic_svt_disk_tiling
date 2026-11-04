@@ -7,11 +7,13 @@
 # v5: disk views show the XML disk openings (+5 mm bakeout buffer) and outer radius in red.
 #     The XML is the parent epic checkout (branch si_disk_hole); these constants are
 #     unchanged since the 2026-10-26 simulation campaign.
+# v6: pages ordered ED4..ED0, HD0..HD4; uniform 2 GeV momentum bins from 0.5 GeV,
+#     last bin 18.5-20 GeV (20.01 includes the gun endpoint).
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 extracted_root="$script_dir/extracted/acceptance_v1"
-output_dir="$script_dir/results/disk_hit_efficiency_v5"
+output_dir="$script_dir/results/disk_hit_efficiency_v6"
 geometry_xml="$script_dir/../../../compact/tracking/definitions_craterlake.xml"
 
 module load conda
@@ -21,11 +23,16 @@ python3 "$script_dir/plot_disk_hit_efficiency_eta_phi.py" \
   --extracted-root "$extracted_root" \
   --output-dir "$output_dir" \
   --vertices 0 \
-  --momentum-bin 0.5 1.5 \
-  --momentum-bin 1.5 3.0 \
-  --momentum-bin 3.0 5.0 \
-  --momentum-bin 5.0 10.0 \
-  --momentum-bin 10.0 20.01 \
+  --momentum-bin 0.5 2.5 \
+  --momentum-bin 2.5 4.5 \
+  --momentum-bin 4.5 6.5 \
+  --momentum-bin 6.5 8.5 \
+  --momentum-bin 8.5 10.5 \
+  --momentum-bin 10.5 12.5 \
+  --momentum-bin 12.5 14.5 \
+  --momentum-bin 14.5 16.5 \
+  --momentum-bin 16.5 18.5 \
+  --momentum-bin 18.5 20.01 \
   --eta-bin-width 0.1 \
   --phi-bin-width-deg 10 \
   --minimum-bin-denominator 20 \

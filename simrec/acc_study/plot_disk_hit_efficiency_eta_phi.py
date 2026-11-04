@@ -316,8 +316,10 @@ def main() -> None:
         pdf_path = args.output_dir / f"disk_hit_efficiency_{vertex_tag}.pdf"
         disk_view_pdf_path = args.output_dir / f"disk_hit_efficiency_disk_view_{vertex_tag}.pdf"
         with PdfPages(pdf_path) as pages, PdfPages(disk_view_pdf_path) as disk_view_pages:
-            for side in ("negative", "positive"):
-                for row in DISKS[side]:
+            # Pages run in z order: ED4, ED3, ..., ED0, HD0, ..., HD4.
+            for side, side_rows in (("negative", DISKS["negative"][::-1]),
+                                    ("positive", DISKS["positive"])):
+                for row in side_rows:
                     label = row[0]
                     disk_z_mm = row[3]  # nominal disk centre z from definitions_craterlake.xml
                     region = hit_region(result["numerator"][ALL_MOMENTA][label],
