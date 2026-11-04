@@ -346,3 +346,10 @@ in the smoke test, because some saved collections depend on those producers.
     `./run_disk_hit_efficiency_eta_phi.sh +/-100`,
     `./run_disk_edge_margin_study.sh +/-100`, and extend
     make_fiducial_summary_all_vertices.py to the +/-100 mm pages.
+
+- 2026-11-04 (job 60805090 finished, acceptance_v2_vz100mm):
+  * sacct: COMPLETED 0:0, elapsed 02:45:40 on 3 premium nodes.
+  * Outputs: 200 sim + 200 rec ROOT files, 0 leftover tmp files, 0 zero-byte
+    ROOT files, 200/200 task logs report completion.
+  * Next: extraction for vz = +100 and -100 mm (run_extract_vertex.sh), then
+    plots and edge study.
