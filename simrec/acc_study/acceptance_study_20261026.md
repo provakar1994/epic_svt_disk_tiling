@@ -353,3 +353,46 @@ in the smoke test, because some saved collections depend on those producers.
     ROOT files, 200/200 task logs report completion.
   * Next: extraction for vz = +100 and -100 mm (run_extract_vertex.sh), then
     plots and edge study.
+
+- 2026-11-04 (vz = +/-100 mm results, v2 geometry, campaign acceptance_v2_vz100mm):
+  * Extraction: extracted/acceptance_v2_vz_{p100,m100}mm, 2 eta signs x 50
+    shards x 100k primaries each (logs/extract_vz_*100mm_20261104.log; the
+    first -100 attempt failed only because logs/ did not exist yet when it
+    started, rerun OK).
+  * Plots: results/disk_hit_efficiency_v8_vz_{p100,m100}mm; edge study:
+    results/disk_edge_margins_v2_vz_{p100,m100}mm. Five-vertex summary:
+    results/fiducial_summary_all_vertices_v8_5vtx.pdf (the 3-vertex
+    fiducial_summary_all_vertices_v8.pdf is kept unchanged).
+  * All-momentum fiducial efficiency [%] (compare_fiducial_vertices.py),
+    L = |z_disk - z_vtx| in mm:
+        disk   vz=-100       -10      0        +10      vz=+100
+        ED4    96.64(920)    96.43    96.39    96.37    96.14(1120)
+        ED3    96.80(750)    96.60    96.56    96.53    96.37(950)
+        ED2    96.74(550)    96.64    96.63    96.63    96.58(750)
+        ED1    96.05(350)    96.45    96.51    96.54    96.67(550)
+        ED0    93.98(150)    96.48    96.61    96.73    97.24(350)
+        HD0    96.93(350)    96.38    96.25    96.10    93.23(150)
+        HD1    96.25(550)    96.12    96.10    96.07    95.66(350)
+        HD2    96.21(800)    96.32    96.33    96.34    96.60(600)
+        HD3    96.02(1050)   96.24    96.26    96.29    96.85(850)
+        HD4    95.71(1300)   96.03    96.05    96.13    96.63(1100)
+  * Main finding: the disk nearest the displaced vertex (L = 150 mm) loses
+    ~3 points (ED0 94.0 at -100, HD0 93.2 at +100; mirror-symmetric), D1 at
+    L = 350 mm loses ~0.5. Far disks shift by +/-0.3, in the direction of a
+    shorter/longer decay-in-flight path.
+  * Incidence-angle check (study_incidence_angle.py,
+    results/incidence_angle_d0_d1_v1.png, logs/incidence_angle_20261104.log):
+    D0/D1 efficiency vs tan(theta) = R/L agrees within ~1 point across all
+    five vertices where they overlap, falling from ~97% (tan 0.2-0.3) to
+    ~94% (tan 0.7) and ~87% (tan 1.2). The near disk at L=150 mm samples
+    tan(theta) 0.45-1.27 inside the fiducial annulus vs 0.27-0.76 at z=0, so
+    the drop is an incidence-angle effect, not vertex-specific.
+  * Hypothesis (NOT verified): module-to-module overlaps between modules at
+    different z cover a gap only while overlap > dz * tan(theta); at large
+    angle the projected overlap closes. Supported by the HD0 (+100) disk view:
+    low arcs (75-88%) near phi = 90/270 deg at fixed radii, growing with R.
+    Check: compare arc positions with the module y-edges, or measure dz and
+    the overlap in the tiling XML.
+  * Geometry caveat: ±100 mm uses the v2 install (c5da03dcf; disks
+    unchanged, support cone +5 mm), so v1 vs v2 differences below ~0.1-0.2
+    point are not interpretable.
