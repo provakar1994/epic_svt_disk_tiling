@@ -174,3 +174,20 @@ in the smoke test, because some saved collections depend on those producers.
   binned counts exactly match the number of hit-associated primaries placed in
   the maps. A dedicated notebook and recorded runner were added. These maps
   locate recorded hits only and do not provide missing-particle denominators.
+- 2026-11-03: Added per-disk hit-efficiency maps in generated `(eta, phi)`
+  (`plot_disk_hit_efficiency_eta_phi.py`, runner
+  `run_disk_hit_efficiency_eta_phi.sh`), styled like the tracking-efficiency
+  reference: 0.1 eta x 10 deg phi bins, efficiency in %, one page per disk.
+  Bin efficiency = generated primaries with >=1 associated disk hit / all
+  generated primaries in the bin. Each disk is shown over its own eta region:
+  eta rows whose phi-integrated, all-momentum hit fraction is >= 1%. A first
+  run with an any-hit region (stray hits stretched HD0 to 0.8-3.7) was
+  retained under `tmp/retained/2026-11-03/`. Output at z=0:
+  `results/disk_hit_efficiency_v1/`. All-momentum in-region efficiencies are
+  84.5-88.3% (ED/HD0-2) and 79.4/80.9% (HD3/HD4); they include the partially
+  covered edge rows (scalloped inner edge, phi~0 beam-pipe asymmetry). Below
+  1.5 GeV they are 0.5-1.6 points lower.
+- 2026-11-03: Regenerated the per-disk hit-efficiency maps with the rounded
+  bin efficiency [%] printed in every unmasked bin (taller figure, width
+  scaled with the number of eta bins). Output: `results/disk_hit_efficiency_v2/`;
+  the runner now writes there. Summary CSV is identical to v1.
