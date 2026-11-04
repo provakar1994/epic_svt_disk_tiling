@@ -157,6 +157,50 @@ def plot_disk(label: str, numerator: np.ndarray, denominator: np.ndarray,
     return fig
 
 
+def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
+                   eta_edges: np.ndarray, phi_edges: np.ndarray, region: tuple[int, int],
+                   disk_z_mm: float, vertex_z_mm: float, title_extra: str,
+                   minimum_bin_denominator: int):
+    """Same (eta, phi) bins as plot_disk, drawn on the disk plane.
+
+    Only the bin EDGES are transformed: an eta edge becomes the radius where a
+    straight line from the vertex at that eta reaches the nominal disk z,
+        R = |z_disk - z_vertex| / sinh(|eta|),
+    and phi stays the azimuth. Bin contents are unchanged. This is a display
+    coordinate; low-momentum tracks bend, so their real hit radius differs.
+    """
+    first, last = region
+    num = numerator[first:last + 1]
+    den = denominator[first:last + 1]
+    edges = eta_edges[first:last + 2]
+    efficiency = np.divide(100.0 * num, den, out=np.zeros(num.shape), where=den > 0)
+    values = np.ma.masked_where(den < minimum_bin_denominator, efficiency)
+
+    radius_edges = abs(disk_z_mm - vertex_z_mm) / np.sinh(np.abs(edges))
+    # Split every phi bin into 6 straight segments so the annuli look round.
+    substeps = 6
+    fine_phi = np.linspace(phi_edges[0], phi_edges[-1], (len(phi_edges) - 1) * substeps + 1)
+    fine_values = np.repeat(values, substeps, axis=1)
+    radius_grid, phi_grid = np.meshgrid(radius_edges, np.radians(fine_phi), indexing="ij")
+    x_grid = radius_grid * np.cos(phi_grid)
+    y_grid = radius_grid * np.sin(phi_grid)
+
+    fig, axis = plt.subplots(figsize=(8.5, 7.5), constrained_layout=True)
+    image = axis.pcolormesh(x_grid, y_grid, fine_values, vmin=0, vmax=100, cmap="viridis")
+    fig.colorbar(image, ax=axis, label="Hit efficiency [%]")
+    r_max = radius_edges.max() * 1.05
+    axis.set_xlim(-r_max, r_max)
+    axis.set_ylim(-r_max, r_max)
+    axis.set_aspect("equal")
+    axis.set_xlabel("x [mm]  (straight-line radius of generated direction)")
+    axis.set_ylabel("y [mm]")
+    region_efficiency = 100.0 * num.sum() / den.sum()
+    axis.set_title(f"{label} hit efficiency, disk view ({title_extra})\n"
+                   f"z_disk={disk_z_mm:g} mm, region {edges[0]:.1f} <= eta < {edges[-1]:.1f}: "
+                   f"{region_efficiency:.1f}%")
+    return fig
+
+
 def momentum_text(m: tuple[float, float]) -> str:
     return "all momenta" if m == ALL_MOMENTA else f"{m[0]:g} <= p < {m[1]:g} GeV"
 
@@ -181,10 +225,12 @@ def main() -> None:
         vertex_tag = f"vz_{VERTEX_LABELS[vertex_z_mm]}mm"
         result = accumulate(args.extracted_root, vertex_z_mm, momentum_bins, eta_edges, phi_edges)
         pdf_path = args.output_dir / f"disk_hit_efficiency_{vertex_tag}.pdf"
-        with PdfPages(pdf_path) as pages:
+        disk_view_pdf_path = args.output_dir / f"disk_hit_efficiency_disk_view_{vertex_tag}.pdf"
+        with PdfPages(pdf_path) as pages, PdfPages(disk_view_pdf_path) as disk_view_pages:
             for side in ("negative", "positive"):
                 for row in DISKS[side]:
                     label = row[0]
+                    disk_z_mm = row[3]  # nominal disk centre z from definitions_craterlake.xml
                     region = hit_region(result["numerator"][ALL_MOMENTA][label],
                                         result["denominator"][ALL_MOMENTA][label],
                                         args.region_min_row_efficiency)
@@ -197,6 +243,15 @@ def main() -> None:
                         pages.savefig(fig)
                         if m == ALL_MOMENTA:
                             fig.savefig(args.output_dir / f"{label}_hit_efficiency_{vertex_tag}_pall.png",
+                                        dpi=150)
+                        plt.close(fig)
+
+                        fig = plot_disk_view(label, num, den, eta_edges[side], phi_edges, region,
+                                             disk_z_mm, vertex_z_mm, title_extra,
+                                             args.minimum_bin_denominator)
+                        disk_view_pages.savefig(fig)
+                        if m == ALL_MOMENTA:
+                            fig.savefig(args.output_dir / f"{label}_disk_view_{vertex_tag}_pall.png",
                                         dpi=150)
                         plt.close(fig)
 

@@ -2,11 +2,12 @@
 # Recorded per-disk hit-efficiency maps in generated (eta, phi), z=0 sample.
 # One page per disk and momentum selection; the region is set from all momenta.
 # v2: same definitions as v1, plus the rounded efficiency [%] printed in each bin.
+# v3: adds disk-plane views (eta edges -> straight-line radius at nominal disk z).
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 extracted_root="$script_dir/extracted/acceptance_v1"
-output_dir="$script_dir/results/disk_hit_efficiency_v2"
+output_dir="$script_dir/results/disk_hit_efficiency_v3"
 
 module load conda
 conda activate tracking

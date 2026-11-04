@@ -191,3 +191,9 @@ in the smoke test, because some saved collections depend on those producers.
   bin efficiency [%] printed in every unmasked bin (taller figure, width
   scaled with the number of eta bins). Output: `results/disk_hit_efficiency_v2/`;
   the runner now writes there. Summary CSV is identical to v1.
+- 2026-11-03: Added disk-plane views of the same hit-efficiency bins. Only
+  the eta bin edges are mapped, to R = |z_disk - z_vtx| / sinh|eta| at the
+  nominal disk z; bin contents are unchanged (summary CSV identical to v2).
+  This is a display coordinate, not a measured hit radius. Output:
+  `results/disk_hit_efficiency_v3/` (`*_disk_view_*.png` and
+  `disk_hit_efficiency_disk_view_vz_000mm.pdf`).
