@@ -284,3 +284,20 @@ in the smoke test, because some saved collections depend on those producers.
   ROOT files and the extracted shards are exactly +/-10.000 mm. The mm
   convention came from the original submission command (`-10*mm`, see the
   2026-10-26 notes). The user intended +/-10 cm; that needs a new campaign.
+- 2026-11-04: Prepared the +/-10 cm campaign `acceptance_v2_vz100mm` (not yet
+  submitted). `prepare_acceptance_tasks_vz100mm.sh` is a copy of the v1
+  generator with vertices +/-100 mm (run_sim.sh takes mm), 4 configurations x
+  50 chunks x 100k = 20M events, seed base 42000000 (no overlap with v1).
+  Validated: 200 tasks, 5M events per configuration, unique seeds. Output
+  root /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v2_vz100mm.
+  Geometry: the current install (epic c5da03dcf). Relative to the v1 campaign
+  (2026-10-26 install, same module-tiled disks: npsim log shows
+  epic_SiEndcapModuleTracker) it differs only by the Step 8p support-cone start
+  (+5 mm), the main-branch BIC layer-1 update and a calibration LUT/material-map
+  constant; no disk geometry change. Smoke test
+  `run_smoke_test_20261104_vz100mm.sh` (10 events, vz = +100 mm) passed:
+  10/10 events sim and rec, all 39 collections, all primaries at z = 100.0 mm
+  (`validate_smoke_test.py` now takes optional OUTPUT_DIR TAG VERTEX_Z_MM).
+  Downstream: VERTEX_LABELS gains +/-100 (m100/p100); run_extract_vertex.sh and
+  both plotting runners accept -100/100 (extraction roots
+  extracted/acceptance_v2_vz_{m100,p100}mm).

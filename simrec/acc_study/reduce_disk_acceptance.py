@@ -48,7 +48,8 @@ DISKS = {
     ],
 }
 
-VERTEX_LABELS = {-10: "m010", 0: "000", 10: "p010"}
+# acceptance_v1: 0, +/-10 mm; acceptance_v2_vz100mm: +/-100 mm (10 cm).
+VERTEX_LABELS = {-100: "m100", -10: "m010", 0: "000", 10: "p010", 100: "p100"}
 ETA_LABELS = {
     "negative": "m3p8_to_m0p6",
     "positive": "p0p6_to_p3p8",

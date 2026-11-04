@@ -7,13 +7,15 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# Usage: <runner> [vertex_mm]   (0 default; -10 or 10 for the displaced-vertex samples)
+# Usage: <runner> [vertex_mm]   (0 default; -10/10 = +/-1 cm, -100/100 = +/-10 cm samples)
 vertex="${1:-0}"
 case "$vertex" in
   0)   vertex_label="";              extracted_root="$script_dir/extracted/acceptance_v1" ;;
   -10) vertex_label="_vz_m010mm";    extracted_root="$script_dir/extracted/acceptance_v1_vz_m010mm" ;;
   10)  vertex_label="_vz_p010mm";    extracted_root="$script_dir/extracted/acceptance_v1_vz_p010mm" ;;
-  *)   echo "ERROR: vertex must be 0, -10 or 10" >&2; exit 2 ;;
+  -100) vertex_label="_vz_m100mm";   extracted_root="$script_dir/extracted/acceptance_v2_vz_m100mm" ;;
+  100)  vertex_label="_vz_p100mm";   extracted_root="$script_dir/extracted/acceptance_v2_vz_p100mm" ;;
+  *)   echo "ERROR: vertex must be 0, -10, 10, -100 or 100" >&2; exit 2 ;;
 esac
 output_dir="$script_dir/results/disk_edge_margins_v2${vertex_label}"
 geometry_xml="$script_dir/../../../compact/tracking/definitions_craterlake.xml"

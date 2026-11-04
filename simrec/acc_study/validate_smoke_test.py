@@ -6,8 +6,12 @@ from pathlib import Path
 import uproot
 
 
-OUTPUT_DIR = Path("/pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261026")
-TAG = "smoke_vz_000mm_eta_p0p6_to_p3p8_n10"
+import sys
+
+# Optional arguments: OUTPUT_DIR TAG [EXPECTED_VERTEX_Z_MM]; defaults are the 2026-10-26 smoke test.
+OUTPUT_DIR = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261026")
+TAG = sys.argv[2] if len(sys.argv) > 2 else "smoke_vz_000mm_eta_p0p6_to_p3p8_n10"
+EXPECTED_VERTEX_Z_MM = float(sys.argv[3]) if len(sys.argv) > 3 else None
 EXPECTED_EVENTS = 10
 EXPECTED_COLLECTIONS = {
     "EventHeader",
@@ -82,3 +86,16 @@ if missing_collections:
     raise SystemExit("FAIL: missing required collections: " + ", ".join(missing_collections))
 
 print(f"PASS: all {len(EXPECTED_COLLECTIONS)} required collections are present")
+
+if EXPECTED_VERTEX_Z_MM is not None:
+    import awkward as ak
+    import numpy as np
+    with uproot.open(simulation_file) as root_file:
+        tree = root_file["events"]
+        vertex_z = tree["MCParticles/MCParticles.vertex.z"].array()
+        status = tree["MCParticles/MCParticles.generatorStatus"].array()
+    primary_z = ak.to_numpy(ak.flatten(vertex_z[status == 1]))
+    if len(primary_z) != EXPECTED_EVENTS or not np.allclose(primary_z, EXPECTED_VERTEX_Z_MM):
+        raise SystemExit(f"FAIL: primary vertex z {sorted(set(primary_z.round(3)))} mm, "
+                         f"expected {EXPECTED_VERTEX_Z_MM} mm for {EXPECTED_EVENTS} primaries")
+    print(f"PASS: all {len(primary_z)} primaries start at z = {EXPECTED_VERTEX_Z_MM} mm")
