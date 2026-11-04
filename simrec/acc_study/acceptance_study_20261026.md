@@ -197,3 +197,7 @@ in the smoke test, because some saved collections depend on those producers.
   This is a display coordinate, not a measured hit radius. Output:
   `results/disk_hit_efficiency_v3/` (`*_disk_view_*.png` and
   `disk_hit_efficiency_disk_view_vz_000mm.pdf`).
+- 2026-11-03: Disk views now have an inner-edge zoom panel (|x|,|y| <= 3x
+  the innermost display radius) and print the rounded bin efficiency where
+  the bin is large enough on the page for the text. Output:
+  `results/disk_hit_efficiency_v4/`; summary CSV identical to v3.

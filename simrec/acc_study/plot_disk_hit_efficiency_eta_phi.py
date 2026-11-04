@@ -185,19 +185,47 @@ def plot_disk_view(label: str, numerator: np.ndarray, denominator: np.ndarray,
     x_grid = radius_grid * np.cos(phi_grid)
     y_grid = radius_grid * np.sin(phi_grid)
 
-    fig, axis = plt.subplots(figsize=(8.5, 7.5), constrained_layout=True)
-    image = axis.pcolormesh(x_grid, y_grid, fine_values, vmin=0, vmax=100, cmap="viridis")
-    fig.colorbar(image, ax=axis, label="Hit efficiency [%]")
-    r_max = radius_edges.max() * 1.05
-    axis.set_xlim(-r_max, r_max)
-    axis.set_ylim(-r_max, r_max)
-    axis.set_aspect("equal")
-    axis.set_xlabel("x [mm]  (straight-line radius of generated direction)")
-    axis.set_ylabel("y [mm]")
+    # Left: full disk. Right: zoom on the inner edge, where eta bins are narrow.
+    fig, (full_axis, zoom_axis) = plt.subplots(1, 2, figsize=(19, 9.5), constrained_layout=True)
+    r_full = radius_edges.max() * 1.05
+    r_zoom = 3.0 * radius_edges.min()
+    for axis, r_lim in ((full_axis, r_full), (zoom_axis, r_zoom)):
+        image = axis.pcolormesh(x_grid, y_grid, fine_values, vmin=0, vmax=100, cmap="viridis")
+        axis.set_xlim(-r_lim, r_lim)
+        axis.set_ylim(-r_lim, r_lim)
+        axis.set_aspect("equal")
+        axis.set_xlabel("x [mm]  (straight-line radius of generated direction)")
+        axis.set_ylabel("y [mm]")
+    fig.colorbar(image, ax=[full_axis, zoom_axis], shrink=0.8, label="Hit efficiency [%]")
+    zoom_axis.set_title(f"inner-edge zoom, |x|,|y| <= {r_zoom:.0f} mm")
     region_efficiency = 100.0 * num.sum() / den.sum()
-    axis.set_title(f"{label} hit efficiency, disk view ({title_extra})\n"
-                   f"z_disk={disk_z_mm:g} mm, region {edges[0]:.1f} <= eta < {edges[-1]:.1f}: "
-                   f"{region_efficiency:.1f}%")
+    full_axis.set_title(f"{label} hit efficiency, disk view ({title_extra})\n"
+                        f"z_disk={disk_z_mm:g} mm, region {edges[0]:.1f} <= eta < {edges[-1]:.1f}: "
+                        f"{region_efficiency:.1f}%")
+
+    # Print each bin's rounded efficiency at its centre, but only where the bin
+    # is large enough on the page for the text not to overlap its neighbours.
+    fig.canvas.draw()  # settle the constrained layout so axis sizes are final
+    font_size = 6.0
+    text_size_points = 1.1 * max(2 * 0.6 * font_size, font_size)  # two digits, ~square
+    phi_width_rad = np.radians(phi_edges[1] - phi_edges[0])
+    phi_centres = np.radians(0.5 * (phi_edges[:-1] + phi_edges[1:]))
+    for axis, r_lim in ((full_axis, r_full), (zoom_axis, r_zoom)):
+        points_per_mm = axis.get_window_extent().width * 72.0 / fig.dpi / (2 * r_lim)
+        for i in range(len(num)):
+            r_low, r_high = sorted(radius_edges[i:i + 2])
+            r_centre = 0.5 * (r_low + r_high)
+            radial_points = (r_high - r_low) * points_per_mm
+            arc_points = r_centre * phi_width_rad * points_per_mm
+            if r_centre > r_lim or min(radial_points, arc_points) < text_size_points:
+                continue
+            for j, phi_centre in enumerate(phi_centres):
+                if values.mask is not np.ma.nomask and values.mask[i, j]:
+                    continue
+                value = values[i, j]
+                axis.text(r_centre * np.cos(phi_centre), r_centre * np.sin(phi_centre),
+                          f"{value:.0f}", ha="center", va="center", fontsize=font_size,
+                          color="black" if value > 55 else "white", clip_on=True)
     return fig
 
 

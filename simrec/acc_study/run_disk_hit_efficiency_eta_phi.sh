@@ -3,11 +3,12 @@
 # One page per disk and momentum selection; the region is set from all momenta.
 # v2: same definitions as v1, plus the rounded efficiency [%] printed in each bin.
 # v3: adds disk-plane views (eta edges -> straight-line radius at nominal disk z).
+# v4: disk view gets an inner-edge zoom panel and per-bin numbers where they fit.
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 extracted_root="$script_dir/extracted/acceptance_v1"
-output_dir="$script_dir/results/disk_hit_efficiency_v3"
+output_dir="$script_dir/results/disk_hit_efficiency_v4"
 
 module load conda
 conda activate tracking
