@@ -401,3 +401,23 @@ in the smoke test, because some saved collections depend on those producers.
   (results/fiducial_summary_all_vertices_v8_vz_m100_0_p100.pdf); the +/-10 mm
   pages were dropped at the user's request (within 0.15 point of z=0). The
   5-page version was moved to tmp/retained/2026-11-04/.
+
+- 2026-11-05: straight-line projection error (check_straight_line_projection.py,
+  logs/check_straight_line_projection_20261105.log; z=0, 10 shards per side,
+  primaries that hit the disk, mean hit vs straight-line point at the same z).
+  Median |d| [mm] (90th percentile in brackets):
+      p [GeV]     D0          D1          D4 (ED / HD)
+      0.5-1       9.4 (19)    22 (57)     53 (124) / 64 (140)
+      1-2         4.7 (9.5)   11 (29)     26 (61)  / 32 (69)
+      2-3         2.8 (5.6)   6.4 (17)    16 (36)  / 19 (41)
+      18.5-20     0.36 (0.7)  0.8 (2.2)   2.0 (4.6) / 2.5 (5.2)
+  Scales as 1/p (field bending + scattering). Consequences:
+  * Row-level studies (16.5 mm row spacing, mm-scale overlaps, tan theta_y)
+    are NOT possible with the straight-line position except at high p on D0/D1.
+  * At low p the fiducial cut itself is smeared (errors comparable to or larger
+    than the 30/40 mm margins on D1-D4), so part of the low-p fiducial loss can
+    be particles that really land in the hole or beyond rmax. The earlier
+    statement that the low-p drop is "not explained by the straight-line
+    mapping" is withdrawn until checked with true crossing points.
+  * Next step under discussion: a zero-material sensitive plane in front of
+    each disk to record the true crossing point and direction of every primary.
