@@ -1,0 +1,25 @@
+Step 8n npsim submissions at 20261020T222118Z UTC
+Geometry: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only_disk_tiles_new.xml
+Events per job: 20000
+Gun settings: unchanged from the 2026-10-19 fixed-vertex runners
+b4d19d80f248bf3cbf9dede262e8a16683a4f0839ba0fd3a8a59441cc0809bd7  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only_disk_tiles_new.xml
+6766b564a7901f2efcc335ea5a89c6d9429c689efca78a1c700c4b1de2b9aac6  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/submit_premium_packed.sh
+4a76f7577e2e7d7002c0525f1ecd4a40e93f5a282d9f235e604e78c3cb93be1d  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/run_sim.sh
+dcc2c74665427d515762b21798a82ea075c34006c131369d11816180a92358b3  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/run_sim_v0mm.sh
+596a2537f456bfcbb29115cbe05b0aae2d6748e7670c1a813455418a33a45444  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/run_sim_v10mm.sh
+
+60056891 | vm10mm_8n_job_0 | run_sim.sh
+60056892 | vm10mm_8n_job_1 | run_sim.sh
+60056893 | vm10mm_8n_job_2 | run_sim.sh
+60056894 | vm10mm_8n_job_3 | run_sim.sh
+60056895 | vm10mm_8n_job_4 | run_sim.sh
+60056896 | v0mm_8n_job_0 | run_sim_v0mm.sh
+60056897 | v0mm_8n_job_1 | run_sim_v0mm.sh
+60056898 | v0mm_8n_job_2 | run_sim_v0mm.sh
+60056899 | v0mm_8n_job_3 | run_sim_v0mm.sh
+60056900 | v0mm_8n_job_4 | run_sim_v0mm.sh
+60056901 | v10mm_8n_job_0 | run_sim_v10mm.sh
+60056902 | v10mm_8n_job_1 | run_sim_v10mm.sh
+60056903 | v10mm_8n_job_2 | run_sim_v10mm.sh
+60056904 | v10mm_8n_job_3 | run_sim_v10mm.sh
+60056905 | v10mm_8n_job_4 | run_sim_v10mm.sh

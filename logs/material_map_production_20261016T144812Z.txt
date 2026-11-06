@@ -1,0 +1,2626 @@
+Production material-map run: 20261016T144812Z
+Repository HEAD: a8ba9f7d3ecedff1e820ac5aeaa1068a6e3449cf
+DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+Sampling: 1000 events x 5000 geantinos per event
+Output prefix: production_20261016T144812Z_
+Previous plots retained at: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-10-16/material_map_plots_before_20261016T144812Z
+Existing calibration-map validation: skipped (known ACTS cylinder-axis mismatch)
+Installed geometry checksums:
+dabd097dfdac464a4bf90f1a3961ac4f070d2101115925987f3ba02bdc72a46b  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_material_map.xml
+d8810a710c51c3c4371a5be05eb5ec2c4a3f99dc81c0a61b07b77957f984f0ac  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_modules.xml
+4bae948ae0116960262ba5de909349d27890ba63d0a5193af6f4f14c5e65a6aa  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/definitions_craterlake.xml
+527ee19c0ae14338eabaf4fe258588d1110d15af386c727a6bcb88642c69d23d  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/SVT_endcap_corrugation_rows_33_36.csv
+9b52a0c9433229a5df0ddad040dac33e33f2069aee20fc865fde065882ed3400  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/catalog.csv
+62480b02f3b261d663093c1eb3ba32f103f151852cc9e46d820b4e874961744e  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED0_metadata.txt
+370b7b46d9cf60c9bc5d9a9397ba7bf4928dd2d8025737c7d364f9c5b6dea6b3  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED0_modules.csv
+b4a8f7e6dbc55e2bd936f07e5716a957f88c8cdba2883c1f6d6f8d54377ea822  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED1_metadata.txt
+5b1cb7a15021e223ff7077a2ad92c7aa0bac7c573407e20d526f04512004c840  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED1_modules.csv
+6ee2be3c8868398986f140b6ea1eb4f12bf360694acefa7c8ea2d3ff35a5e230  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED2_metadata.txt
+917d2201cc6c26aa42264606833c3ca21d6520abdb645ca58ef02fecbdb8fe49  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED2_modules.csv
+b48183f3c84ee9a3be048fa89857a80619e486f5b6b965724c98bb69bf0b8610  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED3_metadata.txt
+075c3f27212c5fcf9b5c10e3df8b968edb9eb9d21d07ca4995d1c95c5fc3a4ac  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED3_modules.csv
+fa03a513804b0a835228a31c2b9817aabaabfed04fdd6ef86022304eb797e468  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED4_metadata.txt
+977542f3c4bafc28a385614d9a2328e3c37cab14ace1f012912209ed84ceaba6  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/ED4_modules.csv
+a15c2aa87f72ea37234dc4e7d9c08ccb7773a1bb451a5b3ecc7a7013bcbfd174  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD0_metadata.txt
+ebf92e758324241c3d3b448fc4cb68d5703b73f59a358b518fd0d5cbc2fae6cf  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD0_modules.csv
+de8af53e5a90f8876e86abd22284f061078c26646b12be225a9f2efff98c5f75  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD1_metadata.txt
+c8a1f3189fcfa171a5f831346e52476ef2c078c0cda44ec2e5f2ef6469bea34d  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD1_modules.csv
+e32dea23324dc91fd575e303de5d33764508a6c2111896ba30155704aa864b69  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD2_metadata.txt
+e6b982ce3dd45d028d6f1d642738b2f488a9ef8248a3cde99818636bd4bae26a  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD2_modules.csv
+3a6c3f45d2f7f7c2be68f74ab15c4e60d229ad1f78abd81fc2abc2c85afdebbd  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD3b_metadata.txt
+c99de62d0c4b92509e328917a749185fc2d731aedeafe5eadd9c7af0788536a2  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD3b_modules.csv
+34d9a1f3cea88ae9201fe89f6494610a2a1fa3e6ceb8bc3d3ccb649195a5b621  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD4_metadata.txt
+a2f7522524c7f60abc7f64b3f98e6e0a6e22dee02fb911580789630264102f5a  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261001_ES/rsu_opt/HD4_modules.csv
+Runner checksum:
+9ddd9b349fd36f6f8e5a401ef805d2afeb7c33e28ba3df00ba8b7ed3e0a7a77f  /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/run_material_map_validation.sh
+Uncommitted source changes at run start:
+configurations/craterlake_material_map.yml
+proj_svt_disk_tiling/logs/rsu_opt_endcap_20261004.md
+scripts/material_map/run_material_map_validation.sh
+Caution: review the known envelope26 bounding-box warning before accepting this map.
+ACTS patch 6010.diff is already applied.
+ACTS patch 6012.diff is already applied.
+::group::----GEANTINO SCAN------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+07:48:51    Sequencer      INFO      Create Sequencer (single-threaded)
+07:48:51    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+07:48:51    Sequencer      INFO      Add Reader 'EventGenerator'
+07:48:51    Sequencer      INFO      -> OutputEvent 'hepmc3_event':
+07:48:51    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:48:51    Sequencer      INFO      Add Algorithm 'HepMC3InputConverter'
+07:48:51    Sequencer      INFO      <- InputEvent 'hepmc3_event':
+07:48:51    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:48:51    Sequencer      INFO      -> OutputParticles 'particles_initial':
+07:48:51    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:48:51    Sequencer      INFO      -> OutputVertices 'vertices_initial':
+07:48:51    Sequencer      INFO         flat_set<SimVertex, detail::CompareVertexId, void>
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-01 [MT]   (13-March-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+Geant4VolumeManager       +++ Populating Geant4 volume manager.
+Geant4VolumeManager       +++ Geant4 volume manager populated with 260352 sensitive path entries.
+07:49:06    Sequencer      INFO      Add Algorithm 'Geant4Simulation'
+07:49:06    Sequencer      INFO      <- InputParticles 'particles_initial':
+07:49:06    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:49:06    Sequencer      INFO      -> OutputMaterialTracks 'material_tracks':
+07:49:06    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:49:06    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:49:06    Sequencer      INFO      <- InputHandle 'material_tracks':
+07:49:06    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:49:06    Sequencer      INFO      Processing events [0, 1000)
+07:49:06    Sequencer      INFO      Starting event loop with 1 threads
+07:49:06    Sequencer      INFO        0 context decorators
+07:49:06    Sequencer      INFO        4 sequence elements
+07:49:06    Sequencer      INFO        1 readers
+07:49:06    Sequencer      INFO        2 algorithms
+07:49:06    Sequencer      INFO        1 writers
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : Air
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    PFRICHRegion
+
+Index : 1     used in the geometry : Yes
+ Material : Silicon
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 2     used in the geometry : Yes
+ Material : Copper
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 3     used in the geometry : Yes
+ Material : CarbonFiber
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    PFRICHRegion
+
+Index : 4     used in the geometry : Yes
+ Material : SVT_Endcap_Glue
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes
+ Material : Kapton
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 6     used in the geometry : Yes
+ Material : Aluminum
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    DIRCRegion
+    DRICHRegion
+
+Index : 7     used in the geometry : Yes
+ Material : Vacuum
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 8     used in the geometry : Yes
+ Material : Ar90IsoButane
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 9     used in the geometry : Yes
+ Material : Nomex
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 10     used in the geometry : Yes
+ Material : Fr4
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 11     used in the geometry : Yes
+ Material : MMGAS_InoxForMesh
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 12     used in the geometry : Yes
+ Material : MMGAS_ResistivePaste
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 13     used in the geometry : Yes
+ Material : CarbonFoam
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 14     used in the geometry : Yes
+ Material : Water
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 15     used in the geometry : Yes
+ Material : SiliconOxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 16     used in the geometry : Yes
+ Material : CarbonFoam_LowDensity
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 17     used in the geometry : Yes
+ Material : PEEK
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 18     used in the geometry : Yes
+ Material : AIREX_R82_80
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 19     used in the geometry : Yes
+ Material : Gold
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 20     used in the geometry : Yes
+ Material : Beryllium
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 21     used in the geometry : Yes
+ Material : StainlessSteelP506
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 22     used in the geometry : Yes
+ Material : Iron
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 23     used in the geometry : Yes
+ Material : SolenoidCoil
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 24     used in the geometry : Yes
+ Material : StainlessSteelSAE304
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 25     used in the geometry : Yes
+ Material : Al6061T6
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 26     used in the geometry : Yes
+ Material : StainlessSteelA53
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 27     used in the geometry : Yes
+ Material : Epoxy
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    DRICHRegion
+
+Index : 28     used in the geometry : Yes
+ Material : PbWO4
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 29     used in the geometry : Yes
+ Material : LYSO
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 30     used in the geometry : Yes
+ Material : Steel235
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 31     used in the geometry : Yes
+ Material : Polystyrene
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 32     used in the geometry : Yes
+ Material : ZDC_Polyethylene
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 33     used in the geometry : Yes
+ Material : EpotekOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+
+Index : 34     used in the geometry : Yes
+ Material : QuartzOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+    PFRICHRegion
+
+Index : 35     used in the geometry : Yes
+ Material : SapphireOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+
+Index : 36     used in the geometry : Yes
+ Material : AirOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+    PFRICHRegion
+    DRICHRegion
+
+Index : 37     used in the geometry : Yes
+ Material : Aerogel_PFRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 38     used in the geometry : Yes
+ Material : Acrylic_PFRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 39     used in the geometry : Yes
+ Material : G10
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 40     used in the geometry : Yes
+ Material : AluminumOxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 41     used in the geometry : Yes
+ Material : TungstenDens25
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 42     used in the geometry : Yes
+ Material : SiliconDioxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 43     used in the geometry : Yes
+ Material : N2cherenkov
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 44     used in the geometry : Yes
+ Material : CarbonFiber_15percent
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 45     used in the geometry : Yes
+ Material : Aerogel_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 46     used in the geometry : Yes
+ Material : Acrylic_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 47     used in the geometry : Yes
+ Material : C2F6_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+==================================================================
+
+07:53:56    Sequencer      INFO      100 / 1000 events processed
+07:57:30    Sequencer      INFO      200 / 1000 events processed
+08:01:16    Sequencer      INFO      300 / 1000 events processed
+08:05:03    Sequencer      INFO      400 / 1000 events processed
+08:08:48    Sequencer      INFO      500 / 1000 events processed
+08:12:32    Sequencer      INFO      600 / 1000 events processed
+08:16:17    Sequencer      INFO      700 / 1000 events processed
+08:20:03    Sequencer      INFO      800 / 1000 events processed
+08:23:44    Sequencer      INFO      900 / 1000 events processed
+08:27:35    Sequencer      INFO      1000 / 1000 events processed
+08:27:35    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_geant4_material_tracks.root
+08:27:35    Sequencer      INFO      Processed 1000 events in 2309.278710 s (wall clock)
+08:27:35    Sequencer      INFO      Average time per event: 2.305189 s/event
+08:27:35    Sequencer      INFO      Timing breakdown:
+| Algorithm                      | Total Time (ms) | Time/Event (ms) | Fraction |
+|:-------------------------------|----------------:|----------------:|---------:|
+| Algorithm:Geant4Simulation     |      2136959.44 |         2136.96 |    92.7% |
+| Writer:RootMaterialTrackWriter |       130907.51 |          130.91 |     5.7% |
+| Reader:EventGenerator          |        32175.48 |           32.18 |     1.4% |
+| Algorithm:HepMC3InputConverter |         5146.45 |            5.15 |     0.2% |
+| TOTAL                          |      2305188.88 |         2305.19 |   100.0% |
+
+::endgroup::
+::group::-----MAPPING Configuration-----
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+Namespace(inputFile='production_20261016T144812Z_config-map.json', outputFile='production_20261016T144812Z_config-map_regenerated.json')
+Volume ID        Name       Approaches
+2 acts_beampipe_central::Barrel 1, 2
+2 acts_beampipe_central::Barrel X
+20 EndcapMPGDSubAssembly::NegativeEndcap 1, 2
+22 OuterSiEndcapSubAssembly::NegativeEndcap 1, 2
+24 MiddleSiEndcapSubAssembly::NegativeEndcap 1, 2
+32 InnerSiTrackerSubAssembly::NegativeEndcap 1, 2
+34 VertexBarrelSubAssembly::Barrel 1, 2
+36 InnerSiTrackerSubAssembly::PositiveEndcap 1, 2
+38 MiddleSiBarrelSubAssembly::Barrel 1, 2
+40 OuterSiBarrelSubAssembly::Barrel 1, 2
+41 MiddleSiEndcapSubAssembly::PositiveEndcap 1, 2
+42 OuterSiEndcapSubAssembly::PositiveEndcap 1, 2
+43 EndcapMPGDSubAssembly::PositiveEndcap 1, 2
+45 InnerMPGDBarrelSubAssembly::Barrel 1, 2
+47 EndcapTOFSubAssembly::PositiveEndcap 1, 2
+48 BarrelTOFSubAssembly::Barrel 1, 2
+49 OuterBarrelMPGDSubAssembly::Barrel 1, 2
+50 EcalBarrelTrackerSubAssembly::Barrel 1, 2
+51 B0TrackerSubAssembly::PositiveEndcap 1, 2
+Done! Updated config file at production_20261016T144812Z_config-map_regenerated.json
+ --- Geometry visualisation and material map fie creation --- 
+
+	 parsing file :  production_20261016T144812Z_geometry-map.json
+	 job configured to produce plots in output folder:  plots
+::endgroup::
+::group::----MAPPING------------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+08:30:22    Sequencer      INFO      Create Sequencer (single-threaded)
+08:30:22    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+08:30:24    Sequencer      INFO      Add Reader 'RootMaterialTrackReader'
+08:30:24    Sequencer      INFO      -> OutputMaterialTracks 'material_tracks':
+08:30:24    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:30:24    MaterialMapp   INFO      This algorithm requires inter-event information, run in single-threaded mode!
+08:30:24    Sequencer      INFO      Add Algorithm 'MaterialMapping'
+08:30:24    Sequencer      INFO      <- InputMaterialTracks 'material_tracks':
+08:30:24    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:30:24    Sequencer      INFO      -> OutputMappedMaterialTracks 'material_tracks_mapped':
+08:30:24    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:30:24    Sequencer      INFO      -> OutputUnmappedMaterialTracks 'material_tracks_unmapped':
+08:30:24    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:30:24    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+08:30:24    Sequencer      INFO      <- InputHandle 'material_tracks_mapped':
+08:30:24    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:30:24    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+08:30:24    Sequencer      INFO      <- InputHandle 'material_tracks_unmapped':
+08:30:24    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:30:24    Sequencer      INFO      Processing events [0, 1000)
+08:30:24    Sequencer      INFO      Starting event loop with 1 threads
+08:30:24    Sequencer      INFO        0 context decorators
+08:30:24    Sequencer      INFO        4 sequence elements
+08:30:24    Sequencer      INFO        1 readers
+08:30:24    Sequencer      INFO        1 algorithms
+08:30:24    Sequencer      INFO        2 writers
+08:30:51    Sequencer      INFO      100 / 1000 events processed
+08:31:18    Sequencer      INFO      200 / 1000 events processed
+08:31:43    Sequencer      INFO      300 / 1000 events processed
+08:32:11    Sequencer      INFO      400 / 1000 events processed
+08:32:37    Sequencer      INFO      500 / 1000 events processed
+08:33:05    Sequencer      INFO      600 / 1000 events processed
+08:33:32    Sequencer      INFO      700 / 1000 events processed
+08:34:00    Sequencer      INFO      800 / 1000 events processed
+08:34:27    Sequencer      INFO      900 / 1000 events processed
+08:34:52    Sequencer      INFO      1000 / 1000 events processed
+08:34:52    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_mapped.root
+08:34:53    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_unmapped.root
+08:34:53    Sequencer      INFO      Processed 1000 events in 269.268699 s (wall clock)
+08:34:53    Sequencer      INFO      Average time per event: 264.081180 ms/event
+08:34:53    Sequencer      INFO      Timing breakdown:
+| Algorithm                      | Total Time (ms) | Time/Event (ms) | Fraction |
+|:-------------------------------|----------------:|----------------:|---------:|
+| Writer:RootMaterialTrackWriter |       107014.46 |          107.01 |    40.5% |
+| Algorithm:MaterialMapping      |        88572.39 |           88.57 |    33.5% |
+| Reader:RootMaterialTrackReader |        47632.72 |           47.63 |    18.0% |
+| Writer:RootMaterialTrackWriter |        20861.61 |           20.86 |     7.9% |
+| TOTAL                          |       264081.18 |          264.08 |   100.0% |
+
+Creating the sequencer with 1 thread (inter event information needed)
+::endgroup::
+::group::----Prepare validation rootfile--------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+08:35:33    Sequencer      INFO      Create Sequencer with -1 threads
+08:35:33    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+08:35:33    Sequencer      INFO      Add Reader 'EventGenerator'
+08:35:33    Sequencer      INFO      -> OutputEvent 'particle_gun_event':
+08:35:33    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+08:35:33    Sequencer      INFO      Add Algorithm 'HepMC3InputConverter'
+08:35:33    Sequencer      INFO      <- InputEvent 'particle_gun_event':
+08:35:33    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+08:35:33    Sequencer      INFO      -> OutputParticles 'particles_generated':
+08:35:33    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+08:35:33    Sequencer      INFO      -> OutputVertices 'vertices_generated':
+08:35:33    Sequencer      INFO         flat_set<SimVertex, detail::CompareVertexId, void>
+08:35:33    Sequencer      INFO      Key 'particles_generated' aliased to 'particles'
+08:35:33    Sequencer      INFO      Key 'vertices_generated' aliased to 'vertices_truth'
+08:35:33    Sequencer      INFO      Key 'particles_generated' aliased to 'particles_generated_selected'
+08:35:33    Sequencer      INFO      Add Algorithm 'ParticleTrackParamExtractor'
+08:35:33    Sequencer      INFO      <- InputParticles 'particles_generated':
+08:35:33    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+08:35:33    Sequencer      INFO      -> OutputTrackParameters 'params_particles_generated':
+08:35:33    Sequencer      INFO         vector<BoundTrackParameters>
+08:35:33    Sequencer      INFO      Add Algorithm 'MaterialValidation'
+08:35:33    Sequencer      INFO      <- InputTrackParameters 'params_particles_generated':
+08:35:33    Sequencer      INFO         vector<BoundTrackParameters>
+08:35:33    Sequencer      INFO      -> ValidationMaterialTracks 'material_tracks':
+08:35:33    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:35:33    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+08:35:33    Sequencer      INFO      <- InputHandle 'material_tracks':
+08:35:33    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:35:33    Sequencer      INFO      Add Algorithm 'PropagationAlgorithm'
+08:35:33    Sequencer      INFO      <- InputTrackParameters 'params_particles_generated':
+08:35:33    Sequencer      INFO         vector<BoundTrackParameters>
+08:35:33    Sequencer      INFO      -> OutputSummary 'propagation_summary':
+08:35:33    Sequencer      INFO         vector<PropagationSummary>
+08:35:33    Sequencer      INFO      -> RecordedMaterial 'material_tracks_propagated':
+08:35:33    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:35:33    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+08:35:33    Sequencer      INFO      <- InputHandle 'material_tracks_propagated':
+08:35:33    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+08:35:33    Sequencer      INFO      Processing events [0, 1000)
+08:35:33    Sequencer      INFO      Starting event loop with -1 threads
+08:35:33    Sequencer      INFO        0 context decorators
+08:35:33    Sequencer      INFO        7 sequence elements
+08:35:33    Sequencer      INFO        1 readers
+08:35:33    Sequencer      INFO        4 algorithms
+08:35:33    Sequencer      INFO        2 writers
+08:36:02    Sequencer      INFO      100 / 1000 events processed
+08:36:14    Sequencer      INFO      200 / 1000 events processed
+08:36:25    Sequencer      INFO      300 / 1000 events processed
+08:36:37    Sequencer      INFO      400 / 1000 events processed
+08:36:49    Sequencer      INFO      500 / 1000 events processed
+08:37:01    Sequencer      INFO      600 / 1000 events processed
+08:37:12    Sequencer      INFO      700 / 1000 events processed
+08:37:24    Sequencer      INFO      800 / 1000 events processed
+08:37:36    Sequencer      INFO      900 / 1000 events processed
+08:37:47    Sequencer      INFO      1000 / 1000 events processed
+08:37:47    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_propagation_material_regenerated.root
+08:37:48    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_propagation_material_regenerated_propagated.root
+08:37:48    Sequencer      INFO      Processed 1000 events in 134.532254 s (wall clock)
+08:37:48    Sequencer      INFO      Average time per event: 28.800997 s/event
+08:37:48    Sequencer      INFO      Timing breakdown:
+| Algorithm                             | Total Time (ms) | Time/Event (ms) | Fraction |
+|:--------------------------------------|----------------:|----------------:|---------:|
+| Writer:RootMaterialTrackWriter        |     24025229.87 |        24025.23 |    83.4% |
+| Algorithm:MaterialValidation          |      2870939.78 |         2870.94 |    10.0% |
+| Reader:EventGenerator                 |       986327.75 |          986.33 |     3.4% |
+| Algorithm:PropagationAlgorithm        |       502032.86 |          502.03 |     1.7% |
+| Writer:RootMaterialTrackWriter        |       396691.29 |          396.69 |     1.4% |
+| Algorithm:HepMC3InputConverter        |        16105.32 |           16.11 |     0.1% |
+| Algorithm:ParticleTrackParamExtractor |         3669.92 |            3.67 |     0.0% |
+| TOTAL                                 |     28800996.81 |        28801.00 |   100.0% |
+
+Skipping validation with the existing calibration map.
+::endgroup::
+::group::-------Comparison plots---------
+Processing Examples/Scripts/MaterialMapping/Mat_map.C("production_20261016T144812Z_propagation_material_regenerated.root","production_20261016T144812Z_material-map_mapped.root","Validation/regenerated")...
+Info in <TCanvas::Print>: png file Validation/regenerated/Val_mat_map.png has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_mat_Eta_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_X0_Eta_spread.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_mat_Phi_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_mat_Phi_X0_spread.pdf has been created
+Info in <TCanvas::Print>: png file Validation/regenerated/Val_mat_X0.png has been created
+Info in <TCanvas::Print>: png file Validation/regenerated/geant_mat_map.png has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Eta_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Eta_X0_spread.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Phi_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Phi_X0_spread.pdf has been created
+Info in <TCanvas::Print>: png file Validation/regenerated/geant_mat_X0.png has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Eta.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Eta_spread.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Phi.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Phi_spread.pdf has been created
+Score : -nan
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Ratio_Val_geant_mat_X0_Eta.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Ratio_Val_geant_mat_X0_Phi.pdf has been created
+Processing Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C("production_20261016T144812Z_propagation_material_regenerated.root","production_20261016T144812Z_material-map_mapped.root",-1,"Surfaces/regenerated/ratio_plot","Surfaces/regenerated/prop_plot","Surfaces/regenerated/map_plot","production_20261016T144812Z_geometry-map.json")...
+processed 0 events out of 5000000
+processed 10000 events out of 5000000
+processed 20000 events out of 5000000
+processed 30000 events out of 5000000
+processed 40000 events out of 5000000
+processed 50000 events out of 5000000
+processed 60000 events out of 5000000
+processed 70000 events out of 5000000
+processed 80000 events out of 5000000
+processed 90000 events out of 5000000
+processed 100000 events out of 5000000
+processed 110000 events out of 5000000
+processed 120000 events out of 5000000
+processed 130000 events out of 5000000
+processed 140000 events out of 5000000
+processed 150000 events out of 5000000
+processed 160000 events out of 5000000
+processed 170000 events out of 5000000
+processed 180000 events out of 5000000
+processed 190000 events out of 5000000
+processed 200000 events out of 5000000
+processed 210000 events out of 5000000
+processed 220000 events out of 5000000
+processed 230000 events out of 5000000
+processed 240000 events out of 5000000
+processed 250000 events out of 5000000
+processed 260000 events out of 5000000
+processed 270000 events out of 5000000
+processed 280000 events out of 5000000
+processed 290000 events out of 5000000
+processed 300000 events out of 5000000
+processed 310000 events out of 5000000
+processed 320000 events out of 5000000
+processed 330000 events out of 5000000
+processed 340000 events out of 5000000
+processed 350000 events out of 5000000
+processed 360000 events out of 5000000
+processed 370000 events out of 5000000
+processed 380000 events out of 5000000
+processed 390000 events out of 5000000
+processed 400000 events out of 5000000
+processed 410000 events out of 5000000
+processed 420000 events out of 5000000
+processed 430000 events out of 5000000
+processed 440000 events out of 5000000
+processed 450000 events out of 5000000
+processed 460000 events out of 5000000
+processed 470000 events out of 5000000
+processed 480000 events out of 5000000
+processed 490000 events out of 5000000
+processed 500000 events out of 5000000
+processed 510000 events out of 5000000
+processed 520000 events out of 5000000
+processed 530000 events out of 5000000
+processed 540000 events out of 5000000
+processed 550000 events out of 5000000
+processed 560000 events out of 5000000
+processed 570000 events out of 5000000
+processed 580000 events out of 5000000
+processed 590000 events out of 5000000
+processed 600000 events out of 5000000
+processed 610000 events out of 5000000
+processed 620000 events out of 5000000
+processed 630000 events out of 5000000
+processed 640000 events out of 5000000
+processed 650000 events out of 5000000
+processed 660000 events out of 5000000
+processed 670000 events out of 5000000
+processed 680000 events out of 5000000
+processed 690000 events out of 5000000
+processed 700000 events out of 5000000
+processed 710000 events out of 5000000
+processed 720000 events out of 5000000
+processed 730000 events out of 5000000
+processed 740000 events out of 5000000
+processed 750000 events out of 5000000
+processed 760000 events out of 5000000
+processed 770000 events out of 5000000
+processed 780000 events out of 5000000
+processed 790000 events out of 5000000
+processed 800000 events out of 5000000
+processed 810000 events out of 5000000
+processed 820000 events out of 5000000
+processed 830000 events out of 5000000
+processed 840000 events out of 5000000
+processed 850000 events out of 5000000
+processed 860000 events out of 5000000
+processed 870000 events out of 5000000
+processed 880000 events out of 5000000
+processed 890000 events out of 5000000
+processed 900000 events out of 5000000
+processed 910000 events out of 5000000
+processed 920000 events out of 5000000
+processed 930000 events out of 5000000
+processed 940000 events out of 5000000
+processed 950000 events out of 5000000
+processed 960000 events out of 5000000
+processed 970000 events out of 5000000
+processed 980000 events out of 5000000
+processed 990000 events out of 5000000
+processed 1000000 events out of 5000000
+processed 1010000 events out of 5000000
+processed 1020000 events out of 5000000
+processed 1030000 events out of 5000000
+processed 1040000 events out of 5000000
+processed 1050000 events out of 5000000
+processed 1060000 events out of 5000000
+processed 1070000 events out of 5000000
+processed 1080000 events out of 5000000
+processed 1090000 events out of 5000000
+processed 1100000 events out of 5000000
+processed 1110000 events out of 5000000
+processed 1120000 events out of 5000000
+processed 1130000 events out of 5000000
+processed 1140000 events out of 5000000
+processed 1150000 events out of 5000000
+processed 1160000 events out of 5000000
+processed 1170000 events out of 5000000
+processed 1180000 events out of 5000000
+processed 1190000 events out of 5000000
+processed 1200000 events out of 5000000
+processed 1210000 events out of 5000000
+processed 1220000 events out of 5000000
+processed 1230000 events out of 5000000
+processed 1240000 events out of 5000000
+processed 1250000 events out of 5000000
+processed 1260000 events out of 5000000
+processed 1270000 events out of 5000000
+processed 1280000 events out of 5000000
+processed 1290000 events out of 5000000
+processed 1300000 events out of 5000000
+processed 1310000 events out of 5000000
+processed 1320000 events out of 5000000
+processed 1330000 events out of 5000000
+processed 1340000 events out of 5000000
+processed 1350000 events out of 5000000
+processed 1360000 events out of 5000000
+processed 1370000 events out of 5000000
+processed 1380000 events out of 5000000
+processed 1390000 events out of 5000000
+processed 1400000 events out of 5000000
+processed 1410000 events out of 5000000
+processed 1420000 events out of 5000000
+processed 1430000 events out of 5000000
+processed 1440000 events out of 5000000
+processed 1450000 events out of 5000000
+processed 1460000 events out of 5000000
+processed 1470000 events out of 5000000
+processed 1480000 events out of 5000000
+processed 1490000 events out of 5000000
+processed 1500000 events out of 5000000
+processed 1510000 events out of 5000000
+processed 1520000 events out of 5000000
+processed 1530000 events out of 5000000
+processed 1540000 events out of 5000000
+processed 1550000 events out of 5000000
+processed 1560000 events out of 5000000
+processed 1570000 events out of 5000000
+processed 1580000 events out of 5000000
+processed 1590000 events out of 5000000
+processed 1600000 events out of 5000000
+processed 1610000 events out of 5000000
+processed 1620000 events out of 5000000
+processed 1630000 events out of 5000000
+processed 1640000 events out of 5000000
+processed 1650000 events out of 5000000
+processed 1660000 events out of 5000000
+processed 1670000 events out of 5000000
+processed 1680000 events out of 5000000
+processed 1690000 events out of 5000000
+processed 1700000 events out of 5000000
+processed 1710000 events out of 5000000
+processed 1720000 events out of 5000000
+processed 1730000 events out of 5000000
+processed 1740000 events out of 5000000
+processed 1750000 events out of 5000000
+processed 1760000 events out of 5000000
+processed 1770000 events out of 5000000
+processed 1780000 events out of 5000000
+processed 1790000 events out of 5000000
+processed 1800000 events out of 5000000
+processed 1810000 events out of 5000000
+processed 1820000 events out of 5000000
+processed 1830000 events out of 5000000
+processed 1840000 events out of 5000000
+processed 1850000 events out of 5000000
+processed 1860000 events out of 5000000
+processed 1870000 events out of 5000000
+processed 1880000 events out of 5000000
+processed 1890000 events out of 5000000
+processed 1900000 events out of 5000000
+processed 1910000 events out of 5000000
+processed 1920000 events out of 5000000
+processed 1930000 events out of 5000000
+processed 1940000 events out of 5000000
+processed 1950000 events out of 5000000
+processed 1960000 events out of 5000000
+processed 1970000 events out of 5000000
+processed 1980000 events out of 5000000
+processed 1990000 events out of 5000000
+processed 2000000 events out of 5000000
+processed 2010000 events out of 5000000
+processed 2020000 events out of 5000000
+processed 2030000 events out of 5000000
+processed 2040000 events out of 5000000
+processed 2050000 events out of 5000000
+processed 2060000 events out of 5000000
+processed 2070000 events out of 5000000
+processed 2080000 events out of 5000000
+processed 2090000 events out of 5000000
+processed 2100000 events out of 5000000
+processed 2110000 events out of 5000000
+processed 2120000 events out of 5000000
+processed 2130000 events out of 5000000
+processed 2140000 events out of 5000000
+processed 2150000 events out of 5000000
+processed 2160000 events out of 5000000
+processed 2170000 events out of 5000000
+processed 2180000 events out of 5000000
+processed 2190000 events out of 5000000
+processed 2200000 events out of 5000000
+processed 2210000 events out of 5000000
+processed 2220000 events out of 5000000
+processed 2230000 events out of 5000000
+processed 2240000 events out of 5000000
+processed 2250000 events out of 5000000
+processed 2260000 events out of 5000000
+processed 2270000 events out of 5000000
+processed 2280000 events out of 5000000
+processed 2290000 events out of 5000000
+processed 2300000 events out of 5000000
+processed 2310000 events out of 5000000
+processed 2320000 events out of 5000000
+processed 2330000 events out of 5000000
+processed 2340000 events out of 5000000
+processed 2350000 events out of 5000000
+processed 2360000 events out of 5000000
+processed 2370000 events out of 5000000
+processed 2380000 events out of 5000000
+processed 2390000 events out of 5000000
+processed 2400000 events out of 5000000
+processed 2410000 events out of 5000000
+processed 2420000 events out of 5000000
+processed 2430000 events out of 5000000
+processed 2440000 events out of 5000000
+processed 2450000 events out of 5000000
+processed 2460000 events out of 5000000
+processed 2470000 events out of 5000000
+processed 2480000 events out of 5000000
+processed 2490000 events out of 5000000
+processed 2500000 events out of 5000000
+processed 2510000 events out of 5000000
+processed 2520000 events out of 5000000
+processed 2530000 events out of 5000000
+processed 2540000 events out of 5000000
+processed 2550000 events out of 5000000
+processed 2560000 events out of 5000000
+processed 2570000 events out of 5000000
+processed 2580000 events out of 5000000
+processed 2590000 events out of 5000000
+processed 2600000 events out of 5000000
+processed 2610000 events out of 5000000
+processed 2620000 events out of 5000000
+processed 2630000 events out of 5000000
+processed 2640000 events out of 5000000
+processed 2650000 events out of 5000000
+processed 2660000 events out of 5000000
+processed 2670000 events out of 5000000
+processed 2680000 events out of 5000000
+processed 2690000 events out of 5000000
+processed 2700000 events out of 5000000
+processed 2710000 events out of 5000000
+processed 2720000 events out of 5000000
+processed 2730000 events out of 5000000
+processed 2740000 events out of 5000000
+processed 2750000 events out of 5000000
+processed 2760000 events out of 5000000
+processed 2770000 events out of 5000000
+processed 2780000 events out of 5000000
+processed 2790000 events out of 5000000
+processed 2800000 events out of 5000000
+processed 2810000 events out of 5000000
+processed 2820000 events out of 5000000
+processed 2830000 events out of 5000000
+processed 2840000 events out of 5000000
+processed 2850000 events out of 5000000
+processed 2860000 events out of 5000000
+processed 2870000 events out of 5000000
+processed 2880000 events out of 5000000
+processed 2890000 events out of 5000000
+processed 2900000 events out of 5000000
+processed 2910000 events out of 5000000
+processed 2920000 events out of 5000000
+processed 2930000 events out of 5000000
+processed 2940000 events out of 5000000
+processed 2950000 events out of 5000000
+processed 2960000 events out of 5000000
+processed 2970000 events out of 5000000
+processed 2980000 events out of 5000000
+processed 2990000 events out of 5000000
+processed 3000000 events out of 5000000
+processed 3010000 events out of 5000000
+processed 3020000 events out of 5000000
+processed 3030000 events out of 5000000
+processed 3040000 events out of 5000000
+processed 3050000 events out of 5000000
+processed 3060000 events out of 5000000
+processed 3070000 events out of 5000000
+processed 3080000 events out of 5000000
+processed 3090000 events out of 5000000
+processed 3100000 events out of 5000000
+processed 3110000 events out of 5000000
+processed 3120000 events out of 5000000
+processed 3130000 events out of 5000000
+processed 3140000 events out of 5000000
+processed 3150000 events out of 5000000
+processed 3160000 events out of 5000000
+processed 3170000 events out of 5000000
+processed 3180000 events out of 5000000
+processed 3190000 events out of 5000000
+processed 3200000 events out of 5000000
+processed 3210000 events out of 5000000
+processed 3220000 events out of 5000000
+processed 3230000 events out of 5000000
+processed 3240000 events out of 5000000
+processed 3250000 events out of 5000000
+processed 3260000 events out of 5000000
+processed 3270000 events out of 5000000
+processed 3280000 events out of 5000000
+processed 3290000 events out of 5000000
+processed 3300000 events out of 5000000
+processed 3310000 events out of 5000000
+processed 3320000 events out of 5000000
+processed 3330000 events out of 5000000
+processed 3340000 events out of 5000000
+processed 3350000 events out of 5000000
+processed 3360000 events out of 5000000
+processed 3370000 events out of 5000000
+processed 3380000 events out of 5000000
+processed 3390000 events out of 5000000
+processed 3400000 events out of 5000000
+processed 3410000 events out of 5000000
+processed 3420000 events out of 5000000
+processed 3430000 events out of 5000000
+processed 3440000 events out of 5000000
+processed 3450000 events out of 5000000
+processed 3460000 events out of 5000000
+processed 3470000 events out of 5000000
+processed 3480000 events out of 5000000
+processed 3490000 events out of 5000000
+processed 3500000 events out of 5000000
+processed 3510000 events out of 5000000
+processed 3520000 events out of 5000000
+processed 3530000 events out of 5000000
+processed 3540000 events out of 5000000
+processed 3550000 events out of 5000000
+processed 3560000 events out of 5000000
+processed 3570000 events out of 5000000
+processed 3580000 events out of 5000000
+processed 3590000 events out of 5000000
+processed 3600000 events out of 5000000
+processed 3610000 events out of 5000000
+processed 3620000 events out of 5000000
+processed 3630000 events out of 5000000
+processed 3640000 events out of 5000000
+processed 3650000 events out of 5000000
+processed 3660000 events out of 5000000
+processed 3670000 events out of 5000000
+processed 3680000 events out of 5000000
+processed 3690000 events out of 5000000
+processed 3700000 events out of 5000000
+processed 3710000 events out of 5000000
+processed 3720000 events out of 5000000
+processed 3730000 events out of 5000000
+processed 3740000 events out of 5000000
+processed 3750000 events out of 5000000
+processed 3760000 events out of 5000000
+processed 3770000 events out of 5000000
+processed 3780000 events out of 5000000
+processed 3790000 events out of 5000000
+processed 3800000 events out of 5000000
+processed 3810000 events out of 5000000
+processed 3820000 events out of 5000000
+processed 3830000 events out of 5000000
+processed 3840000 events out of 5000000
+processed 3850000 events out of 5000000
+processed 3860000 events out of 5000000
+processed 3870000 events out of 5000000
+processed 3880000 events out of 5000000
+processed 3890000 events out of 5000000
+processed 3900000 events out of 5000000
+processed 3910000 events out of 5000000
+processed 3920000 events out of 5000000
+processed 3930000 events out of 5000000
+processed 3940000 events out of 5000000
+processed 3950000 events out of 5000000
+processed 3960000 events out of 5000000
+processed 3970000 events out of 5000000
+processed 3980000 events out of 5000000
+processed 3990000 events out of 5000000
+processed 4000000 events out of 5000000
+processed 4010000 events out of 5000000
+processed 4020000 events out of 5000000
+processed 4030000 events out of 5000000
+processed 4040000 events out of 5000000
+processed 4050000 events out of 5000000
+processed 4060000 events out of 5000000
+processed 4070000 events out of 5000000
+processed 4080000 events out of 5000000
+processed 4090000 events out of 5000000
+processed 4100000 events out of 5000000
+processed 4110000 events out of 5000000
+processed 4120000 events out of 5000000
+processed 4130000 events out of 5000000
+processed 4140000 events out of 5000000
+processed 4150000 events out of 5000000
+processed 4160000 events out of 5000000
+processed 4170000 events out of 5000000
+processed 4180000 events out of 5000000
+processed 4190000 events out of 5000000
+processed 4200000 events out of 5000000
+processed 4210000 events out of 5000000
+processed 4220000 events out of 5000000
+processed 4230000 events out of 5000000
+processed 4240000 events out of 5000000
+processed 4250000 events out of 5000000
+processed 4260000 events out of 5000000
+processed 4270000 events out of 5000000
+processed 4280000 events out of 5000000
+processed 4290000 events out of 5000000
+processed 4300000 events out of 5000000
+processed 4310000 events out of 5000000
+processed 4320000 events out of 5000000
+processed 4330000 events out of 5000000
+processed 4340000 events out of 5000000
+processed 4350000 events out of 5000000
+processed 4360000 events out of 5000000
+processed 4370000 events out of 5000000
+processed 4380000 events out of 5000000
+processed 4390000 events out of 5000000
+processed 4400000 events out of 5000000
+processed 4410000 events out of 5000000
+processed 4420000 events out of 5000000
+processed 4430000 events out of 5000000
+processed 4440000 events out of 5000000
+processed 4450000 events out of 5000000
+processed 4460000 events out of 5000000
+processed 4470000 events out of 5000000
+processed 4480000 events out of 5000000
+processed 4490000 events out of 5000000
+processed 4500000 events out of 5000000
+processed 4510000 events out of 5000000
+processed 4520000 events out of 5000000
+processed 4530000 events out of 5000000
+processed 4540000 events out of 5000000
+processed 4550000 events out of 5000000
+processed 4560000 events out of 5000000
+processed 4570000 events out of 5000000
+processed 4580000 events out of 5000000
+processed 4590000 events out of 5000000
+processed 4600000 events out of 5000000
+processed 4610000 events out of 5000000
+processed 4620000 events out of 5000000
+processed 4630000 events out of 5000000
+processed 4640000 events out of 5000000
+processed 4650000 events out of 5000000
+processed 4660000 events out of 5000000
+processed 4670000 events out of 5000000
+processed 4680000 events out of 5000000
+processed 4690000 events out of 5000000
+processed 4700000 events out of 5000000
+processed 4710000 events out of 5000000
+processed 4720000 events out of 5000000
+processed 4730000 events out of 5000000
+processed 4740000 events out of 5000000
+processed 4750000 events out of 5000000
+processed 4760000 events out of 5000000
+processed 4770000 events out of 5000000
+processed 4780000 events out of 5000000
+processed 4790000 events out of 5000000
+processed 4800000 events out of 5000000
+processed 4810000 events out of 5000000
+processed 4820000 events out of 5000000
+processed 4830000 events out of 5000000
+processed 4840000 events out of 5000000
+processed 4850000 events out of 5000000
+processed 4860000 events out of 5000000
+processed 4870000 events out of 5000000
+processed 4880000 events out of 5000000
+processed 4890000 events out of 5000000
+processed 4900000 events out of 5000000
+processed 4910000 events out of 5000000
+processed 4920000 events out of 5000000
+processed 4930000 events out of 5000000
+processed 4940000 events out of 5000000
+processed 4950000 events out of 5000000
+processed 4960000 events out of 5000000
+processed 4970000 events out of 5000000
+processed 4980000 events out of 5000000
+processed 4990000 events out of 5000000
+processed 0 events out of 4089000
+processed 10000 events out of 4089000
+processed 20000 events out of 4089000
+processed 30000 events out of 4089000
+processed 40000 events out of 4089000
+processed 50000 events out of 4089000
+processed 60000 events out of 4089000
+processed 70000 events out of 4089000
+processed 80000 events out of 4089000
+processed 90000 events out of 4089000
+processed 100000 events out of 4089000
+processed 110000 events out of 4089000
+processed 120000 events out of 4089000
+processed 130000 events out of 4089000
+processed 140000 events out of 4089000
+processed 150000 events out of 4089000
+processed 160000 events out of 4089000
+processed 170000 events out of 4089000
+processed 180000 events out of 4089000
+processed 190000 events out of 4089000
+processed 200000 events out of 4089000
+processed 210000 events out of 4089000
+processed 220000 events out of 4089000
+processed 230000 events out of 4089000
+processed 240000 events out of 4089000
+processed 250000 events out of 4089000
+processed 260000 events out of 4089000
+processed 270000 events out of 4089000
+processed 280000 events out of 4089000
+processed 290000 events out of 4089000
+processed 300000 events out of 4089000
+processed 310000 events out of 4089000
+processed 320000 events out of 4089000
+processed 330000 events out of 4089000
+processed 340000 events out of 4089000
+processed 350000 events out of 4089000
+processed 360000 events out of 4089000
+processed 370000 events out of 4089000
+processed 380000 events out of 4089000
+processed 390000 events out of 4089000
+processed 400000 events out of 4089000
+processed 410000 events out of 4089000
+processed 420000 events out of 4089000
+processed 430000 events out of 4089000
+processed 440000 events out of 4089000
+processed 450000 events out of 4089000
+processed 460000 events out of 4089000
+processed 470000 events out of 4089000
+processed 480000 events out of 4089000
+processed 490000 events out of 4089000
+processed 500000 events out of 4089000
+processed 510000 events out of 4089000
+processed 520000 events out of 4089000
+processed 530000 events out of 4089000
+processed 540000 events out of 4089000
+processed 550000 events out of 4089000
+processed 560000 events out of 4089000
+processed 570000 events out of 4089000
+processed 580000 events out of 4089000
+processed 590000 events out of 4089000
+processed 600000 events out of 4089000
+processed 610000 events out of 4089000
+processed 620000 events out of 4089000
+processed 630000 events out of 4089000
+processed 640000 events out of 4089000
+processed 650000 events out of 4089000
+processed 660000 events out of 4089000
+processed 670000 events out of 4089000
+processed 680000 events out of 4089000
+processed 690000 events out of 4089000
+processed 700000 events out of 4089000
+processed 710000 events out of 4089000
+processed 720000 events out of 4089000
+processed 730000 events out of 4089000
+processed 740000 events out of 4089000
+processed 750000 events out of 4089000
+processed 760000 events out of 4089000
+processed 770000 events out of 4089000
+processed 780000 events out of 4089000
+processed 790000 events out of 4089000
+processed 800000 events out of 4089000
+processed 810000 events out of 4089000
+processed 820000 events out of 4089000
+processed 830000 events out of 4089000
+processed 840000 events out of 4089000
+processed 850000 events out of 4089000
+processed 860000 events out of 4089000
+processed 870000 events out of 4089000
+processed 880000 events out of 4089000
+processed 890000 events out of 4089000
+processed 900000 events out of 4089000
+processed 910000 events out of 4089000
+processed 920000 events out of 4089000
+processed 930000 events out of 4089000
+processed 940000 events out of 4089000
+processed 950000 events out of 4089000
+processed 960000 events out of 4089000
+processed 970000 events out of 4089000
+processed 980000 events out of 4089000
+processed 990000 events out of 4089000
+processed 1000000 events out of 4089000
+processed 1010000 events out of 4089000
+processed 1020000 events out of 4089000
+processed 1030000 events out of 4089000
+processed 1040000 events out of 4089000
+processed 1050000 events out of 4089000
+processed 1060000 events out of 4089000
+processed 1070000 events out of 4089000
+processed 1080000 events out of 4089000
+processed 1090000 events out of 4089000
+processed 1100000 events out of 4089000
+processed 1110000 events out of 4089000
+processed 1120000 events out of 4089000
+processed 1130000 events out of 4089000
+processed 1140000 events out of 4089000
+processed 1150000 events out of 4089000
+processed 1160000 events out of 4089000
+processed 1170000 events out of 4089000
+processed 1180000 events out of 4089000
+processed 1190000 events out of 4089000
+processed 1200000 events out of 4089000
+processed 1210000 events out of 4089000
+processed 1220000 events out of 4089000
+processed 1230000 events out of 4089000
+processed 1240000 events out of 4089000
+processed 1250000 events out of 4089000
+processed 1260000 events out of 4089000
+processed 1270000 events out of 4089000
+processed 1280000 events out of 4089000
+processed 1290000 events out of 4089000
+processed 1300000 events out of 4089000
+processed 1310000 events out of 4089000
+processed 1320000 events out of 4089000
+processed 1330000 events out of 4089000
+processed 1340000 events out of 4089000
+processed 1350000 events out of 4089000
+processed 1360000 events out of 4089000
+processed 1370000 events out of 4089000
+processed 1380000 events out of 4089000
+processed 1390000 events out of 4089000
+processed 1400000 events out of 4089000
+processed 1410000 events out of 4089000
+processed 1420000 events out of 4089000
+processed 1430000 events out of 4089000
+processed 1440000 events out of 4089000
+processed 1450000 events out of 4089000
+processed 1460000 events out of 4089000
+processed 1470000 events out of 4089000
+processed 1480000 events out of 4089000
+processed 1490000 events out of 4089000
+processed 1500000 events out of 4089000
+processed 1510000 events out of 4089000
+processed 1520000 events out of 4089000
+processed 1530000 events out of 4089000
+processed 1540000 events out of 4089000
+processed 1550000 events out of 4089000
+processed 1560000 events out of 4089000
+processed 1570000 events out of 4089000
+processed 1580000 events out of 4089000
+processed 1590000 events out of 4089000
+processed 1600000 events out of 4089000
+processed 1610000 events out of 4089000
+processed 1620000 events out of 4089000
+processed 1630000 events out of 4089000
+processed 1640000 events out of 4089000
+processed 1650000 events out of 4089000
+processed 1660000 events out of 4089000
+processed 1670000 events out of 4089000
+processed 1680000 events out of 4089000
+processed 1690000 events out of 4089000
+processed 1700000 events out of 4089000
+processed 1710000 events out of 4089000
+processed 1720000 events out of 4089000
+processed 1730000 events out of 4089000
+processed 1740000 events out of 4089000
+processed 1750000 events out of 4089000
+processed 1760000 events out of 4089000
+processed 1770000 events out of 4089000
+processed 1780000 events out of 4089000
+processed 1790000 events out of 4089000
+processed 1800000 events out of 4089000
+processed 1810000 events out of 4089000
+processed 1820000 events out of 4089000
+processed 1830000 events out of 4089000
+processed 1840000 events out of 4089000
+processed 1850000 events out of 4089000
+processed 1860000 events out of 4089000
+processed 1870000 events out of 4089000
+processed 1880000 events out of 4089000
+processed 1890000 events out of 4089000
+processed 1900000 events out of 4089000
+processed 1910000 events out of 4089000
+processed 1920000 events out of 4089000
+processed 1930000 events out of 4089000
+processed 1940000 events out of 4089000
+processed 1950000 events out of 4089000
+processed 1960000 events out of 4089000
+processed 1970000 events out of 4089000
+processed 1980000 events out of 4089000
+processed 1990000 events out of 4089000
+processed 2000000 events out of 4089000
+processed 2010000 events out of 4089000
+processed 2020000 events out of 4089000
+processed 2030000 events out of 4089000
+processed 2040000 events out of 4089000
+processed 2050000 events out of 4089000
+processed 2060000 events out of 4089000
+processed 2070000 events out of 4089000
+processed 2080000 events out of 4089000
+processed 2090000 events out of 4089000
+processed 2100000 events out of 4089000
+processed 2110000 events out of 4089000
+processed 2120000 events out of 4089000
+processed 2130000 events out of 4089000
+processed 2140000 events out of 4089000
+processed 2150000 events out of 4089000
+processed 2160000 events out of 4089000
+processed 2170000 events out of 4089000
+processed 2180000 events out of 4089000
+processed 2190000 events out of 4089000
+processed 2200000 events out of 4089000
+processed 2210000 events out of 4089000
+processed 2220000 events out of 4089000
+processed 2230000 events out of 4089000
+processed 2240000 events out of 4089000
+processed 2250000 events out of 4089000
+processed 2260000 events out of 4089000
+processed 2270000 events out of 4089000
+processed 2280000 events out of 4089000
+processed 2290000 events out of 4089000
+processed 2300000 events out of 4089000
+processed 2310000 events out of 4089000
+processed 2320000 events out of 4089000
+processed 2330000 events out of 4089000
+processed 2340000 events out of 4089000
+processed 2350000 events out of 4089000
+processed 2360000 events out of 4089000
+processed 2370000 events out of 4089000
+processed 2380000 events out of 4089000
+processed 2390000 events out of 4089000
+processed 2400000 events out of 4089000
+processed 2410000 events out of 4089000
+processed 2420000 events out of 4089000
+processed 2430000 events out of 4089000
+processed 2440000 events out of 4089000
+processed 2450000 events out of 4089000
+processed 2460000 events out of 4089000
+processed 2470000 events out of 4089000
+processed 2480000 events out of 4089000
+processed 2490000 events out of 4089000
+processed 2500000 events out of 4089000
+processed 2510000 events out of 4089000
+processed 2520000 events out of 4089000
+processed 2530000 events out of 4089000
+processed 2540000 events out of 4089000
+processed 2550000 events out of 4089000
+processed 2560000 events out of 4089000
+processed 2570000 events out of 4089000
+processed 2580000 events out of 4089000
+processed 2590000 events out of 4089000
+processed 2600000 events out of 4089000
+processed 2610000 events out of 4089000
+processed 2620000 events out of 4089000
+processed 2630000 events out of 4089000
+processed 2640000 events out of 4089000
+processed 2650000 events out of 4089000
+processed 2660000 events out of 4089000
+processed 2670000 events out of 4089000
+processed 2680000 events out of 4089000
+processed 2690000 events out of 4089000
+processed 2700000 events out of 4089000
+processed 2710000 events out of 4089000
+processed 2720000 events out of 4089000
+processed 2730000 events out of 4089000
+processed 2740000 events out of 4089000
+processed 2750000 events out of 4089000
+processed 2760000 events out of 4089000
+processed 2770000 events out of 4089000
+processed 2780000 events out of 4089000
+processed 2790000 events out of 4089000
+processed 2800000 events out of 4089000
+processed 2810000 events out of 4089000
+processed 2820000 events out of 4089000
+processed 2830000 events out of 4089000
+processed 2840000 events out of 4089000
+processed 2850000 events out of 4089000
+processed 2860000 events out of 4089000
+processed 2870000 events out of 4089000
+processed 2880000 events out of 4089000
+processed 2890000 events out of 4089000
+processed 2900000 events out of 4089000
+processed 2910000 events out of 4089000
+processed 2920000 events out of 4089000
+processed 2930000 events out of 4089000
+processed 2940000 events out of 4089000
+processed 2950000 events out of 4089000
+processed 2960000 events out of 4089000
+processed 2970000 events out of 4089000
+processed 2980000 events out of 4089000
+processed 2990000 events out of 4089000
+processed 3000000 events out of 4089000
+processed 3010000 events out of 4089000
+processed 3020000 events out of 4089000
+processed 3030000 events out of 4089000
+processed 3040000 events out of 4089000
+processed 3050000 events out of 4089000
+processed 3060000 events out of 4089000
+processed 3070000 events out of 4089000
+processed 3080000 events out of 4089000
+processed 3090000 events out of 4089000
+processed 3100000 events out of 4089000
+processed 3110000 events out of 4089000
+processed 3120000 events out of 4089000
+processed 3130000 events out of 4089000
+processed 3140000 events out of 4089000
+processed 3150000 events out of 4089000
+processed 3160000 events out of 4089000
+processed 3170000 events out of 4089000
+processed 3180000 events out of 4089000
+processed 3190000 events out of 4089000
+processed 3200000 events out of 4089000
+processed 3210000 events out of 4089000
+processed 3220000 events out of 4089000
+processed 3230000 events out of 4089000
+processed 3240000 events out of 4089000
+processed 3250000 events out of 4089000
+processed 3260000 events out of 4089000
+processed 3270000 events out of 4089000
+processed 3280000 events out of 4089000
+processed 3290000 events out of 4089000
+processed 3300000 events out of 4089000
+processed 3310000 events out of 4089000
+processed 3320000 events out of 4089000
+processed 3330000 events out of 4089000
+processed 3340000 events out of 4089000
+processed 3350000 events out of 4089000
+processed 3360000 events out of 4089000
+processed 3370000 events out of 4089000
+processed 3380000 events out of 4089000
+processed 3390000 events out of 4089000
+processed 3400000 events out of 4089000
+processed 3410000 events out of 4089000
+processed 3420000 events out of 4089000
+processed 3430000 events out of 4089000
+processed 3440000 events out of 4089000
+processed 3450000 events out of 4089000
+processed 3460000 events out of 4089000
+processed 3470000 events out of 4089000
+processed 3480000 events out of 4089000
+processed 3490000 events out of 4089000
+processed 3500000 events out of 4089000
+processed 3510000 events out of 4089000
+processed 3520000 events out of 4089000
+processed 3530000 events out of 4089000
+processed 3540000 events out of 4089000
+processed 3550000 events out of 4089000
+processed 3560000 events out of 4089000
+processed 3570000 events out of 4089000
+processed 3580000 events out of 4089000
+processed 3590000 events out of 4089000
+processed 3600000 events out of 4089000
+processed 3610000 events out of 4089000
+processed 3620000 events out of 4089000
+processed 3630000 events out of 4089000
+processed 3640000 events out of 4089000
+processed 3650000 events out of 4089000
+processed 3660000 events out of 4089000
+processed 3670000 events out of 4089000
+processed 3680000 events out of 4089000
+processed 3690000 events out of 4089000
+processed 3700000 events out of 4089000
+processed 3710000 events out of 4089000
+processed 3720000 events out of 4089000
+processed 3730000 events out of 4089000
+processed 3740000 events out of 4089000
+processed 3750000 events out of 4089000
+processed 3760000 events out of 4089000
+processed 3770000 events out of 4089000
+processed 3780000 events out of 4089000
+processed 3790000 events out of 4089000
+processed 3800000 events out of 4089000
+processed 3810000 events out of 4089000
+processed 3820000 events out of 4089000
+processed 3830000 events out of 4089000
+processed 3840000 events out of 4089000
+processed 3850000 events out of 4089000
+processed 3860000 events out of 4089000
+processed 3870000 events out of 4089000
+processed 3880000 events out of 4089000
+processed 3890000 events out of 4089000
+processed 3900000 events out of 4089000
+processed 3910000 events out of 4089000
+processed 3920000 events out of 4089000
+processed 3930000 events out of 4089000
+processed 3940000 events out of 4089000
+processed 3950000 events out of 4089000
+processed 3960000 events out of 4089000
+processed 3970000 events out of 4089000
+processed 3980000 events out of 4089000
+processed 3990000 events out of 4089000
+processed 4000000 events out of 4089000
+processed 4010000 events out of 4089000
+processed 4020000 events out of 4089000
+processed 4030000 events out of 4089000
+processed 4040000 events out of 4089000
+processed 4050000 events out of 4089000
+processed 4060000 events out of 4089000
+processed 4070000 events out of 4089000
+processed 4080000 events out of 4089000
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v2_b0_l2_a0_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v2_b0_l2_a0_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v2_b0_l2_a0_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v24_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v24_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v24_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v24_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v24_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v24_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v32_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v32_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v32_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v32_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v32_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v32_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v36_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v36_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v36_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v36_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v36_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v36_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v38_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v38_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v38_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v38_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v38_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v38_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v40_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v40_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v40_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v40_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v40_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v40_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v41_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v41_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v41_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v41_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v41_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v41_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v45_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v45_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v45_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v45_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v45_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v45_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v48_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v48_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v48_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v48_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v48_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v48_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v49_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v49_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v49_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v49_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v49_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v49_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v50_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v50_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v50_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v50_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v50_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v50_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v51_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v51_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v51_b0_l8_a2_s0_X0.pdf has been created
+Processing Examples/Scripts/MaterialMapping/Mat_map_surface_plot_dist.C("production_20261016T144812Z_material-map_mapped.root",-1,"Surfaces/dist_plot","production_20261016T144812Z_geometry-map.json")...
+Number of event reduced to 10000
+processed 0 events out of 10000
+processed 1000 events out of 10000
+processed 2000 events out of 10000
+processed 3000 events out of 10000
+processed 4000 events out of 10000
+processed 5000 events out of 10000
+processed 6000 events out of 10000
+processed 7000 events out of 10000
+processed 8000 events out of 10000
+processed 9000 events out of 10000
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v2_b0_l2_a0_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v24_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v24_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v32_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v32_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v36_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v36_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v38_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v38_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v40_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v40_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v41_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v41_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v45_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v45_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l8_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l8_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v48_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v48_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v49_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v49_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v50_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v50_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l8_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l8_a2_s0_Dist.pdf has been created
+Processing Examples/Scripts/MaterialMapping/Mat_map_surface_plot_1D.C("production_20261016T144812Z_material-map_mapped.root",-1,"Surfaces/1D_plot","production_20261016T144812Z_geometry-map.json")...
+processed 0 events out of 4089000
+processed 10000 events out of 4089000
+processed 20000 events out of 4089000
+processed 30000 events out of 4089000
+processed 40000 events out of 4089000
+processed 50000 events out of 4089000
+processed 60000 events out of 4089000
+processed 70000 events out of 4089000
+processed 80000 events out of 4089000
+processed 90000 events out of 4089000
+processed 100000 events out of 4089000
+processed 110000 events out of 4089000
+processed 120000 events out of 4089000
+processed 130000 events out of 4089000
+processed 140000 events out of 4089000
+processed 150000 events out of 4089000
+processed 160000 events out of 4089000
+processed 170000 events out of 4089000
+processed 180000 events out of 4089000
+processed 190000 events out of 4089000
+processed 200000 events out of 4089000
+processed 210000 events out of 4089000
+processed 220000 events out of 4089000
+processed 230000 events out of 4089000
+processed 240000 events out of 4089000
+processed 250000 events out of 4089000
+processed 260000 events out of 4089000
+processed 270000 events out of 4089000
+processed 280000 events out of 4089000
+processed 290000 events out of 4089000
+processed 300000 events out of 4089000
+processed 310000 events out of 4089000
+processed 320000 events out of 4089000
+processed 330000 events out of 4089000
+processed 340000 events out of 4089000
+processed 350000 events out of 4089000
+processed 360000 events out of 4089000
+processed 370000 events out of 4089000
+processed 380000 events out of 4089000
+processed 390000 events out of 4089000
+processed 400000 events out of 4089000
+processed 410000 events out of 4089000
+processed 420000 events out of 4089000
+processed 430000 events out of 4089000
+processed 440000 events out of 4089000
+processed 450000 events out of 4089000
+processed 460000 events out of 4089000
+processed 470000 events out of 4089000
+processed 480000 events out of 4089000
+processed 490000 events out of 4089000
+processed 500000 events out of 4089000
+processed 510000 events out of 4089000
+processed 520000 events out of 4089000
+processed 530000 events out of 4089000
+processed 540000 events out of 4089000
+processed 550000 events out of 4089000
+processed 560000 events out of 4089000
+processed 570000 events out of 4089000
+processed 580000 events out of 4089000
+processed 590000 events out of 4089000
+processed 600000 events out of 4089000
+processed 610000 events out of 4089000
+processed 620000 events out of 4089000
+processed 630000 events out of 4089000
+processed 640000 events out of 4089000
+processed 650000 events out of 4089000
+processed 660000 events out of 4089000
+processed 670000 events out of 4089000
+processed 680000 events out of 4089000
+processed 690000 events out of 4089000
+processed 700000 events out of 4089000
+processed 710000 events out of 4089000
+processed 720000 events out of 4089000
+processed 730000 events out of 4089000
+processed 740000 events out of 4089000
+processed 750000 events out of 4089000
+processed 760000 events out of 4089000
+processed 770000 events out of 4089000
+processed 780000 events out of 4089000
+processed 790000 events out of 4089000
+processed 800000 events out of 4089000
+processed 810000 events out of 4089000
+processed 820000 events out of 4089000
+processed 830000 events out of 4089000
+processed 840000 events out of 4089000
+processed 850000 events out of 4089000
+processed 860000 events out of 4089000
+processed 870000 events out of 4089000
+processed 880000 events out of 4089000
+processed 890000 events out of 4089000
+processed 900000 events out of 4089000
+processed 910000 events out of 4089000
+processed 920000 events out of 4089000
+processed 930000 events out of 4089000
+processed 940000 events out of 4089000
+processed 950000 events out of 4089000
+processed 960000 events out of 4089000
+processed 970000 events out of 4089000
+processed 980000 events out of 4089000
+processed 990000 events out of 4089000
+processed 1000000 events out of 4089000
+processed 1010000 events out of 4089000
+processed 1020000 events out of 4089000
+processed 1030000 events out of 4089000
+processed 1040000 events out of 4089000
+processed 1050000 events out of 4089000
+processed 1060000 events out of 4089000
+processed 1070000 events out of 4089000
+processed 1080000 events out of 4089000
+processed 1090000 events out of 4089000
+processed 1100000 events out of 4089000
+processed 1110000 events out of 4089000
+processed 1120000 events out of 4089000
+processed 1130000 events out of 4089000
+processed 1140000 events out of 4089000
+processed 1150000 events out of 4089000
+processed 1160000 events out of 4089000
+processed 1170000 events out of 4089000
+processed 1180000 events out of 4089000
+processed 1190000 events out of 4089000
+processed 1200000 events out of 4089000
+processed 1210000 events out of 4089000
+processed 1220000 events out of 4089000
+processed 1230000 events out of 4089000
+processed 1240000 events out of 4089000
+processed 1250000 events out of 4089000
+processed 1260000 events out of 4089000
+processed 1270000 events out of 4089000
+processed 1280000 events out of 4089000
+processed 1290000 events out of 4089000
+processed 1300000 events out of 4089000
+processed 1310000 events out of 4089000
+processed 1320000 events out of 4089000
+processed 1330000 events out of 4089000
+processed 1340000 events out of 4089000
+processed 1350000 events out of 4089000
+processed 1360000 events out of 4089000
+processed 1370000 events out of 4089000
+processed 1380000 events out of 4089000
+processed 1390000 events out of 4089000
+processed 1400000 events out of 4089000
+processed 1410000 events out of 4089000
+processed 1420000 events out of 4089000
+processed 1430000 events out of 4089000
+processed 1440000 events out of 4089000
+processed 1450000 events out of 4089000
+processed 1460000 events out of 4089000
+processed 1470000 events out of 4089000
+processed 1480000 events out of 4089000
+processed 1490000 events out of 4089000
+processed 1500000 events out of 4089000
+processed 1510000 events out of 4089000
+processed 1520000 events out of 4089000
+processed 1530000 events out of 4089000
+processed 1540000 events out of 4089000
+processed 1550000 events out of 4089000
+processed 1560000 events out of 4089000
+processed 1570000 events out of 4089000
+processed 1580000 events out of 4089000
+processed 1590000 events out of 4089000
+processed 1600000 events out of 4089000
+processed 1610000 events out of 4089000
+processed 1620000 events out of 4089000
+processed 1630000 events out of 4089000
+processed 1640000 events out of 4089000
+processed 1650000 events out of 4089000
+processed 1660000 events out of 4089000
+processed 1670000 events out of 4089000
+processed 1680000 events out of 4089000
+processed 1690000 events out of 4089000
+processed 1700000 events out of 4089000
+processed 1710000 events out of 4089000
+processed 1720000 events out of 4089000
+processed 1730000 events out of 4089000
+processed 1740000 events out of 4089000
+processed 1750000 events out of 4089000
+processed 1760000 events out of 4089000
+processed 1770000 events out of 4089000
+processed 1780000 events out of 4089000
+processed 1790000 events out of 4089000
+processed 1800000 events out of 4089000
+processed 1810000 events out of 4089000
+processed 1820000 events out of 4089000
+processed 1830000 events out of 4089000
+processed 1840000 events out of 4089000
+processed 1850000 events out of 4089000
+processed 1860000 events out of 4089000
+processed 1870000 events out of 4089000
+processed 1880000 events out of 4089000
+processed 1890000 events out of 4089000
+processed 1900000 events out of 4089000
+processed 1910000 events out of 4089000
+processed 1920000 events out of 4089000
+processed 1930000 events out of 4089000
+processed 1940000 events out of 4089000
+processed 1950000 events out of 4089000
+processed 1960000 events out of 4089000
+processed 1970000 events out of 4089000
+processed 1980000 events out of 4089000
+processed 1990000 events out of 4089000
+processed 2000000 events out of 4089000
+processed 2010000 events out of 4089000
+processed 2020000 events out of 4089000
+processed 2030000 events out of 4089000
+processed 2040000 events out of 4089000
+processed 2050000 events out of 4089000
+processed 2060000 events out of 4089000
+processed 2070000 events out of 4089000
+processed 2080000 events out of 4089000
+processed 2090000 events out of 4089000
+processed 2100000 events out of 4089000
+processed 2110000 events out of 4089000
+processed 2120000 events out of 4089000
+processed 2130000 events out of 4089000
+processed 2140000 events out of 4089000
+processed 2150000 events out of 4089000
+processed 2160000 events out of 4089000
+processed 2170000 events out of 4089000
+processed 2180000 events out of 4089000
+processed 2190000 events out of 4089000
+processed 2200000 events out of 4089000
+processed 2210000 events out of 4089000
+processed 2220000 events out of 4089000
+processed 2230000 events out of 4089000
+processed 2240000 events out of 4089000
+processed 2250000 events out of 4089000
+processed 2260000 events out of 4089000
+processed 2270000 events out of 4089000
+processed 2280000 events out of 4089000
+processed 2290000 events out of 4089000
+processed 2300000 events out of 4089000
+processed 2310000 events out of 4089000
+processed 2320000 events out of 4089000
+processed 2330000 events out of 4089000
+processed 2340000 events out of 4089000
+processed 2350000 events out of 4089000
+processed 2360000 events out of 4089000
+processed 2370000 events out of 4089000
+processed 2380000 events out of 4089000
+processed 2390000 events out of 4089000
+processed 2400000 events out of 4089000
+processed 2410000 events out of 4089000
+processed 2420000 events out of 4089000
+processed 2430000 events out of 4089000
+processed 2440000 events out of 4089000
+processed 2450000 events out of 4089000
+processed 2460000 events out of 4089000
+processed 2470000 events out of 4089000
+processed 2480000 events out of 4089000
+processed 2490000 events out of 4089000
+processed 2500000 events out of 4089000
+processed 2510000 events out of 4089000
+processed 2520000 events out of 4089000
+processed 2530000 events out of 4089000
+processed 2540000 events out of 4089000
+processed 2550000 events out of 4089000
+processed 2560000 events out of 4089000
+processed 2570000 events out of 4089000
+processed 2580000 events out of 4089000
+processed 2590000 events out of 4089000
+processed 2600000 events out of 4089000
+processed 2610000 events out of 4089000
+processed 2620000 events out of 4089000
+processed 2630000 events out of 4089000
+processed 2640000 events out of 4089000
+processed 2650000 events out of 4089000
+processed 2660000 events out of 4089000
+processed 2670000 events out of 4089000
+processed 2680000 events out of 4089000
+processed 2690000 events out of 4089000
+processed 2700000 events out of 4089000
+processed 2710000 events out of 4089000
+processed 2720000 events out of 4089000
+processed 2730000 events out of 4089000
+processed 2740000 events out of 4089000
+processed 2750000 events out of 4089000
+processed 2760000 events out of 4089000
+processed 2770000 events out of 4089000
+processed 2780000 events out of 4089000
+processed 2790000 events out of 4089000
+processed 2800000 events out of 4089000
+processed 2810000 events out of 4089000
+processed 2820000 events out of 4089000
+processed 2830000 events out of 4089000
+processed 2840000 events out of 4089000
+processed 2850000 events out of 4089000
+processed 2860000 events out of 4089000
+processed 2870000 events out of 4089000
+processed 2880000 events out of 4089000
+processed 2890000 events out of 4089000
+processed 2900000 events out of 4089000
+processed 2910000 events out of 4089000
+processed 2920000 events out of 4089000
+processed 2930000 events out of 4089000
+processed 2940000 events out of 4089000
+processed 2950000 events out of 4089000
+processed 2960000 events out of 4089000
+processed 2970000 events out of 4089000
+processed 2980000 events out of 4089000
+processed 2990000 events out of 4089000
+processed 3000000 events out of 4089000
+processed 3010000 events out of 4089000
+processed 3020000 events out of 4089000
+processed 3030000 events out of 4089000
+processed 3040000 events out of 4089000
+processed 3050000 events out of 4089000
+processed 3060000 events out of 4089000
+processed 3070000 events out of 4089000
+processed 3080000 events out of 4089000
+processed 3090000 events out of 4089000
+processed 3100000 events out of 4089000
+processed 3110000 events out of 4089000
+processed 3120000 events out of 4089000
+processed 3130000 events out of 4089000
+processed 3140000 events out of 4089000
+processed 3150000 events out of 4089000
+processed 3160000 events out of 4089000
+processed 3170000 events out of 4089000
+processed 3180000 events out of 4089000
+processed 3190000 events out of 4089000
+processed 3200000 events out of 4089000
+processed 3210000 events out of 4089000
+processed 3220000 events out of 4089000
+processed 3230000 events out of 4089000
+processed 3240000 events out of 4089000
+processed 3250000 events out of 4089000
+processed 3260000 events out of 4089000
+processed 3270000 events out of 4089000
+processed 3280000 events out of 4089000
+processed 3290000 events out of 4089000
+processed 3300000 events out of 4089000
+processed 3310000 events out of 4089000
+processed 3320000 events out of 4089000
+processed 3330000 events out of 4089000
+processed 3340000 events out of 4089000
+processed 3350000 events out of 4089000
+processed 3360000 events out of 4089000
+processed 3370000 events out of 4089000
+processed 3380000 events out of 4089000
+processed 3390000 events out of 4089000
+processed 3400000 events out of 4089000
+processed 3410000 events out of 4089000
+processed 3420000 events out of 4089000
+processed 3430000 events out of 4089000
+processed 3440000 events out of 4089000
+processed 3450000 events out of 4089000
+processed 3460000 events out of 4089000
+processed 3470000 events out of 4089000
+processed 3480000 events out of 4089000
+processed 3490000 events out of 4089000
+processed 3500000 events out of 4089000
+processed 3510000 events out of 4089000
+processed 3520000 events out of 4089000
+processed 3530000 events out of 4089000
+processed 3540000 events out of 4089000
+processed 3550000 events out of 4089000
+processed 3560000 events out of 4089000
+processed 3570000 events out of 4089000
+processed 3580000 events out of 4089000
+processed 3590000 events out of 4089000
+processed 3600000 events out of 4089000
+processed 3610000 events out of 4089000
+processed 3620000 events out of 4089000
+processed 3630000 events out of 4089000
+processed 3640000 events out of 4089000
+processed 3650000 events out of 4089000
+processed 3660000 events out of 4089000
+processed 3670000 events out of 4089000
+processed 3680000 events out of 4089000
+processed 3690000 events out of 4089000
+processed 3700000 events out of 4089000
+processed 3710000 events out of 4089000
+processed 3720000 events out of 4089000
+processed 3730000 events out of 4089000
+processed 3740000 events out of 4089000
+processed 3750000 events out of 4089000
+processed 3760000 events out of 4089000
+processed 3770000 events out of 4089000
+processed 3780000 events out of 4089000
+processed 3790000 events out of 4089000
+processed 3800000 events out of 4089000
+processed 3810000 events out of 4089000
+processed 3820000 events out of 4089000
+processed 3830000 events out of 4089000
+processed 3840000 events out of 4089000
+processed 3850000 events out of 4089000
+processed 3860000 events out of 4089000
+processed 3870000 events out of 4089000
+processed 3880000 events out of 4089000
+processed 3890000 events out of 4089000
+processed 3900000 events out of 4089000
+processed 3910000 events out of 4089000
+processed 3920000 events out of 4089000
+processed 3930000 events out of 4089000
+processed 3940000 events out of 4089000
+processed 3950000 events out of 4089000
+processed 3960000 events out of 4089000
+processed 3970000 events out of 4089000
+processed 3980000 events out of 4089000
+processed 3990000 events out of 4089000
+processed 4000000 events out of 4089000
+processed 4010000 events out of 4089000
+processed 4020000 events out of 4089000
+processed 4030000 events out of 4089000
+processed 4040000 events out of 4089000
+processed 4050000 events out of 4089000
+processed 4060000 events out of 4089000
+processed 4070000 events out of 4089000
+processed 4080000 events out of 4089000
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v2_b0_l2_a0_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v2_b0_l2_a0_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a2_s0_Phi.pdf has been created
+::endgroup::
+Completed map: /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_map.cbor
+26edc35b57aaa53d4d2e8e3711d34c4ce450ccf2b2bb6dc4f1b57bcdbe474af2  production_20261016T144812Z_material-map_map.cbor
+Review plots and the full transcript before using this map.

@@ -1,0 +1,1215 @@
+EIC material-map smoke test: 20261016T142017Z
+DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+Output prefix=smoke_20261016T142017Z_
+Earlier plots retained at /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-10-16/material_map_plots_before_20261016T142017Z
+Existing calibration-map validation is skipped; regenerated-map validation remains enabled.
+patching file Examples/Scripts/MaterialMapping/materialPlotHelper.cpp
+patching file Examples/Scripts/Python/material_mapping.py
+::group::----GEANTINO SCAN------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+07:20:54    Sequencer      INFO      Create Sequencer (single-threaded)
+07:20:54    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+07:20:54    Sequencer      INFO      Add Reader 'EventGenerator'
+07:20:54    Sequencer      INFO      -> OutputEvent 'hepmc3_event':
+07:20:54    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:20:54    Sequencer      INFO      Add Algorithm 'HepMC3InputConverter'
+07:20:54    Sequencer      INFO      <- InputEvent 'hepmc3_event':
+07:20:54    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:20:54    Sequencer      INFO      -> OutputParticles 'particles_initial':
+07:20:54    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:20:54    Sequencer      INFO      -> OutputVertices 'vertices_initial':
+07:20:54    Sequencer      INFO         flat_set<SimVertex, detail::CompareVertexId, void>
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-01 [MT]   (13-March-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+Geant4VolumeManager       +++ Populating Geant4 volume manager.
+Geant4VolumeManager       +++ Geant4 volume manager populated with 260352 sensitive path entries.
+07:21:09    Sequencer      INFO      Add Algorithm 'Geant4Simulation'
+07:21:09    Sequencer      INFO      <- InputParticles 'particles_initial':
+07:21:09    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:21:09    Sequencer      INFO      -> OutputMaterialTracks 'material_tracks':
+07:21:09    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:21:09    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:21:09    Sequencer      INFO      <- InputHandle 'material_tracks':
+07:21:09    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:21:09    Sequencer      INFO      Processing events [0, 10)
+07:21:09    Sequencer      INFO      Starting event loop with 1 threads
+07:21:09    Sequencer      INFO        0 context decorators
+07:21:09    Sequencer      INFO        4 sequence elements
+07:21:09    Sequencer      INFO        1 readers
+07:21:09    Sequencer      INFO        2 algorithms
+07:21:09    Sequencer      INFO        1 writers
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : Air
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    PFRICHRegion
+
+Index : 1     used in the geometry : Yes
+ Material : Silicon
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 2     used in the geometry : Yes
+ Material : Copper
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 3     used in the geometry : Yes
+ Material : CarbonFiber
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    PFRICHRegion
+
+Index : 4     used in the geometry : Yes
+ Material : SVT_Endcap_Glue
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes
+ Material : Kapton
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 6     used in the geometry : Yes
+ Material : Aluminum
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    DIRCRegion
+    DRICHRegion
+
+Index : 7     used in the geometry : Yes
+ Material : Vacuum
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 8     used in the geometry : Yes
+ Material : Ar90IsoButane
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 9     used in the geometry : Yes
+ Material : Nomex
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 10     used in the geometry : Yes
+ Material : Fr4
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 11     used in the geometry : Yes
+ Material : MMGAS_InoxForMesh
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 12     used in the geometry : Yes
+ Material : MMGAS_ResistivePaste
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 13     used in the geometry : Yes
+ Material : CarbonFoam
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 14     used in the geometry : Yes
+ Material : Water
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 15     used in the geometry : Yes
+ Material : SiliconOxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 16     used in the geometry : Yes
+ Material : CarbonFoam_LowDensity
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 17     used in the geometry : Yes
+ Material : PEEK
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 18     used in the geometry : Yes
+ Material : AIREX_R82_80
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 19     used in the geometry : Yes
+ Material : Gold
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 20     used in the geometry : Yes
+ Material : Beryllium
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 21     used in the geometry : Yes
+ Material : StainlessSteelP506
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 22     used in the geometry : Yes
+ Material : Iron
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 23     used in the geometry : Yes
+ Material : SolenoidCoil
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 24     used in the geometry : Yes
+ Material : StainlessSteelSAE304
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 25     used in the geometry : Yes
+ Material : Al6061T6
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 26     used in the geometry : Yes
+ Material : StainlessSteelA53
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 27     used in the geometry : Yes
+ Material : Epoxy
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    DRICHRegion
+
+Index : 28     used in the geometry : Yes
+ Material : PbWO4
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 29     used in the geometry : Yes
+ Material : LYSO
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 30     used in the geometry : Yes
+ Material : Steel235
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 31     used in the geometry : Yes
+ Material : Polystyrene
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 32     used in the geometry : Yes
+ Material : ZDC_Polyethylene
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 33     used in the geometry : Yes
+ Material : EpotekOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+
+Index : 34     used in the geometry : Yes
+ Material : QuartzOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+    PFRICHRegion
+
+Index : 35     used in the geometry : Yes
+ Material : SapphireOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+
+Index : 36     used in the geometry : Yes
+ Material : AirOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+    PFRICHRegion
+    DRICHRegion
+
+Index : 37     used in the geometry : Yes
+ Material : Aerogel_PFRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 38     used in the geometry : Yes
+ Material : Acrylic_PFRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 39     used in the geometry : Yes
+ Material : G10
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 40     used in the geometry : Yes
+ Material : AluminumOxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 41     used in the geometry : Yes
+ Material : TungstenDens25
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 42     used in the geometry : Yes
+ Material : SiliconDioxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 43     used in the geometry : Yes
+ Material : N2cherenkov
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 44     used in the geometry : Yes
+ Material : CarbonFiber_15percent
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 45     used in the geometry : Yes
+ Material : Aerogel_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 46     used in the geometry : Yes
+ Material : Acrylic_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 47     used in the geometry : Yes
+ Material : C2F6_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+==================================================================
+
+07:22:22    Sequencer      INFO      finished event 0
+07:22:23    Sequencer      INFO      finished event 1
+07:22:23    Sequencer      INFO      finished event 2
+07:22:24    Sequencer      INFO      finished event 3
+07:22:25    Sequencer      INFO      finished event 4
+07:22:26    Sequencer      INFO      finished event 5
+07:22:27    Sequencer      INFO      finished event 6
+07:22:28    Sequencer      INFO      finished event 7
+07:22:29    Sequencer      INFO      finished event 8
+07:22:30    Sequencer      INFO      finished event 9
+07:22:30    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_geant4_material_tracks.root
+07:22:30    Sequencer      INFO      Processed 10 events in 81.190993 s (wall clock)
+07:22:30    Sequencer      INFO      Average time per event: 8.109071 s/event
+07:22:30    Sequencer      INFO      Timing breakdown:
+| Algorithm                      | Total Time (ms) | Time/Event (ms) | Fraction |
+|:-------------------------------|----------------:|----------------:|---------:|
+| Algorithm:Geant4Simulation     |        81065.67 |         8106.57 |   100.0% |
+| Writer:RootMaterialTrackWriter |           21.70 |            2.17 |     0.0% |
+| Reader:EventGenerator          |            2.37 |            0.24 |     0.0% |
+| Algorithm:HepMC3InputConverter |            0.97 |            0.10 |     0.0% |
+| TOTAL                          |        81090.71 |         8109.07 |   100.0% |
+
+::endgroup::
+::group::-----MAPPING Configuration-----
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+Namespace(inputFile='smoke_20261016T142017Z_config-map.json', outputFile='smoke_20261016T142017Z_config-map_regenerated.json')
+Volume ID        Name       Approaches
+2 acts_beampipe_central::Barrel 1, 2
+2 acts_beampipe_central::Barrel X
+20 EndcapMPGDSubAssembly::NegativeEndcap 1, 2
+22 OuterSiEndcapSubAssembly::NegativeEndcap 1, 2
+24 MiddleSiEndcapSubAssembly::NegativeEndcap 1, 2
+32 InnerSiTrackerSubAssembly::NegativeEndcap 1, 2
+34 VertexBarrelSubAssembly::Barrel 1, 2
+36 InnerSiTrackerSubAssembly::PositiveEndcap 1, 2
+38 MiddleSiBarrelSubAssembly::Barrel 1, 2
+40 OuterSiBarrelSubAssembly::Barrel 1, 2
+41 MiddleSiEndcapSubAssembly::PositiveEndcap 1, 2
+42 OuterSiEndcapSubAssembly::PositiveEndcap 1, 2
+43 EndcapMPGDSubAssembly::PositiveEndcap 1, 2
+45 InnerMPGDBarrelSubAssembly::Barrel 1, 2
+47 EndcapTOFSubAssembly::PositiveEndcap 1, 2
+48 BarrelTOFSubAssembly::Barrel 1, 2
+49 OuterBarrelMPGDSubAssembly::Barrel 1, 2
+50 EcalBarrelTrackerSubAssembly::Barrel 1, 2
+51 B0TrackerSubAssembly::PositiveEndcap 1, 2
+Done! Updated config file at smoke_20261016T142017Z_config-map_regenerated.json
+ --- Geometry visualisation and material map fie creation --- 
+
+	 parsing file :  smoke_20261016T142017Z_geometry-map.json
+	 job configured to produce plots in output folder:  plots
+::endgroup::
+::group::----MAPPING------------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+07:25:18    Sequencer      INFO      Create Sequencer (single-threaded)
+07:25:18    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+07:25:18    Sequencer      INFO      Add Reader 'RootMaterialTrackReader'
+07:25:18    Sequencer      INFO      -> OutputMaterialTracks 'material_tracks':
+07:25:18    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:18    MaterialMapp   INFO      This algorithm requires inter-event information, run in single-threaded mode!
+07:25:18    Sequencer      INFO      Add Algorithm 'MaterialMapping'
+07:25:18    Sequencer      INFO      <- InputMaterialTracks 'material_tracks':
+07:25:18    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:18    Sequencer      INFO      -> OutputMappedMaterialTracks 'material_tracks_mapped':
+07:25:18    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:18    Sequencer      INFO      -> OutputUnmappedMaterialTracks 'material_tracks_unmapped':
+07:25:18    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:18    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:25:18    Sequencer      INFO      <- InputHandle 'material_tracks_mapped':
+07:25:18    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:18    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:25:18    Sequencer      INFO      <- InputHandle 'material_tracks_unmapped':
+07:25:18    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:18    Sequencer      INFO      Processing events [0, 10)
+07:25:18    Sequencer      INFO      Starting event loop with 1 threads
+07:25:18    Sequencer      INFO        0 context decorators
+07:25:18    Sequencer      INFO        4 sequence elements
+07:25:18    Sequencer      INFO        1 readers
+07:25:18    Sequencer      INFO        1 algorithms
+07:25:18    Sequencer      INFO        2 writers
+07:25:18    Sequencer      INFO      finished event 0
+07:25:18    Sequencer      INFO      finished event 1
+07:25:18    Sequencer      INFO      finished event 2
+07:25:18    Sequencer      INFO      finished event 3
+07:25:18    Sequencer      INFO      finished event 4
+07:25:18    Sequencer      INFO      finished event 5
+07:25:18    Sequencer      INFO      finished event 6
+07:25:18    Sequencer      INFO      finished event 7
+07:25:18    Sequencer      INFO      finished event 8
+07:25:18    Sequencer      INFO      finished event 9
+07:25:18    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_material-map_mapped.root
+07:25:19    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_material-map_unmapped.root
+07:25:19    Sequencer      INFO      Processed 10 events in 117.112334 ms (wall clock)
+07:25:19    Sequencer      INFO      Average time per event: 4.748050 ms/event
+07:25:19    Sequencer      INFO      Timing breakdown:
+| Algorithm                      | Total Time (ms) | Time/Event (ms) | Fraction |
+|:-------------------------------|----------------:|----------------:|---------:|
+| Writer:RootMaterialTrackWriter |           19.18 |            1.92 |    40.4% |
+| Algorithm:MaterialMapping      |           15.93 |            1.59 |    33.6% |
+| Reader:RootMaterialTrackReader |           10.22 |            1.02 |    21.5% |
+| Writer:RootMaterialTrackWriter |            2.15 |            0.21 |     4.5% |
+| TOTAL                          |           47.48 |            4.75 |   100.0% |
+
+Creating the sequencer with 1 thread (inter event information needed)
+::endgroup::
+::group::----Prepare validation rootfile--------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+07:25:54    Sequencer      INFO      Create Sequencer with -1 threads
+07:25:54    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+07:25:54    Sequencer      INFO      Add Reader 'EventGenerator'
+07:25:54    Sequencer      INFO      -> OutputEvent 'particle_gun_event':
+07:25:54    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:25:54    Sequencer      INFO      Add Algorithm 'HepMC3InputConverter'
+07:25:54    Sequencer      INFO      <- InputEvent 'particle_gun_event':
+07:25:54    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:25:54    Sequencer      INFO      -> OutputParticles 'particles_generated':
+07:25:54    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:25:54    Sequencer      INFO      -> OutputVertices 'vertices_generated':
+07:25:54    Sequencer      INFO         flat_set<SimVertex, detail::CompareVertexId, void>
+07:25:54    Sequencer      INFO      Key 'particles_generated' aliased to 'particles'
+07:25:54    Sequencer      INFO      Key 'vertices_generated' aliased to 'vertices_truth'
+07:25:54    Sequencer      INFO      Key 'particles_generated' aliased to 'particles_generated_selected'
+07:25:54    Sequencer      INFO      Add Algorithm 'ParticleTrackParamExtractor'
+07:25:54    Sequencer      INFO      <- InputParticles 'particles_generated':
+07:25:54    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:25:54    Sequencer      INFO      -> OutputTrackParameters 'params_particles_generated':
+07:25:54    Sequencer      INFO         vector<BoundTrackParameters>
+07:25:54    Sequencer      INFO      Add Algorithm 'MaterialValidation'
+07:25:54    Sequencer      INFO      <- InputTrackParameters 'params_particles_generated':
+07:25:54    Sequencer      INFO         vector<BoundTrackParameters>
+07:25:54    Sequencer      INFO      -> ValidationMaterialTracks 'material_tracks':
+07:25:54    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:54    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:25:54    Sequencer      INFO      <- InputHandle 'material_tracks':
+07:25:54    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:54    Sequencer      INFO      Add Algorithm 'PropagationAlgorithm'
+07:25:54    Sequencer      INFO      <- InputTrackParameters 'params_particles_generated':
+07:25:54    Sequencer      INFO         vector<BoundTrackParameters>
+07:25:54    Sequencer      INFO      -> OutputSummary 'propagation_summary':
+07:25:54    Sequencer      INFO         vector<PropagationSummary>
+07:25:54    Sequencer      INFO      -> RecordedMaterial 'material_tracks_propagated':
+07:25:54    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:54    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:25:54    Sequencer      INFO      <- InputHandle 'material_tracks_propagated':
+07:25:54    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:25:54    Sequencer      INFO      Processing events [0, 10)
+07:25:54    Sequencer      INFO      Starting event loop with -1 threads
+07:25:54    Sequencer      INFO        0 context decorators
+07:25:54    Sequencer      INFO        7 sequence elements
+07:25:54    Sequencer      INFO        1 readers
+07:25:54    Sequencer      INFO        4 algorithms
+07:25:54    Sequencer      INFO        2 writers
+07:25:54    Sequencer      INFO      finished event 0
+07:25:54    Sequencer      INFO      finished event 8
+07:25:54    Sequencer      INFO      finished event 7
+07:25:54    Sequencer      INFO      finished event 2
+07:25:54    Sequencer      INFO      finished event 1
+07:25:54    Sequencer      INFO      finished event 9
+07:25:54    Sequencer      INFO      finished event 6
+07:25:54    Sequencer      INFO      finished event 4
+07:25:54    Sequencer      INFO      finished event 5
+07:25:54    Sequencer      INFO      finished event 3
+07:25:54    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_propagation_material_regenerated.root
+07:25:54    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_propagation_material_regenerated_propagated.root
+07:25:54    Sequencer      INFO      Processed 10 events in 202.895154 ms (wall clock)
+07:25:54    Sequencer      INFO      Average time per event: 27.930931 ms/event
+07:25:54    Sequencer      INFO      Timing breakdown:
+| Algorithm                             | Total Time (ms) | Time/Event (ms) | Fraction |
+|:--------------------------------------|----------------:|----------------:|---------:|
+| Writer:RootMaterialTrackWriter        |          126.26 |           12.63 |    45.2% |
+| Algorithm:PropagationAlgorithm        |           99.55 |            9.96 |    35.6% |
+| Algorithm:MaterialValidation          |           34.81 |            3.48 |    12.5% |
+| Algorithm:HepMC3InputConverter        |            5.83 |            0.58 |     2.1% |
+| Algorithm:ParticleTrackParamExtractor |            5.02 |            0.50 |     1.8% |
+| Writer:RootMaterialTrackWriter        |            4.49 |            0.45 |     1.6% |
+| Reader:EventGenerator                 |            3.35 |            0.33 |     1.2% |
+| TOTAL                                 |          279.31 |           27.93 |   100.0% |
+
+Skipping validation with the existing calibration map.
+::endgroup::
+::group::-------Comparison plots---------
+Processing Examples/Scripts/MaterialMapping/Mat_map.C("smoke_20261016T142017Z_propagation_material_regenerated.root","smoke_20261016T142017Z_material-map_mapped.root","Validation/regenerated")...
+Info in <TCanvas::Print>: png file Validation/regenerated/Val_mat_map.png has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_mat_Eta_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_X0_Eta_spread.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_mat_Phi_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Val_mat_Phi_X0_spread.pdf has been created
+Info in <TCanvas::Print>: png file Validation/regenerated/Val_mat_X0.png has been created
+Info in <TCanvas::Print>: png file Validation/regenerated/geant_mat_map.png has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Eta_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Eta_X0_spread.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Phi_X0.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/geant_mat_Phi_X0_spread.pdf has been created
+Info in <TCanvas::Print>: png file Validation/regenerated/geant_mat_X0.png has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Eta.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Eta_spread.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Phi.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Comp_Val_geant_mat_X0_Phi_spread.pdf has been created
+Score : -nan
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Ratio_Val_geant_mat_X0_Eta.pdf has been created
+Info in <TCanvas::Print>: pdf file Validation/regenerated/Ratio_Val_geant_mat_X0_Phi.pdf has been created
+Processing Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C("smoke_20261016T142017Z_propagation_material_regenerated.root","smoke_20261016T142017Z_material-map_mapped.root",-1,"Surfaces/regenerated/ratio_plot","Surfaces/regenerated/prop_plot","Surfaces/regenerated/map_plot","smoke_20261016T142017Z_geometry-map.json")...
+processed 0 events out of 1000
+processed 0 events out of 790
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v2_b0_l2_a0_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v2_b0_l2_a0_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v2_b0_l2_a0_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v20_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v20_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v20_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v22_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v22_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v22_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v24_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v24_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v24_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v24_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v24_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v24_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v32_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v32_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v32_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v32_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v32_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v32_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v34_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v34_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v34_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v36_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v36_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v36_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v36_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v36_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v36_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v38_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v38_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v38_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v38_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v38_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v38_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v40_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v40_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v40_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v40_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v40_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v40_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v41_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v41_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v41_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v41_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v41_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v41_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l6_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v42_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v42_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v42_b0_l6_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v43_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v43_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v43_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v45_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v45_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v45_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v45_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v45_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v45_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l4_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l4_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l8_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v47_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v47_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v47_b0_l8_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v48_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v48_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v48_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v48_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v48_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v48_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v49_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v49_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v49_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v49_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v49_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v49_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v50_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v50_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v50_b0_l2_a1_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/prop_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/prop_plot//_v50_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/map_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/map_plot//_v50_b0_l2_a2_s0_X0.pdf has been created
+mkdir: cannot create directory ‘Surfaces/regenerated/ratio_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/regenerated/ratio_plot//_v50_b0_l2_a2_s0_X0.pdf has been created
+Processing Examples/Scripts/MaterialMapping/Mat_map_surface_plot_dist.C("smoke_20261016T142017Z_material-map_mapped.root",-1,"Surfaces/dist_plot","smoke_20261016T142017Z_geometry-map.json")...
+processed 0 events out of 790
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v2_b0_l2_a0_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v20_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v22_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v24_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v24_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v32_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v32_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v34_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v36_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v36_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v38_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v38_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v40_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v40_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v41_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v41_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v42_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v43_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v45_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v45_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l8_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v47_b0_l8_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v48_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v48_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v49_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v49_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v50_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v50_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l2_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l2_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l4_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l4_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l6_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l6_a2_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l8_a1_s0_Dist.pdf has been created
+mkdir: cannot create directory ‘Surfaces/dist_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/dist_plot//_v51_b0_l8_a2_s0_Dist.pdf has been created
+Processing Examples/Scripts/MaterialMapping/Mat_map_surface_plot_1D.C("smoke_20261016T142017Z_material-map_mapped.root",-1,"Surfaces/1D_plot","smoke_20261016T142017Z_geometry-map.json")...
+processed 0 events out of 790
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v2_b0_l2_a0_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v2_b0_l2_a0_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v20_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v22_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v24_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v32_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v34_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v36_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v38_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v40_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v41_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v42_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v43_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v45_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v47_b0_l8_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v48_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v49_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a1_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a2_s0_Z.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v50_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l2_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l4_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l6_a2_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a1_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a1_s0_Phi.pdf has been created
+mkdir: cannot create directory ‘Surfaces/1D_plot/’: File exists
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a2_s0_R.pdf has been created
+Info in <TCanvas::Print>: pdf file Surfaces/1D_plot//_v51_b0_l8_a2_s0_Phi.pdf has been created
+::endgroup::

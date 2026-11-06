@@ -1,0 +1,7 @@
+EIC material-map smoke test: 20261016T141621Z
+DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+Output prefix=smoke_20261016T141621Z_
+Earlier plots retained at /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-10-16/material_map_plots_before_20261016T141621Z
+Existing calibration-map validation is skipped; regenerated-map validation remains enabled.
+patching file Examples/Scripts/MaterialMapping/materialPlotHelper.cpp
+patch: **** Failed to set the owner of file Examples/Scripts/MaterialMapping/materialPlotHelper.cpp.oKmuGRO : Invalid argument

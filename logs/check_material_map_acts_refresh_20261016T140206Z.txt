@@ -1,0 +1,589 @@
+EIC material-map smoke test: 20261016T140206Z
+DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+Output prefix=smoke_20261016T140206Z_
+Earlier plots retained at /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-10-16/material_map_plots_before_20261016T140206Z
+::group::----GEANTINO SCAN------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+07:02:43    Sequencer      INFO      Create Sequencer (single-threaded)
+07:02:43    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+07:02:43    Sequencer      INFO      Add Reader 'EventGenerator'
+07:02:43    Sequencer      INFO      -> OutputEvent 'hepmc3_event':
+07:02:43    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:02:43    Sequencer      INFO      Add Algorithm 'HepMC3InputConverter'
+07:02:43    Sequencer      INFO      <- InputEvent 'hepmc3_event':
+07:02:43    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:02:43    Sequencer      INFO      -> OutputParticles 'particles_initial':
+07:02:43    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:02:43    Sequencer      INFO      -> OutputVertices 'vertices_initial':
+07:02:43    Sequencer      INFO         flat_set<SimVertex, detail::CompareVertexId, void>
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-01 [MT]   (13-March-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+Geant4VolumeManager       +++ Populating Geant4 volume manager.
+Geant4VolumeManager       +++ Geant4 volume manager populated with 260352 sensitive path entries.
+07:02:58    Sequencer      INFO      Add Algorithm 'Geant4Simulation'
+07:02:58    Sequencer      INFO      <- InputParticles 'particles_initial':
+07:02:58    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:02:58    Sequencer      INFO      -> OutputMaterialTracks 'material_tracks':
+07:02:58    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:02:58    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:02:58    Sequencer      INFO      <- InputHandle 'material_tracks':
+07:02:58    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:02:58    Sequencer      INFO      Processing events [0, 10)
+07:02:58    Sequencer      INFO      Starting event loop with 1 threads
+07:02:58    Sequencer      INFO        0 context decorators
+07:02:58    Sequencer      INFO        4 sequence elements
+07:02:58    Sequencer      INFO        1 readers
+07:02:58    Sequencer      INFO        2 algorithms
+07:02:58    Sequencer      INFO        1 writers
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : Air
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    PFRICHRegion
+
+Index : 1     used in the geometry : Yes
+ Material : Silicon
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 2     used in the geometry : Yes
+ Material : Copper
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 3     used in the geometry : Yes
+ Material : CarbonFiber
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    PFRICHRegion
+
+Index : 4     used in the geometry : Yes
+ Material : SVT_Endcap_Glue
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes
+ Material : Kapton
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+
+Index : 6     used in the geometry : Yes
+ Material : Aluminum
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    DIRCRegion
+    DRICHRegion
+
+Index : 7     used in the geometry : Yes
+ Material : Vacuum
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 8     used in the geometry : Yes
+ Material : Ar90IsoButane
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 9     used in the geometry : Yes
+ Material : Nomex
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 10     used in the geometry : Yes
+ Material : Fr4
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 11     used in the geometry : Yes
+ Material : MMGAS_InoxForMesh
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 12     used in the geometry : Yes
+ Material : MMGAS_ResistivePaste
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 13     used in the geometry : Yes
+ Material : CarbonFoam
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 14     used in the geometry : Yes
+ Material : Water
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 15     used in the geometry : Yes
+ Material : SiliconOxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 16     used in the geometry : Yes
+ Material : CarbonFoam_LowDensity
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 17     used in the geometry : Yes
+ Material : PEEK
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 18     used in the geometry : Yes
+ Material : AIREX_R82_80
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 19     used in the geometry : Yes
+ Material : Gold
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 20     used in the geometry : Yes
+ Material : Beryllium
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 21     used in the geometry : Yes
+ Material : StainlessSteelP506
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 22     used in the geometry : Yes
+ Material : Iron
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 23     used in the geometry : Yes
+ Material : SolenoidCoil
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 24     used in the geometry : Yes
+ Material : StainlessSteelSAE304
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 25     used in the geometry : Yes
+ Material : Al6061T6
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 26     used in the geometry : Yes
+ Material : StainlessSteelA53
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 27     used in the geometry : Yes
+ Material : Epoxy
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+    EcalBarrelRegion
+    DRICHRegion
+
+Index : 28     used in the geometry : Yes
+ Material : PbWO4
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 29     used in the geometry : Yes
+ Material : LYSO
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 30     used in the geometry : Yes
+ Material : Steel235
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 31     used in the geometry : Yes
+ Material : Polystyrene
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 32     used in the geometry : Yes
+ Material : ZDC_Polyethylene
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 33     used in the geometry : Yes
+ Material : EpotekOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+
+Index : 34     used in the geometry : Yes
+ Material : QuartzOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+    PFRICHRegion
+
+Index : 35     used in the geometry : Yes
+ Material : SapphireOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+
+Index : 36     used in the geometry : Yes
+ Material : AirOptical
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DIRCRegion
+    PFRICHRegion
+    DRICHRegion
+
+Index : 37     used in the geometry : Yes
+ Material : Aerogel_PFRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 38     used in the geometry : Yes
+ Material : Acrylic_PFRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 39     used in the geometry : Yes
+ Material : G10
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 40     used in the geometry : Yes
+ Material : AluminumOxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 41     used in the geometry : Yes
+ Material : TungstenDens25
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 42     used in the geometry : Yes
+ Material : SiliconDioxide
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 43     used in the geometry : Yes
+ Material : N2cherenkov
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    PFRICHRegion
+
+Index : 44     used in the geometry : Yes
+ Material : CarbonFiber_15percent
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 45     used in the geometry : Yes
+ Material : Aerogel_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 46     used in the geometry : Yes
+ Material : Acrylic_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+Index : 47     used in the geometry : Yes
+ Material : C2F6_DRICH
+ Range cuts        :  gamma  1 cm     e-  1 cm     e+  1 cm  proton 1 cm 
+ Energy thresholds :  gamma  -1 MeV    e-  -1 MeV    e+  -1 MeV proton -1 MeV
+ Region(s) which use this couple : 
+    DRICHRegion
+
+==================================================================
+
+07:04:12    Sequencer      INFO      finished event 0
+07:04:13    Sequencer      INFO      finished event 1
+07:04:14    Sequencer      INFO      finished event 2
+07:04:15    Sequencer      INFO      finished event 3
+07:04:16    Sequencer      INFO      finished event 4
+07:04:16    Sequencer      INFO      finished event 5
+07:04:17    Sequencer      INFO      finished event 6
+07:04:18    Sequencer      INFO      finished event 7
+07:04:19    Sequencer      INFO      finished event 8
+07:04:20    Sequencer      INFO      finished event 9
+07:04:20    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_geant4_material_tracks.root
+07:04:20    Sequencer      INFO      Processed 10 events in 82.112706 s (wall clock)
+07:04:20    Sequencer      INFO      Average time per event: 8.201280 s/event
+07:04:20    Sequencer      INFO      Timing breakdown:
+| Algorithm                      | Total Time (ms) | Time/Event (ms) | Fraction |
+|:-------------------------------|----------------:|----------------:|---------:|
+| Algorithm:Geant4Simulation     |        81987.59 |         8198.76 |   100.0% |
+| Writer:RootMaterialTrackWriter |           21.78 |            2.18 |     0.0% |
+| Reader:EventGenerator          |            2.44 |            0.24 |     0.0% |
+| Algorithm:HepMC3InputConverter |            0.98 |            0.10 |     0.0% |
+| TOTAL                          |        82012.80 |         8201.28 |   100.0% |
+
+::endgroup::
+::group::-----MAPPING Configuration-----
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+Namespace(inputFile='smoke_20261016T140206Z_config-map.json', outputFile='smoke_20261016T140206Z_config-map_regenerated.json')
+Volume ID        Name       Approaches
+2 acts_beampipe_central::Barrel 1, 2
+2 acts_beampipe_central::Barrel X
+20 EndcapMPGDSubAssembly::NegativeEndcap 1, 2
+22 OuterSiEndcapSubAssembly::NegativeEndcap 1, 2
+24 MiddleSiEndcapSubAssembly::NegativeEndcap 1, 2
+32 InnerSiTrackerSubAssembly::NegativeEndcap 1, 2
+34 VertexBarrelSubAssembly::Barrel 1, 2
+36 InnerSiTrackerSubAssembly::PositiveEndcap 1, 2
+38 MiddleSiBarrelSubAssembly::Barrel 1, 2
+40 OuterSiBarrelSubAssembly::Barrel 1, 2
+41 MiddleSiEndcapSubAssembly::PositiveEndcap 1, 2
+42 OuterSiEndcapSubAssembly::PositiveEndcap 1, 2
+43 EndcapMPGDSubAssembly::PositiveEndcap 1, 2
+45 InnerMPGDBarrelSubAssembly::Barrel 1, 2
+47 EndcapTOFSubAssembly::PositiveEndcap 1, 2
+48 BarrelTOFSubAssembly::Barrel 1, 2
+49 OuterBarrelMPGDSubAssembly::Barrel 1, 2
+50 EcalBarrelTrackerSubAssembly::Barrel 1, 2
+51 B0TrackerSubAssembly::PositiveEndcap 1, 2
+Done! Updated config file at smoke_20261016T140206Z_config-map_regenerated.json
+ --- Geometry visualisation and material map fie creation --- 
+
+	 parsing file :  smoke_20261016T140206Z_geometry-map.json
+	 job configured to produce plots in output folder:  plots
+::endgroup::
+::group::----MAPPING------------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+07:07:25    Sequencer      INFO      Create Sequencer (single-threaded)
+07:07:25    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+07:07:25    Sequencer      INFO      Add Reader 'RootMaterialTrackReader'
+07:07:25    Sequencer      INFO      -> OutputMaterialTracks 'material_tracks':
+07:07:25    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:25    MaterialMapp   INFO      This algorithm requires inter-event information, run in single-threaded mode!
+07:07:25    Sequencer      INFO      Add Algorithm 'MaterialMapping'
+07:07:25    Sequencer      INFO      <- InputMaterialTracks 'material_tracks':
+07:07:25    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:25    Sequencer      INFO      -> OutputMappedMaterialTracks 'material_tracks_mapped':
+07:07:25    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:25    Sequencer      INFO      -> OutputUnmappedMaterialTracks 'material_tracks_unmapped':
+07:07:25    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:25    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:07:25    Sequencer      INFO      <- InputHandle 'material_tracks_mapped':
+07:07:25    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:25    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:07:25    Sequencer      INFO      <- InputHandle 'material_tracks_unmapped':
+07:07:25    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:25    Sequencer      INFO      Processing events [0, 10)
+07:07:25    Sequencer      INFO      Starting event loop with 1 threads
+07:07:25    Sequencer      INFO        0 context decorators
+07:07:25    Sequencer      INFO        4 sequence elements
+07:07:25    Sequencer      INFO        1 readers
+07:07:25    Sequencer      INFO        1 algorithms
+07:07:25    Sequencer      INFO        2 writers
+07:07:25    Sequencer      INFO      finished event 0
+07:07:25    Sequencer      INFO      finished event 1
+07:07:25    Sequencer      INFO      finished event 2
+07:07:25    Sequencer      INFO      finished event 3
+07:07:25    Sequencer      INFO      finished event 4
+07:07:25    Sequencer      INFO      finished event 5
+07:07:25    Sequencer      INFO      finished event 6
+07:07:25    Sequencer      INFO      finished event 7
+07:07:25    Sequencer      INFO      finished event 8
+07:07:25    Sequencer      INFO      finished event 9
+07:07:25    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_material-map_mapped.root
+07:07:25    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_material-map_unmapped.root
+07:07:25    Sequencer      INFO      Processed 10 events in 89.829253 ms (wall clock)
+07:07:25    Sequencer      INFO      Average time per event: 4.699680 ms/event
+07:07:25    Sequencer      INFO      Timing breakdown:
+| Algorithm                      | Total Time (ms) | Time/Event (ms) | Fraction |
+|:-------------------------------|----------------:|----------------:|---------:|
+| Writer:RootMaterialTrackWriter |           18.12 |            1.81 |    38.6% |
+| Algorithm:MaterialMapping      |           16.27 |            1.63 |    34.6% |
+| Reader:RootMaterialTrackReader |           10.34 |            1.03 |    22.0% |
+| Writer:RootMaterialTrackWriter |            2.27 |            0.23 |     4.8% |
+| TOTAL                          |           47.00 |            4.70 |   100.0% |
+
+Creating the sequencer with 1 thread (inter event information needed)
+::endgroup::
+::group::----Prepare validation rootfile--------
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+07:07:59    Sequencer      INFO      Create Sequencer with -1 threads
+07:07:59    Sequencer      INFO      FPE tracking is disabled based on environment variable ACTS_SEQUENCER_DISABLE_FPEMON
+07:07:59    Sequencer      INFO      Add Reader 'EventGenerator'
+07:07:59    Sequencer      INFO      -> OutputEvent 'particle_gun_event':
+07:07:59    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:07:59    Sequencer      INFO      Add Algorithm 'HepMC3InputConverter'
+07:07:59    Sequencer      INFO      <- InputEvent 'particle_gun_event':
+07:07:59    Sequencer      INFO         shared_ptr<HepMC3::GenEvent>
+07:07:59    Sequencer      INFO      -> OutputParticles 'particles_generated':
+07:07:59    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:07:59    Sequencer      INFO      -> OutputVertices 'vertices_generated':
+07:07:59    Sequencer      INFO         flat_set<SimVertex, detail::CompareVertexId, void>
+07:07:59    Sequencer      INFO      Key 'particles_generated' aliased to 'particles'
+07:07:59    Sequencer      INFO      Key 'vertices_generated' aliased to 'vertices_truth'
+07:07:59    Sequencer      INFO      Key 'particles_generated' aliased to 'particles_generated_selected'
+07:07:59    Sequencer      INFO      Add Algorithm 'ParticleTrackParamExtractor'
+07:07:59    Sequencer      INFO      <- InputParticles 'particles_generated':
+07:07:59    Sequencer      INFO         flat_set<SimParticle, detail::CompareParticleId, void>
+07:07:59    Sequencer      INFO      -> OutputTrackParameters 'params_particles_generated':
+07:07:59    Sequencer      INFO         vector<BoundTrackParameters>
+07:07:59    Sequencer      INFO      Add Algorithm 'MaterialValidation'
+07:07:59    Sequencer      INFO      <- InputTrackParameters 'params_particles_generated':
+07:07:59    Sequencer      INFO         vector<BoundTrackParameters>
+07:07:59    Sequencer      INFO      -> ValidationMaterialTracks 'material_tracks':
+07:07:59    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:59    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:07:59    Sequencer      INFO      <- InputHandle 'material_tracks':
+07:07:59    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:59    Sequencer      INFO      Add Algorithm 'PropagationAlgorithm'
+07:07:59    Sequencer      INFO      <- InputTrackParameters 'params_particles_generated':
+07:07:59    Sequencer      INFO         vector<BoundTrackParameters>
+07:07:59    Sequencer      INFO      -> OutputSummary 'propagation_summary':
+07:07:59    Sequencer      INFO         vector<PropagationSummary>
+07:07:59    Sequencer      INFO      -> RecordedMaterial 'material_tracks_propagated':
+07:07:59    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:59    Sequencer      INFO      Add Writer 'RootMaterialTrackWriter'
+07:07:59    Sequencer      INFO      <- InputHandle 'material_tracks_propagated':
+07:07:59    Sequencer      INFO            unordered_map<unsigned long, pair<pair<Eigen::Matrix<double, 3, 1, 0, 3, 1>, Eig   en::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial>, hash<unsigned long>, equ   al_to<unsigned long>, allocator<pair<unsigned long const, pair<pair<Eigen::Matri   x<double, 3, 1, 0, 3, 1>, Eigen::Matrix<double, 3, 1, 0, 3, 1> >, RecordedMaterial> > > >
+07:07:59    Sequencer      INFO      Processing events [0, 10)
+07:07:59    Sequencer      INFO      Starting event loop with -1 threads
+07:07:59    Sequencer      INFO        0 context decorators
+07:07:59    Sequencer      INFO        7 sequence elements
+07:07:59    Sequencer      INFO        1 readers
+07:07:59    Sequencer      INFO        4 algorithms
+07:07:59    Sequencer      INFO        2 writers
+07:07:59    Sequencer      INFO      finished event 0
+07:07:59    Sequencer      INFO      finished event 9
+07:07:59    Sequencer      INFO      finished event 7
+07:07:59    Sequencer      INFO      finished event 8
+07:07:59    Sequencer      INFO      finished event 3
+07:07:59    Sequencer      INFO      finished event 2
+07:07:59    Sequencer      INFO      finished event 6
+07:07:59    Sequencer      INFO      finished event 4
+07:07:59    Sequencer      INFO      finished event 1
+07:08:00    Sequencer      INFO      finished event 5
+07:08:00    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_propagation_material_regenerated.root
+07:08:00    RootMaterial   INFO      Writing ROOT output File : /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_propagation_material_regenerated_propagated.root
+07:08:00    Sequencer      INFO      Processed 10 events in 216.389626 ms (wall clock)
+07:08:00    Sequencer      INFO      Average time per event: 32.424633 ms/event
+07:08:00    Sequencer      INFO      Timing breakdown:
+| Algorithm                             | Total Time (ms) | Time/Event (ms) | Fraction |
+|:--------------------------------------|----------------:|----------------:|---------:|
+| Writer:RootMaterialTrackWriter        |          151.49 |           15.15 |    46.7% |
+| Algorithm:PropagationAlgorithm        |          103.44 |           10.34 |    31.9% |
+| Algorithm:MaterialValidation          |           32.26 |            3.23 |     9.9% |
+| Algorithm:HepMC3InputConverter        |           17.17 |            1.72 |     5.3% |
+| Algorithm:ParticleTrackParamExtractor |           11.16 |            1.12 |     3.4% |
+| Writer:RootMaterialTrackWriter        |            4.43 |            0.44 |     1.4% |
+| Reader:EventGenerator                 |            4.30 |            0.43 |     1.3% |
+| TOTAL                                 |          324.25 |           32.42 |   100.0% |
+
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+Traceback (most recent call last):
+  File "/global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/material_validation_epic.py", line 66, in <module>
+    detector = epic.getDetector(args.xmlFile, matFile)
+  File "/global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/epic.py", line 40, in getDetector
+    detector = acts.examples.dd4hep.DD4hepDetector(dd4hepConfig)
+  File "/opt/local/python/acts/_adapter.py", line 14, in wrapped
+    fn(self, maybe_config, *args[1:], **kwargs)
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: CylinderSurface::checkSurfaceMaterial: material axis directions {AxisPhi, AxisR} are not supported by this surface. Supported axes are: {AxisRPhi, AxisZ} or {AxisPhi, AxisZ}

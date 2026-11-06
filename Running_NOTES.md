@@ -1,0 +1,7 @@
+## Executions
+- Material scan:
+- python3 ../../../scripts/subdetector_tests/material_scan.py   "$DETECTOR_PATH/epic_craterlake_tracking_only_disk_tiles_new.xml"   --path-r 200 --start-point 0,0,0   --eta-min -4.2 --eta-max 4.2 --eta-nbins 841   --phi 20 --epsilon 1e-3 --value-type X0   --detectors InnerSiTrackerSubAssembly,MiddleSiEndcapSubAssembly,OuterSiEndcapSubAssembly   > material_scan_stdio.txt 2>&1
+- npsim:
+- npsim --compactFile $DETECTOR_PATH/epic_craterlake_material_map.xml --numberOfEvents 100 --enableGun --gun.particle pi+ --gun.distribution eta  --gun.thetaMax "175*degree" --gun.thetaMin "5*degree" --gun.momentumMin "10*GeV" --gun.momentumMax "10*GeV" --gun.multiplicity 1 --outputFile proj_svt_disk_tiling/simout/sim_20261016T144812Z_t1.root > proj_svt_disk_tiling/simout/sim_20261016T144812Z_t1.log
+- eicrecon:
+- eicrecon -Pacts:MaterialMap=/global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_map.cbor -Pjana:nevents=100 -Ppodio:output_file=proj_svt_disk_tiling/simout/sim_20261016T144812Z_t1_recon.root -Pdd4hep:xml_files=${DETECTOR_PATH}/epic_craterlake_material_map.xml -Pjana:debug_plugin_loading=1 proj_svt_disk_tiling/simout/sim_20261016T144812Z_t1.root > tmp_recon_t2.log

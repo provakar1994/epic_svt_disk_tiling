@@ -1,0 +1,23 @@
+ACTS example refresh: 2026-10-16 13:33:33 UTC
+Source tag: v46.8.1
+Downloaded Examples/Scripts/Python/geometry.py
+Downloaded Examples/Scripts/Python/material_mapping.py
+Downloaded Examples/Scripts/Python/material_recording.py
+Downloaded Examples/Scripts/Python/material_validation.py
+Downloaded Examples/Scripts/MaterialMapping/writeMapConfig.py
+Downloaded Examples/Scripts/MaterialMapping/configureMap.py
+Downloaded Examples/Scripts/MaterialMapping/GeometryVisualisationAndMaterialHandling.py
+Downloaded Examples/Scripts/MaterialMapping/Mat_map.C
+Downloaded Examples/Scripts/MaterialMapping/Mat_map_surface_plot.C
+Downloaded Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C
+Downloaded Examples/Scripts/MaterialMapping/Mat_map_surface_plot_dist.C
+Downloaded Examples/Scripts/MaterialMapping/Mat_map_surface_plot_1D.C
+Downloaded Examples/Scripts/MaterialMapping/Mat_map_detector_plot.C
+Downloaded Examples/Scripts/MaterialMapping/materialPlotHelper.cpp
+Downloaded Examples/Scripts/MaterialMapping/materialPlotHelper.hpp
+Verified runMaterialRecording accepts outputFileBase
+Verified runMaterialMapping accepts outputFileBase
+Verified runMaterialValidation accepts outputFileBase
+PASS: refreshed v46.8.1 ACTS examples; original cache retained at /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-10-16/material_map_acts_refresh
+The runner will download and apply patches 6010 and 6012 on the next smoke test.
+Post-refresh correction: applied the runner's local B0 validation-map adjustment to Examples/Scripts/MaterialMapping/Mat_map.C; the recorded refresh script now includes this step for reproducibility.

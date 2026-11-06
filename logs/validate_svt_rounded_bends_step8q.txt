@@ -1,0 +1,26 @@
+sources: 10 corrugated frames, 10 carry bend_radius; C++ bend builder present
+XML: h=6.000 mm, t=0.150 mm, theta=45.0 deg, R(mid)=5.000 mm
+ED4  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+ED3  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+ED2  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+ED1  : flats=48 webs=47 bends=94  (web centred on y=0: 1)
+ED0  : flats=26 webs=25 bends=50  (web centred on y=0: 1)
+HD0  : flats=26 webs=25 bends=50  (web centred on y=0: 1)
+HD1  : flats=48 webs=47 bends=94  (web centred on y=0: 1)
+HD2  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+HD3b : flats=49 webs=48 bends=96  (web centred on y=0: 0)
+HD4  : flats=49 webs=48 bends=96  (web centred on y=0: 0)
+bends before x-interval splitting: 872
+straight flat widths [mm]: {'B': [6.507864, 8.578932], 'A': [8.007864]}
+straight web lengths [mm]: [4.131014]
+PASS: every bend is tangent to, and shares end faces with, its flat and web boxes
+rsu_opt: glue strips=4328, minimum margin to straight-flat edge = 0.2148 mm
+all_6rsu: glue strips=4320, minimum margin to straight-flat edge = 0.2148 mm
+PASS: every glue strip lies fully on a straight flat
+INFO keep-clear (box = source width x 1 mm below the module surface, centred on module y):
+  rsu_opt rounded R=5      A: modules with carbon in box = 718/818, worst y intrusion = 0.746 mm (max module offset from channel centre 0.789 mm)
+  rsu_opt rounded R=5      B: modules with carbon in box = 1346/1346, worst y intrusion = 0.056 mm (max module offset from channel centre 0.039 mm)
+  rsu_opt sharp (Step 8i)  A: modules with carbon in box = 818/818, worst y intrusion = 0.864 mm (max module offset from channel centre 0.789 mm)
+  rsu_opt sharp (Step 8i)  B: modules with carbon in box = 1346/1346, worst y intrusion = 0.174 mm (max module offset from channel centre 0.039 mm)
+INFO mid-surface carbon length (all disks, per unit x): rounded/sharp = 0.9781
+RESULT: PASS

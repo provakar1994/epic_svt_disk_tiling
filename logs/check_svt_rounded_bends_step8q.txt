@@ -1,0 +1,128 @@
+SVT step 8q rounded corrugation bends: 2026-11-06 01:12:27 UTC
+Repository: /global/cfs/cdirs/m3763/pdatta/epic (commit c5da03dcf + working tree)
+Report directory: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/rounded_bends_step8q_20261106T011227Z
+sources: 10 corrugated frames, 10 carry bend_radius; C++ bend builder present
+XML: h=6.000 mm, t=0.150 mm, theta=45.0 deg, R(mid)=5.000 mm
+ED4  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+ED3  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+ED2  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+ED1  : flats=48 webs=47 bends=94  (web centred on y=0: 1)
+ED0  : flats=26 webs=25 bends=50  (web centred on y=0: 1)
+HD0  : flats=26 webs=25 bends=50  (web centred on y=0: 1)
+HD1  : flats=48 webs=47 bends=94  (web centred on y=0: 1)
+HD2  : flats=50 webs=49 bends=98  (web centred on y=0: 1)
+HD3b : flats=49 webs=48 bends=96  (web centred on y=0: 0)
+HD4  : flats=49 webs=48 bends=96  (web centred on y=0: 0)
+bends before x-interval splitting: 872
+straight flat widths [mm]: {'B': [6.507864, 8.578932], 'A': [8.007864]}
+straight web lengths [mm]: [4.131014]
+PASS: every bend is tangent to, and shares end faces with, its flat and web boxes
+rsu_opt: glue strips=4328, minimum margin to straight-flat edge = 0.2148 mm
+all_6rsu: glue strips=4320, minimum margin to straight-flat edge = 0.2148 mm
+PASS: every glue strip lies fully on a straight flat
+INFO keep-clear (box = source width x 1 mm below the module surface, centred on module y):
+  rsu_opt rounded R=5      A: modules with carbon in box = 718/818, worst y intrusion = 0.746 mm (max module offset from channel centre 0.789 mm)
+  rsu_opt rounded R=5      B: modules with carbon in box = 1346/1346, worst y intrusion = 0.056 mm (max module offset from channel centre 0.039 mm)
+  rsu_opt sharp (Step 8i)  A: modules with carbon in box = 818/818, worst y intrusion = 0.864 mm (max module offset from channel centre 0.789 mm)
+  rsu_opt sharp (Step 8i)  B: modules with carbon in box = 1346/1346, worst y intrusion = 0.174 mm (max module offset from channel centre 0.039 mm)
+INFO mid-surface carbon length (all disks, per unit x): rounded/sharp = 0.9781
+RESULT: PASS
+ED0: flats=26 webs=25 widths=[10.65] flat_web_gap=0.000 mm
+ED1: flats=48 webs=47 widths=[10.65] flat_web_gap=0.000 mm
+ED2: flats=50 webs=49 widths=[10.65, 12.15] flat_web_gap=0.000 mm
+ED3: flats=50 webs=49 widths=[10.65, 12.15] flat_web_gap=0.000 mm
+ED4: flats=50 webs=49 widths=[10.65, 12.15] flat_web_gap=0.000 mm
+HD0: flats=26 webs=25 widths=[10.65] flat_web_gap=0.000 mm
+HD1: flats=48 webs=47 widths=[10.65] flat_web_gap=0.000 mm
+HD2: flats=50 webs=49 widths=[10.65, 12.15] flat_web_gap=0.000 mm
+HD3b: flats=49 webs=48 widths=[10.65, 12.15] flat_web_gap=0.000 mm
+HD4: flats=49 webs=48 widths=[10.65, 12.15] flat_web_gap=0.000 mm
+totals: flats=446 webs=436
+floating-point audit: negative_slacks=116 minimum=-6.217e-15 mm tolerance=1.0e-09 mm
+PASS: every straight flat meets its adjacent web with zero y gap
+ED0: central web rows 13--12, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+ED1: central web rows 23--22, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+ED2: central web rows 24--23, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+ED3: central web rows 24--23, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+ED4: central web rows 24--23, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+HD0: central web rows 13--12, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+HD1: central web rows 23--22, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+HD2: central web rows 24--23, y_center=+0.000 mm, projected y=[-2.978,+2.978] mm
+HD3b/HD4: row 23 flat is centered at y=0; adjacent webs do not cross y=0
+PASS: all eight CSV-defined central webs remain eligible for placement
+active placement: rsu_opt
+module-normal offsets: inward=-0.0325 mm, outward=+0.2625 mm
+PASS: corrugation has no module-dependent x cutouts
+PASS: disk-boundary and physical-opening clipping remain enabled
+applied offsets along module normal: inward=-0.0325 mm, outward=0.2625 mm; relative=0.230 mm
+inward component intervals from corrugation surface: {'baseplate': (Decimal('-0.2625'), Decimal('-0.1125')), 'external_epoxy': (Decimal('-0.1125'), Decimal('-0.0325')), 'film': (Decimal('-0.1125'), Decimal('-0.0525')), 'sensor': (Decimal('-0.0525'), Decimal('-0.0025')), 'copper': (Decimal('-0.0025'), Decimal('0.0000')), 'fpc_kapton': (Decimal('-0.1125'), Decimal('-0.0325')), 'fpc_aluminum': (Decimal('-0.0325'), Decimal('-0.0025')), 'ancasic_glue': (Decimal('-0.0025'), Decimal('0.0775')), 'ancasic': (Decimal('0.0775'), Decimal('0.3775'))}
+outward backing intervals in +channel coordinate: {'external_epoxy': (Decimal('-0.3425'), Decimal('-0.2625')), 'baseplate': (Decimal('-0.4925'), Decimal('-0.3425'))}
+PASS: Cu ends at the carbon boundary; Si and FPC stop 2.5 um before it
+NOTE: inward edge epoxy now ends 0.0325 mm before the corrugation surface
+ED4: flats=50 webs=49 flat_widths=[10.65, 12.15] web_angle=45.000 deg flat_web_gap=0.000 mm
+ED3: flats=50 webs=49 flat_widths=[10.65, 12.15] web_angle=45.000 deg flat_web_gap=0.000 mm
+ED2: flats=50 webs=49 flat_widths=[10.65, 12.15] web_angle=45.000 deg flat_web_gap=0.000 mm
+ED1: flats=48 webs=47 flat_widths=[10.65] web_angle=45.000 deg flat_web_gap=0.000 mm
+ED0: flats=26 webs=25 flat_widths=[10.65] web_angle=45.000 deg flat_web_gap=0.000 mm
+HD0: flats=26 webs=25 flat_widths=[10.65] web_angle=45.000 deg flat_web_gap=0.000 mm
+HD1: flats=48 webs=47 flat_widths=[10.65] web_angle=45.000 deg flat_web_gap=0.000 mm
+HD2: flats=50 webs=49 flat_widths=[10.65, 12.15] web_angle=45.000 deg flat_web_gap=0.000 mm
+HD3b: flats=49 webs=48 flat_widths=[10.65, 12.15] web_angle=45.000 deg flat_web_gap=0.000 mm
+HD4: flats=49 webs=48 flat_widths=[10.65, 12.15] web_angle=45.000 deg flat_web_gap=0.000 mm
+PASS: enlarged simulation flats meet every 45-degree web without y gaps
+NOTE: the sharp-junction approximation omits the 5 mm-radius bends and uses 10.65/12.15 mm B/A flats
+ED4: rows=50 y=[-422.250,+423.750] transitions=2
+ED3: rows=50 y=[-419.250,+417.750] transitions=2
+ED2: rows=50 y=[-416.250,+414.750] transitions=2
+ED1: rows=48 y=[-387.750,+387.750] transitions=0
+ED0: rows=26 y=[-206.250,+206.250] transitions=0
+HD0: rows=26 y=[-206.250,+206.250] transitions=0
+HD1: rows=48 y=[-387.750,+387.750] transitions=0
+HD2: rows=50 y=[-416.250,+414.750] transitions=2
+HD3b: rows=49 y=[-413.250,+413.250] transitions=2
+HD4: rows=49 y=[-419.250,+419.250] transitions=2
+rsu_opt
+  ED4: matched=48 missing=none
+  ED3: matched=48 missing=none
+  ED2: matched=48 missing=none
+  ED1: matched=46 missing=none
+  ED0: matched=24 missing=none
+  HD0: matched=24 missing=none
+  HD1: matched=46 missing=none
+  HD2: matched=48 missing=none
+  HD3b: matched=47 missing=none
+  HD4: matched=47 missing=none
+  matched_rows=426 max_module_shift=0.7891 max_B_module_shift=0.0391 glue_strips=4328 min_glue_overlap=2.5000
+all_6rsu
+  ED4: matched=46 missing=[0, 47]
+  ED3: matched=48 missing=none
+  ED2: matched=48 missing=none
+  ED1: matched=46 missing=none
+  ED0: matched=24 missing=none
+  HD0: matched=24 missing=none
+  HD1: matched=46 missing=none
+  HD2: matched=48 missing=none
+  HD3b: matched=47 missing=none
+  HD4: matched=47 missing=none
+  matched_rows=424 max_module_shift=0.7891 max_B_module_shift=0.0391 glue_strips=4320 min_glue_overlap=2.5000
+PASS: both packages agree with the pitches, joins, opposite-surface facets, and glue contact
+rsu_opt: strips=4328 legacy_y_contacts=0 production_y_contacts=4328 production_min_overlap=2.5000 mm
+all_6rsu: strips=4320 legacy_y_contacts=0 production_y_contacts=4320 production_min_overlap=2.5000 mm
+PASS: the rejected lattice misses every strip; production neighboring facets cover all strips
+all_6rsu: PASS, 2160 modules, 8 types
+  disk map: 0:OuterTrackerEndcapN_disk4, 1:OuterTrackerEndcapN_disk3, 2:OuterTrackerEndcapN_disk2, 3:MiddleTrackerEndcapN_disk1, 4:InnerTrackerEndcapN_disk1, 5:InnerTrackerEndcapP_disk1, 6:MiddleTrackerEndcapP_disk1, 7:OuterTrackerEndcapP_disk2, 8:OuterTrackerEndcapP_disk3, 9:OuterTrackerEndcapP_disk4
+  (rotation_z, rotation_y) degrees: {(0, 0): 536, (0, 180): 539, (180, 0): 544, (180, 180): 541}
+rsu_opt: PASS, 2164 modules, 12 types
+  disk map: 0:OuterTrackerEndcapN_disk4, 1:OuterTrackerEndcapN_disk3, 2:OuterTrackerEndcapN_disk2, 3:MiddleTrackerEndcapN_disk1, 4:InnerTrackerEndcapN_disk1, 5:InnerTrackerEndcapP_disk1, 6:MiddleTrackerEndcapP_disk1, 7:OuterTrackerEndcapP_disk2, 8:OuterTrackerEndcapP_disk3, 9:OuterTrackerEndcapP_disk4
+  (rotation_z, rotation_y) degrees: {(0, 0): 537, (0, 180): 540, (180, 0): 545, (180, 180): 542}
+All LEC-boundary midpoints and both z reference surfaces reconstruct exactly.
+Configure/build/install; logs in /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/rounded_bends_step8q_20261106T011227Z
+Exported files:
+./detector_geometry.root
+ROOT overlap lines (epic_craterlake_tracking_only, 0.01 mm): 0
+Info in <TGeoNodeMatrix::CheckOverlaps>: Number of illegal overlaps/extrusions : 0 found in 0.552984 [sec]
+ROOT overlap lines (epic_craterlake, 0.01 mm): 0
+Info in <TGeoNodeMatrix::CheckOverlaps>: Number of illegal overlaps/extrusions : 0 found in 0.816069 [sec]
+VISUAL CHECK: flats, bends and webs form one smooth profile on every disk (edge-on view).
+VISUAL CHECK: bends are clipped like the flats/webs at the disk edge and beam-pipe openings.
+RESULT: COMPLETE (review visualization, then run check_svt_rounded_bends_geant_step8q.sh)

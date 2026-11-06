@@ -1,0 +1,6 @@
+SVT step 8q Geant4 continuation: 2026-11-06 01:16:16 UTC
+Detector configuration: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake.xml
+Raw Geant4 log: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/check_svt_rounded_bends_geant_raw_step8q.txt
+Geant4 GeomVol1002 overlap warnings: 0
+G4Exception lines: 0
+RESULT: PASS (no Geant4 overlaps at 0.1 mm)
