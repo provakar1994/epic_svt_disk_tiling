@@ -125,6 +125,48 @@ Gaussian-core sigma [%] in selected p bins (p_lo of the 1 GeV bin; 0.5 = 0.5-1 G
   Proposed check: same gun settings on main-branch geometry with its matching
   material map (needs an eic-shell run by the user).
 
+### 2026-11-06: forward efficiency dip at 1.6 < eta < 1.85
+
+Question (user): origin of the efficiency dip in the hadron-going endcap near eta ~ 1.7.
+Scripts: `diagnose_forward_dip.py` (via `run_diagnose_forward_dip.sh`) and
+`diagnose_forward_dip_tracks.py`; reports and plots in `out/diagnose_forward_dip/`
+(`diagnose_forward_dip.txt`, `diagnose_forward_dip_tracks.txt`, `dip_*.png`).
+All numbers for p > 2 GeV.
+
+Findings:
+1. Not uniform in phi: per-5-deg efficiency in the dip ranges 0.61-0.89, rms 0.071
+   vs 0.006 expected from statistics (`dip_eff_eta_phi.png`). Narrow low-efficiency
+   stripes also at eta 1.2-1.3 near phi = 0, +/-90, 180 deg.
+2. Not missing silicon: Geant4 truth disk hits (acceptance-study extraction,
+   10 files) show the dip window is exactly where the primary hits HD0-HD3 but
+   not HD4 (HD3 starts at eta 1.6, HD4 at 1.8; both uniform in phi,
+   `dip_truth_disk_hits_eta_phi.png`). Efficiency there: 4 disks hit 0.78,
+   5 disks 0.87, while just below (1.35-1.55, HD0-HD2) 3 disks give 0.98 and
+   above (2.1-2.4) 4 disks give 0.99.
+3. Not a hadronic interaction: failed primaries survive to the world boundary
+   (median endpoint far outside the detector) and have the same median number of
+   MCParticles (3) as reconstructed ones. Contrast: failures at 2.1-2.4 are
+   interactions (median endpoint z = 186 mm, 20 MCParticles).
+4. Seeding works, the CKF returns nothing: 96% of failed dip events have
+   >= 1 CentralTrackSeed, but 1677 of 1705 have zero CentralCKFTracks.
+5. The dip moves with the vertex: minimum at eta 1.69 / 1.71 / 1.59 for
+   vz = -100 / 0 / +100 mm and gets much deeper for +100 mm (eff 0.25).
+   Straight-line estimate of a fixed structure: r ~ 750 mm, z ~ 1860 mm (rough;
+   from noisy minima). Failed events also carry more barrel MPGD/TOF hits
+   (1.16 vs 0.22 TOF barrel hits per event), origin not understood.
+6. EICrecon logs are at info level: no per-event CKF/propagation messages.
+
+Interpretation (not confirmed): a reconstruction-side failure for tracks that
+leave the silicon past the outer edge of HD4 (after HD3), not a physics loss.
+Candidates: (a) ACTS navigation/propagation failure in the CKF for these
+trajectories (the track then is dropped as a whole); (b) Step 8m material map
+not matching `epic_craterlake_tracking_only.xml`, giving wrong material
+effects that are phi-dependent through the map binning (consistent with the
+phi structure and with q/p pull widths > 1).
+Proposed tests (eic-shell): rerun EICrecon on failed dip events with CKF
+debug logging; rerun one forward chunk with a material map made from the same
+XML (and without a material map); same gun on the main-branch geometry.
+
 ## Open issues
 
 - `shujie/modules` points to `/global/cfs/cdirs/m3763/shujie/worksim/scripts/modules`,
