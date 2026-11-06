@@ -3562,3 +3562,38 @@ Earlier entries/summaries that cite `scripts/out/disk_material_map/...` or the s
 `scripts/material_map/` refer to these moved copies. Default output dirs of
 `run_disk_material_map.sh` and the 8q script now point to `matscan/disk_material_map/`.
 `CLAUDE.md` gained a "Material scans" section.
+
+### Step 10: Step 8q material map from the tracking-only XML (2026-11-06)
+
+Purpose: make the ACTS map consistent with the `acceptance_v3_refplanes` simulation before
+reconstructing it. Earlier maps (Step 8m, used for the `acceptance_v1` reconstruction) were made
+from `epic_craterlake_material_map.xml`, which, compared with the `epic_craterlake_tracking_only.xml`
+used for simulation and reconstruction, adds DIRC/pfRICH/dRICH, uses `beamline_5x41.xml` instead of
+`beamline_18x275.xml`, and drops `marco.xml` and `far_backward/default.xml`. Step 8m was also made
+on the pre-8q geometry (HEAD `85ac3605`).
+
+Reference planes are not included: they carry no ACTS parameters (not in the tracking geometry)
+and are 0.1 mm Vacuum; Step 9f showed silicon hits unchanged with the overlay. The v3 rec will use
+the plain tracking-only XML with this map.
+
+Files changed:
+- `scripts/material_map/run_material_map_validation.sh` (EPIC repo, uncommitted):
+  `DETECTOR_CONFIG="${DETECTOR_CONFIG:-epic_craterlake_material_map}"` and a restored
+  `--skip-current-map-validation` option (the Step 8m run used this flag, but it was not in the
+  current file; without it the runner would validate the old calibration map too).
+- New `logs/regenerate_svt_material_map_step8q.sh` (Step 8m wrapper adapted): exports
+  `DETECTOR_CONFIG=epic_craterlake_tracking_only`; requires installed XML sha256 `c0141309…`
+  (= v3 overlay source, `refplanes/generated/*.provenance.txt`), EPIC HEAD `311634084`, no
+  uncommitted `compact/`/`src/` changes, installed module XML == checkout, ACTS 46.8.1.
+- New `logs/submit_material_map_step8q.sh` (Slurm, shared QOS, runs the wrapper via `refplanes/eic_exec.sh`).
+
+Smoke run (10 x 100, login node, 9.6 min): `logs/material_map_step8q_smoke_20261106T214810Z.txt`,
+map `scripts/material_map/step8q_smoke_20261106T214810Z_material-map_map.cbor`. Only warnings: the known
+`envelope26` bounding-box message (4x) and Fontconfig cache messages.
+Config check: the regenerated map config has the same 215 surfaces and the same 35 mapped surfaces
+with identical binning as Step 8m (only the recorded material differs), so the map's surface
+identifiers match the tracking-only geometry EICrecon builds.
+
+Full run: Slurm job 60930010 (1000 x 5000, same statistics as Step 8m), log
+`logs/material_map_step8q_<timestamp>.txt`, Slurm output `logs/slurm_material_map_step8q_60930010.out`.
+PENDING user review of `scripts/material_map/Validation/regenerated` and `Surfaces/` before the v3 reconstruction.
