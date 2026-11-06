@@ -1,0 +1,8 @@
+Generated: 2026-11-06T04:30:39+00:00 by /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/make_refplanes_xml.sh
+EPIC checkout: /global/cfs/cdirs/m3763/pdatta/epic
+EPIC commit: 311634084f0ff4229c25d6e8cadb6ff9c497c5d8 (si_disk_hole)
+EPIC tracked changes (git status --short --untracked-files=no):
+DETECTOR_PATH: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+source sha256: c0141309c5f618eafdeacb66b4d8174d05e2dab815ed5c07ba947f5570bfb4fd  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+plane XML sha256: 172cc1e1f9fa9c8ad12b1cf898a694b220a68845d12758f8099a55e062a64631  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/silicon_disks_refplanes.xml
+output sha256: d7dcf158624e11360926a6bf6011b45978dfbd41f2bae01c1ec9134aee45c339  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml

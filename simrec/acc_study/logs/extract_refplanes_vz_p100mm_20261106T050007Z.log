@@ -1,0 +1,11 @@
+Started: 2026-11-05T21:00:08-08:00
+Campaign root: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/tmp/refplanes_smoke_chain_20261106/campaign
+Output dir:    /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/tmp/refplanes_smoke_chain_20261106/extracted
+f58184021f161080b7487a610993bc5d472dc64730c25c85b8bc9ed9b6d3dd67  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/plane_map.csv
+ef01bfd7c69e8e496138b707ec329cc086772be57498fbb44387d5aea586aef8  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extract_disk_particles_refplanes.py
+vz_p100mm_eta_m3p8_to_m0p6: extracting 1 files
+  [01/01] particles_vz100_bwd.npz: 100 particles, plane collection present, plane hits 418 total / 335 accepted / 79 dropped (not primary) / 4 secondary-flagged
+vz_p100mm_eta_p0p6_to_p3p8: extracting 1 files
+  [01/01] particles_vz100_fwd.npz: 100 particles, plane collection present, plane hits 553 total / 321 accepted / 220 dropped (not primary) / 8 secondary-flagged
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/tmp/refplanes_smoke_chain_20261106/extracted/extraction_manifest_vz_p100mm.csv
+Finished: 2026-11-05T21:00:12-08:00

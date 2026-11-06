@@ -1,0 +1,105 @@
+Started: 2026-11-06T04:30:39+00:00
+== make_refplanes_xml.sh ==
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.provenance.txt
+exit status: 0
+Generated: 2026-11-06T04:30:39+00:00 by /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/make_refplanes_xml.sh
+EPIC checkout: /global/cfs/cdirs/m3763/pdatta/epic
+EPIC commit: 311634084f0ff4229c25d6e8cadb6ff9c497c5d8 (si_disk_hole)
+EPIC tracked changes (git status --short --untracked-files=no):
+DETECTOR_PATH: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+source sha256: c0141309c5f618eafdeacb66b4d8174d05e2dab815ed5c07ba947f5570bfb4fd  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+plane XML sha256: 172cc1e1f9fa9c8ad12b1cf898a694b220a68845d12758f8099a55e062a64631  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/silicon_disks_refplanes.xml
+output sha256: d7dcf158624e11360926a6bf6011b45978dfbd41f2bae01c1ec9134aee45c339  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+== make_plane_map.py (container) ==
+disk,side,z_disk_mm,z_plane_mm,rmin_mm,rmax_mm,system,barrel,layer,center_x_mm,center_y_mm,r_inner_about_center_mm,r_outer_about_center_mm,uncovered_max_depth_mm,uncovered_area_mm2,note
+ED0,negative,-250.000,-244.000,36.757,250.000,55,2,0,0.000,0.000,36.757,250.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+ED1,negative,-450.000,-444.000,36.757,425.000,55,2,1,0.000,0.000,36.757,425.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+ED2,negative,-650.000,-644.000,36.757,450.000,55,2,2,0.000,0.000,36.757,450.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+ED3,negative,-850.000,-844.000,38.500,450.000,86,2,0,1.082,0.000,39.582,451.082,2.111,230.2,"openings not nested: enclosing circle leaves a sliver; lepton (x=0.000, y=0.000, r=38.500) hadron (x=21.379, y=0.000, r=19.285) mm"
+ED4,negative,-1020.000,-1014.000,38.500,450.000,87,2,0,3.208,0.000,41.708,453.208,6.048,645.8,"openings not nested: enclosing circle leaves a sliver; lepton (x=0.000, y=0.000, r=38.500) hadron (x=25.630, y=0.000, r=19.285) mm"
+HD0,positive,250.000,244.000,36.757,250.000,54,3,0,0.000,0.000,36.757,250.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+HD1,positive,450.000,444.000,36.757,425.000,54,3,1,0.000,0.000,36.757,425.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+HD2,positive,700.000,694.000,39.048,450.000,56,3,0,-0.990,0.000,40.038,450.990,0.000,0.0,"lepton inside hadron opening; lepton (x=0.000, y=0.000, r=36.757) hadron (x=-0.990, y=0.000, r=40.038) mm"
+HD3,positive,950.000,944.000,39.045,450.000,57,3,0,-6.616,0.000,45.661,456.616,0.000,0.0,"lepton inside hadron opening; lepton (x=0.000, y=0.000, r=36.757) hadron (x=-6.616, y=0.000, r=45.661) mm"
+HD4,positive,1200.000,1194.000,39.042,450.000,58,3,0,-12.242,0.000,51.284,462.242,0.000,0.0,"lepton inside hadron opening; lepton (x=0.000, y=0.000, r=36.757) hadron (x=-12.242, y=0.000, r=51.284) mm"
+
+exit status: 0
+== validate_refplanes_9b.py (container) ==
+1. Generated XML vs installed source
+  [ok] exactly one added line: ['+  <include ref="/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/silicon_disks_refplanes.xml"/>']
+  [ok] include directly after silicon_disks_modules.xml (line 139)
+  [ok] other includes keep ${DETECTOR_PATH}/${DD4hepINSTALL}: offending=[]
+2. Plane detector ids unused elsewhere
+  [ok] no *_ID constant or detector id in [54, 55, 56, 57, 58, 86, 87] under /global/cfs/cdirs/m3763/pdatta/epic/compact: []
+  [ok] no *_ID constant or detector id in [54, 55, 56, 57, 58, 86, 87] under /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact: []
+3. No ACTS hooks in the plane XML
+  [ok] 'layer_material' absent
+  [ok] 'ParametersPlugin' absent
+  [ok] 'acts_' absent
+  [ok] '<segmentation' absent
+4-6. Load overlay; placed volumes vs plane_map.csv; envelope; openings
+  [ok] all detector ids >= 0 unique: duplicates={}
+  [ok] plane ids: [(54, ['SVTDiskRefPlanesP']), (55, ['SVTDiskRefPlanesN']), (56, ['SVTDiskRefPlanesHD2']), (57, ['SVTDiskRefPlanesHD3']), (58, ['SVTDiskRefPlanesHD4']), (86, ['SVTDiskRefPlanesED3']), (87, ['SVTDiskRefPlanesED4'])]
+  [ok] HD0: grouped detector centre cx = 0
+  [ok] HD1: grouped detector centre cx = 0
+  [ok] ED0: grouped detector centre cx = 0
+  [ok] ED1: grouped detector centre cx = 0
+  [ok] ED2: grouped detector centre cx = 0
+  [ok] ED0: SVTDiskRefPlanesN placed centre=(0.000,0.000,-244.000) tube r=[36.757,250.000] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 2, b'layer': 0} slice-ids={b'slice': 0}
+  [ok] ED0: slab |z| <= 244.050 < envelope |z| >= 245.000 (gap 0.950 mm), IP side
+  [ok] ED0: openings inside the plane hole (margins 0.000 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] ED0: outer edge covers r <= 250.000 mm (disk rmax 230.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+  [ok] ED1: SVTDiskRefPlanesN placed centre=(0.000,0.000,-444.000) tube r=[36.757,425.000] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 2, b'layer': 1} slice-ids={b'slice': 0}
+  [ok] ED1: slab |z| <= 444.050 < envelope |z| >= 445.000 (gap 0.950 mm), IP side
+  [ok] ED1: openings inside the plane hole (margins 0.000 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] ED1: outer edge covers r <= 425.000 mm (disk rmax 405.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+  [ok] ED2: SVTDiskRefPlanesN placed centre=(0.000,0.000,-644.000) tube r=[36.757,450.000] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 2, b'layer': 2} slice-ids={b'slice': 0}
+  [ok] ED2: slab |z| <= 644.050 < envelope |z| >= 645.000 (gap 0.950 mm), IP side
+  [ok] ED2: openings inside the plane hole (margins 0.000 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] ED2: outer edge covers r <= 450.000 mm (disk rmax 430.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+  [ok] ED3: SVTDiskRefPlanesED3 placed centre=(1.082,0.000,-844.000) tube r=[39.582,451.082] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 2, b'layer': 0} slice-ids={b'slice': 0}
+  [ok] ED3: slab |z| <= 844.050 < envelope |z| >= 845.000 (gap 0.950 mm), IP side
+  [ok] ED3: openings inside the plane hole (margins 0.000 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] ED3: outer edge covers r <= 450.000 mm (disk rmax 430.0 + 20)
+       uncovered sliver: max depth 2.111 mm, area 230.2 mm2
+  [ok] ED4: SVTDiskRefPlanesED4 placed centre=(3.208,0.000,-1014.000) tube r=[41.708,453.208] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 2, b'layer': 0} slice-ids={b'slice': 0}
+  [ok] ED4: slab |z| <= 1014.050 < envelope |z| >= 1015.000 (gap 0.950 mm), IP side
+  [ok] ED4: openings inside the plane hole (margins -0.000 lepton, -0.000 hadron mm); hole = smallest enclosing circle
+  [ok] ED4: outer edge covers r <= 450.000 mm (disk rmax 430.0 + 20)
+       uncovered sliver: max depth 6.048 mm, area 645.8 mm2
+  [ok] HD0: SVTDiskRefPlanesP placed centre=(0.000,0.000,244.000) tube r=[36.757,250.000] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 3, b'layer': 0} slice-ids={b'slice': 0}
+  [ok] HD0: slab |z| <= 244.050 < envelope |z| >= 245.000 (gap 0.950 mm), IP side
+  [ok] HD0: openings inside the plane hole (margins 0.000 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] HD0: outer edge covers r <= 250.000 mm (disk rmax 230.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+  [ok] HD1: SVTDiskRefPlanesP placed centre=(0.000,0.000,444.000) tube r=[36.757,425.000] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 3, b'layer': 1} slice-ids={b'slice': 0}
+  [ok] HD1: slab |z| <= 444.050 < envelope |z| >= 445.000 (gap 0.950 mm), IP side
+  [ok] HD1: openings inside the plane hole (margins 0.000 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] HD1: outer edge covers r <= 425.000 mm (disk rmax 405.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+  [ok] HD2: SVTDiskRefPlanesHD2 placed centre=(-0.990,0.000,694.000) tube r=[40.038,450.990] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 3, b'layer': 0} slice-ids={b'slice': 0}
+  [ok] HD2: slab |z| <= 694.050 < envelope |z| >= 695.000 (gap 0.950 mm), IP side
+  [ok] HD2: openings inside the plane hole (margins 2.291 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] HD2: outer edge covers r <= 450.000 mm (disk rmax 430.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+  [ok] HD3: SVTDiskRefPlanesHD3 placed centre=(-6.616,0.000,944.000) tube r=[45.661,456.616] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 3, b'layer': 0} slice-ids={b'slice': 0}
+  [ok] HD3: slab |z| <= 944.050 < envelope |z| >= 945.000 (gap 0.950 mm), IP side
+  [ok] HD3: openings inside the plane hole (margins 2.288 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] HD3: outer edge covers r <= 450.000 mm (disk rmax 430.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+  [ok] HD4: SVTDiskRefPlanesHD4 placed centre=(-12.242,0.000,1194.000) tube r=[51.284,462.242] dz=0.050 mat=Vacuum sensitive=True layer-ids={b'barrel': 3, b'layer': 0} slice-ids={b'slice': 0}
+  [ok] HD4: slab |z| <= 1194.050 < envelope |z| >= 1195.000 (gap 0.950 mm), IP side
+  [ok] HD4: openings inside the plane hole (margins 2.285 lepton, 0.000 hadron mm); hole = smallest enclosing circle
+  [ok] HD4: outer edge covers r <= 450.000 mm (disk rmax 430.0 + 20)
+       uncovered sliver: max depth 0.000 mm, area 0.0 mm2
+7. Readout
+  [ok] id spec = system:0:8,barrel:8:3,layer:11:4,slice:15:4 -> system:8,barrel:3,layer:4,slice:4
+  [ok] no segmentation
+
+Step 9b validator (v2): PASS
+exit status: 0
+Finished: 2026-11-06T04:31:08+00:00

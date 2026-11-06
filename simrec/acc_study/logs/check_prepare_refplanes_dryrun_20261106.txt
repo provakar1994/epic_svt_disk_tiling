@@ -1,0 +1,33 @@
+check_prepare_refplanes_dryrun_20261106: 2026-11-05T19:57:55-08:00
+prepare script sha256: 299d8f2b1287579ec6f55cfd659d7e00c6e4d659ecf1c2dd4a346e86c5d6ab8f
+WARNING (dry run): refplanes file not found yet: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+WARNING (dry run): refplanes file not found yet: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/npsim_refplanes_steering.py
+Seed overlap with 2 earlier manifest(s): none
+Prepared: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/tmp/dryrun_task_lists_refplanes_20261106/acceptance_v3_refplanes/tasks.txt (300 tasks, 300 unique seeds)
+Manifest: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/tmp/dryrun_task_lists_refplanes_20261106/acceptance_v3_refplanes/manifest.tsv
+Output:   /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v3_refplanes
+DRY RUN: nothing created under task_lists/ or /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study
+--- audit ---
+command lines:          300
+manifest rows:          300
+unique seeds:           300
+seed range:             43000001-43005050
+earlier seed ranges:
+  acceptance_v1: 41000001-41005050
+  acceptance_v2_vz100mm: 42000001-42003050
+tasks per configuration (vertex, eta range, events):
+  vz_000mm_eta_m3p8_to_m0p6 vz=0 eta=[-3.8,-0.6]  50 tasks   5000000 events
+  vz_000mm_eta_p0p6_to_p3p8 vz=0 eta=[0.6,3.8]  50 tasks   5000000 events
+  vz_m100mm_eta_m3p8_to_m0p6 vz=-100 eta=[-3.8,-0.6]  50 tasks   5000000 events
+  vz_m100mm_eta_p0p6_to_p3p8 vz=-100 eta=[0.6,3.8]  50 tasks   5000000 events
+  vz_p100mm_eta_m3p8_to_m0p6 vz=100 eta=[-3.8,-0.6]  50 tasks   5000000 events
+  vz_p100mm_eta_p0p6_to_p3p8 vz=100 eta=[0.6,3.8]  50 tasks   5000000 events
+lines in sim mode:      300
+lines with ACC_XML and ACC_STEERING prefix: 300
+first task line:
+ACC_XML=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml ACC_STEERING=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/npsim_refplanes_steering.py /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/run_sim.sh sim /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v3_refplanes/vz_000mm_eta_p0p6_to_p3p8 vz_000mm_eta_p0p6_to_p3p8_chunk_001_n100000 100000 0 0.6 3.8 43000001 
+last task line:
+ACC_XML=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml ACC_STEERING=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/npsim_refplanes_steering.py /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/run_sim.sh sim /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v3_refplanes/vz_m100mm_eta_m3p8_to_m0p6 vz_m100mm_eta_m3p8_to_m0p6_chunk_050_n100000 100000 -100 -3.8 -0.6 43005050 
+one packed wave on 4 nodes x 90 slots = 360 >= 300 tasks: yes
+real task_lists/acceptance_v3_refplanes created: no
+dry-run output retained at: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/simrec_acc_study_tmp_dryrun_task_lists_refplanes_20261106

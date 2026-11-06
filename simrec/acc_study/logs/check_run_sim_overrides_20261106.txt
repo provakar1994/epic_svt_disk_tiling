@@ -1,0 +1,27 @@
+check_run_sim_overrides_20261106: 2026-11-05T19:56:30-08:00
+work dir: /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ
+run_sim.sh sha256: 4bfbf8cf14f99bb8c6e0fd4aad9f76e1c7146b697e7bb558df5c138a727534d5
+===== case: default () =====
+Command: npsim --compactFile /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml --outputFile /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/default/rootfiles/sim_check_default.tmp.local.0.root --numberOfEvents 10 --random.seed 12345 --enableGun --gun.phiMin 0\*degree --gun.phiMax 360\*degree --gun.distribution eta --gun.etaMin 0.6 --gun.etaMax 3.8 --gun.particle pi+ --gun.position 0\ 0\ 0\*mm --gun.momentumMin 0.5\*GeV --gun.momentumMax 20\*GeV --gun.multiplicity 1 --output.part WARNING
+Compact XML: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+Steering file: none
+sha256 lines:
+c0141309c5f618eafdeacb66b4d8174d05e2dab815ed5c07ba947f5570bfb4fd  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+===== case: xml_only (ACC_XML=/tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml) =====
+Command: npsim --compactFile /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml --outputFile /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/xml_only/rootfiles/sim_check_xml_only.tmp.local.0.root --numberOfEvents 10 --random.seed 12345 --enableGun --gun.phiMin 0\*degree --gun.phiMax 360\*degree --gun.distribution eta --gun.etaMin 0.6 --gun.etaMax 3.8 --gun.particle pi+ --gun.position 0\ 0\ 0\*mm --gun.momentumMin 0.5\*GeV --gun.momentumMax 20\*GeV --gun.multiplicity 1 --output.part WARNING
+Compact XML: /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml
+Steering file: none
+sha256 lines:
+1515a948c2c652b3a70d4a66983978021dc60ed7d53298c14919b0d80c706cb1  /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml
+===== case: both (ACC_XML=/tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml ACC_STEERING=/tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_steering.py) =====
+Command: npsim --steeringFile /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_steering.py --compactFile /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml --outputFile /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/both/rootfiles/sim_check_both.tmp.local.0.root --numberOfEvents 10 --random.seed 12345 --enableGun --gun.phiMin 0\*degree --gun.phiMax 360\*degree --gun.distribution eta --gun.etaMin 0.6 --gun.etaMax 3.8 --gun.particle pi+ --gun.position 0\ 0\ 0\*mm --gun.momentumMin 0.5\*GeV --gun.momentumMax 20\*GeV --gun.multiplicity 1 --output.part WARNING
+Compact XML: /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml
+Steering file: /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_steering.py
+sha256 lines:
+1515a948c2c652b3a70d4a66983978021dc60ed7d53298c14919b0d80c706cb1  /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_compact.xml
+6c9fac16504aefd03b6ef23484ccfc1a64e80b976ec5fb308203eb38b8543012  /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/dummy_steering.py
+===== case: missing steering file (must fail with status 2) =====
+ERROR: steering file not found: /tmp/claude-110396/-global-cfs-cdirs-m3763-pdatta-epic/01fe03dd-6390-4cc3-b219-fa53fd39ac18/scratchpad/check_run_sim_overrides.NC7bbZ/does_not_exist.py
+exit status: 2
+===== default command vs original run_sim.sh command template =====
+default command identical to original: PASS

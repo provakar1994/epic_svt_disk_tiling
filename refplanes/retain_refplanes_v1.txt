@@ -1,0 +1,25 @@
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/silicon_disks_refplanes.xml -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/silicon_disks_refplanes.xml
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/plane_map.csv -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/plane_map.csv
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/generated
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/validate_refplanes_9b.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/validate_refplanes_9b.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/validate_refplanes_9b_run1_validator_bugs.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/validate_refplanes_9b_run1_validator_bugs.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/check_refplanes_9c_root.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/check_refplanes_9c_root.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/check_refplanes_9c_geant4.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/check_refplanes_9c_geant4.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/out_9c -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/out_9c
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/out_9d -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/out_9d
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/compare_material_scan_9d.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/compare_material_scan_9d.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/material_scan_9d_installed.log -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/material_scan_9d_installed.log
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/material_scan_9d_overlay.log -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/material_scan_9d_overlay.log
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/material_scan_9d_installed_all_failed.log -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/material_scan_9d_installed_all_failed.log
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/material_scan_9d_overlay_all_failed.log -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/material_scan_9d_overlay_all_failed.log
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/check_smoke_9e.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/check_smoke_9e.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/diagnose_smoke_secondaries_9e.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/diagnose_smoke_secondaries_9e.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/run_smoke_9e.log -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/run_smoke_9e.log
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/plane_clearance_9a_crosscheck.txt -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/plane_clearance_9a_crosscheck.txt
+moved /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/run_silicon_unchanged_9f.log -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/run_silicon_unchanged_9f.log
+moved /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/smoke -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/smoke
+moved /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/smoke_debug -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/retained/2026-11-06/refplanes_v1/smoke_debug
+moved /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/silicon_9f/sim_overlay_fwd.root
+moved /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/silicon_9f/sim_overlay_fwd.log
+moved /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/silicon_9f/sim_overlay_bwd.root
+moved /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/silicon_9f/sim_overlay_bwd.log

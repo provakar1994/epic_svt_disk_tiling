@@ -1,0 +1,16 @@
+ED0: single-hit primaries  283863; R1 n=283863, R2 n=     0: pattern mirror-symmetric in y, sign not testable
+ED1: single-hit primaries  466193; R1 n=466193, R2 n=     0: pattern mirror-symmetric in y, sign not testable
+ED2: single-hit primaries  510771; R1 n=498837, R2 n= 11934: corr(same,dz) R1 = +0.960, R2 = +0.273  -> CSV y = global y
+    family A (36 mm) region: -144.00 <= y < 126.00 mm (15 rows); B (33 mm) elsewhere
+ED3: single-hit primaries  521417; R1 n=513028, R2 n=  8389: corr(same,dz) R1 = +0.963, R2 = +0.317  -> CSV y = global y
+    family A (36 mm) region: -180.00 <= y < 162.00 mm (19 rows); B (33 mm) elsewhere
+ED4: single-hit primaries  523718; R1 n=518942, R2 n=  4776: corr(same,dz) R1 = +0.964, R2 = +0.257  -> CSV y = global y
+    family A (36 mm) region: -216.00 <= y < 234.00 mm (25 rows); B (33 mm) elsewhere
+HD0: single-hit primaries  282625; R1 n=282625, R2 n=     0: pattern mirror-symmetric in y, sign not testable
+HD1: single-hit primaries  464463; R1 n=464463, R2 n=     0: pattern mirror-symmetric in y, sign not testable
+HD2: single-hit primaries  504747; R1 n=493264, R2 n= 11482: corr(same,dz) R1 = -0.962, R2 = -0.312  -> CSV y = global y
+    family A (36 mm) region: -144.00 <= y < 126.00 mm (15 rows); B (33 mm) elsewhere
+HD3: single-hit primaries  493361; R1 n=     0, R2 n=493361: pattern mirror-symmetric in y, sign not testable
+    family A (36 mm) region: -207.00 <= y < 207.00 mm (23 rows); B (33 mm) elsewhere
+HD4: single-hit primaries  481938; R1 n=     0, R2 n=481938: pattern mirror-symmetric in y, sign not testable
+    family A (36 mm) region: -279.00 <= y < 279.00 mm (31 rows); B (33 mm) elsewhere

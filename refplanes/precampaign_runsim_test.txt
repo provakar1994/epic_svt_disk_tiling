@@ -1,0 +1,15 @@
+Output: /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/precampaign_test_20261106T045654Z
+Completed sim task: test_vzm100_bwd
+Command: npsim --steeringFile /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/npsim_refplanes_steering.py --compactFile /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml --outputFile /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/precampaign_test_20261106T045654Z/rootfiles/sim_test_vzm100_bwd.tmp.local.0.root --numberOfEvents 20 --random.seed 43999999 --enableGun --gun.phiMin 0\*degree --gun.phiMax 360\*degree --gun.distribution eta --gun.etaMin -3.8 --gun.etaMax -0.6 --gun.particle pi+ --gun.position 0\ 0\ -100\*mm --gun.momentumMin 0.5\*GeV --gun.momentumMax 20\*GeV --gun.multiplicity 1 --output.part WARNING
+Compact XML: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+Steering file: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/npsim_refplanes_steering.py
+d7dcf158624e11360926a6bf6011b45978dfbd41f2bae01c1ec9134aee45c339  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+23665eab1460debf7aacfcab02a54b0a42fec604866545123f802dedb1cb1133  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/npsim_refplanes_steering.py
+XMLLoader        INFO  +++ Processing XML file: file:/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+Geant4Output2EDM4hep INFO  Opened /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/precampaign_test_20261106T045654Z/rootfiles/sim_test_vzm100_bwd.tmp.local.0.root for output
+GenerationInit   WARN  +++ Finished run 0 after 20 events (20 events in total)
+Finished: 2026-11-05T20:58:18-08:00
+total 160
+drwxrwx--- 2 pdatta pdatta   4096 Nov  5 20:58 .
+drwxrwx--- 4 pdatta pdatta   4096 Nov  5 20:57 ..
+-rw-rw---- 1 pdatta pdatta 152802 Nov  5 20:58 sim_test_vzm100_bwd.root

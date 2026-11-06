@@ -1,0 +1,15 @@
+[fwd] primaries=10000 identical generated momenta=False
+  disk  hit_inst  hit_over  only_inst(b)  only_over(c)  McNemar z
+  HD0       3829      3812          2365          2348      -0.25
+  HD1       5662      5607          2472          2417      -0.79
+  HD2       5650      5614          2468          2432      -0.51
+  HD3       5469      5393          2542          2466      -1.07
+  HD4       5284      5295          2515          2526      +0.15
+[bwd] primaries=10000 identical generated momenta=False
+  disk  hit_inst  hit_over  only_inst(b)  only_over(c)  McNemar z
+  ED0       3815      3761          2343          2289      -0.79
+  ED1       5623      5623          2455          2455      +0.00
+  ED2       5789      5775          2462          2448      -0.20
+  ED3       5902      5867          2457          2422      -0.50
+  ED4       5880      5827          2464          2411      -0.76
+max |McNemar z| = 1.07  ->  PASS (|z| < 3)

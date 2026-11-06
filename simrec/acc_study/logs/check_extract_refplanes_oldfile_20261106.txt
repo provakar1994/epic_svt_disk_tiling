@@ -1,0 +1,57 @@
+check_extract_refplanes_oldfile_20261106: 2026-11-05T20:00:38-08:00
+extractor sha256: bcd7291581dc07303dd46c9432e054231a2e7985c0fcbee7b181328440df1775
+vz_p100mm_eta_m3p8_to_m0p6: extracting 1 files
+  [01/01] particles_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_n100000.npz: 100,000 particles, plane collection ABSENT, plane hits 0 total / 0 accepted / 0 dropped (not primary) / 0 secondary-flagged
+vz_p100mm_eta_p0p6_to_p3p8: extracting 1 files
+  [01/01] particles_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_n100000.npz: 100,000 particles, plane collection ABSENT, plane hits 0 total / 0 accepted / 0 dropped (not primary) / 0 secondary-flagged
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/tmp/extract_refplanes_oldfile_check_20261106/extracted/extraction_manifest_vz_p100mm.csv
+extraction wall time: 14 s for 2 files x 100k events
+--- vz_p100mm_eta_m3p8_to_m0p6/particles_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_n100000.npz
+    reference: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extracted/acceptance_v2_vz_p100mm/vz_p100mm_eta_m3p8_to_m0p6/particles_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_n100000.npz
+    event_entry      (100000,)    uint32  identical: True
+    mc_index         (100000,)    uint32  identical: True
+    px_GeV           (100000,)    float32  identical: True
+    py_GeV           (100000,)    float32  identical: True
+    pz_GeV           (100000,)    float32  identical: True
+    p_GeV            (100000,)    float32  identical: True
+    eta              (100000,)    float32  identical: True
+    phi_rad          (100000,)    float32  identical: True
+    vertex_x_mm      (100000,)    float32  identical: True
+    vertex_y_mm      (100000,)    float32  identical: True
+    vertex_z_mm      (100000,)    float32  identical: True
+    hit_mask         (100000,)    uint8  identical: True
+    hit_count        (100000, 5)  uint16  identical: True
+    mean_hit_x_mm    (100000, 5)  float32  identical: True
+    mean_hit_y_mm    (100000, 5)  float32  identical: True
+    mean_hit_z_mm    (100000, 5)  float32  identical: True
+    plane_collection_present is false: True
+    plane_mask all 0: True
+    plane_crossings all 0: True
+    plane_secondary_flagged all 0: True
+    plane float fields all NaN: True
+    plane hit counters 0: True
+--- vz_p100mm_eta_p0p6_to_p3p8/particles_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_n100000.npz
+    reference: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extracted/acceptance_v2_vz_p100mm/vz_p100mm_eta_p0p6_to_p3p8/particles_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_n100000.npz
+    event_entry      (100000,)    uint32  identical: True
+    mc_index         (100000,)    uint32  identical: True
+    px_GeV           (100000,)    float32  identical: True
+    py_GeV           (100000,)    float32  identical: True
+    pz_GeV           (100000,)    float32  identical: True
+    p_GeV            (100000,)    float32  identical: True
+    eta              (100000,)    float32  identical: True
+    phi_rad          (100000,)    float32  identical: True
+    vertex_x_mm      (100000,)    float32  identical: True
+    vertex_y_mm      (100000,)    float32  identical: True
+    vertex_z_mm      (100000,)    float32  identical: True
+    hit_mask         (100000,)    uint8  identical: True
+    hit_count        (100000, 5)  uint16  identical: True
+    mean_hit_x_mm    (100000, 5)  float32  identical: True
+    mean_hit_y_mm    (100000, 5)  float32  identical: True
+    mean_hit_z_mm    (100000, 5)  float32  identical: True
+    plane_collection_present is false: True
+    plane_mask all 0: True
+    plane_crossings all 0: True
+    plane_secondary_flagged all 0: True
+    plane float fields all NaN: True
+    plane hit counters 0: True
+OVERALL: PASS

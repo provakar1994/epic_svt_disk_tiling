@@ -1,0 +1,219 @@
+<!-- SPDX-License-Identifier: LGPL-3.0-or-later -->
+<lccdd>
+  <comment>
+    Study-only overlay (Step 9, v2, 2026-11-06): zero-material sensitive reference planes
+    6 mm on the interaction-point side of each SVT endcap disk.
+    Included by refplanes/make_refplanes_xml.sh right after silicon_disks_modules.xml,
+    so all disk constants below are already defined.
+
+    Placement: one Vacuum annulus per disk, 0.1 mm thick, centred at
+      z_plane = sign * (|z_disk| - 6 mm).
+    The disk layer envelope spans z_disk +/- 5 mm, so the plane face nearest the disk is
+    0.95 mm from it.
+
+    Inner boundary (v2): the annulus is centred on the smallest circle enclosing the
+    disk's two buffered beam-pipe openings (lepton and hadron circles from
+    definitions_craterlake.xml). All openings have centre_y = 0, so along x:
+      left  = min(lepton_cx - lepton_r, hadron_cx - hadron_r)
+      right = max(lepton_cx + lepton_r, hadron_cx + hadron_r)
+      cx = (left + right)/2,   r_in = (right - left)/2.
+    - D0, D1 (and ED2): both openings coincide at the origin -> cx = 0, r_in = disk rmin (as v1).
+    - HD2, HD3, HD4: the lepton circle lies inside the hadron circle, so the enclosing circle
+      IS the hadron opening and the plane inner edge follows the opening exactly.
+    - ED3, ED4: the openings are not nested; the enclosing circle leaves a thin uncovered
+      sliver outside both openings (documented in plane_map.csv and the Step 9 log).
+    Outer boundary: r_out = disk rmax + 20 mm + |cx|, so every radius r up to rmax + 20 mm
+    (measured from the beam axis) is covered.
+
+    v1 used centred annuli with rmin = the disk *_rmin constant (centred enclosing circle);
+    that left silicon uncovered on HD3/HD4 (and ED3/ED4, HD2) on the side away from the
+    hadron offset. v1 is retained in tmp/retained/2026-11-06/refplanes_v1/.
+
+    Why off-centre annuli and not Tube minus the two openings: no stock DD4hep XML builder
+    in eic_xl:26.09.0-stable produced a sensitive boolean-shape volume WITH volume ids
+    (DD4hep_VolumeAssembly builds the shape but sets no ids; tests in refplanes/tests/).
+    epic_SolenoidEndcap places its assembly at the detector position, so a separate
+    detector per off-centre disk gives the offset (no new C++).
+
+    Builder epic_SolenoidEndcap (src/SimpleDiskDetector_geo.cpp): a layer's IP-side face is at
+    |z| = inner_z; reflect="true" mirrors the layer to negative z (RotationY(pi) about the
+    assembly origin; the assembly x offset is not mirrored). Volume ids: system = detector id,
+    barrel = 3 (positive) / 2 (reflected), layer = layer index within its detector starting
+    at 0, slice = 0. Disk to (system, layer) mapping: refplanes/plane_map.csv.
+    No ACTS parameters: the planes are not part of the ACTS tracking geometry.
+    Hits have ~zero eDep (Vacuum = 1e-15 g/cm3); npsim must disable its energy filter for
+    these sensitive detectors only (refplanes/npsim_refplanes_steering.py, pattern
+    'SVTDiskRefPlanes' matches every detector name below).
+  </comment>
+
+  <define>
+    <constant name="SVTDiskRefPlanesP_ID"   value="54"/>
+    <constant name="SVTDiskRefPlanesN_ID"   value="55"/>
+    <constant name="SVTDiskRefPlanesHD2_ID" value="56"/>
+    <constant name="SVTDiskRefPlanesHD3_ID" value="57"/>
+    <constant name="SVTDiskRefPlanesHD4_ID" value="58"/>
+    <constant name="SVTDiskRefPlanesED3_ID" value="86"/>
+    <constant name="SVTDiskRefPlanesED4_ID" value="87"/>
+    <constant name="SVTDiskRefPlane_thickness"         value="0.1*mm"/>
+    <constant name="SVTDiskRefPlane_upstream_offset"   value="6.0*mm"/>
+    <constant name="SVTDiskRefPlane_rmax_extra"        value="20.0*mm"/>
+
+    <comment> Signed plane-centre z </comment>
+    <constant name="SVTDiskRefPlane_HD0_z" value="  InnerTrackerEndcapP_zmin - SVTDiskRefPlane_upstream_offset"/>
+    <constant name="SVTDiskRefPlane_HD1_z" value="  TrackerEndcapPDisk1_zmin - SVTDiskRefPlane_upstream_offset"/>
+    <constant name="SVTDiskRefPlane_HD2_z" value="  TrackerEndcapPDisk2_zmin - SVTDiskRefPlane_upstream_offset"/>
+    <constant name="SVTDiskRefPlane_HD3_z" value="  TrackerEndcapPDisk3_zmin - SVTDiskRefPlane_upstream_offset"/>
+    <constant name="SVTDiskRefPlane_HD4_z" value="  TrackerEndcapPDisk4_zmin - SVTDiskRefPlane_upstream_offset"/>
+    <constant name="SVTDiskRefPlane_ED0_z" value="-(InnerTrackerEndcapN_zmin - SVTDiskRefPlane_upstream_offset)"/>
+    <constant name="SVTDiskRefPlane_ED1_z" value="-(TrackerEndcapNDisk1_zmin - SVTDiskRefPlane_upstream_offset)"/>
+    <constant name="SVTDiskRefPlane_ED2_z" value="-(TrackerEndcapNDisk2_zmin - SVTDiskRefPlane_upstream_offset)"/>
+    <constant name="SVTDiskRefPlane_ED3_z" value="-(TrackerEndcapNDisk3_zmin - SVTDiskRefPlane_upstream_offset)"/>
+    <constant name="SVTDiskRefPlane_ED4_z" value="-(TrackerEndcapNDisk4_zmin - SVTDiskRefPlane_upstream_offset)"/>
+
+    <comment> Opening extent along x (openings have centre_y = 0; checked by the validator) </comment>
+    <constant name="SVTDiskRefPlane_HD0_left"  value="min(InnerTrackerEndcapP_lepton_center_x - InnerTrackerEndcapP_lepton_radius, InnerTrackerEndcapP_hadron_center_x - InnerTrackerEndcapP_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD0_right" value="max(InnerTrackerEndcapP_lepton_center_x + InnerTrackerEndcapP_lepton_radius, InnerTrackerEndcapP_hadron_center_x + InnerTrackerEndcapP_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED0_left"  value="min(InnerTrackerEndcapN_lepton_center_x - InnerTrackerEndcapN_lepton_radius, InnerTrackerEndcapN_hadron_center_x - InnerTrackerEndcapN_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED0_right" value="max(InnerTrackerEndcapN_lepton_center_x + InnerTrackerEndcapN_lepton_radius, InnerTrackerEndcapN_hadron_center_x + InnerTrackerEndcapN_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD1_left"  value="min(TrackerEndcapPDisk1_lepton_center_x - TrackerEndcapPDisk1_lepton_radius, TrackerEndcapPDisk1_hadron_center_x - TrackerEndcapPDisk1_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD1_right" value="max(TrackerEndcapPDisk1_lepton_center_x + TrackerEndcapPDisk1_lepton_radius, TrackerEndcapPDisk1_hadron_center_x + TrackerEndcapPDisk1_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD2_left"  value="min(TrackerEndcapPDisk2_lepton_center_x - TrackerEndcapPDisk2_lepton_radius, TrackerEndcapPDisk2_hadron_center_x - TrackerEndcapPDisk2_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD2_right" value="max(TrackerEndcapPDisk2_lepton_center_x + TrackerEndcapPDisk2_lepton_radius, TrackerEndcapPDisk2_hadron_center_x + TrackerEndcapPDisk2_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD3_left"  value="min(TrackerEndcapPDisk3_lepton_center_x - TrackerEndcapPDisk3_lepton_radius, TrackerEndcapPDisk3_hadron_center_x - TrackerEndcapPDisk3_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD3_right" value="max(TrackerEndcapPDisk3_lepton_center_x + TrackerEndcapPDisk3_lepton_radius, TrackerEndcapPDisk3_hadron_center_x + TrackerEndcapPDisk3_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD4_left"  value="min(TrackerEndcapPDisk4_lepton_center_x - TrackerEndcapPDisk4_lepton_radius, TrackerEndcapPDisk4_hadron_center_x - TrackerEndcapPDisk4_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_HD4_right" value="max(TrackerEndcapPDisk4_lepton_center_x + TrackerEndcapPDisk4_lepton_radius, TrackerEndcapPDisk4_hadron_center_x + TrackerEndcapPDisk4_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED1_left"  value="min(TrackerEndcapNDisk1_lepton_center_x - TrackerEndcapNDisk1_lepton_radius, TrackerEndcapNDisk1_hadron_center_x - TrackerEndcapNDisk1_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED1_right" value="max(TrackerEndcapNDisk1_lepton_center_x + TrackerEndcapNDisk1_lepton_radius, TrackerEndcapNDisk1_hadron_center_x + TrackerEndcapNDisk1_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED2_left"  value="min(TrackerEndcapNDisk2_lepton_center_x - TrackerEndcapNDisk2_lepton_radius, TrackerEndcapNDisk2_hadron_center_x - TrackerEndcapNDisk2_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED2_right" value="max(TrackerEndcapNDisk2_lepton_center_x + TrackerEndcapNDisk2_lepton_radius, TrackerEndcapNDisk2_hadron_center_x + TrackerEndcapNDisk2_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED3_left"  value="min(TrackerEndcapNDisk3_lepton_center_x - TrackerEndcapNDisk3_lepton_radius, TrackerEndcapNDisk3_hadron_center_x - TrackerEndcapNDisk3_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED3_right" value="max(TrackerEndcapNDisk3_lepton_center_x + TrackerEndcapNDisk3_lepton_radius, TrackerEndcapNDisk3_hadron_center_x + TrackerEndcapNDisk3_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED4_left"  value="min(TrackerEndcapNDisk4_lepton_center_x - TrackerEndcapNDisk4_lepton_radius, TrackerEndcapNDisk4_hadron_center_x - TrackerEndcapNDisk4_hadron_radius)"/>
+    <constant name="SVTDiskRefPlane_ED4_right" value="max(TrackerEndcapNDisk4_lepton_center_x + TrackerEndcapNDisk4_lepton_radius, TrackerEndcapNDisk4_hadron_center_x + TrackerEndcapNDisk4_hadron_radius)"/>
+
+    <comment> Annulus centre x, inner radius about that centre, outer radius about that centre </comment>
+    <constant name="SVTDiskRefPlane_HD0_cx"   value="(SVTDiskRefPlane_HD0_left + SVTDiskRefPlane_HD0_right)/2"/>
+    <constant name="SVTDiskRefPlane_HD0_rin"  value="(SVTDiskRefPlane_HD0_right - SVTDiskRefPlane_HD0_left)/2"/>
+    <constant name="SVTDiskRefPlane_HD0_rout" value="InnerTrackerEndcapP_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_HD0_cx)"/>
+    <constant name="SVTDiskRefPlane_HD1_cx"   value="(SVTDiskRefPlane_HD1_left + SVTDiskRefPlane_HD1_right)/2"/>
+    <constant name="SVTDiskRefPlane_HD1_rin"  value="(SVTDiskRefPlane_HD1_right - SVTDiskRefPlane_HD1_left)/2"/>
+    <constant name="SVTDiskRefPlane_HD1_rout" value="TrackerEndcapPDisk1_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_HD1_cx)"/>
+    <constant name="SVTDiskRefPlane_HD2_cx"   value="(SVTDiskRefPlane_HD2_left + SVTDiskRefPlane_HD2_right)/2"/>
+    <constant name="SVTDiskRefPlane_HD2_rin"  value="(SVTDiskRefPlane_HD2_right - SVTDiskRefPlane_HD2_left)/2"/>
+    <constant name="SVTDiskRefPlane_HD2_rout" value="TrackerEndcapPDisk2_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_HD2_cx)"/>
+    <constant name="SVTDiskRefPlane_HD3_cx"   value="(SVTDiskRefPlane_HD3_left + SVTDiskRefPlane_HD3_right)/2"/>
+    <constant name="SVTDiskRefPlane_HD3_rin"  value="(SVTDiskRefPlane_HD3_right - SVTDiskRefPlane_HD3_left)/2"/>
+    <constant name="SVTDiskRefPlane_HD3_rout" value="TrackerEndcapPDisk3_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_HD3_cx)"/>
+    <constant name="SVTDiskRefPlane_HD4_cx"   value="(SVTDiskRefPlane_HD4_left + SVTDiskRefPlane_HD4_right)/2"/>
+    <constant name="SVTDiskRefPlane_HD4_rin"  value="(SVTDiskRefPlane_HD4_right - SVTDiskRefPlane_HD4_left)/2"/>
+    <constant name="SVTDiskRefPlane_HD4_rout" value="TrackerEndcapPDisk4_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_HD4_cx)"/>
+    <constant name="SVTDiskRefPlane_ED0_cx"   value="(SVTDiskRefPlane_ED0_left + SVTDiskRefPlane_ED0_right)/2"/>
+    <constant name="SVTDiskRefPlane_ED0_rin"  value="(SVTDiskRefPlane_ED0_right - SVTDiskRefPlane_ED0_left)/2"/>
+    <constant name="SVTDiskRefPlane_ED0_rout" value="InnerTrackerEndcapN_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_ED0_cx)"/>
+    <constant name="SVTDiskRefPlane_ED1_cx"   value="(SVTDiskRefPlane_ED1_left + SVTDiskRefPlane_ED1_right)/2"/>
+    <constant name="SVTDiskRefPlane_ED1_rin"  value="(SVTDiskRefPlane_ED1_right - SVTDiskRefPlane_ED1_left)/2"/>
+    <constant name="SVTDiskRefPlane_ED1_rout" value="TrackerEndcapNDisk1_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_ED1_cx)"/>
+    <constant name="SVTDiskRefPlane_ED2_cx"   value="(SVTDiskRefPlane_ED2_left + SVTDiskRefPlane_ED2_right)/2"/>
+    <constant name="SVTDiskRefPlane_ED2_rin"  value="(SVTDiskRefPlane_ED2_right - SVTDiskRefPlane_ED2_left)/2"/>
+    <constant name="SVTDiskRefPlane_ED2_rout" value="TrackerEndcapNDisk2_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_ED2_cx)"/>
+    <constant name="SVTDiskRefPlane_ED3_cx"   value="(SVTDiskRefPlane_ED3_left + SVTDiskRefPlane_ED3_right)/2"/>
+    <constant name="SVTDiskRefPlane_ED3_rin"  value="(SVTDiskRefPlane_ED3_right - SVTDiskRefPlane_ED3_left)/2"/>
+    <constant name="SVTDiskRefPlane_ED3_rout" value="TrackerEndcapNDisk3_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_ED3_cx)"/>
+    <constant name="SVTDiskRefPlane_ED4_cx"   value="(SVTDiskRefPlane_ED4_left + SVTDiskRefPlane_ED4_right)/2"/>
+    <constant name="SVTDiskRefPlane_ED4_rin"  value="(SVTDiskRefPlane_ED4_right - SVTDiskRefPlane_ED4_left)/2"/>
+    <constant name="SVTDiskRefPlane_ED4_rout" value="TrackerEndcapNDisk4_rmax + SVTDiskRefPlane_rmax_extra + abs(SVTDiskRefPlane_ED4_cx)"/>
+  </define>
+
+  <display>
+    <vis name="SVTDiskRefPlaneVis" alpha="0.4" r="0.85" g="0.10" b="0.10" visible="true" showDaughters="true"/>
+  </display>
+
+  <detectors>
+    <comment> Positive side, centred: HD0 (layer 0), HD1 (layer 1); HD0_cx = HD1_cx = 0 (validator) </comment>
+    <detector id="SVTDiskRefPlanesP_ID" name="SVTDiskRefPlanesP" type="epic_SolenoidEndcap"
+              readout="SVTDiskRefPlaneHits" vis="SVTDiskRefPlaneVis" reflect="false">
+      <position x="SVTDiskRefPlane_HD0_cx" y="0" z="0"/>
+      <type_flags type="DetType_TRACKER"/>
+      <layer id="0" vis="SVTDiskRefPlaneVis" inner_z="SVTDiskRefPlane_HD0_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_HD0_rin" outer_r="SVTDiskRefPlane_HD0_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+      <layer id="1" vis="SVTDiskRefPlaneVis" inner_z="SVTDiskRefPlane_HD1_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_HD1_rin" outer_r="SVTDiskRefPlane_HD1_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+    </detector>
+    <detector id="SVTDiskRefPlanesHD2_ID" name="SVTDiskRefPlanesHD2" type="epic_SolenoidEndcap"
+              readout="SVTDiskRefPlaneHits" vis="SVTDiskRefPlaneVis" reflect="false">
+      <position x="SVTDiskRefPlane_HD2_cx" y="0" z="0"/>
+      <type_flags type="DetType_TRACKER"/>
+      <layer id="0" vis="SVTDiskRefPlaneVis" inner_z="SVTDiskRefPlane_HD2_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_HD2_rin" outer_r="SVTDiskRefPlane_HD2_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+    </detector>
+    <detector id="SVTDiskRefPlanesHD3_ID" name="SVTDiskRefPlanesHD3" type="epic_SolenoidEndcap"
+              readout="SVTDiskRefPlaneHits" vis="SVTDiskRefPlaneVis" reflect="false">
+      <position x="SVTDiskRefPlane_HD3_cx" y="0" z="0"/>
+      <type_flags type="DetType_TRACKER"/>
+      <layer id="0" vis="SVTDiskRefPlaneVis" inner_z="SVTDiskRefPlane_HD3_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_HD3_rin" outer_r="SVTDiskRefPlane_HD3_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+    </detector>
+    <detector id="SVTDiskRefPlanesHD4_ID" name="SVTDiskRefPlanesHD4" type="epic_SolenoidEndcap"
+              readout="SVTDiskRefPlaneHits" vis="SVTDiskRefPlaneVis" reflect="false">
+      <position x="SVTDiskRefPlane_HD4_cx" y="0" z="0"/>
+      <type_flags type="DetType_TRACKER"/>
+      <layer id="0" vis="SVTDiskRefPlaneVis" inner_z="SVTDiskRefPlane_HD4_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_HD4_rin" outer_r="SVTDiskRefPlane_HD4_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+    </detector>
+
+    <comment> Negative side (reflect: layer centre at -(inner_z + thickness/2), so inner_z = |z_plane| - thickness/2) </comment>
+    <comment> Centred: ED0 (layer 0), ED1 (layer 1), ED2 (layer 2); ED0_cx = ED1_cx = ED2_cx = 0 (validator) </comment>
+    <detector id="SVTDiskRefPlanesN_ID" name="SVTDiskRefPlanesN" type="epic_SolenoidEndcap"
+              readout="SVTDiskRefPlaneHits" vis="SVTDiskRefPlaneVis" reflect="true">
+      <position x="SVTDiskRefPlane_ED0_cx" y="0" z="0"/>
+      <type_flags type="DetType_TRACKER"/>
+      <layer id="0" vis="SVTDiskRefPlaneVis" inner_z="-SVTDiskRefPlane_ED0_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_ED0_rin" outer_r="SVTDiskRefPlane_ED0_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+      <layer id="1" vis="SVTDiskRefPlaneVis" inner_z="-SVTDiskRefPlane_ED1_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_ED1_rin" outer_r="SVTDiskRefPlane_ED1_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+      <layer id="2" vis="SVTDiskRefPlaneVis" inner_z="-SVTDiskRefPlane_ED2_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_ED2_rin" outer_r="SVTDiskRefPlane_ED2_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+    </detector>
+    <detector id="SVTDiskRefPlanesED3_ID" name="SVTDiskRefPlanesED3" type="epic_SolenoidEndcap"
+              readout="SVTDiskRefPlaneHits" vis="SVTDiskRefPlaneVis" reflect="true">
+      <position x="SVTDiskRefPlane_ED3_cx" y="0" z="0"/>
+      <type_flags type="DetType_TRACKER"/>
+      <layer id="0" vis="SVTDiskRefPlaneVis" inner_z="-SVTDiskRefPlane_ED3_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_ED3_rin" outer_r="SVTDiskRefPlane_ED3_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+    </detector>
+    <detector id="SVTDiskRefPlanesED4_ID" name="SVTDiskRefPlanesED4" type="epic_SolenoidEndcap"
+              readout="SVTDiskRefPlaneHits" vis="SVTDiskRefPlaneVis" reflect="true">
+      <position x="SVTDiskRefPlane_ED4_cx" y="0" z="0"/>
+      <type_flags type="DetType_TRACKER"/>
+      <layer id="0" vis="SVTDiskRefPlaneVis" inner_z="-SVTDiskRefPlane_ED4_z - SVTDiskRefPlane_thickness/2"
+             inner_r="SVTDiskRefPlane_ED4_rin" outer_r="SVTDiskRefPlane_ED4_rout">
+        <slice material="Vacuum" thickness="SVTDiskRefPlane_thickness" sensitive="true" vis="SVTDiskRefPlaneVis"/>
+      </layer>
+    </detector>
+  </detectors>
+
+  <readouts>
+    <readout name="SVTDiskRefPlaneHits">
+      <id>system:8,barrel:3,layer:4,slice:4</id>
+    </readout>
+  </readouts>
+</lccdd>

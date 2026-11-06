@@ -421,3 +421,340 @@ in the smoke test, because some saved collections depend on those producers.
     mapping" is withdrawn until checked with true crossing points.
   * Next step under discussion: a zero-material sensitive plane in front of
     each disk to record the true crossing point and direction of every primary.
+
+- 2026-11-06: reference-plane campaign and analysis tooling prepared (nothing
+  submitted, no task list created). The planes themselves (SVTDiskRefPlaneHits,
+  refplanes/) are built by the geometry session; this entry covers only the
+  acceptance-study side. Interface used (refplanes/, read only):
+  generated/epic_craterlake_tracking_only_refplanes.xml, npsim_refplanes_steering.py,
+  plane_map.csv (planes 6 mm on the IP side, system 55/54 with barrel 2/3 and
+  layer 0-4 for ED/HD; rmin = disk XML *_rmin; rmax = disk rmax + 20 mm).
+  * run_sim.sh: opt-in env overrides ACC_XML (compact XML; default unchanged)
+    and ACC_STEERING (npsim --steeringFile, placed before the other options so
+    command-line options still win; default none). The sim log now also
+    prints "Compact XML:" / "Steering file:" and the sha256 of both. Checked
+    with a stub npsim (check_run_sim_overrides_20261106.sh,
+    logs/check_run_sim_overrides_20261106.txt): with no overrides the npsim
+    command line is identical to the original; overrides appear as intended;
+    a missing steering file exits 2. No real npsim run.
+  * prepare_acceptance_tasks_refplanes.sh: campaign acceptance_v3_refplanes,
+    vz = 0, +100, -100 mm x eta [0.6,3.8] / [-3.8,-0.6] x 50 chunks x 100k =
+    300 tasks, 30M events, mode sim, seeds 43000001-43005050 (v1
+    41000001-41005050, v2 42000001-42003050; the script also checks overlap
+    against every task_lists/*/manifest.tsv), each line prefixed
+    ACC_XML=<refplanes xml> ACC_STEERING=<refplanes steering>. Real mode
+    refuses if those files are missing. Tested only in dry-run mode
+    (DRY_RUN_TASK_ROOT; check_prepare_refplanes_dryrun_20261106.sh,
+    logs/check_prepare_refplanes_dryrun_20261106.txt): 300 lines, 300 unique
+    seeds and tags, 6 x 50 tasks, 5M events per configuration, no overlap.
+    Dry-run output retained in tmp/retained/2026-11-06/ (2 dirs; the first
+    attempt stopped on a SIGPIPE in the audit script, logged).
+    Wall time: 300 tasks on 4 x 90 slots = one wave at 75 tasks/node, same
+    packing as acceptance_v1. Measured npsim time per 100k task (sim logs
+    Started/Finished): v1 mean 2h23 max 2h38 (75/node), v2 mean 2h23 max 2h43
+    (67/node). The default 3:00 limit leaves only ~15-20 min margin on the
+    slowest task; submit with --time=03:30:00 as for v2.
+  * extract_disk_particles_refplanes.py (+ run_extract_refplanes.sh <vz>):
+    sibling of extract_disk_particles.py (unchanged); silicon fields come from
+    the original append_block(). Adds per disk: plane_mask (plane_reached
+    bits), plane_crossings, first crossing (earliest time) plane_{x,y,z}_mm,
+    plane_t_ns, plane_p{x,y,z}_GeV, plane_secondary_flagged. Accepted plane
+    hit = linked to a generatorStatus==1 pi+ and EDM4hep quality bit 30
+    (producedBySecondary) not set. Shard metadata: total / accepted /
+    dropped-not-primary / secondary-flagged / other-side plane-hit counts,
+    plane_map content and sha256. Mapping data-driven from plane_map.csv via
+    decoded (system, barrel, layer); unknown ids are an error. One extraction
+    root extracted/acceptance_v3_refplanes with one manifest per vertex.
+    Tests: (a) old file (v2 vz=+100 chunk 001, both sides, no plane
+    collection; check_extract_refplanes_oldfile_20261106.sh): all 16 particle
+    and silicon arrays bit-identical to the old shards, plane fields
+    empty/NaN, 7 s per 100k-event file. (b) Hand-made block
+    (check_extract_refplanes_synthetic_20261106.py): first crossing,
+    multiple crossings, secondary flag, other-side and unmapped ids behave as
+    specified. (c) Real smoke files (below).
+  * analyze_refplane_efficiency.py (+ run_refplane_efficiency.sh [vz...]):
+    definitions in the docstring. Denominator: primaries with plane_reached
+    on disk d; numerator: those with >=1 TrackerEndcapHits hit on d. True
+    point = first plane hit propagated straight along its own momentum to
+    z_disk (6 mm). Selections on the true point: reached (no cut); nomargin =
+    r < XML rmax and outside both buffered openings; fid = XML r_in + 30 <= r
+    < rmax - 40 (the old annulus, now on the true point). Momentum bins
+    [0.5,0.6,...,1.0,2,3,5,...,19,20]; the last bin 19-20 GeV is implemented
+    as [19, 20.01) to include the gun endpoint (user's choice of a 1 GeV last
+    bin). Outputs per vertex in results/refplane_efficiency_v1/vz_*/:
+    integrated and vs-p efficiencies, family A/B table (disks 2-4), the
+    decomposition reached/generated x hit/reached in the straight-line
+    acceptance and straight-line fiducial annulus, the comparison with the
+    v8 published straight-line fiducial numbers and with the old definition
+    recomputed on the same sample, histograms.npz, summary.txt, a PDF and
+    PNGs (overview, per disk: vs p + decomposition, 2D map, profiles vs y,
+    |y|, x, tan theta_x/y). Streams shard by shard.
+    Choices: 2D map 4 mm bins. Full statistics (5M per side) give a median
+    of ~50 primaries per 4 mm bin on D2-D4 (from the synthetic test, scaled),
+    i.e. ~3% per-bin error at 96%; 2 mm bins would give ~12. Row structure
+    (18 / 16.5 mm row spacing, mm-scale overlaps) is resolved in the 1 mm 1D
+    profiles, which have far more statistics. tan theta_x = px/|pz|,
+    tan theta_y = py/|pz| (positive = toward +x / +y on both sides).
+  * Row families: the A (36 mm) region is not symmetric in y. From the CSV
+    (row band = row_y +/- pitch/4), A covers ED2/HD2 -144..126, ED3
+    -180..162, ED4 -216..234, HD3 -207..207, HD4 -279..279 mm. The
+    efficiency vs signed y is therefore the primary plot; the |y| plot marks
+    both boundaries. check_row_family_y_convention_20261106.py
+    (logs/check_row_family_y_convention_20261106.txt) uses the +/-3 mm row
+    surface offsets seen in old silicon hit z. Result: CSV row_y is global y
+    on ED2-ED4 and HD2, the disks where the sign is testable. HD3/HD4 and
+    D0/D1 are mirror-symmetric, so the sign does not matter there.
+  * Synthetic chain test (check_refplane_analysis_synthetic_20261106.sh;
+    make_synthetic_refplane_shards_20261106.py; TOY plane fields on real old
+    silicon shards, 3 shards per side and vertex): runs end to end for
+    0/+100/-100 in 143 s (~3 s per shard, so ~15 min for the full
+    campaign). The straight-line fid efficiency recomputed by the new code
+    agrees with the v8 published values (e.g. vz=-100: HD4 95.73 vs 95.71, ED0 93.89 vs 93.98; 3 shards only). No
+    physics content.
+  * Real smoke files (geometry session, /pscratch/.../refplanes/smoke/,
+    4 x 100 events, vz = 0 and +100 only; check_refplanes_smoke_chain_20261106.sh,
+    validate_refplanes_shards_20261106.py,
+    logs/check_refplanes_smoke_chain_20261106.txt; outputs in
+    tmp/refplanes_smoke_chain_20261106/). Extraction, validation and analysis
+    all ran. Plane hit z equals z_plane exactly; |p_plane|/p_gen median
+    1.000 (min 0.985); all first-crossing times > 0; no multiple crossings in
+    400 events; true point vs mean silicon hit median 0.4-1.7 mm (90%
+    <= 3 mm), consistent with the +/-3 mm corrugation and module overlaps.
+    Per 100 events: 418-1143 plane hits, 77-805 dropped (secondaries), 1-11
+    primary-linked hits flagged producedBySecondary (excluded). One primary
+    has a silicon hit with no plane crossing: HD4, r = 54 mm, below the HD4
+    plane rmin (63.5 mm).
+  * FINDING for the geometry session: plane rmin = XML *_rmin, the circle
+    circumscribing both offset openings. On HD3/HD4 (not on ED3/ED4/HD2,
+    whose silicon starts outside plane rmin) the silicon reaches smaller radii on the side away from the
+    hadron-opening offset. In the old z=0 extraction about 1% of HD4
+    silicon-hit primaries have r < 60.7 mm (plane rmin 63.5), and about 0.1%
+    of HD3 have r < 50.6 mm (plane rmin 52.3). Such particles never enter
+    the denominator, so the inner edge of HD3/HD4 is not sampled in the
+    nomargin selection. The fid selection (r >= r_in + 30) is unaffected.
+    Either accept this, or give the planes the opening shape (or the
+    lepton-opening radius) as the inner boundary.
+  * Interpretation note: on the smoke files, nomargin efficiency (~75-90%)
+    is far below fid (~97-100%). The XML envelope includes regions that the
+    tiling does not cover: around the openings (a square-ish untiled
+    region, visible in the synthetic 2D maps) and near rmax. So nomargin
+    measures coverage of the XML envelope, not tile gaps alone. The fid and
+    A/B numbers in the tiled region are the ones to compare with the
+    collaborator's ~2% expectation.
+  * Not done / pending: the real task list and submission (needs the user),
+    the campaign extraction and analysis, and a vz = -100 mm smoke test
+    (none exists; the analysis code is identical for that vertex).
+  * Update, v2 plane geometry (2026-11-06, after the geometry session's
+    Step 9 v2; logs/rsu_opt_endcap_20261004.md Step 9). The FINDING above
+    (HD3/HD4 plane holes) is resolved: v2 planes are off-centre annuli
+    about the smallest circle enclosing both openings. There are 7 plane
+    detectors: 54 = HD0/HD1 (layers 0/1), 55 = ED0-ED2 (layers 0-2),
+    56/57/58 = HD2/HD3/HD4, 86/87 = ED3/ED4 (layer 0), with barrel 3 (HD) or
+    2 (ED). plane_map.csv gains center_x_mm, center_y_mm,
+    r_inner/r_outer_about_center_mm, uncovered_*, note.
+    - Extractor: no logic change was needed, because the mapping is
+      already keyed on (system, barrel, layer) through plane_map.csv.
+      Verified that all 10 v2 ids map to the right disk; docstring updated.
+    - Analysis: it never assumed centred planes, because the selections
+      use the disk XML boundaries. New: it reads the plane annulus about
+      its centre (a 9-column map falls back to a centred annulus), counts
+      first crossings off the annulus (first_crossing_off_plane, must be
+      0), draws the plane edges on the 2D maps, and prints the min as well
+      as the median of |p_plane|/p_gen. Nothing assumes
+      |p_plane| ~ |p_gen|; the propagation uses the plane momentum
+      direction.
+    - Validator: same off-plane test, plus an OVERALL PASS/FAIL line.
+      Synthetic generator: on-plane test about the centre. The synthetic
+      test was NOT rerun after these edits; the real smoke chain below
+      exercises the same code.
+    - The v1-plane smoke-chain output and report were moved to
+      tmp/retained/2026-11-06/ (logged).
+    - Rerun check_refplanes_smoke_chain_20261106.sh on the 6 v2 smoke
+      files (vz = 0, +100, -100; both eta signs; 100 events each; the
+      -100 pair is new). Report: logs/check_refplanes_smoke_chain_20261106.txt.
+      Result: OVERALL PASS, 0 problems.
+      0 silicon-hit primaries without a plane crossing (HD4 included); 0
+      first crossings off the annulus; plane z = z_plane exactly; all times
+      > 0; no multiple crossings. |p_plane|/p_gen median 1.000, but the
+      minimum is 0.841 on HD3/HD4 (vz=0 fwd: the interacted primary the
+      geometry session reported). True point vs mean silicon hit median
+      0.4-2.0 mm (90% <= 3.2 mm). Primary-linked fraction of plane hits:
+      55-81% per file (e.g. vz0_fwd 352 accepted, 277 dropped, 9 flagged
+      out of 641). HD4 first crossings reach r = 470 mm (the off-centre
+      r_outer is 462 about x = -12.2). Analysis wrote all three vertex
+      directories (39 files each); fid efficiencies are 94-100% with
+      N ~ 30-50 per disk, so there is no statistical content.
+  * Campaign status (from the coordinator): acceptance_v3_refplanes
+    (task_lists/acceptance_v3_refplanes, 300 tasks, sim only) was
+    generated and submitted by the coordinator as Slurm job 60887803
+    (premium, 4 nodes, --time=03:30:00) at about 05:00 UTC on 2026-11-06.
+    A 20-event pre-campaign run through run_sim.sh with the ACC_XML /
+    ACC_STEERING overrides succeeded, with plane hits at all 10 plane z
+    values (report proj_svt_disk_tiling/refplanes/precampaign_runsim_test.txt;
+    run by the coordinator/geometry session, not by this session).
+    Campaign extraction not started; jobs still running.
+
+## 2026-11-06 morning summary: true-crossing (reference-plane) efficiency, acceptance_v3_refplanes
+
+Written by the coordinating session. Numbers are copied from
+`results/refplane_efficiency_v1/vz_*/summary.txt`; nothing was rerun by hand.
+
+**Runs**
+- Slurm 60887803: COMPLETED in 02:40:23, exit 0.
+  - 300/300 task logs end with "=== Completed task"; no Traceback, fatal or
+    G4Exception lines.
+  - 300 sim files of about 160 MB each in
+    /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v3_refplanes/.
+- Extraction: `./run_extract_refplanes.sh 0|100|-100`, run in parallel,
+  2026-11-06 07:40 UTC. Logs: `logs/extract_refplanes_vz_*_20261106T074007Z.log`.
+- Analysis: `./run_refplane_efficiency.sh`. Log:
+  `logs/refplane_efficiency_20261106T075625Z.log`.
+- Each vertex has 100 shards and 10M primaries.
+
+**Gates**
+- First crossings off the plane annulus: 0 on every disk and vertex. PASS.
+- |plane z − z_plane| < 0.05 mm everywhere.
+- Median |p_plane|/p_gen is 0.9996–0.9999.
+- Median |true point − mean silicon hit| is 0.41–1.78 mm.
+- Silicon-hit primaries without a plane crossing: 0–12 per disk, out of about
+  3M reached, so ≤ 4e-6. This is not exactly 0 as in the 100-event smoke
+  test; likely scattered or curling entries, not inspected.
+- Multi-crossing primaries: ≤ 14 per disk. Negligible.
+
+**Main result (vz = 0)**
+Fiducial efficiency (true crossing point inside the 30/40 mm fiducial
+margins; denominator = plane reached):
+
+| disk | old straight-line fid (this sample) | true-point fid | diff (pts) |
+|---|---|---|---|
+| ED4 | 96.41 | 98.31 | +1.91 |
+| ED3 | 96.58 | 98.25 | +1.67 |
+| ED2 | 96.66 | 98.04 | +1.37 |
+| ED1 | 96.52 | 97.57 | +1.05 |
+| ED0 | 96.62 | 97.42 | +0.80 |
+| HD0 | 96.23 | 97.41 | +1.18 |
+| HD1 | 96.10 | 97.55 | +1.45 |
+| HD2 | 96.36 | 98.11 | +1.76 |
+| HD3 | 96.29 | 98.35 | +2.07 |
+| HD4 | 96.08 | 98.39 | +2.31 |
+
+Statistical errors are ±0.01 pts. The old fid values in this sample
+reproduce the published v8 values to within 0.03 pts.
+
+- **Decomposition.** Old straight-line fid = (fraction that reaches the plane)
+  × (hit given reached).
+  - Reached fraction: 97.7–99.2%.
+  - Hit given reached: equals the true-point fid to within 0.01 pts.
+  - So the old 3.4–3.9% inefficiency was about half "never got there"
+    (multiple scattering, curling and interactions before the disk, larger
+    for the far disks) and half genuine module or coverage loss.
+- **Momentum dependence.**
+  - The true-point fid is flat in p: within about 0.3 pts from 0.5 to 20 GeV
+    on every disk.
+  - The old definition's low-p deficit disappears. At 0.5–0.6 GeV the
+    old-minus-new difference was −5.2 pts on ED4 and −2.0 pts on ED0/HD0.
+  - Remaining inefficiency is about 1.6–2.6%. It comes from row gaps (visible
+    as horizontal bands in the xy maps) and the retained inactive strips.
+- **A (36 mm) vs B (33 mm) rows, fid, vz = 0.**
+  - A ≈ 98.3% on all of ED2–ED4 and HD2–HD4.
+  - B is lower on ED2/HD2 (97.52 / 97.75) and ED3/HD3 (98.13 / 98.24).
+  - B equals A within errors on ED4/HD4.
+  - The B-only disks ED0/ED1/HD0/HD1 are at 97.4–97.6%.
+- **Vertex dependence.**
+  - Within about 0.8 pts of vz = 0, except the disk nearest the vertex:
+    - HD0 at vz = +100: 94.43% (vz = 0: 97.41);
+    - ED0 at vz = −100: 94.43% (vz = 0: 97.42).
+  - These are symmetric, as they should be.
+  - The HD0 map at vz = +100 shows wider, darker row-gap bands. Plane-to-vertex
+    distance is 144 mm, so tanθ reaches about 1.3 at the fid edge. Steep
+    incidence in y appears to defeat the row overlap. This is a physical
+    geometry effect, not an analysis fault (to be confirmed by the user).
+- **nomargin and reached selections (71–89%).**
+  - These use the XML disk envelope, so they include untiled area.
+  - They are not module efficiencies. A tiling-footprint boundary is needed if
+    a no-margin number is wanted.
+
+**Outputs:** `results/refplane_efficiency_v1/vz_{000,p100,m100}mm/` holds,
+per vertex:
+- `summary.txt`;
+- CSVs: integrated efficiency, efficiency vs p, decomposition vs p, family A/B,
+  comparison with the straight-line result;
+- per-disk xy maps, profiles (x, y, tanθx, tanθy) and vs-p PNGs;
+- an overview PNG, a combined PDF and `histograms.npz`.
+
+**Open items for the user (morning)**
+1. Visual check of the overlay geometry:
+   `proj_svt_disk_tiling/refplanes/out_9c/detector_geometry.root`.
+2. Review the HD0 (+100) and ED0 (−100) row-gap loss at steep incidence.
+3. Decide whether to define a tiling-footprint (no-margin) boundary.
+4. The family-A y range is asymmetric on ED2/HD2/ED3/ED4 (for example ED4 A is
+   [−216, 234) mm). Check that this matches the delivered row layout.
+5. Still deferred: eicrecon/ACTS with the overlay (unverified), and a new
+   material map (needed after Step 8q in any case).
+- Nothing was committed in either repository.
+
+## 2026-11-06: "active" selection replaces "reached" (refplane_efficiency_v2)
+
+User request: replace the no-cut "reached" selection with the active-silicon
+boundary. User choice: use the filled outline, so that gaps inside it count as
+inefficiency.
+
+**Active-silicon rectangles from the built geometry**
+- Scripts: `dump_active_silicon_rectangles.py` and the wrapper
+  `run_dump_active_silicon.sh`. They run in eic_xl:26.09.0-stable on the
+  local install, EPIC commit 311634084.
+- Output: `geometry/active_silicon_rectangles.csv`. Log:
+  `logs/dump_active_silicon_20261106T153907Z.log`.
+- 152,628 sensitive boxes, all TGeoBBox, each 3.571 × 9.197 mm, all
+  axis-aligned. Sensor centres are at z_disk ± 3.6 mm.
+- Checks:
+  - Per-disk box area equals catalogue `total_active_area_mm2` × (1 − 0.01749)
+    on every disk.
+  - x and y extents equal the metadata `sensor_max_x/y_mm`.
+- Gap survey of the union of both faces, on a 0.1 mm raster:
+  - interior gaps ≤ 0.7 mm only;
+  - 14.5–18.5 mm notches at row ends of the outer staircase, which are not
+    interior.
+
+**Selection in `analyze_refplane_efficiency.py`**
+- `active` = plane reached AND the true point is inside the filled outline.
+- Building the outline:
+  1. union of the boxes on a 0.5 mm raster;
+  2. binary closing with a 1 mm radius;
+  3. fill the enclosed holes;
+  4. reopen the hole that contains a beam-pipe opening centre.
+- New options: `--active-csv`, `--active-grid-mm` (0.5) and
+  `--active-close-mm` (1.0).
+- Outline area vs raw union: +3%, from raster seams and slivers.
+- Maps: still all primaries that reached the plane. The outline is now drawn in
+  orange.
+- New diagnostic: silicon-hit primaries whose true point lies outside the
+  outline.
+  - 0.15–0.3% on disks 2–4, 0.4% on disk 1, about 1% on disk 0.
+  - At ±100 mm, up to 1.8% on the disk nearest the vertex.
+  - These are edge effects of projecting to z_disk rather than to the sensor
+    face.
+- Command: `OUTPUT_DIR=results/refplane_efficiency_v2 ./run_refplane_efficiency.sh`.
+  Log: `logs/refplane_efficiency_20261106T161039Z.log`.
+- v1 is untouched. In v2 the nomargin and fid numbers are identical to v1.
+
+**Active efficiency [%] (errors ±0.01–0.02)**
+
+| disk | vz 0 | vz +100 | vz −100 |
+|---|---|---|---|
+| ED4 | 98.11 | 98.13 | 98.08 |
+| ED3 | 98.01 | 98.07 | 97.92 |
+| ED2 | 97.78 | 97.94 | 97.51 |
+| ED1 | 97.36 | 97.75 | 96.62 |
+| ED0 | 96.83 | 97.74 | 94.02 |
+| HD0 | 96.80 | 93.93 | 97.72 |
+| HD1 | 97.33 | 96.61 | 97.75 |
+| HD2 | 97.87 | 97.65 | 97.99 |
+| HD3 | 98.20 | 98.13 | 98.23 |
+| HD4 | 98.26 | 98.23 | 98.26 |
+
+**Observations**
+- Active efficiency is 0.1–0.6 points below fid. Including the beam-pipe and
+  outer module edges costs little, most on ED0/HD0.
+- A vs B rows at vz 0: A is 98.0–98.3%; B is lower on every disk, by 0.15
+  points on ED4 up to 0.84 points on ED2.

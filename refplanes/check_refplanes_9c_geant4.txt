@@ -1,0 +1,25 @@
+Started: 2026-11-06T04:31:35+00:00
+Overlay XML: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+sha256: d7dcf158624e11360926a6bf6011b45978dfbd41f2bae01c1ec9134aee45c339
+Plane XML sha256: 172cc1e1f9fa9c8ad12b1cf898a694b220a68845d12758f8099a55e062a64631
+EPIC commit: 311634084f0ff4229c25d6e8cadb6ff9c497c5d8
+checkOverlaps.py exit status: 0
+Geant4 GeomVol1002 overlap warnings: 0
+G4Exception lines: 0
+-- tail of raw log --
+Geant4UI         INFO  +++ ConstructGeometry> Install Geant4 control directory:/ddg4/ConstructGeometry/
+
+ hInelastic QGSP_BERT  Thresholds: 
+    1) between BERT  and FTF/P over the interval 3 to 6 GeV. 
+    2) between FTF/P and QGS/P over the interval 12 to 25 GeV. 
+  -- quasiElastic: 1 for QGS  and 0 for FTF
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+UI               INFO  ++ Executing pre-run statement: /geometry/test/resolution 10000
+UI               INFO  ++ Executing pre-run statement: /geometry/test/tolerance 0.1
+UI               INFO  ++ Executing pre-run statement: /geometry/test/verbosity 0
+UI               INFO  ++ Executing pre-run statement: /geometry/test/run
+Running geometry overlaps check...
+Geometry overlaps check completed !
+
+Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
+Finished: 2026-11-06T04:49:52+00:00

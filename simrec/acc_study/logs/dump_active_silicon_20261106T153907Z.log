@@ -1,0 +1,4 @@
+Started: Fri Nov  6 03:39:07 PM UTC 2026 ; xml: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml ; EPIC commit: 311634084
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+SENSITIVE_BOXES 152628 {'ED0': 4944, 'ED1': 16776, 'ED2': 18432, 'ED3': 18360, 'ED4': 18228, 'HD0': 4944, 'HD1': 16776, 'HD2': 18432, 'HD3': 17952, 'HD4': 17784}
+Finished: Fri Nov  6 03:40:01 PM UTC 2026

@@ -1,0 +1,24 @@
+ED0 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (0.00, 0.00, 36.76), (0.00, 0.00, 230.00)
+ED0 fiducial annulus: 66.8 <= R < 190.0 mm
+ED1 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (0.00, 0.00, 36.76), (0.00, 0.00, 405.00)
+ED1 fiducial annulus: 66.8 <= R < 365.0 mm
+ED2 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (0.00, 0.00, 36.76), (0.00, 0.00, 430.00)
+ED2 fiducial annulus: 66.8 <= R < 390.0 mm
+ED3 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 38.50), (21.38, 0.00, 19.29), (0.00, 0.00, 430.00)
+ED3 fiducial annulus: 70.7 <= R < 390.0 mm
+ED4 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 38.50), (25.63, 0.00, 19.29), (0.00, 0.00, 430.00)
+ED4 fiducial annulus: 74.9 <= R < 390.0 mm
+HD0 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (0.00, 0.00, 36.76), (0.00, 0.00, 230.00)
+HD0 fiducial annulus: 66.8 <= R < 190.0 mm
+HD1 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (0.00, 0.00, 36.76), (0.00, 0.00, 405.00)
+HD1 fiducial annulus: 66.8 <= R < 365.0 mm
+HD2 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (-0.99, 0.00, 40.04), (0.00, 0.00, 430.00)
+HD2 fiducial annulus: 71.0 <= R < 390.0 mm
+HD3 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (-6.62, 0.00, 45.66), (0.00, 0.00, 430.00)
+HD3 fiducial annulus: 82.3 <= R < 390.0 mm
+HD4 boundary circles (x_c, y_c, r) [mm]: (0.00, 0.00, 36.76), (-12.24, 0.00, 51.28), (0.00, 0.00, 430.00)
+HD4 fiducial annulus: 93.5 <= R < 390.0 mm
+vz_m100mm_eta_m3p8_to_m0p6: reading 50 shards
+vz_m100mm_eta_p0p6_to_p3p8: reading 50 shards
+Wrote /global/cfs/projectdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/disk_hit_efficiency_v8_vz_m100mm/disk_hit_efficiency_vz_m100mm.pdf
+Wrote /global/cfs/projectdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/disk_hit_efficiency_v8_vz_m100mm/disk_hit_efficiency_summary.csv

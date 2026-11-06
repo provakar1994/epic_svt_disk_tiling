@@ -232,3 +232,21 @@ reusable particle dataset. Each reduction then produces:
 
 The full production validation requires 50 files and 5,000,000 selected events
 per eta side. Results from different generated vertices remain separate.
+
+## Reference-plane campaign (acceptance_v3_refplanes, prepared 2026-11-06)
+
+Zero-material planes 6 mm in front of each disk (collection
+`SVTDiskRefPlaneHits`, geometry in `../../refplanes/`) give the true crossing
+point and direction of every primary. Chain:
+
+```text
+prepare_acceptance_tasks_refplanes.sh   -> task_lists/acceptance_v3_refplanes (300 sim tasks)
+sbatch --time=03:30:00 submit_premium_packed.sh task_lists/acceptance_v3_refplanes/tasks.txt
+./run_extract_refplanes.sh 0|100|-100   -> extracted/acceptance_v3_refplanes (extract_disk_particles_refplanes.py)
+./run_refplane_efficiency.sh            -> results/refplane_efficiency_v1/vz_*/ (analyze_refplane_efficiency.py)
+```
+
+`run_sim.sh` accepts the opt-in overrides `ACC_XML` and `ACC_STEERING`; unset,
+it behaves exactly as before. Definitions are in the docstring of
+`analyze_refplane_efficiency.py` and in the 2026-11-06 entry of
+`acceptance_study_20261026.md`.

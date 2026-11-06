@@ -1,0 +1,12 @@
+Started: 2026-11-06T04:31:37+00:00
+Overlay XML: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+sha256: d7dcf158624e11360926a6bf6011b45978dfbd41f2bae01c1ec9134aee45c339
+Plane XML sha256: 172cc1e1f9fa9c8ad12b1cf898a694b220a68845d12758f8099a55e062a64631
+EPIC commit: 311634084f0ff4229c25d6e8cadb6ff9c497c5d8
+dd_web_display exit status: 0
+export files in /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/out_9c:
+-rw-rw---- 1 pdatta m3763 3964345 Nov  5 20:31 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/out_9c/detector_geometry.root
+checkOverlaps exit status: 0
+ROOT 'ovlp' lines: 0
+Info in <TGeoNodeMatrix::CheckOverlaps>: Number of illegal overlaps/extrusions : 0 found in 0.593275 [sec]
+Finished: 2026-11-06T04:31:53+00:00

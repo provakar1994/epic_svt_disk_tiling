@@ -1,0 +1,36 @@
+<lccdd>
+  <comment>
+    Feasibility test (Step 9b-v2): can stock DD4hep_VolumeAssembly build a sensitive Vacuum
+    plane whose shape is Tube(0, rmax) minus the disk's lepton and hadron openings, with a
+    readout and volume ids? HD4 and ED4 only; ids 56 (not used by the real overlay).
+  </comment>
+  <detectors>
+    <detector id="56" name="RefPlaneVATest" type="DD4hep_VolumeAssembly" readout="RefPlaneVATestHits"
+              vis="TrackerVis">
+      <sensitive type="tracker"/>
+      <volume name="RefPlaneVATest_HD4_vol" material="Vacuum" vis="TrackerVis" sensitive="true">
+        <shape type="BooleanShape" operation="Subtraction">
+          <shape type="BooleanShape" operation="Subtraction">
+            <shape type="Tube" rmin="0" rmax="TrackerEndcapPDisk4_rmax + 20*mm" dz="0.05*mm"/>
+            <shape type="Tube" rmin="0" rmax="TrackerEndcapPDisk4_lepton_radius" dz="0.1*mm"/>
+            <position x="TrackerEndcapPDisk4_lepton_center_x" y="TrackerEndcapPDisk4_lepton_center_y" z="0"/>
+          </shape>
+          <shape type="Tube" rmin="0" rmax="TrackerEndcapPDisk4_hadron_radius" dz="0.1*mm"/>
+          <position x="TrackerEndcapPDisk4_hadron_center_x" y="TrackerEndcapPDisk4_hadron_center_y" z="0"/>
+        </shape>
+      </volume>
+      <envelope type="Assembly">
+        <physvol logvol="RefPlaneVATest_HD4_vol">
+          <position x="0" y="0" z="1194*mm"/>
+          <physvolid field_name="barrel" value="3"/>
+          <physvolid field_name="layer" value="4"/>
+        </physvol>
+      </envelope>
+    </detector>
+  </detectors>
+  <readouts>
+    <readout name="RefPlaneVATestHits">
+      <id>system:8,barrel:3,layer:4,slice:4</id>
+    </readout>
+  </readouts>
+</lccdd>

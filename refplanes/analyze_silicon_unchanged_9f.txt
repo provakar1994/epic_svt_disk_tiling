@@ -1,0 +1,25 @@
+Started: 2026-11-06T04:53:36+00:00
+      4 npsim exit status: 0
+sim_installed_bwd.log: random.seed 202 /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+sim_installed_fwd.log: random.seed 201 /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+sim_overlay_bwd.log: random.seed 202 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+sim_overlay_fwd.log: random.seed 201 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/generated/epic_craterlake_tracking_only_refplanes.xml
+sim_installed_fwd.root: 10000 primaries, 29889 primary-linked TrackerEndcapHits
+sim_overlay_fwd.root: 10000 primaries, 29813 primary-linked TrackerEndcapHits
+sim_installed_bwd.root: 10000 primaries, 31216 primary-linked TrackerEndcapHits
+sim_overlay_bwd.root: 10000 primaries, 31004 primary-linked TrackerEndcapHits
+disk  n_installed  k_installed  f_installed  n_overlay  k_overlay  f_overlay    diff  sigma       z   ok
+ HD0        10000         3829       0.3829      10000       3812     0.3812 -0.0017 0.0069 -0.2474 True
+ HD1        10000         5662       0.5662      10000       5607     0.5607 -0.0055 0.0070 -0.7842 True
+ HD2        10000         5650       0.5650      10000       5614     0.5614 -0.0036 0.0070 -0.5132 True
+ HD3        10000         5469       0.5469      10000       5393     0.5393 -0.0076 0.0070 -1.0788 True
+ HD4        10000         5284       0.5284      10000       5295     0.5295  0.0011 0.0071  0.1558 True
+ ED0        10000         3815       0.3815      10000       3761     0.3761 -0.0054 0.0069 -0.7872 True
+ ED1        10000         5623       0.5623      10000       5623     0.5623  0.0000 0.0070  0.0000 True
+ ED2        10000         5789       0.5789      10000       5775     0.5775 -0.0014 0.0070 -0.2005 True
+ ED3        10000         5902       0.5902      10000       5867     0.5867 -0.0035 0.0070 -0.5029 True
+ ED4        10000         5880       0.5880      10000       5827     0.5827 -0.0053 0.0070 -0.7607 True
+
+max |z| = 1.08
+Step 9f silicon-unchanged gate (|z| < 3 on every disk): PASS
+exit status: 0

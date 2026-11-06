@@ -1,0 +1,22 @@
+Compact          INFO  ++ Converted subdetector:RefPlaneVATest of type DD4hep_VolumeAssembly [sensitive]
+DDG4             INFO +++  RefPlaneVATest                   type:sensitive     --> Sensitive type: Unknown                         
+DDSim            INFO getDetectorLists - found active detector RefPlaneVATest type: sensitive
+DDSim            INFO getDetectorLists - Identified RefPlaneVATest as a tracker
+DDSim            INFO Setting up SD for RefPlaneVATest with ('Geant4TrackerWeightedAction', {'HitPositionCombination': 2, 'CollectSingleDeposits': False})
+Geant4UI         INFO  +++ RefPlaneVATest> Install Geant4 control directory:/ddg4/RefPlaneVATest/
+Geant4UI         INFO  +++ RefPlaneVATestHandler> Install Geant4 control directory:/ddg4/RefPlaneVATestHandler/
+RefPlaneVATestHandler FATAL +++ Invalid CELL ID for hit!
+DDSim            ERROR Simulation failed!
+Geant4Kernel     FATAL +++ Exception while simulating:+++ Invalid CELL ID for hit!
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/global/homes/p/pdatta/.conda/envs/tracking/lib/python3.11/site-packages/uproot/reading.py", line 2137, in __getitem__
+    return self.key(where).get()
+           ^^^^^^^^^^^^^^^
+  File "/global/homes/p/pdatta/.conda/envs/tracking/lib/python3.11/site-packages/uproot/reading.py", line 2079, in key
+    raise uproot.KeyInFileError(
+uproot.exceptions.KeyInFileError: not found: 'events' (with any cycle number)
+
+    Available keys: 'podio_metadata;1'
+
+in file /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes/tests/va_test_20261106T042011Z.root

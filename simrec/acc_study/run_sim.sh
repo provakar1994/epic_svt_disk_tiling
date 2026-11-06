@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Run one acceptance-study simulation, reconstruction, or both.
 # Usage: run_sim.sh sim|recon|both OUTPUT_DIR TAG EVENTS VERTEX_Z_MM ETA_MIN ETA_MAX SEED
+# Optional environment overrides (unset = the original behaviour):
+#   ACC_XML       compact XML for npsim/eicrecon (default $DETECTOR_PATH/epic_craterlake_tracking_only.xml)
+#   ACC_STEERING  npsim --steeringFile (default: none). Command-line options below
+#                 still take precedence over values set in the steering file.
 set -euo pipefail
 
 show_usage() {
@@ -39,7 +43,8 @@ set -u
 export DETECTOR_PATH="$repo_root/install/share/epic"
 export OMP_NUM_THREADS=1
 
-xml="$DETECTOR_PATH/epic_craterlake_tracking_only.xml"
+xml="${ACC_XML:-$DETECTOR_PATH/epic_craterlake_tracking_only.xml}"
+steering_file="${ACC_STEERING:-}"
 material_map="$repo_root/scripts/material_map/step8m_20261020T164956Z_material-map_map.cbor"
 root_dir="$output_dir/rootfiles"
 log_dir="$output_dir/logs"
@@ -49,6 +54,11 @@ sim_log="$log_dir/sim_${tag}.log"
 recon_log="$log_dir/rec_${tag}.log"
 
 [[ -f "$xml" ]] || { echo "ERROR: compact XML not found: $xml" >&2; exit 2; }
+[[ -z "${ACC_XML:-}" ]] || xml="$(realpath -e -- "$xml")"
+if [[ -n "$steering_file" ]]; then
+  [[ -f "$steering_file" ]] || { echo "ERROR: steering file not found: $steering_file" >&2; exit 2; }
+  steering_file="$(realpath -e -- "$steering_file")"
+fi
 if [[ "$mode" != sim && ! -s "$material_map" ]]; then
   echo "ERROR: material map not found: $material_map" >&2; exit 2
 fi
@@ -74,7 +84,11 @@ temporary_recon_file="${recon_file%.root}.tmp.${job_id}.${rank}.root"
 }
 
 npsim_command=(
-  npsim --compactFile "$xml" --outputFile "$temporary_sim_file"
+  npsim
+)
+if [[ -n "$steering_file" ]]; then npsim_command+=(--steeringFile "$steering_file"); fi
+npsim_command+=(
+  --compactFile "$xml" --outputFile "$temporary_sim_file"
   --numberOfEvents "$events" --random.seed "$random_seed" --enableGun
   --gun.phiMin "0*degree" --gun.phiMax "360*degree"
   --gun.distribution eta --gun.etaMin "$eta_min" --gun.etaMax "$eta_max"
@@ -118,7 +132,9 @@ if [[ "$mode" != recon ]]; then
     printf 'Tag: %s\nEvents: %s\nVertex z: %s mm\nEta: [%s, %s]\nSeed: %s\n' \
       "$tag" "$events" "$vertex_z_mm" "$eta_min" "$eta_max" "$random_seed"
     printf 'Command:'; printf ' %q' "${npsim_command[@]}"; printf '\n'
+    printf 'Compact XML: %s\nSteering file: %s\n' "$xml" "${steering_file:-none}"
     sha256sum "$xml"
+    [[ -z "$steering_file" ]] || sha256sum "$steering_file"
     "${npsim_command[@]}"
     echo "Finished: $(date --iso-8601=seconds)"
   } > "$sim_log" 2>&1 || { status=$?; echo "ERROR: npsim failed; see $sim_log" >&2; exit "$status"; }

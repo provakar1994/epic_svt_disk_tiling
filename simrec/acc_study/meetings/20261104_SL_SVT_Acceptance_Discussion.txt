@@ -1,0 +1,1956 @@
+
+13:55:19 --> 13:55:21
+Provakar Datta: Okay, let me probably share here.
+
+13:55:20 --> 13:55:22
+Shujie Li: Heat efficiency? Okay, yeah.
+
+13:55:22 --> 13:55:37
+Provakar Datta: Yeah. So, this is what I showed before, right? This is, like, the, the material… let me first show the material scan, because that's the easiest one. So, this is what I had with the existing script, but answered one, like, disk by disk.
+
+13:55:37 --> 13:55:54
+Provakar Datta: and stuff, right? So that's what I have been… I have done here. So let me show you the plots first. It takes a little long… a little time, but it's here. So here, so this is ED4, right? So this is ETA versus Pi. Hopefully you can see my screen.
+
+13:55:54 --> 13:56:09
+Provakar Datta: And this is X versus Y, but what it's being done here is just, you know, it's converting eta to R, basically. Like, we're using the formula, like, using the Z vertex and Z of the disk, you know, and the sine hyperbolic.
+
+13:56:05 --> 13:56:07
+Shujie Li: Yep.
+
+13:56:08 --> 13:56:13
+Shujie Li: That is cool, that is cool. And this is for only one surface, right?
+
+13:56:12 --> 13:56:30
+Provakar Datta: this is for… yeah, this is so… so it has, yeah, it has a cut on both Z and R, so that's how it selects the disks, and then these red circles are basically showing the actual boundaries from the XML files. And so this is the, you know, like, the,
+
+13:56:13 --> 13:56:16
+Shujie Li: Only one desk. Okay.
+
+13:56:17 --> 13:56:18
+Shujie Li: Yep.
+
+13:56:24 --> 13:56:26
+Shujie Li: Mmhm.
+
+13:56:30 --> 13:56:46
+Provakar Datta: X over X0 as a function of R for different material. So, it looks pretty good to me, because if you see, like, you know, if you see a phi for a given, like, you know, a given R, then this is what you should be seeing.
+
+13:56:47 --> 13:56:48
+Provakar Datta: And…
+
+13:56:47 --> 13:56:58
+Shujie Li: Let me, check one thing. So this is, you projected onto X, Y, or R, but this is still, what a track starting from zero will see, right?
+
+13:56:58 --> 13:57:01
+Provakar Datta: Yes. Yes.
+
+13:56:59 --> 13:57:01
+Shujie Li: Okay, great.
+
+13:57:01 --> 13:57:18
+Provakar Datta: Yeah, and then this is the material, decomposition. So, this is carbon fiber, so it is, like, 61.5% of the disks, X0, then silicon is the second highest, then the glue.
+
+13:57:09 --> 13:57:11
+Shujie Li: Aha.
+
+13:57:13 --> 13:57:15
+Shujie Li: Mmhm. Mmhm.
+
+13:57:18 --> 13:57:33
+Provakar Datta: the end cap glue, and then this is copper. So, copper is because, you know, like, it has a copper layer of 2.5 micrometers, then aluminum, and then cactin. And these features are basically where we have overlaps, right? So, and you can see
+
+13:57:18 --> 13:57:19
+Shujie Li: Mmhm.
+
+13:57:24 --> 13:57:25
+Shujie Li: Mmhm.
+
+13:57:28 --> 13:57:30
+Shujie Li: Okay.
+
+13:57:33 --> 13:57:38
+Provakar Datta: overlaps between two modules, like two AIC classes.
+
+13:57:38 --> 13:57:41
+Shujie Li: Wonderful. I think Ernst cannot ask for more.
+
+13:57:38 --> 13:57:39
+Provakar Datta: And then…
+
+13:57:41 --> 13:57:56
+Provakar Datta: Right, so… so this is ED4, this is, and this also shows the same things, but in, like, ETA5, if one needs to know in ETA5, and then this ED3, and I have it for, all… all disks.
+
+13:57:49 --> 13:57:50
+Shujie Li: Mmhm.
+
+13:57:56 --> 13:58:06
+Provakar Datta: So… yeah, it has a lot of plots, so that's the annoying part. Otherwise, I think it's pretty cool. And then this is HD4.
+
+13:58:03 --> 13:58:05
+Shujie Li: Oh.
+
+13:58:06 --> 13:58:22
+Provakar Datta: So yeah, I don't know what else, I could get out of it. But I sent these to Arns, and then asked him if he… if he finds anything that doesn't make sense, or… because it made total sense to me, right? Just looking at the geometry.
+
+13:58:21 --> 13:58:22
+Shujie Li: Yes.
+
+13:58:22 --> 13:58:31
+Provakar Datta: and then if he wants anything more, but he didn't really say anything, so I'm taking it as he doesn't want anything more. And then…
+
+13:58:29 --> 13:58:38
+Shujie Li: He's in Netherlands, and very busy. Well, I think he will… he will say, yeah, if he finds something, he will say it.
+
+13:58:38 --> 13:58:53
+Provakar Datta: Right. No, so I also sent him the acceptance study part afterwards. He responded quickly on that, so I'm now sure that he probably didn't want to say anything about the materials. Even if he does, it's fine.
+
+13:58:39 --> 13:58:40
+Shujie Li: Okay.
+
+13:58:46 --> 13:58:47
+Shujie Li: Okay.
+
+13:58:50 --> 13:58:52
+Shujie Li: Sure.
+
+13:58:53 --> 13:59:04
+Provakar Datta: So, but this is kind of what you were probably wanting to see, right? So this makes sense to you, like, these kind of details? Okay, cool.
+
+13:59:02 --> 13:59:03
+Shujie Li: Yep.
+
+13:59:04 --> 13:59:17
+Provakar Datta: And then the other part is the acceptance study. So, let me show you what I have. So, the plot… yeah, I have, like, a bunch of plots.
+
+13:59:08 --> 13:59:09
+Shujie Li: Aha.
+
+13:59:16 --> 13:59:19
+Shujie Li: Very well organized.
+
+13:59:17 --> 13:59:18
+Provakar Datta: But…
+
+13:59:19 --> 13:59:23
+Provakar Datta: Let me show you this first, because this is really cool.
+
+13:59:23 --> 13:59:25
+Shujie Li: Mmhm.
+
+13:59:23 --> 13:59:33
+Provakar Datta: So this is the summary. So basically what I am doing, I'll show this plot later. First, let me show this.
+
+13:59:30 --> 13:59:31
+Shujie Li: Aha.
+
+13:59:33 --> 13:59:38
+Provakar Datta: So this is, again, like, you know, where is the…
+
+13:59:38 --> 13:59:42
+Provakar Datta: Like, I wanna zoom out, how do I do that?
+
+13:59:42 --> 13:59:46
+Shujie Li: You have the button, yeah, exactly there, right?
+
+13:59:43 --> 13:59:44
+Provakar Datta: I mean.
+
+13:59:45 --> 14:00:02
+Provakar Datta: Yeah, so I need to hide this floating meeting… No, okay, cool. So, yeah, what's happening here… yes, so this is ED4, right? So, I have done this EDA5 mapping for disk, right? So, I have
+
+14:00:02 --> 14:00:12
+Provakar Datta: because I'm not doing any straight line projection or anything. So, so I have done this eta phi, so probably let me show you that plot here.
+
+14:00:13 --> 14:00:19
+Provakar Datta: Because this is where we started. So this is, like, you know, how it looks if you…
+
+14:00:19 --> 14:00:23
+Provakar Datta: do this ETA Phi mapping, right? And then…
+
+14:00:21 --> 14:00:24
+Shujie Li: Remind me again how you generate this?
+
+14:00:24 --> 14:00:41
+Provakar Datta: Yes, so these are pi plus pion gun simula… sorry, particle gun simulation. Momentum, I generated from 0.5 to 20 GeV, and then, eta from 0.6 up to 3.8 in both directions.
+
+14:00:41 --> 14:00:48
+Provakar Datta: Right, and then, I am binning it in one, two GEV bins.
+
+14:00:48 --> 14:01:06
+Provakar Datta: so this… this particular plot is for ED4, but it has all momenta, that means integrated over 0.5 to 20, but this is from 0.5 to 2.5, so 2 GeV beam, basically, right? And so here, you have… you see the eta range, and then this is the phi.
+
+14:00:53 --> 14:00:54
+Shujie Li: Mmhm.
+
+14:01:07 --> 14:01:24
+Provakar Datta: So, what's happening here, the heat efficiency is the denominator is basically for a given bin, like, it counts, like, you know, all the event, like, all the generated primaries, right, integrated over all phi and all momenta.
+
+14:01:25 --> 14:01:36
+Provakar Datta: and the numerator is basically, like, looking for one hit in that particular disk. If it has multiple hits, it still counts it as one.
+
+14:01:36 --> 14:01:40
+Shujie Li: Okay, so basically, this is still,
+
+14:01:40 --> 14:01:45
+Shujie Li: a study with respect to the generated particle eta and phi, right?
+
+14:01:45 --> 14:02:01
+Provakar Datta: Yes, yes, yes. And has no projection, of, like, you know, of the sort that I showed you before, so it doesn't use any projection. So then it converts eta to R using the formula I mentioned, and then it gives me this kind of plot.
+
+14:01:46 --> 14:01:47
+Shujie Li: Okay.
+
+14:01:49 --> 14:01:50
+Shujie Li: Mmhm.
+
+14:01:52 --> 14:01:53
+Shujie Li: Yep.
+
+14:02:03 --> 14:02:06
+Provakar Datta: Da da da, here.
+
+14:02:06 --> 14:02:08
+Provakar Datta: So…
+
+14:02:07 --> 14:02:09
+Shujie Li: Mmhm.
+
+14:02:08 --> 14:02:20
+Provakar Datta: because now you can see it in disk space, right? So it's, like, X versus Y, and these numbers are basically the efficiencies, because it's a little hard to know what it is, so that's why I…
+
+14:02:11 --> 14:02:13
+Shujie Li: or an Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or an Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or Or
+
+14:02:16 --> 14:02:17
+Shujie Li: Mmhm.
+
+14:02:20 --> 14:02:31
+Provakar Datta: like, you know, printing it out. Also, and this right side plot is basically a zoomed version of the middle, so that you can see the structure better, right? And
+
+14:02:28 --> 14:02:34
+Shujie Li: So this is converted directly from your previous system.
+
+14:02:34 --> 14:02:35
+Provakar Datta: Yes.
+
+14:02:34 --> 14:02:45
+Shujie Li: scan, so this is not actual, heat position on disk, but this is kind of a rotated, it's kind of rotated view, right? If you fix a bone.
+
+14:02:39 --> 14:02:41
+Provakar Datta: Yes, not, not really.
+
+14:02:41 --> 14:02:44
+Provakar Datta: Yeah, yes. It's not actually…
+
+14:02:44 --> 14:02:45
+Provakar Datta: Yep.
+
+14:02:45 --> 14:02:52
+Shujie Li: Momentum, okay. Can you scroll down so I can see for each momentum slice how this changed?
+
+14:02:47 --> 14:02:48
+Provakar Datta: Yes.
+
+14:02:51 --> 14:03:00
+Provakar Datta: Yes, so this is… this is to all momenta, so this is momenta from 0.5 to 2.5, and then it increases from there.
+
+14:02:54 --> 14:02:55
+Shujie Li: Aha.
+
+14:02:58 --> 14:02:59
+Shujie Li: Wow.
+
+14:03:04 --> 14:03:16
+Provakar Datta: This is 10 to 12, this is 12 to 14, this is 14 to 16, 16 to 18, and then 18 to 20.
+
+14:03:16 --> 14:03:33
+Provakar Datta: So now, I also have a summary plot that will be helpful to see, but before I show that, let me explain one thing. So, you see this, structure, right, at the edge. This is, like, you know, one big part of it is because, you know, like, we are trying to fit in
+
+14:03:27 --> 14:03:28
+Shujie Li: Mhmm.
+
+14:03:33 --> 14:03:50
+Provakar Datta: rectangular-shaped modules in a circle, so there are some gaps. So you see those real gaps here, and then also there are some inefficiencies at the outer edge, right? So that's… so while calculating the average
+
+14:03:47 --> 14:03:48
+Shujie Li: Mmhm.
+
+14:03:50 --> 14:04:06
+Provakar Datta: efficiency, I did not want to include this. So, I am kind of, like, you know, doing a fiducial cut on the disks. So, this is shown by this magenta. So, this is the inner, range.
+
+14:04:06 --> 14:04:14
+Provakar Datta: And this is the outer range. And the way it was calculated is, like, I plotted the efficiency as a function of,
+
+14:04:14 --> 14:04:30
+Provakar Datta: of R, and saw, like, where the efficiency falls below 3 points and stuff. And then, like, you know, that's how I selected the region, kind of. But I also made sure that there is no bias. If there is, like, a real inefficiency near, then I can capture it.
+
+14:04:30 --> 14:04:48
+Provakar Datta: Kind of. So basically, I am doing, like, the inner, circle, plus 30 millimeter, so that's the… that's this magenta here, and then outer side circle minus 40 millimeter. So that's the outer, that's the outer fiducial range.
+
+14:04:48 --> 14:05:00
+Provakar Datta: and this is constant for all disks. And then here, so… so then if I look at this, summary, so this is… this is showing you
+
+14:05:00 --> 14:05:06
+Provakar Datta: efficiency average heat efficiency as a function of momenta beam center.
+
+14:05:06 --> 14:05:20
+Provakar Datta: So, you can see, so this is for the lowest momenta, it's really low, but then after about 5 or something, it doesn't really change that much. 5 or 7.5 is pretty constant.
+
+14:05:20 --> 14:05:34
+Provakar Datta: and then this 80%, so when I use the fiducial region, this 80% is showing that this is the, like, you know, the fiducial region basically covers 80% of the total area of that given disk.
+
+14:05:34 --> 14:05:40
+Provakar Datta: So, because I'm really, like, cutting off, like, you know, from two sides a little bit.
+
+14:05:40 --> 14:05:43
+Provakar Datta: Yeah, so does that make sense?
+
+14:05:43 --> 14:05:55
+Shujie Li: Okay, I have two small comments. So first, it would be nice to spell out the fiducial cut
+
+14:05:55 --> 14:05:57
+Shujie Li: in terms of Ada.
+
+14:05:57 --> 14:06:08
+Provakar Datta: Okay, yeah, because that's how I actually put the card, so it's the… so this is… I did it this way because it's easier to… intuitively, but yeah, definitely.
+
+14:06:01 --> 14:06:02
+Shujie Li: Mmhm.
+
+14:06:08 --> 14:06:23
+Shujie Li: Yeah, just convert that number to Ada at a vertex of 0, because, we're having, like, having concern about the so-called acceptance,
+
+14:06:08 --> 14:06:09
+Provakar Datta: Okay.
+
+14:06:11 --> 14:06:12
+Provakar Datta: Here.
+
+14:06:23 --> 14:06:26
+Shujie Li: especially at the inner radius.
+
+14:06:26 --> 14:06:32
+Shujie Li: Which means a very large error, so people definitely wanted to know Right.
+
+14:06:29 --> 14:06:30
+Provakar Datta: It is.
+
+14:06:32 --> 14:06:52
+Shujie Li: when we started to see in, like, acceptance holes, at which eta range, basically. And second thing is that because what you plotted is a, it's a projection on the disk surface, right? It's not entirely
+
+14:06:40 --> 14:06:41
+Provakar Datta: Okay.
+
+14:06:51 --> 14:06:52
+Provakar Datta: Hmm.
+
+14:06:52 --> 14:06:56
+Shujie Li: XY does not really mean…
+
+14:06:56 --> 14:07:00
+Shujie Li: XY doesn't… let me, let me see how to…
+
+14:07:00 --> 14:07:04
+Shujie Li: Actually, how did you calculate X and Y here?
+
+14:07:04 --> 14:07:17
+Provakar Datta: So, here, that part I need to check, to be honest, because this is what… this is… this was partly done by Claude. So, what exactly it did?
+
+14:07:17 --> 14:07:30
+Provakar Datta: But basically, the equation that was used to go from ERA to R was what I told you, but I can, like, you know, let me double-check in the code, then I can give you a better answer on that.
+
+14:07:29 --> 14:07:31
+Shujie Li: Because.
+
+14:07:30 --> 14:07:33
+Provakar Datta: Because that's also something I need to make sure, yeah.
+
+14:07:32 --> 14:07:48
+Shujie Li: Yeah. If that's directly converted from your vertex angle and momentum, that means angle. So that means, again, so it's a rotated x and y. It's not really your detector x and y.
+
+14:07:47 --> 14:07:54
+Provakar Datta: It definitely is that, because I can't have the detector X and Y for the denominator.
+
+14:07:49 --> 14:07:51
+Shujie Li: Aha.
+
+14:07:55 --> 14:08:08
+Provakar Datta: If I don't do a projection. Because, like, the hits, the particles that misses the hits, for those, I don't have X and Y information.
+
+14:08:08 --> 14:08:10
+Provakar Datta: For that given module.
+
+14:08:10 --> 14:08:18
+Shujie Li: so my point is, if, you do not want to make people think that's exactly where
+
+14:08:18 --> 14:08:21
+Shujie Li: The acceptance has a…
+
+14:08:21 --> 14:08:32
+Shujie Li: has a gap or hole on that desk. So, it could be a little bit misleading, because you draw the spin pipe shape there.
+
+14:08:24 --> 14:08:26
+Provakar Datta: Right.
+
+14:08:33 --> 14:08:34
+Provakar Datta: Oh, okay.
+
+14:08:35 --> 14:08:37
+Provakar Datta: But,
+
+14:08:37 --> 14:08:45
+Provakar Datta: Is it possible… like, is it okay if I… because this kind of is also important, because, you know, like…
+
+14:08:43 --> 14:08:52
+Shujie Li: Yeah, it is. So, I was thinking, definitely we need something. How about you just draw,
+
+14:08:49 --> 14:08:52
+Provakar Datta: Because when I go here.
+
+14:08:52 --> 14:09:00
+Provakar Datta: You see, this kind of is important to tell people why you see this, right? Because of this.
+
+14:08:58 --> 14:09:13
+Shujie Li: Yeah, but if there is a rotation attached to that, then it's mixing a few things. Definitely at this momentum slice, I think there's nothing wrong of assuming it's a straight line.
+
+14:09:12 --> 14:09:14
+Provakar Datta: Right, right.
+
+14:09:13 --> 14:09:22
+Shujie Li: It's more complicated at low momentum. Actually, if you move to low momentum, did you see a slow rotation?
+
+14:09:14 --> 14:09:16
+Provakar Datta: At higher moment.
+
+14:09:22 --> 14:09:25
+Provakar Datta: Slow rotation.
+
+14:09:25 --> 14:09:29
+Shujie Li: Yeah, did you see, like, this gap kind of rotated?
+
+14:09:25 --> 14:09:27
+Provakar Datta: Sir?
+
+14:09:30 --> 14:09:32
+Provakar Datta: So I…
+
+14:09:30 --> 14:09:32
+Shujie Li: Distribution.
+
+14:09:33 --> 14:09:37
+Provakar Datta: Let me show the lowest moment, maybe.
+
+14:09:37 --> 14:09:39
+Provakar Datta: This is the lowest moment.
+
+14:09:39 --> 14:09:40
+Shujie Li: Aha.
+
+14:09:39 --> 14:09:48
+Provakar Datta: Yeah. So, it definitely is less, like, the efficiency is less. That's probably because
+
+14:09:48 --> 14:09:56
+Provakar Datta: like, you know, we really don't know the exact position, and our rotation kind of fails more here, I guess. Yeah.
+
+14:09:54 --> 14:10:02
+Shujie Li: What I meant is, can you allow me to make annotation?
+
+14:10:02 --> 14:10:07
+Provakar Datta: Yeah, okay, do I have to allow? Because I think it's… oh, okay, okay.
+
+14:10:05 --> 14:10:08
+Shujie Li: Yes, yes, because you are sharing the screen.
+
+14:10:08 --> 14:10:11
+Provakar Datta: Let me first get the…
+
+14:10:12 --> 14:10:17
+Provakar Datta: Enable… okay, yeah, I did.
+
+14:10:17 --> 14:10:23
+Shujie Li: Yeah, what I mean is that now you basically have this opening like this.
+
+14:10:24 --> 14:10:26
+Provakar Datta: Here.
+
+14:10:25 --> 14:10:29
+Shujie Li: And okay, so now if you scroll down to higher momentum.
+
+14:10:29 --> 14:10:32
+Provakar Datta: Oh, I…
+
+14:10:30 --> 14:10:38
+Shujie Li: I wanted to see if it's rotated. Yeah, it is. I think if you scroll down a little bit, just to match the shape.
+
+14:10:34 --> 14:10:36
+Provakar Datta: It did.
+
+14:10:38 --> 14:10:41
+Shujie Li: Scroll down. Down.
+
+14:10:38 --> 14:10:45
+Provakar Datta: Oh, oh, I can't scroll down anymore, because it's, you know, this is the end of the page.
+
+14:10:41 --> 14:10:43
+Shujie Li: M?
+
+14:10:45 --> 14:10:48
+Shujie Li: Oh, I see, so probably the previous one?
+
+14:10:48 --> 14:10:50
+Provakar Datta: Yeah maybe.
+
+14:10:50 --> 14:10:56
+Shujie Li: Yeah, definitely, I think I see a rotate… a small, like, shift in angle.
+
+14:10:54 --> 14:10:58
+Provakar Datta: Yeah, I think there is a rotation, yeah.
+
+14:10:56 --> 14:11:10
+Shujie Li: Yeah, that's what I meant. It could be a little bit misleading if you, kind of, like, make people think the X… the, beam pipe is always,
+
+14:11:10 --> 14:11:15
+Shujie Li: In this case, it's always on the horizontal surface.
+
+14:11:16 --> 14:11:17
+Provakar Datta: Hmm.
+
+14:11:17 --> 14:11:22
+Shujie Li: Yeah, but, I think you are… there are two ways.
+
+14:11:22 --> 14:11:32
+Shujie Li: To deal with it, first, you can do an, like, calculate the beam pipe rotation based on your average momentum of that beam.
+
+14:11:24 --> 14:11:25
+Provakar Datta: Okay.
+
+14:11:33 --> 14:11:34
+Provakar Datta: Hmm.
+
+14:11:33 --> 14:11:43
+Shujie Li: But you could, like, you do not need to project any of your track, but instead, you can slightly project your… rotate back your beam pipe.
+
+14:11:44 --> 14:11:49
+Shujie Li: That's one thing to do. Another thing is… Sorry,
+
+14:11:44 --> 14:11:46
+Provakar Datta: Hmm.
+
+14:11:47 --> 14:11:51
+Provakar Datta: Oh, so you mean, like, these beam pipes…
+
+14:11:50 --> 14:11:51
+Shujie Li: Yep.
+
+14:11:51 --> 14:11:57
+Provakar Datta: just rotate them based on the momentum, kinda. Oh, I see, okay.
+
+14:11:53 --> 14:11:56
+Shujie Li: Aha, aha.
+
+14:11:56 --> 14:12:07
+Shujie Li: That's one thing you can do. Another thing to do is, instead of drawing, like, this off-axis circle.
+
+14:12:07 --> 14:12:23
+Shujie Li: So, instead of showing the entire circle, just to show the, this is a furthest point, right? And you draw a circle
+
+14:12:18 --> 14:12:20
+Provakar Datta: Hmm.
+
+14:12:24 --> 14:12:27
+Shujie Li: With respect to zero.
+
+14:12:27 --> 14:12:30
+Shujie Li: So this is the largest radius.
+
+14:12:30 --> 14:12:33
+Provakar Datta: Oh, I see.
+
+14:12:32 --> 14:12:35
+Shujie Li: Yeah,
+
+14:12:34 --> 14:12:38
+Provakar Datta: So just one circle, with the, with the…
+
+14:12:35 --> 14:12:42
+Shujie Li: Yeah, another, like, larger circle, but it's not off-axis.
+
+14:12:42 --> 14:12:46
+Shujie Li: And people can evaluate.
+
+14:12:43 --> 14:12:45
+Provakar Datta: So, so you are saying…
+
+14:12:45 --> 14:12:51
+Provakar Datta: So you're saying, like, take this radius…
+
+14:12:51 --> 14:12:56
+Provakar Datta: here, and then draw a circle, like this, kind of? Okay.
+
+14:12:54 --> 14:13:05
+Shujie Li: Yes, yes. So keep your inner circle… well, keep your, the standard circle, but draw another one to replace the off-axis circle.
+
+14:13:05 --> 14:13:10
+Shujie Li: So that people kind of have an idea of, like, the maximum.
+
+14:13:05 --> 14:13:08
+Provakar Datta: Oh, I see.
+
+14:13:10 --> 14:13:16
+Shujie Li: maximum reach of the beam pipe. I think it's…
+
+14:13:14 --> 14:13:24
+Provakar Datta: So, you're saying that I keep this small circle, and then instead of this off-center circle, replace it with another concentric circle?
+
+14:13:17 --> 14:13:19
+Shujie Li: Yes.
+
+14:13:20 --> 14:13:21
+Shujie Li: Mmhm.
+
+14:13:23 --> 14:13:25
+Shujie Li: Yep.
+
+14:13:24 --> 14:13:25
+Provakar Datta: Okay.
+
+14:13:25 --> 14:13:30
+Shujie Li: You can think what, probably there are other solutions.
+
+14:13:31 --> 14:13:32
+Provakar Datta: Hmm.
+
+14:13:31 --> 14:13:36
+Shujie Li: Just, think about it. I think, so the main…
+
+14:13:36 --> 14:13:43
+Shujie Li: point here is, don't make people assume this is already the disk coordinate.
+
+14:13:43 --> 14:13:48
+Provakar Datta: Yeah, so that part I've definitely gonna, like, you know.
+
+14:13:48 --> 14:13:54
+Provakar Datta: say, but I know people don't really listen to everything everyone says.
+
+14:13:54 --> 14:13:59
+Provakar Datta: That's definitely a problem, but
+
+14:13:57 --> 14:13:58
+Shujie Li: Aha.
+
+14:13:59 --> 14:14:07
+Provakar Datta: But yeah, so at higher momenta, it's really not that, misleading, but definitely at lower momenta, there is,
+
+14:14:08 --> 14:14:12
+Provakar Datta: Yeah, there should be some rotation.
+
+14:14:11 --> 14:14:20
+Shujie Li: Yeah, and so previously, if you remind me, previously you tried to make the projection, right?
+
+14:14:12 --> 14:14:14
+Provakar Datta: Like you.
+
+14:14:19 --> 14:14:20
+Provakar Datta: Yes.
+
+14:14:20 --> 14:14:22
+Shujie Li: What went wrong there?
+
+14:14:22 --> 14:14:28
+Provakar Datta: Same problem, like, at low momenta, it doesn't work very well.
+
+14:14:27 --> 14:14:30
+Shujie Li: Oh, because multiple scattering.
+
+14:14:30 --> 14:14:34
+Provakar Datta: Yeah, multiple scattering and also the bending is larger.
+
+14:14:34 --> 14:14:36
+Shujie Li: Here.
+
+14:14:35 --> 14:14:44
+Provakar Datta: So, like, if you wanna… and I did the projection as straight line, so I didn't really project the helical structure. So, yeah.
+
+14:14:44 --> 14:14:47
+Provakar Datta: It was really a nice model.
+
+14:14:50 --> 14:15:00
+Provakar Datta: for large momentum, like, bending is smaller, so it works better. But still, like, this is much better than doing any sorts of naive projection, in my mind.
+
+14:14:57 --> 14:14:59
+Shujie Li: Hmm.
+
+14:14:59 --> 14:15:01
+Shujie Li: Yep.
+
+14:15:03 --> 14:15:12
+Shujie Li: And what do you think, like, overall, the efficiency is not bad, right? Except we do have some,
+
+14:15:09 --> 14:15:13
+Provakar Datta: Yeah, so let me show you the…
+
+14:15:12 --> 14:15:17
+Shujie Li: it's definitely not 100%, and I still do not understand why
+
+14:15:17 --> 14:15:21
+Shujie Li: I didn't see a pattern of those missing heads.
+
+14:15:21 --> 14:15:36
+Provakar Datta: Yeah, there is none, to be honest. So, like, you know, now if someone wants to do, like, tile-level stuff, but that is not done here. But here you can see, right, so this is, like, I just chose, like, the lowest momentum beam.
+
+14:15:36 --> 14:15:47
+Provakar Datta: the highest momentum beam, and a mid-momentum beam. And so this is how the efficiency, like, average efficiency within the fiducial region look like.
+
+14:15:47 --> 14:15:49
+Provakar Datta: across disks.
+
+14:15:50 --> 14:16:12
+Provakar Datta: So, I plan to do this at 0 plus or minus 10 centimeter, but instead of centimeter, I unfortunately did millimeter. So, that's why, like, you know, actually, it did not have any effect, but I'm rerunning the simulation now for centimeters, plus or minus 10 centimeter, and then I plan to redo this.
+
+14:16:12 --> 14:16:15
+Provakar Datta: regenerate these plots.
+
+14:16:15 --> 14:16:20
+Provakar Datta: Just to see, like, you know, what kind of vortex effect we have.
+
+14:16:22 --> 14:16:24
+Provakar Datta: That's the plan.
+
+14:16:28 --> 14:16:33
+Provakar Datta: So I sent these to Ernst, and he said,
+
+14:16:33 --> 14:16:49
+Provakar Datta: Let me show… so he seems like he's very busy, but he first said… noticed that I didn't do, like, minus 10, plus 10 centimeter, which I'm doing now. He also asked if the sensors have the tile structure. Yeah, that's true, they do.
+
+14:16:44 --> 14:16:45
+Shujie Li: Mmhm.
+
+14:16:49 --> 14:16:58
+Provakar Datta: But he said he's surprised that there are apparent asymmetries between ED0, HD0, and ED1, and HD1.
+
+14:16:49 --> 14:16:50
+Shujie Li: Mmhm.
+
+14:16:57 --> 14:16:59
+Shujie Li: Mmhm.
+
+14:16:58 --> 14:17:14
+Provakar Datta: And then he said the low momentum discrepancy warrants finer steps. So I asked, like, you know, how fine does he think we should… we should use it? Because I have 2 GeV beans, I can do 1 GeV, but if he suggests even smaller.
+
+14:17:02 --> 14:17:03
+Shujie Li: Mmhm.
+
+14:17:15 --> 14:17:24
+Shujie Li: Mmm, I think, probably you want to go, like, 100 MeV for anything below 1 GeV.
+
+14:17:24 --> 14:17:35
+Provakar Datta: Oh, I see, so… so do another binning for below 1 GeV, and then above 1 GeV, just doing 1 GeV? Is that kind of what…
+
+14:17:26 --> 14:17:27
+Shujie Li: Mmhm.
+
+14:17:36 --> 14:17:38
+Provakar Datta: He is getting it.
+
+14:17:40 --> 14:17:49
+Shujie Li: I'm just saying from my experience, when I look at the fixed momentum, I did 0.5, 1, and 2.
+
+14:17:49 --> 14:17:59
+Shujie Li: And because you're looking at a continuous spectrum, you probably need an even smaller interval.
+
+14:17:59 --> 14:18:04
+Shujie Li: I would say at least the two bins below, like, from 0.5 to 1,
+
+14:17:59 --> 14:18:01
+Provakar Datta: 1…
+
+14:18:06 --> 14:18:16
+Shujie Li: And another… yeah, if you… if you do two bins between 0.5 and 1, and two bins between 1 and 2, probably, it's not a bad starting point.
+
+14:18:17 --> 14:18:19
+Provakar Datta: Okay, so…
+
+14:18:17 --> 14:18:22
+Shujie Li: Or if you have enough statistics, just being at 0.1.
+
+14:18:22 --> 14:18:38
+Provakar Datta: Yeah, so I do have pretty good statistics, to be honest, because the statistical uncertainty for these beans are, like, 0.03%, so I can make them finer. Okay, then I can try to… but what I'm asking is.
+
+14:18:28 --> 14:18:30
+Shujie Li: Mmhm.
+
+14:18:31 --> 14:18:33
+Shujie Li: Okay.
+
+14:18:38 --> 14:18:53
+Provakar Datta: So, when you say that 100 MeV beaming, right, so what is the upper limit of momentum up to which I should do that fine beaming? Is it 1 GeV or 1.5 GeV?
+
+14:18:52 --> 14:18:58
+Shujie Li: I think a 2 or 2.5 is a good, upper limit.
+
+14:18:58 --> 14:19:04
+Provakar Datta: Okay, and then beyond 2.5, is it okay to do, like, just 1 GB we need?
+
+14:19:04 --> 14:19:07
+Provakar Datta: Or just 2GV binning as I'm doing, right?
+
+14:19:05 --> 14:19:09
+Shujie Li: You can do 2 or larger.
+
+14:19:08 --> 14:19:10
+Provakar Datta: Okay.
+
+14:19:11 --> 14:19:16
+Provakar Datta: Because currently, I have done 2 GEV, so… but I can make this…
+
+14:19:13 --> 14:19:17
+Shujie Li: Yeah, 2 is, very reasonable.
+
+14:19:17 --> 14:19:20
+Provakar Datta: Okay, so after 2.5, I can…
+
+14:19:17 --> 14:19:21
+Shujie Li: Just not the lowest one.
+
+14:19:20 --> 14:19:24
+Provakar Datta: I can make it more granular, then.
+
+14:19:23 --> 14:19:25
+Shujie Li: Yep.
+
+14:19:25 --> 14:19:27
+Provakar Datta: That makes sense.
+
+14:19:27 --> 14:19:35
+Shujie Li: Let me think, I think there was another point he raised. Okay, so you will also check the different Z position, right?
+
+14:19:35 --> 14:19:37
+Shujie Li: Mmm…
+
+14:19:35 --> 14:19:40
+Provakar Datta: Z vertex, yeah, plus and minus 10 centimeters.
+
+14:19:37 --> 14:19:44
+Shujie Li: So when you look at a different Z, how would you…
+
+14:19:44 --> 14:19:49
+Shujie Li: How would you do the conversion or calculation of ADA?
+
+14:19:49 --> 14:19:55
+Provakar Datta: So, like, the eta con… like, you mean the… from eta to R?
+
+14:19:58 --> 14:20:00
+Provakar Datta: conversion, or…
+
+14:19:58 --> 14:20:03
+Shujie Li: So, if, saying that you have,
+
+14:20:03 --> 14:20:12
+Shujie Li: Z equals zero, then your eta can be directly converted from your theta, your polar angle, right?
+
+14:20:11 --> 14:20:13
+Provakar Datta: Right.
+
+14:20:12 --> 14:20:16
+Shujie Li: And… but now you have an offset.
+
+14:20:16 --> 14:20:21
+Provakar Datta: I see. Yeah, I haven't thought about that.
+
+14:20:20 --> 14:20:26
+Shujie Li: Yeah, so just to think what's the most reasonable way to make this disc plot.
+
+14:20:26 --> 14:20:28
+Provakar Datta: Okay.
+
+14:20:27 --> 14:20:29
+Shujie Li: Yep.
+
+14:20:30 --> 14:20:33
+Provakar Datta: Alright, sounds good.
+
+14:20:32 --> 14:20:43
+Shujie Li: So I think eventually, the most straightforward solution would still be if we can create an imaginary surface.
+
+14:20:43 --> 14:20:45
+Provakar Datta: Yeah.
+
+14:20:44 --> 14:20:47
+Shujie Li: To attach to this.
+
+14:20:48 --> 14:20:55
+Shujie Li: sorry, imaginary, this is not a good word to use here. We can create a representing surface.
+
+14:20:55 --> 14:20:58
+Shujie Li: With no material, that
+
+14:20:58 --> 14:21:05
+Shujie Li: That way, you do not need to deal with the projection at all. I think on Earth also have a good
+
+14:21:03 --> 14:21:04
+Provakar Datta: And…
+
+14:21:05 --> 14:21:10
+Shujie Li: point regarding the sensor structure.
+
+14:21:10 --> 14:21:17
+Shujie Li: Because in our current design, right, so the ICU actually has
+
+14:21:17 --> 14:21:22
+Shujie Li: I forgot the number, something between 10 to 9% of dead area.
+
+14:21:23 --> 14:21:30
+Shujie Li: So, in that sense, your number, which is not 100%, is not a…
+
+14:21:30 --> 14:21:33
+Shujie Li: by itself a problem.
+
+14:21:33 --> 14:21:48
+Shujie Li: Probably it's just a… it's just the tracks going through those insensitive areas, and you actually probably recovered some of those acceptance by having overlappings.
+
+14:21:38 --> 14:21:39
+Provakar Datta: Yep.
+
+14:21:49 --> 14:21:50
+Provakar Datta: Yes.
+
+14:21:51 --> 14:21:56
+Shujie Li: So that's… so that means the number itself is not bad.
+
+14:21:56 --> 14:22:09
+Shujie Li: Probably the, more important task now is to figure out if there are, first, any local inefficiency.
+
+14:22:09 --> 14:22:15
+Shujie Li: And second, what exactly are our acceptance at the edge?
+
+14:22:19 --> 14:22:23
+Provakar Datta: At the edge. You mean these regions?
+
+14:22:22 --> 14:22:36
+Shujie Li: Yeah, both the inner and outer edge. So, for inner edge, we care about our reach of eta, right? So the upper limit of eta is actually defined by those,
+
+14:22:31 --> 14:22:33
+Provakar Datta: And.
+
+14:22:36 --> 14:22:41
+Shujie Li: acceptance, partially, defined by the acceptance.
+
+14:22:41 --> 14:22:46
+Shujie Li: And the… the outer edge…
+
+14:22:46 --> 14:22:51
+Shujie Li: That is the transition region between our barrel and the desk.
+
+14:22:51 --> 14:22:53
+Provakar Datta: Hmm.
+
+14:22:51 --> 14:22:54
+Shujie Li: I think that is…
+
+14:22:54 --> 14:22:55
+Shujie Li: Cool.
+
+14:22:55 --> 14:22:58
+Shujie Li: more well-defined.
+
+14:22:58 --> 14:23:00
+Provakar Datta: And.
+
+14:22:59 --> 14:23:07
+Shujie Li: It's almost just one number from your radius calculation. Yeah, I think inner edge is…
+
+14:23:07 --> 14:23:10
+Shujie Li: The part where you have to.
+
+14:23:10 --> 14:23:14
+Shujie Li: really quantify the acceptance.
+
+14:23:16 --> 14:23:29
+Shujie Li: Because now, if you look at our detector design, right, we have been talking about the acceptance coverage from minus 4 to 4, and sometimes you will see, like, minus
+
+14:23:16 --> 14:23:18
+Provakar Datta: Yeah.
+
+14:23:30 --> 14:23:41
+Shujie Li: 3.5, where people are quoting different numbers, because that's partially convoluted with this, beam pipe opening design.
+
+14:23:41 --> 14:23:42
+Provakar Datta: I see.
+
+14:23:42 --> 14:23:43
+Shujie Li: Yes.
+
+14:23:43 --> 14:23:51
+Provakar Datta: So then, with this kind of study, I don't know if we'll be able to really get these numbers very…
+
+14:23:51 --> 14:23:54
+Provakar Datta: Reliably, like, at the edge.
+
+14:23:51 --> 14:24:02
+Shujie Li: Yeah, that's my point. It's probably, like, more straightforward if we can set up the actual sensitive surface.
+
+14:24:04 --> 14:24:07
+Shujie Li: But, I…
+
+14:24:07 --> 14:24:11
+Shujie Li: I think your current approach is already.
+
+14:24:11 --> 14:24:12
+Shujie Li: a very…
+
+14:24:13 --> 14:24:16
+Shujie Li: I would say I didn't see any issue.
+
+14:24:16 --> 14:24:19
+Provakar Datta: I also did not, to be honest.
+
+14:24:16 --> 14:24:21
+Shujie Li: With this specific disk layout.
+
+14:24:22 --> 14:24:24
+Provakar Datta: Right, like…
+
+14:24:22 --> 14:24:29
+Shujie Li: They're probably… yeah, if it was me, I think I will, I would just merge this
+
+14:24:29 --> 14:24:40
+Shujie Li: this geometry, and whatever Ernst or whoever wants to fine-tune, including yourself, wants to fine-tune later.
+
+14:24:39 --> 14:24:41
+Provakar Datta: Yes.
+
+14:24:40 --> 14:24:51
+Shujie Li: It can be… it can come later. So, in this case, I would suggest, so, in addition to what we said about, like, some details of the plottings.
+
+14:24:51 --> 14:24:54
+Shujie Li: For your next steps. Okay.
+
+14:24:53 --> 14:24:55
+Provakar Datta: Hmm.
+
+14:24:55 --> 14:25:04
+Shujie Li: probably one of those two things. First is to get that representing surface set up.
+
+14:25:04 --> 14:25:18
+Shujie Li: Second is to look at the actually reconstructed tracks, and check the tracking performance at large eta, which means the tracks going through the inner circles.
+
+14:25:04 --> 14:25:05
+Provakar Datta: Hmm.
+
+14:25:19 --> 14:25:20
+Provakar Datta: Hmm.
+
+14:25:23 --> 14:25:25
+Provakar Datta: Okay, so…
+
+14:25:24 --> 14:25:30
+Shujie Li: So, have you looked at the reconstructed files at all?
+
+14:25:25 --> 14:25:27
+Provakar Datta: So you're…
+
+14:25:30 --> 14:25:39
+Provakar Datta: I just looked to see whether they… we… I have tracks, and yeah, I… like, you know, in measurements and all those things.
+
+14:25:39 --> 14:25:45
+Provakar Datta: And also, I generate reconstructed files for all these simulations as well.
+
+14:25:45 --> 14:25:47
+Provakar Datta: And.
+
+14:25:47 --> 14:25:49
+Provakar Datta: They should be there.
+
+14:25:49 --> 14:25:54
+Shujie Li: Okay, so you do have all the files.
+
+14:25:50 --> 14:25:51
+Provakar Datta: But.
+
+14:25:52 --> 14:25:58
+Provakar Datta: Yeah, but I have not done any track efficiency or anything like that.
+
+14:25:54 --> 14:25:55
+Shujie Li: Mmhm.
+
+14:25:58 --> 14:26:07
+Shujie Li: Yeah, probably you can just do a very string, a very standard efficiency study.
+
+14:26:08 --> 14:26:11
+Shujie Li: Is this even simple?
+
+14:26:12 --> 14:26:23
+Provakar Datta: So, you know, yeah, so, it seems like… so, like, just to be realistic, right? So, I'm gonna go to India in 2 weeks.
+
+14:26:12 --> 14:26:13
+Shujie Li: Mmm.
+
+14:26:13 --> 14:26:15
+Shujie Li: Mmhm.
+
+14:26:22 --> 14:26:24
+Shujie Li: Mmhm.
+
+14:26:23 --> 14:26:35
+Provakar Datta: And there are, like, few other tasks that I'll have to complete, like, in terms of GMN and RCTs and stuff. So I… I don't really have, like, a lot of time to work on this.
+
+14:26:30 --> 14:26:32
+Shujie Li: Mmhm.
+
+14:26:35 --> 14:26:50
+Provakar Datta: So I just wanted to have it in a place where we are at least comfortable with, you know, like, the most important things, and then everything so that someone else can pick it up if needed to be done soon.
+
+14:26:50 --> 14:26:56
+Provakar Datta: So for that, like, you know, with that in mind, what do you think I should…
+
+14:26:56 --> 14:27:11
+Provakar Datta: like, you know, do so that I can show it in the DSC meeting if I'm presenting, and then kind of leave it at that, and then pick up when I come back. But in between, if anything needs to happen, so that someone else can
+
+14:27:11 --> 14:27:14
+Provakar Datta: Like, you know, try to do those things.
+
+14:27:14 --> 14:27:23
+Shujie Li: For the two things I proposed, I would think getting the performance out… performance plot is probably more straightforward.
+
+14:27:24 --> 14:27:25
+Provakar Datta: Hmm.
+
+14:27:27 --> 14:27:30
+Provakar Datta: You mean tracking performance?
+
+14:27:28 --> 14:27:29
+Shujie Li: Because you…
+
+14:27:30 --> 14:27:31
+Shujie Li: Mhmm.
+
+14:27:33 --> 14:27:37
+Shujie Li: You already have the standard plot,
+
+14:27:37 --> 14:27:39
+Shujie Li: standard script.
+
+14:27:39 --> 14:27:41
+Shujie Li: Okay.
+
+14:27:41 --> 14:27:46
+Shujie Li: You probably want to have finer bin names at the…
+
+14:27:46 --> 14:27:55
+Shujie Li: at a larger area, but otherwise, it's a matter of running the script and understand the result.
+
+14:27:56 --> 14:28:09
+Shujie Li: But, you can take a look to see if that's something you want to do, because you didn't look at… if you never worked on the tracking performance in the past.
+
+14:27:56 --> 14:27:58
+Provakar Datta: Okay, so…
+
+14:28:02 --> 14:28:04
+Provakar Datta: Okay.
+
+14:28:09 --> 14:28:23
+Shujie Li: It's possible that it's probably… you want to spend more time on the actual geometry instead of start a new chapter of your
+
+14:28:09 --> 14:28:11
+Provakar Datta: Right.
+
+14:28:23 --> 14:28:29
+Shujie Li: of your study, on tracking reconstruction.
+
+14:28:25 --> 14:28:35
+Provakar Datta: I think that makes sense, to be honest, yeah. Because if I start now, I don't really have enough time to probably fine-tune it.
+
+14:28:35 --> 14:28:38
+Provakar Datta: And, you know, have a
+
+14:28:36 --> 14:28:40
+Shujie Li: Technically, you do not need to fine-tune anything.
+
+14:28:41 --> 14:28:44
+Provakar Datta: So, you were just saying that…
+
+14:28:41 --> 14:28:58
+Shujie Li: The issue is that you will need to understand what, you will need to understand the workflow, the concept of how we calculate efficiency and purity and resolutions.
+
+14:28:59 --> 14:29:06
+Shujie Li: I do not know how much you already picked up from your, like, attending all the meetings.
+
+14:29:07 --> 14:29:16
+Provakar Datta: Some, but not, like, a lot to be totally confident about everything, because I don't really remember all the details.
+
+14:29:16 --> 14:29:17
+Shujie Li: Yes.
+
+14:29:18 --> 14:29:20
+Provakar Datta: But,
+
+14:29:21 --> 14:29:23
+Provakar Datta: Okay, so…
+
+14:29:21 --> 14:29:23
+Shujie Li: Oh.
+
+14:29:23 --> 14:29:28
+Provakar Datta: First thing first, so about this reference surface thing…
+
+14:29:28 --> 14:29:32
+Provakar Datta: How important do you think that is, given what I have right now?
+
+14:29:33 --> 14:29:35
+Shujie Li: important.
+
+14:29:35 --> 14:29:38
+Provakar Datta: Like, by…
+
+14:29:38 --> 14:29:55
+Provakar Datta: next Tuesday or something, because I don't wanna… I don't plan to do anything beyond next Tuesday on this, because that… the… like, that week, rest of it, I will spend time on GMN and other stuff. So I wanna, like, you know, complete things in the next few days.
+
+14:29:55 --> 14:30:03
+Provakar Datta: so that I can show stuff, and then, you know, put a pause on this work, and then come back, and then pick up again.
+
+14:30:03 --> 14:30:18
+Provakar Datta: Because I'll have to draw some, like, you know, boundaries, otherwise other… like, you know, I don't really know how to… how to manage. So that's why I'm trying to figure out, like, what things you think have to be done, then I can probably put in some time to get them.
+
+14:30:18 --> 14:30:24
+Provakar Datta: And then, you know, a habitat at that point, something like that.
+
+14:30:25 --> 14:30:31
+Shujie Li: I think working on tracking performance will give you a more complete
+
+14:30:31 --> 14:30:38
+Shujie Li: Study, but if you really want to focus on the geometry itself.
+
+14:30:33 --> 14:30:35
+Provakar Datta: Okay.
+
+14:30:39 --> 14:30:44
+Shujie Li: Adding that tracking surface.
+
+14:30:47 --> 14:30:52
+Shujie Li: Should be doable,
+
+14:30:52 --> 14:30:55
+Shujie Li: Let's assume that's something Claude can handle.
+
+14:30:55 --> 14:30:58
+Provakar Datta: Yeah, no, I can add them.
+
+14:30:55 --> 14:31:09
+Shujie Li: So that's probably more straightforward, and does not require you to start anything new with EIC Recon. Is that what you have in mind?
+
+14:31:09 --> 14:31:17
+Provakar Datta: Whatever you think could be… yeah, because, like, you know, for me to update the geometry is no big deal.
+
+14:31:17 --> 14:31:31
+Provakar Datta: But, but, you know, like, if just, like, you know, this much information is good enough for people to be happy, I can definitely rebin it and make them finer and all those things. Those are, like, you know.
+
+14:31:31 --> 14:31:36
+Shujie Li: Don't try to make people happy, people will never be happy.
+
+14:31:31 --> 14:31:33
+Provakar Datta: Very easy to do.
+
+14:31:35 --> 14:31:41
+Provakar Datta: Like, by happy, I mean, like, whatever as a group we need, kind of, right now.
+
+14:31:40 --> 14:31:41
+Shujie Li: What do you think?
+
+14:31:42 --> 14:31:50
+Provakar Datta: I think the group needs everything, like yesterday, it seems like, but that's not feasible.
+
+14:31:48 --> 14:31:54
+Shujie Li: Sure, but what do you think, for this project, what do you want to still complete before you leave?
+
+14:31:54 --> 14:32:09
+Provakar Datta: Yeah, so for this project, definitely tracking study is definitely a big part of it, tracking performance and stuff. But, you know, like, I think the first thing was to make sure the geometry works, and then there are no dead areas and stuff like that.
+
+14:32:00 --> 14:32:02
+Shujie Li: Mmhm.
+
+14:32:09 --> 14:32:25
+Provakar Datta: and, like, that we have, like, like, you know, like, all the modules that we have implemented are pretty good. So, all I wanted to do at this point is to just give Art some more information so that he can update his,
+
+14:32:25 --> 14:32:44
+Provakar Datta: positioning and stuff, like placements and stuff. So I don't really know what exactly Arntz needs from me, because he was thinking of talking about mid-regions and stuff, but that finer level of, like, you know, stuff, I think we can't really do from this kind of analysis.
+
+14:32:44 --> 14:32:59
+Provakar Datta: we'll probably need a sensitive surface or something that can pinpoint that particular area. But, but yeah, so I am not really sure of the deadlines and stuff, like, when everything needs to happen.
+
+14:32:59 --> 14:33:15
+Provakar Datta: So, I don't know, like, I think whatever would be the most helpful, I'll just get that done, and then take it from there, kind of situation. So, I don't really have a good feeling of the entire project.
+
+14:33:15 --> 14:33:24
+Provakar Datta: Like, you know, which one needs to come first, and which one needs to come after, like, you know, can wait a little bit, and stuff like that, so…
+
+14:33:24 --> 14:33:43
+Provakar Datta: But definitely, the geometry is working, so that part is, I think, settled. And then, like, you know, this kind of efficiency, so Arnst expected 98%, but his tiles… he did not have a 12-tile structure, so we definitely should have some small number, smaller number.
+
+14:33:43 --> 14:33:48
+Provakar Datta: And since it's between 96 to 97, I think that's pretty reasonable.
+
+14:33:48 --> 14:34:04
+Provakar Datta: to me. So that gives me enough confidence to say that the geometry is fine, right? And it's kind of, like what we expected, but these age regions are definitely, something that I don't think we can
+
+14:34:04 --> 14:34:15
+Provakar Datta: understand very well, just from this study, right? So now, if I need to implement that sensitive surface, and then redo everything, it will definitely take me time.
+
+14:34:15 --> 14:34:28
+Provakar Datta: But, whether I should put in time in that is something that you guys will have to let me know. Then I can just do that, and then, you know, have it ready
+
+14:34:28 --> 14:34:34
+Provakar Datta: like, you know, up to that point. But then the tracking performance will have to be done, like, later on.
+
+14:34:35 --> 14:34:44
+Provakar Datta: Because I don't think I'll be able to do all of it by, like, in next 2 weeks. That's the main thing. So I'll have to prioritize.
+
+14:34:44 --> 14:34:49
+Shujie Li: Yeah, that's my point. I asked you to choose one, but it sounds like…
+
+14:34:49 --> 14:34:54
+Shujie Li: It's not clear to me, it sounds like you do not want to work on checking performance.
+
+14:34:54 --> 14:35:03
+Shujie Li: And you are not so excited about adding the sensitive surface. Do you see other things you want to work on?
+
+14:35:03 --> 14:35:17
+Provakar Datta: No, I am… it's not, like, you know, it's not true that I'm not excited about adding the circuit. I can definitely add it, but that would mean that I won't be able to work on the tracking performance. Is that okay? Like, or… okay, cool.
+
+14:35:14 --> 14:35:15
+Shujie Li: Mmhm.
+
+14:35:17 --> 14:35:20
+Provakar Datta: Then I can just add that and give you more information.
+
+14:35:17 --> 14:35:25
+Shujie Li: But, I mean, so… you give me the impression you do not want to work on tracking performance.
+
+14:35:25 --> 14:35:39
+Provakar Datta: So the problem is, it's not that I don't want to, I'm just trying to figure out whether I have enough time to work on that. Because you were saying that I need to understand all those details, that's reasonable.
+
+14:35:30 --> 14:35:31
+Shujie Li: Mmhm.
+
+14:35:37 --> 14:35:42
+Shujie Li: But, that's just how you calculate resolution, which…
+
+14:35:43 --> 14:35:47
+Shujie Li: Should not take you more than one hour to understand.
+
+14:35:47 --> 14:35:52
+Provakar Datta: Okay, if you think that it would be like, you know,
+
+14:35:52 --> 14:35:56
+Provakar Datta: Reasonably easy for… and also, like.
+
+14:35:56 --> 14:36:07
+Provakar Datta: I don't know because I show stuff and then if there is some weird feature, people will probably grill me to death. But sure, I'm happy to take that risk.
+
+14:36:04 --> 14:36:19
+Shujie Li: Well, if you see something strange, you should look at that. Don't wait for people to make comments. How about that? I think I prepared a notebook somewhere.
+
+14:36:19 --> 14:36:27
+Shujie Li: regarding the performance study, the standard performance study for, in this case, a single particle, right?
+
+14:36:27 --> 14:36:38
+Shujie Li: Take a look. And if you think that is straightforward, then it's just a matter of how to do mass production of similar analysis.
+
+14:36:38 --> 14:36:50
+Shujie Li: Which I do have script for, but you will need to first, again, just understand the meaning of each of the observables.
+
+14:36:52 --> 14:36:54
+Provakar Datta: Okay.
+
+14:36:52 --> 14:36:56
+Shujie Li: So, let me… let me find you…
+
+14:36:57 --> 14:37:06
+Shujie Li: Do… are you connected to… yes, you are. Just go… go to my repository. Sorry, go to my directory.
+
+14:37:12 --> 14:37:19
+Shujie Li: I thought you'd make me a short link. Anyway, so, go to scripts.
+
+14:37:16 --> 14:37:19
+Provakar Datta: Yeah, I think I did, but I forgot.
+
+14:37:19 --> 14:37:22
+Shujie Li: Go to Scripts, Modules.
+
+14:37:24 --> 14:37:30
+Shujie Li: LS… let me see what I have here… there must be something called the…
+
+14:37:31 --> 14:37:36
+Shujie Li: It's probably… yeah, the last one, the last one.
+
+14:37:32 --> 14:37:34
+Provakar Datta: Is it a dot pi?
+
+14:37:34 --> 14:37:36
+Provakar Datta: And.
+
+14:37:36 --> 14:37:37
+Shujie Li: Yeah.
+
+14:37:37 --> 14:37:40
+Shujie Li: Make a copy, play with that.
+
+14:37:40 --> 14:37:43
+Shujie Li: You probably need, to load… yeah.
+
+14:37:50 --> 14:37:53
+Shujie Li: Oh, I'm so sorry about that.
+
+14:37:53 --> 14:38:05
+Shujie Li: Probably, sometimes I'm doing random things, but yeah, just take a look. It's just how I take one file and calculate the efficiency.
+
+14:38:05 --> 14:38:14
+Shujie Li: And what else? Resolution, and probably the pod distribution as well.
+
+14:38:14 --> 14:38:20
+Shujie Li: There are some of the cells, I'm just checking random things that you can skip.
+
+14:38:20 --> 14:38:22
+Shujie Li: I think the.
+
+14:38:20 --> 14:38:21
+Provakar Datta: Okay.
+
+14:38:22 --> 14:38:29
+Shujie Li: This is the efficiency, this is probably the… yeah, those are both the resolution and the power distribution.
+
+14:38:32 --> 14:38:47
+Shujie Li: That's it. You don't need to… the other one is just how you summarize your result, because we wanted to do the fit of efficiency, which basically is just think about the data to MSeq.
+
+14:38:47 --> 14:38:58
+Shujie Li: comparison, or how you, in Monte Carlo, right, with CMC, you also need to look at the resolutions. It's very, very similar things.
+
+14:38:51 --> 14:38:53
+Provakar Datta: Hmm.
+
+14:38:58 --> 14:39:08
+Shujie Li: We… for each of the eta and momentum being, we want to get the width of that distribution.
+
+14:39:08 --> 14:39:23
+Shujie Li: And each of that become a point in our summary plot, like this one. We do not have two configurations, but each of those, you can see, eventually we will plot the width versus momentum binning.
+
+14:39:23 --> 14:39:27
+Shujie Li: And for each of the Ada slice, that's it.
+
+14:39:28 --> 14:39:29
+Provakar Datta: So…
+
+14:39:30 --> 14:39:38
+Provakar Datta: So then I'll have to rerun… run new simulation, right? Because when you say minus one to ones, you kind of have all eta.
+
+14:39:36 --> 14:39:41
+Shujie Li: That's an example I'm not expecting. This is irrelevant for your study.
+
+14:39:42 --> 14:39:45
+Provakar Datta: So, like, what kind of ITER beaning would you…
+
+14:39:45 --> 14:39:47
+Shujie Li: What do you think is important?
+
+14:39:46 --> 14:39:47
+Provakar Datta: But…
+
+14:39:47 --> 14:39:51
+Provakar Datta: The Haiti region, I think.
+
+14:39:50 --> 14:39:53
+Shujie Li: What is the coverage of the desk?
+
+14:39:51 --> 14:39:52
+Provakar Datta: Yes.
+
+14:39:53 --> 14:39:55
+Shujie Li: Hey there, Range.
+
+14:39:55 --> 14:40:02
+Provakar Datta: So, it's, like, from minus… like, you know, definitely from beyond 0.9…
+
+14:40:02 --> 14:40:05
+Provakar Datta: to… let me…
+
+14:40:05 --> 14:40:08
+Provakar Datta: Yeah, not this one.
+
+14:40:12 --> 14:40:15
+Provakar Datta: Yeah, so this is, like, ED…
+
+14:40:15 --> 14:40:17
+Provakar Datta: 4…
+
+14:40:17 --> 14:40:21
+Provakar Datta: Like, from minus 1.75 to…
+
+14:40:21 --> 14:40:27
+Provakar Datta: 3.5 or something. So, like, the ETA range of each disk and stuff, like…
+
+14:40:27 --> 14:40:33
+Provakar Datta: I don't do it disk by disk, right? It's just, for all disks.
+
+14:40:33 --> 14:40:35
+Provakar Datta: The tracking performance, right?
+
+14:40:35 --> 14:40:36
+Provakar Datta: Kind of.
+
+14:40:35 --> 14:40:49
+Shujie Li: Correct. This, what you did here is already part of the efficiency, right? But you are looking at the acceptance. This is your heat acceptance for each of your detector surface.
+
+14:40:41 --> 14:40:42
+Provakar Datta: Hmm.
+
+14:40:45 --> 14:40:46
+Provakar Datta: Yes.
+
+14:40:49 --> 14:40:53
+Shujie Li: And when we put the acceptance.
+
+14:40:53 --> 14:41:03
+Shujie Li: from different disks together, with how… and couple that with how our Kalman filter can handle track reconstruction.
+
+14:41:03 --> 14:41:05
+Shujie Li: We get our efficiency.
+
+14:41:05 --> 14:41:20
+Shujie Li: of tracking efficiency, right? So, basically, we care about the range, I think it would be probably, 1 to, 3.8, 3.7, something like that.
+
+14:41:20 --> 14:41:22
+Provakar Datta: Hmm.
+
+14:41:21 --> 14:41:26
+Shujie Li: Right, that's probably, the… the range of ADA you care about.
+
+14:41:26 --> 14:41:30
+Shujie Li: And then, within that range.
+
+14:41:30 --> 14:41:34
+Shujie Li: The central region, it seems to be very…
+
+14:41:34 --> 14:41:44
+Shujie Li: standard, so probably you do not want to do very fine binning there when you look at the
+
+14:41:44 --> 14:41:52
+Shujie Li: a resolution, right? You just use the standard binning, which you can find in my other file.
+
+14:41:52 --> 14:41:59
+Shujie Li: We can have one more meeting next few days, once you are comfortable with this workflow.
+
+14:41:59 --> 14:42:06
+Shujie Li: We can decide the binning to use. But then we definitely want to go finer binning at a higher resolution.
+
+14:42:06 --> 14:42:12
+Shujie Li: very large or very small eta, especially the large eta side.
+
+14:42:14 --> 14:42:17
+Shujie Li: Actually, so if you look at…
+
+14:42:17 --> 14:42:19
+Shujie Li: Umm.
+
+14:42:22 --> 14:42:28
+Shujie Li: If you look at some of my presentations, sometimes we see
+
+14:42:28 --> 14:42:33
+Shujie Li: we will always show something called the single particle performance plot, right?
+
+14:42:33 --> 14:42:36
+Shujie Li: Have you seen any of those, like, seven panels?
+
+14:42:38 --> 14:42:41
+Provakar Datta: Probably I did, but I don't remember.
+
+14:42:41 --> 14:42:45
+Shujie Li: Okay, give me one moment to find something for you.
+
+14:42:57 --> 14:43:00
+Shujie Li: Okay, let me share screen…
+
+14:43:01 --> 14:43:02
+Shujie Li: This one?
+
+14:43:04 --> 14:43:07
+Shujie Li: I need to click the share button.
+
+14:43:07 --> 14:43:09
+Shujie Li: Can you see my screen?
+
+14:43:09 --> 14:43:10
+Provakar Datta: Yes.
+
+14:43:10 --> 14:43:13
+Shujie Li: Yeah, so we…
+
+14:43:13 --> 14:43:15
+Shujie Li: What's going on?
+
+14:43:15 --> 14:43:17
+Shujie Li: Give me one moment.
+
+14:43:21 --> 14:43:22
+Shujie Li: Oops.
+
+14:43:23 --> 14:43:25
+Shujie Li: Okay, great.
+
+14:43:25 --> 14:43:32
+Shujie Li: I think my computer's stuck for a moment. So those are the standard binning range we always use.
+
+14:43:33 --> 14:43:41
+Shujie Li: Basically, one bin for the barrel region, and for the disc region, we break it down to three bins.
+
+14:43:39 --> 14:43:41
+Provakar Datta: Hmm.
+
+14:43:41 --> 14:43:50
+Provakar Datta: So the barrel region will… like, I don't have data there, so… but it's okay if I leave it out, right? Since I haven't done with… anything with…
+
+14:43:48 --> 14:43:53
+Shujie Li: We don't… we don't care about the barrel region for your study, so…
+
+14:43:51 --> 14:43:52
+Provakar Datta: Right, okay.
+
+14:43:53 --> 14:44:00
+Shujie Li: I mean, if you run the script as is, you will get everything, but if you don't care, just delete it.
+
+14:44:00 --> 14:44:04
+Shujie Li: Or just keep it there as a sanity check.
+
+14:44:05 --> 14:44:08
+Shujie Li: So…
+
+14:44:05 --> 14:44:07
+Provakar Datta: Hmm.
+
+14:44:07 --> 14:44:11
+Provakar Datta: No, I did not run simulation, like the…
+
+14:44:08 --> 14:44:09
+Shujie Li: Okay.
+
+14:44:10 --> 14:44:14
+Shujie Li: Yeah, so that will be… that will be empty.
+
+14:44:11 --> 14:44:16
+Provakar Datta: Current simulation is from, like, 0.6. Yeah, yeah. Okay.
+
+14:44:15 --> 14:44:16
+Shujie Li: Mmhm.
+
+14:44:16 --> 14:44:18
+Shujie Li: I would say…
+
+14:44:19 --> 14:44:22
+Shujie Li: You could start with the standard binning.
+
+14:44:22 --> 14:44:29
+Shujie Li: But for this one, for the smallest and largest bins.
+
+14:44:29 --> 14:44:33
+Shujie Li: You probably want to break it down.
+
+14:44:33 --> 14:44:38
+Shujie Li: To a step size of 0.2 or 0.1.
+
+14:44:38 --> 14:44:45
+Shujie Li: And you want to extend it from 3.5 to 3.8, something like that.
+
+14:44:47 --> 14:44:49
+Provakar Datta: Okay.
+
+14:44:48 --> 14:44:52
+Shujie Li: But otherwise…
+
+14:44:50 --> 14:44:54
+Provakar Datta: Yeah, I have data up to 3.8, so it should be fine.
+
+14:44:53 --> 14:45:05
+Shujie Li: Yeah, otherwise, I… it's really the same idea for each of the bin… each of the momentum and ada bin, you calculate all those resolutions.
+
+14:45:06 --> 14:45:12
+Shujie Li: And once you have a list of all those numbers, you make a summary plot.
+
+14:45:12 --> 14:45:25
+Provakar Datta: So, you, like, the… you probably ran this at different momenta, right? Just at 15, 10, but I do have, like, a continuous sample, so is it okay if I just bin it from there?
+
+14:45:18 --> 14:45:20
+Shujie Li: Mmhm.
+
+14:45:20 --> 14:45:21
+Shujie Li: Mmhm.
+
+14:45:22 --> 14:45:24
+Shujie Li: Yep.
+
+14:45:24 --> 14:45:26
+Shujie Li: Yeah, of course.
+
+14:45:27 --> 14:45:34
+Shujie Li: And, just, remember the similar thing here, right? At a low momentum, you need more beans.
+
+14:45:35 --> 14:45:36
+Provakar Datta: Yeah.
+
+14:45:36 --> 14:45:44
+Shujie Li: Yeah, make sure you always explain your binning, and the statistics when you show the result.
+
+14:45:45 --> 14:45:49
+Provakar Datta: Explain your opinion and status. What do you mean?
+
+14:45:51 --> 14:45:55
+Provakar Datta: Like, just show the statistical error bar, is what you mean, or…
+
+14:45:56 --> 14:46:13
+Shujie Li: Yeah, you will show your statistical error bar, but you will explain how you bin the data, because you have a continuous spectrum, where is your bin center, and when you generate the event sample, is that uniform in, eta phi momentum, right?
+
+14:46:05 --> 14:46:07
+Provakar Datta: Oh, yeah. Okay.
+
+14:46:13 --> 14:46:15
+Provakar Datta: Yeah.
+
+14:46:14 --> 14:46:17
+Shujie Li: Mmhm.
+
+14:46:15 --> 14:46:16
+Provakar Datta: Nice.
+
+14:46:17 --> 14:46:26
+Shujie Li: Probably another thing is that definitely there will be phi dependence at a very, large eta.
+
+14:46:26 --> 14:46:32
+Shujie Li: When we look at the inner edge, right, so definitely there are phi dependent.
+
+14:46:32 --> 14:46:36
+Shujie Li: So, probably that's another thing…
+
+14:46:36 --> 14:46:44
+Shujie Li: Only after you were able to produce those standard plots, you may want to look into 2D plots.
+
+14:46:45 --> 14:46:48
+Shujie Li: Which includes the phi.
+
+14:46:48 --> 14:46:56
+Shujie Li: Because here, everything we do, if we're only being in momentum and eta, we kind of integrate it in phi.
+
+14:46:56 --> 14:47:08
+Shujie Li: But you already, in your study, you already… you already have a lot of bins for phi, right? You may want to do the similar thing for the tracking study.
+
+14:47:08 --> 14:47:10
+Shujie Li: But that can come later.
+
+14:47:11 --> 14:47:25
+Shujie Li: So do it step by step. Start from the, Jupyter Notebook I shared. Once you're comfortable with, dealing with one setting, and then we do the spinnings in Eta and Momentum.
+
+14:47:25 --> 14:47:28
+Shujie Li: And once you have this,
+
+14:47:28 --> 14:47:32
+Shujie Li: we can look at adding the phi dependent.
+
+14:47:34 --> 14:47:36
+Provakar Datta: Okay.
+
+14:47:39 --> 14:47:49
+Shujie Li: Alright, so, just let me know if you want to talk more in the next few days, or you have any issue with,
+
+14:47:49 --> 14:47:52
+Shujie Li: either the…
+
+14:47:52 --> 14:47:58
+Shujie Li: Either the code or, the calculations.
+
+14:47:59 --> 14:48:06
+Shujie Li: I don't… I don't think it should… I don't think there's anything that's super…
+
+14:47:59 --> 14:48:01
+Provakar Datta: Yes, will do.
+
+14:48:08 --> 14:48:14
+Shujie Li: definitely, I don't want to overwhelm you for, completing new
+
+14:48:14 --> 14:48:19
+Shujie Li: task. So I hope this would be, straightforward.
+
+14:48:20 --> 14:48:22
+Provakar Datta: So should…
+
+14:48:20 --> 14:48:24
+Shujie Li: But, if any…
+
+14:48:24 --> 14:48:26
+Provakar Datta: No, go ahead.
+
+14:48:26 --> 14:48:43
+Shujie Li: I'm just saying that you don't have to finish everything. So I would say the important thing, it's almost like for education purpose, make sure you really understand what you're doing.
+
+14:48:26 --> 14:48:28
+Provakar Datta: And let you finish.
+
+14:48:43 --> 14:48:48
+Shujie Li: It's also good for your presentation to
+
+14:48:48 --> 14:48:55
+Shujie Li: show at least some level of performance study. That's why I'm pushing you to do this.
+
+14:48:55 --> 14:49:03
+Shujie Li: Because that means you, have more end-to-end control of this entire study.
+
+14:49:03 --> 14:49:05
+Provakar Datta: Hmm, so…
+
+14:49:03 --> 14:49:14
+Shujie Li: Instead of preparing something and have others showing the final result, which will actually impact the decision.
+
+14:49:14 --> 14:49:18
+Provakar Datta: Right, so then for,
+
+14:49:18 --> 14:49:23
+Provakar Datta: like, the… this kind of studies, should I keep it
+
+14:49:23 --> 14:49:39
+Provakar Datta: as is, like, just update the binning, and add this in terms of, like, the fiducial region in terms of ADA, and then the circle that you mentioned, just… with all these three things, should I keep it at that, or do you want me to
+
+14:49:36 --> 14:49:37
+Shujie Li: Yep.
+
+14:49:39 --> 14:49:42
+Provakar Datta: Also, at the sensitive surface and…
+
+14:49:42 --> 14:49:44
+Provakar Datta: do stuff.
+
+14:49:43 --> 14:49:46
+Shujie Li: I don't think… well…
+
+14:49:47 --> 14:49:51
+Shujie Li: I'm not sure if we have time for all those things.
+
+14:49:51 --> 14:49:52
+Provakar Datta: Hmm.
+
+14:49:51 --> 14:49:53
+Shujie Li: you can try.
+
+14:49:53 --> 14:49:58
+Shujie Li: But I think it is already very good as is.
+
+14:49:57 --> 14:49:58
+Provakar Datta: Okay.
+
+14:49:58 --> 14:50:00
+Shujie Li: it will be…
+
+14:50:00 --> 14:50:13
+Shujie Li: it'd be too good if you have both a sensitive surface and also the performance study, but if you have to choose one, I think the performance study is,
+
+14:50:08 --> 14:50:09
+Provakar Datta: Hmm.
+
+14:50:15 --> 14:50:28
+Shujie Li: more, critical at this point. Because that is… so far, you have been showing the hit and the detector level.
+
+14:50:19 --> 14:50:21
+Provakar Datta: Okay.
+
+14:50:28 --> 14:50:33
+Shujie Li: study, and having the tracking, which is,
+
+14:50:33 --> 14:50:39
+Shujie Li: the end product, right? So that is more complete.
+
+14:50:35 --> 14:50:36
+Provakar Datta: Right.
+
+14:50:39 --> 14:50:49
+Shujie Li: You can always say that we need to understand the details by doing what and what. Those are more…
+
+14:50:39 --> 14:50:41
+Provakar Datta: And…
+
+14:50:49 --> 14:50:52
+Shujie Li: derivative studies.
+
+14:50:52 --> 14:50:53
+Provakar Datta: Hmm.
+
+14:50:54 --> 14:51:04
+Provakar Datta: Yeah, no, that makes sense. So, for the DST, so is the presentation confirmed, or is still yet to be confirmed?
+
+14:51:04 --> 14:51:08
+Provakar Datta: Like, next Tuesday, my presentation.
+
+14:51:08 --> 14:51:13
+Shujie Li: It was discussed yesterday,
+
+14:51:13 --> 14:51:18
+Shujie Li: I will check with Ernst and Zhenyi tomorrow and let you know.
+
+14:51:18 --> 14:51:26
+Provakar Datta: Okay, because I need to know, like, because I have never presented in that meeting, so, like, you know, what…
+
+14:51:24 --> 14:51:25
+Shujie Li: Mmhm.
+
+14:51:26 --> 14:51:31
+Provakar Datta: Like, how long are the presentations there? Like, 20 minutes or so?
+
+14:51:32 --> 14:51:34
+Provakar Datta: Is that…
+
+14:51:32 --> 14:51:37
+Shujie Li: Ernst is putting together the agenda, so let me check with him tomorrow.
+
+14:51:37 --> 14:51:38
+Provakar Datta: Okay.
+
+14:51:38 --> 14:51:43
+Provakar Datta: Because it would be also nice to know, like, you know, what are the things I should…
+
+14:51:43 --> 14:51:49
+Provakar Datta: put in there, because I don't think adding all the details would make much sense there.
+
+14:51:43 --> 14:51:45
+Shujie Li: Of course.
+
+14:51:48 --> 14:51:50
+Shujie Li: Mmhm.
+
+14:51:50 --> 14:51:56
+Provakar Datta: Okay, yeah, so then I'll, wait to hear from you tomorrow on that.
+
+14:51:56 --> 14:51:58
+Provakar Datta: Sounds good.
+
+14:51:59 --> 14:52:06
+Shujie Li: Alright, so, I guess we can skip our meeting later today?
+
+14:52:05 --> 14:52:12
+Provakar Datta: Yeah, I think so. We… I think we did talk about everything. So I will cancel that meeting.
+
+14:52:12 --> 14:52:20
+Shujie Li: Okay, great. But again, so feel free to put a meeting on my calendar for Thursday or Friday, if you want.
+
+14:52:14 --> 14:52:15
+Provakar Datta: Yeah.
+
+14:52:20 --> 14:52:22
+Provakar Datta: Okay.
+
+14:52:22 --> 14:52:26
+Provakar Datta: Yeah, let me make some progress, and then I will add a meeting.
+
+14:52:26 --> 14:52:28
+Shujie Li: Sounds great.
+
+14:52:28 --> 14:52:31
+Provakar Datta: Alright, thank you so much.
+
+14:52:29 --> 14:52:30
+Shujie Li: Hello.
+
+14:52:31 --> 14:52:33
+Provakar Datta: Okay, bye.

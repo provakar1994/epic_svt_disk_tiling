@@ -1,0 +1,48 @@
+<lccdd>
+  <comment>
+    Feasibility test v2: DD4hep_VolumeAssembly + nested DetElements (physvol element=...)
+    + DD4hep_DetElementVolumeIDs plugin to assign system/barrel/layer/slice ids.
+  </comment>
+  <detectors>
+    <detector id="56" name="RefPlaneVATest" type="DD4hep_VolumeAssembly" readout="RefPlaneVATestHits"
+              vis="TrackerVis">
+      <volume name="RefPlaneVATest_HD4_vol" material="Vacuum" vis="TrackerVis" sensitive="true">
+        <shape type="BooleanShape" operation="Subtraction">
+          <shape type="BooleanShape" operation="Subtraction">
+            <shape type="Tube" rmin="0" rmax="TrackerEndcapPDisk4_rmax + 20*mm" dz="0.05*mm"/>
+            <shape type="Tube" rmin="0" rmax="TrackerEndcapPDisk4_lepton_radius" dz="0.1*mm"/>
+            <position x="TrackerEndcapPDisk4_lepton_center_x" y="TrackerEndcapPDisk4_lepton_center_y" z="0"/>
+          </shape>
+          <shape type="Tube" rmin="0" rmax="TrackerEndcapPDisk4_hadron_radius" dz="0.1*mm"/>
+          <position x="TrackerEndcapPDisk4_hadron_center_x" y="TrackerEndcapPDisk4_hadron_center_y" z="0"/>
+        </shape>
+      </volume>
+      <volume name="RefPlaneVATest_HD4_layer" vis="TrackerVis" assembly="1">
+        <physvol logvol="RefPlaneVATest_HD4_vol" element="slice0" id="0">
+          <position x="0" y="0" z="0"/>
+        </physvol>
+      </volume>
+      <volume name="RefPlaneVATest_P_side" vis="TrackerVis" assembly="1">
+        <physvol logvol="RefPlaneVATest_HD4_layer" element="layer4" id="4">
+          <position x="0" y="0" z="1194*mm"/>
+        </physvol>
+      </volume>
+      <envelope type="Assembly">
+        <physvol logvol="RefPlaneVATest_P_side" element="barrel3" id="3">
+          <position x="0" y="0" z="0"/>
+        </physvol>
+      </envelope>
+    </detector>
+  </detectors>
+  <readouts>
+    <readout name="RefPlaneVATestHits">
+      <id>system:8,barrel:3,layer:4,slice:4</id>
+    </readout>
+  </readouts>
+  <plugins>
+    <plugin name="DD4hep_DetElementVolumeIDs">
+      <argument value="-detector"/>
+      <argument value="/world/RefPlaneVATest"/>
+    </plugin>
+  </plugins>
+</lccdd>

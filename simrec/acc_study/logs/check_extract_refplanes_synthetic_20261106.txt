@@ -1,0 +1,12 @@
+(expected error: plane hits with ids not in plane_map.csv: [(251, 1, 1)])
+counters: {'plane_hits_linked_to_primary': 5, 'plane_hits_accepted': 3, 'plane_hits_secondary_flagged': 1, 'plane_hits_other_side': 1}
+p0 reached HD1 only (mask 0b00010): True
+p0 crossings on HD1 = 2: True
+p0 first crossing is t=1.5 hit (x=10, y=20, pz=2): True
+p1 not reached, secondary_flagged HD0 = 1: True
+p2 not reached (other-side plane ignored): True
+p3 reached HD4 only, z=1194: True
+unreached entries are NaN: True
+counters: True
+unmapped ids raise ValueError: True
+OVERALL: PASS

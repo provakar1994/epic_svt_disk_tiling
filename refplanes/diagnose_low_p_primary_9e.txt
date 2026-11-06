@@ -1,0 +1,7 @@
+2 clean primary plane hits with ratio < 0.9
+
+--- event 31, mc_index 0: p_gen = 6.777 GeV, eta = 3.667
+    MCParticle {'simulator_status': 83886080.0, 'endpoint_x_mm': 100.45, 'endpoint_y_mm': -286.093, 'endpoint_z_mm': 5757.484, 'endpoint_px_GeV': 0.0, 'endpoint_py_GeV': -0.0, 'endpoint_pz_GeV': 0.0}
+where   z_mm  time_ns    p_hit    ratio  energy_deposit_GeV  by_sec
+  HD3  944.0 3.154060 5.696596 0.840632        1.403625e-20   False
+  HD4 1194.0 3.989439 5.696475 0.840614        1.403616e-20   False
