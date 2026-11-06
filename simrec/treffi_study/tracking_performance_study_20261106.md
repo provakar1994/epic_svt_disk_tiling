@@ -212,3 +212,12 @@ Observations (1 < |eta| < 3.8, 10M primaries):
 - `shujie/modules` points to `/global/cfs/cdirs/m3763/shujie/worksim/scripts/modules`,
   which is group-writable (m3763), so pdatta can modify Shujie's files. Nothing
   in this study imports from it.
+
+### 2026-11-06: efficiency vs eta plot simplified
+
+Removed the zoom row and the black p-integrated curve from `plot_efficiency_eta` (now one row,
+backward | forward, one curve per p bin). The p-integrated efficiency is still written to
+`efficiency_eta_check_<tag>.txt`. Regenerated with
+`bash redo_efficiency_plots_20261106.sh before_no_zoom "superseded: zoom panel and all-p curve removed (same file name)"`
+(the script now takes a retention label and reason); previous PNGs in
+`tmp/retained/2026-11-06/simrec/treffi_study/out_efficiency_before_no_zoom/`.

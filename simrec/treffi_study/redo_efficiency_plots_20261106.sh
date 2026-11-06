@@ -7,7 +7,11 @@ set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 project_dir="$(cd "$script_dir/../.." && pwd)"
-retain_dir="$project_dir/tmp/retained/2026-11-06/simrec/treffi_study/out_efficiency_before_p_bins"
+# Usage: redo_efficiency_plots_20261106.sh [RETAIN_LABEL [REASON]]
+#   first use (default): before_p_bins; 2nd use: before_no_zoom (zoom panel and all-p curve removed)
+retain_label="${1:-before_p_bins}"
+reason="${2:-superseded by efficiency-vs-eta in p bins (same file name)}"
+retain_dir="$project_dir/tmp/retained/2026-11-06/simrec/treffi_study/out_efficiency_${retain_label}"
 log="$project_dir/tmp/file_actions.log"
 
 retain() {
@@ -15,7 +19,7 @@ retain() {
   if [[ -e "$src" ]]; then
     mkdir -p "$retain_dir/$sub"
     mv -n "$src" "$retain_dir/$sub/"
-    echo "$(date -Is) | ${src#$project_dir/} | ${retain_dir#$project_dir/}/$sub/$(basename "$src") | move | superseded by efficiency-vs-eta in p bins (same file name)" >> "$log"
+    echo "$(date -Is) | ${src#$project_dir/} | ${retain_dir#$project_dir/}/$sub/$(basename "$src") | move | $reason" >> "$log"
   fi
 }
 

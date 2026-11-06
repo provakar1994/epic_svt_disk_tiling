@@ -313,14 +313,13 @@ def efficiency_vs_eta(sel, bins):
 
 def plot_efficiency_eta(df, eta_edges, eff_p_edges, outdir, tag, eta_width=0.05,
                         abs_eta_min=1.0, abs_eta_max=3.8):
-    """Efficiency vs signed eta, one curve per true-momentum bin, plus the p-integrated curve.
+    """Efficiency vs signed eta, one curve per true-momentum bin.
 
     Only abs_eta_min < |eta| < abs_eta_max is drawn (the gun covers 0.6 < |eta| < 3.8; the
-    region |eta| < 1 is outside the endcap study). Columns: backward (eta < 0), forward
-    (eta > 0). Rows: full efficiency range, and a zoom near 1. Eta bins have width
-    `eta_width` starting at |eta| = abs_eta_min. The p-integrated curve (black) uses all
-    momenta 0.5-20 GeV, so it is directly comparable with the earlier single curve.
-    Also writes efficiency_eta_check_<tag>.txt with integrated efficiencies per side and p bin.
+    region |eta| < 1 is outside the endcap study). Panels: backward (eta < 0), forward
+    (eta > 0). Eta bins have width `eta_width` starting at |eta| = abs_eta_min.
+    Also writes efficiency_eta_check_<tag>.txt with integrated efficiencies per side and p bin,
+    plus the p-integrated (0.5-20 GeV) value, which is not drawn.
     """
     n_eta_bins = int(round((abs_eta_max - abs_eta_min) / eta_width))
     abs_bins = abs_eta_min + eta_width * np.arange(n_eta_bins + 1)
@@ -328,8 +327,7 @@ def plot_efficiency_eta(df, eta_edges, eff_p_edges, outdir, tag, eta_width=0.05,
     # Sequential colormap ordered by p; stop before the pale yellow end of plasma.
     colors = plt.cm.plasma(np.linspace(0.0, 0.85, len(p_bins)))
 
-    fig, axes = plt.subplots(2, 2, figsize=(13, 8), sharey="row",
-                             gridspec_kw={"height_ratios": [3, 2]})
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5), sharey=True)
     check_lines = [f"# Efficiency check for {tag}: {abs_eta_min:g} < |eta| < {abs_eta_max:g}",
                    "# side  p_bin[GeV]  n_gen  n_matched  efficiency"]
     for col, (side, sign) in enumerate(SIDES):
@@ -342,30 +340,28 @@ def plot_efficiency_eta(df, eta_edges, eff_p_edges, outdir, tag, eta_width=0.05,
         for (p_lo, p_hi), color in zip(p_bins, colors):
             sel = side_df[(side_df["p_mc"] >= p_lo) & (side_df["p_mc"] < p_hi)]
             curves.append((rf"{p_lo:g} < p < {p_hi:g} GeV", color, 2.5, sel))
-        curves.append(("all p (0.5-20 GeV)", "black", 3.0, side_df))
+        curves.append(("all p (0.5-20 GeV)", None, None, side_df))  # check file only, not drawn
 
         for label, color, ms, sel in curves:
             n_gen, n_rec, eff, err_lo, err_hi = efficiency_vs_eta(sel, bins)
             ok = n_gen > 0
-            for ax in axes[:, col]:
-                ax.errorbar(centers[ok], eff[ok], yerr=[err_lo[ok], err_hi[ok]], fmt="o-",
-                            ms=ms, lw=0.8, elinewidth=0.8, color=color, label=label)
+            if color is not None:
+                axes[col].errorbar(centers[ok], eff[ok], yerr=[err_lo[ok], err_hi[ok]], fmt="o-",
+                                   ms=ms, lw=0.8, elinewidth=0.8, color=color, label=label)
             check_lines.append(f"{side:8s}  {label:22s}  {n_gen.sum():8d}  {n_rec.sum():8d}  "
                                f"{n_rec.sum() / max(n_gen.sum(), 1):.4f}")
 
-        for ax in axes[:, col]:
-            ax.axhline(1.0, color="gray", lw=1, ls="--")
-            for edge in eta_edges:
-                ax.axvline(sign * edge, color="gray", lw=0.5, ls=":")
-            ax.set_xlim(bins[0], bins[-1])
-            ax.grid(True, alpha=0.3)
-        axes[0, col].set_title(SIDE_LABEL[side])
-        axes[1, col].set_xlabel(r"$\eta_{MC}$")
-    axes[0, 0].set_ylim(0, 1.05)
-    axes[1, 0].set_ylim(0.8, 1.01)
-    axes[0, 0].set_ylabel("Efficiency")
-    axes[1, 0].set_ylabel("Efficiency (zoom)")
-    axes[0, 1].legend(frameon=False, fontsize=8, loc="lower left")
+        ax = axes[col]
+        ax.axhline(1.0, color="gray", lw=1, ls="--")
+        for edge in eta_edges:
+            ax.axvline(sign * edge, color="gray", lw=0.5, ls=":")
+        ax.set_xlim(bins[0], bins[-1])
+        ax.grid(True, alpha=0.3)
+        ax.set_title(SIDE_LABEL[side])
+        ax.set_xlabel(r"$\eta_{MC}$")
+    axes[0].set_ylim(0, 1.05)
+    axes[0].set_ylabel("Efficiency")
+    axes[1].legend(frameon=False, fontsize=8, loc="lower left")
     fig.suptitle(f"Tracking efficiency vs $\\eta$ in bins of true p "
                  f"($\\Delta\\eta$ = {eta_width:g}), {tag}")
     fig.tight_layout()
