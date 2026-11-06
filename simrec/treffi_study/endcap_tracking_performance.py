@@ -303,36 +303,82 @@ def bin_label(lo, hi):
     return f"{lo:g}-{hi:g}"
 
 
-def plot_efficiency(df, eta_edges, p_edges, outdir, tag):
-    # Efficiency vs signed eta, fine bins over the generated range.
-    bins = np.arange(-4.0, 4.0001, 0.1)
-    n_gen, edges = np.histogram(df["eta_mc"], bins=bins)
-    n_rec, _ = np.histogram(df.loc[df["matched"], "eta_mc"], bins=bins)
+def efficiency_vs_eta(sel, bins):
+    """Efficiency and Wilson errors in eta bins for the primaries in `sel`."""
+    n_gen, _ = np.histogram(sel["eta_mc"], bins=bins)
+    n_rec, _ = np.histogram(sel.loc[sel["matched"], "eta_mc"], bins=bins)
     eff, err_lo, err_hi = efficiency_with_error(n_rec, n_gen)
-    centers = 0.5 * (edges[1:] + edges[:-1])
+    return n_gen, n_rec, eff, err_lo, err_hi
 
-    fig, (ax_top, ax_bot) = plt.subplots(2, 1, figsize=(8, 6), sharex=True,
-                                         gridspec_kw={"height_ratios": [3, 2]})
-    ax_top.hist(df["eta_mc"], bins=bins, histtype="step", color="black", label="Generated primaries")
-    ax_top.hist(df.loc[df["matched"], "eta_mc"], bins=bins, histtype="step", color="tab:blue",
-                label="with matched CKF track")
-    ax_top.set_ylabel("Entries")
-    ax_top.legend(frameon=False)
-    ax_top.grid(True, alpha=0.3)
-    ok = n_gen > 0
-    ax_bot.errorbar(centers[ok], eff[ok], yerr=[err_lo[ok], err_hi[ok]], fmt="o", ms=3, color="tab:blue")
-    ax_bot.axhline(1.0, color="gray", lw=1, ls="--")
-    for edge in eta_edges:
-        for sign in (-1, 1):
-            ax_bot.axvline(sign * edge, color="gray", lw=0.5, ls=":")
-    ax_bot.set_xlabel(r"$\eta_{MC}$")
-    ax_bot.set_ylabel("Efficiency")
-    ax_bot.set_ylim(0, 1.05)
-    ax_bot.grid(True, alpha=0.3)
-    fig.suptitle(f"Tracking efficiency, {tag}")
+
+def plot_efficiency_eta(df, eta_edges, eff_p_edges, outdir, tag, eta_width=0.05,
+                        abs_eta_min=1.0, abs_eta_max=3.8):
+    """Efficiency vs signed eta, one curve per true-momentum bin, plus the p-integrated curve.
+
+    Only abs_eta_min < |eta| < abs_eta_max is drawn (the gun covers 0.6 < |eta| < 3.8; the
+    region |eta| < 1 is outside the endcap study). Columns: backward (eta < 0), forward
+    (eta > 0). Rows: full efficiency range, and a zoom near 1. Eta bins have width
+    `eta_width` starting at |eta| = abs_eta_min. The p-integrated curve (black) uses all
+    momenta 0.5-20 GeV, so it is directly comparable with the earlier single curve.
+    Also writes efficiency_eta_check_<tag>.txt with integrated efficiencies per side and p bin.
+    """
+    n_eta_bins = int(round((abs_eta_max - abs_eta_min) / eta_width))
+    abs_bins = abs_eta_min + eta_width * np.arange(n_eta_bins + 1)
+    p_bins = list(zip(eff_p_edges[:-1], eff_p_edges[1:]))
+    # Sequential colormap ordered by p; stop before the pale yellow end of plasma.
+    colors = plt.cm.plasma(np.linspace(0.0, 0.85, len(p_bins)))
+
+    fig, axes = plt.subplots(2, 2, figsize=(13, 8), sharey="row",
+                             gridspec_kw={"height_ratios": [3, 2]})
+    check_lines = [f"# Efficiency check for {tag}: {abs_eta_min:g} < |eta| < {abs_eta_max:g}",
+                   "# side  p_bin[GeV]  n_gen  n_matched  efficiency"]
+    for col, (side, sign) in enumerate(SIDES):
+        bins = np.sort(sign * abs_bins)
+        centers = 0.5 * (bins[1:] + bins[:-1])
+        side_df = df[(np.sign(df["eta_mc"]) == sign)
+                     & (np.abs(df["eta_mc"]) >= abs_eta_min) & (np.abs(df["eta_mc"]) < abs_eta_max)]
+
+        curves = []
+        for (p_lo, p_hi), color in zip(p_bins, colors):
+            sel = side_df[(side_df["p_mc"] >= p_lo) & (side_df["p_mc"] < p_hi)]
+            curves.append((rf"{p_lo:g} < p < {p_hi:g} GeV", color, 2.5, sel))
+        curves.append(("all p (0.5-20 GeV)", "black", 3.0, side_df))
+
+        for label, color, ms, sel in curves:
+            n_gen, n_rec, eff, err_lo, err_hi = efficiency_vs_eta(sel, bins)
+            ok = n_gen > 0
+            for ax in axes[:, col]:
+                ax.errorbar(centers[ok], eff[ok], yerr=[err_lo[ok], err_hi[ok]], fmt="o-",
+                            ms=ms, lw=0.8, elinewidth=0.8, color=color, label=label)
+            check_lines.append(f"{side:8s}  {label:22s}  {n_gen.sum():8d}  {n_rec.sum():8d}  "
+                               f"{n_rec.sum() / max(n_gen.sum(), 1):.4f}")
+
+        for ax in axes[:, col]:
+            ax.axhline(1.0, color="gray", lw=1, ls="--")
+            for edge in eta_edges:
+                ax.axvline(sign * edge, color="gray", lw=0.5, ls=":")
+            ax.set_xlim(bins[0], bins[-1])
+            ax.grid(True, alpha=0.3)
+        axes[0, col].set_title(SIDE_LABEL[side])
+        axes[1, col].set_xlabel(r"$\eta_{MC}$")
+    axes[0, 0].set_ylim(0, 1.05)
+    axes[1, 0].set_ylim(0.8, 1.01)
+    axes[0, 0].set_ylabel("Efficiency")
+    axes[1, 0].set_ylabel("Efficiency (zoom)")
+    axes[0, 1].legend(frameon=False, fontsize=8, loc="lower left")
+    fig.suptitle(f"Tracking efficiency vs $\\eta$ in bins of true p "
+                 f"($\\Delta\\eta$ = {eta_width:g}), {tag}")
     fig.tight_layout()
     fig.savefig(os.path.join(outdir, f"efficiency_eta_{tag}.png"), dpi=130)
     plt.close(fig)
+    with open(os.path.join(outdir, f"efficiency_eta_check_{tag}.txt"), "w") as f:
+        f.write("\n".join(check_lines) + "\n")
+    print("\n".join(check_lines))
+
+
+def plot_efficiency(df, eta_edges, p_edges, outdir, tag, eff_p_edges, eff_eta_width):
+    # Efficiency vs eta in bins of p (separate, coarse p binning for readability).
+    plot_efficiency_eta(df, eta_edges, eff_p_edges, outdir, tag, eta_width=eff_eta_width)
 
     # Efficiency vs p per |eta| bin, one panel per side.
     p_fine = np.geomspace(p_edges[0], p_edges[-1], 21)
@@ -480,6 +526,12 @@ def main():
                         help="|eta| bin edges")
     parser.add_argument("--p-edges", type=float, nargs="+", default=[0.5, 1.0] + [float(p) for p in range(2, 21)],
                         help="momentum bin edges [GeV]")
+    parser.add_argument("--eff-p-edges", type=float, nargs="+", default=[0.5, 1.0, 2.0, 5.0, 10.0, 20.0],
+                        help="momentum bin edges [GeV] for the efficiency-vs-eta curves")
+    parser.add_argument("--eff-eta-width", type=float, default=0.05,
+                        help="eta bin width for the efficiency-vs-eta plot")
+    parser.add_argument("--efficiency-only", action="store_true",
+                        help="only redo the efficiency plots (skip fits, summary CSV, resolution plots)")
     args = parser.parse_args()
     os.makedirs(args.reduced_dir, exist_ok=True)
     os.makedirs(args.outdir, exist_ok=True)
@@ -509,7 +561,11 @@ def main():
           f"primaries with >1 matched track: {(df['n_assoc'] > 1).sum()}")
 
     # Step 2: plots and summary.
-    plot_efficiency(df, args.eta_edges, args.p_edges, args.outdir, args.tag)
+    plot_efficiency(df, args.eta_edges, args.p_edges, args.outdir, args.tag,
+                    args.eff_p_edges, args.eff_eta_width)
+    if args.efficiency_only:
+        print("Efficiency-only mode: skipped fits and summary.")
+        return
     summary = fit_all_bins(df, args.eta_edges, args.p_edges, args.outdir, args.tag)
     summary_path = os.path.join(args.outdir, f"summary_{args.tag}.csv")
     summary.to_csv(summary_path, index=False, float_format="%.6g")

@@ -167,6 +167,46 @@ Proposed tests (eic-shell): rerun EICrecon on failed dip events with CKF
 debug logging; rerun one forward chunk with a material map made from the same
 XML (and without a material map); same gun on the main-branch geometry.
 
+### 2026-11-06: efficiency vs eta in bins of true momentum
+
+- `endcap_tracking_performance.py`: new `plot_efficiency_eta` (called from
+  `plot_efficiency`) replaces the single p-integrated efficiency-vs-eta curve.
+  Layout: columns backward / forward, only 1 < |eta| < 3.8 drawn; rows full range
+  and zoom 0.80-1.01. One curve per true-p bin (plasma colormap ordered by p) plus
+  the p-integrated curve (black). Wilson errors as before. Also writes
+  `efficiency_eta_check_<tag>.txt` (integrated efficiency per side and p bin).
+  Efficiency vs p plot unchanged.
+- New options: `--eff-p-edges` (default 0.5 1 2 5 10 20 GeV), `--eff-eta-width`
+  (default 0.05), `--efficiency-only` (skip fits/CSV/resolution plots). Run script
+  environment: `EFF_P_EDGES`, `EFF_ETA_WIDTH`, `EFF_ONLY=1` (log then goes to
+  `run_<tag>_efficiency.log`; the full-run log is kept).
+- Regenerated from the cached .npz tables (no ROOT reading, ~25 s per tag) with
+  `./redo_efficiency_plots_20261106.sh`, which first moves the old
+  `efficiency_{eta,p}_<tag>.png` to
+  `tmp/retained/2026-11-06/simrec/treffi_study/out_efficiency_before_p_bins/<tag>/`
+  (logged in `tmp/file_actions.log`).
+- Outputs: `out/{pwg,fine}_vz0_50files/efficiency_eta_<tag>.png`,
+  `efficiency_eta_check_<tag>.txt`, `efficiency_p_<tag>.png` (same content as before).
+- Check: the new p-integrated curve merged to 0.1 eta bins equals the old single
+  curve exactly (max difference 0; e.g. forward eta 1.7-1.8: 0.681).
+
+Observations (1 < |eta| < 3.8, 10M primaries):
+
+| side | 0.5-1 | 1-2 | 2-5 | 5-10 | 10-20 GeV | all p |
+|---|---|---|---|---|---|---|
+| backward | 0.404 | 0.695 | 0.767 | 0.783 | 0.789 | 0.769 |
+| forward | 0.339 | 0.671 | 0.761 | 0.781 | 0.789 | 0.765 |
+
+(integrated values include the acceptance edge above |eta| ~ 3.2).
+- Plateau efficiency rises with p: ~0.98 for p > 5 GeV, ~0.96-0.97 for 2-5 GeV,
+  ~0.85-0.95 for 1-2 GeV. The p-integrated plateau (~0.96) is pulled down by p < 2 GeV.
+- 0.5-1 GeV is far below the others everywhere (0.1-0.85), falling towards large
+  |eta| on both sides (backward ~0.2 at |eta| 3, forward ~0.1 at eta 3).
+  1-2 GeV also loses efficiency earlier at large |eta| (forward from eta ~ 2.8).
+- The forward dip at 1.6 < eta < 1.85 is present at every p (minimum ~0.57 for
+  1-2 GeV, ~0.65 for p > 2 GeV), so it is not a low-momentum effect.
+- Backward structures at eta ~ -1.6 and -1.3 also appear at all p.
+
 ## Open issues
 
 - `shujie/modules` points to `/global/cfs/cdirs/m3763/shujie/worksim/scripts/modules`,
