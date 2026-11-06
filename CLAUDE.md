@@ -59,6 +59,11 @@ All material-scan outputs live in
 
 ## Working rules
 
+- Absolute rule (see global `~/.claude/CLAUDE.md`): never modify, move, delete,
+  or create files owned by, or inside directories owned by, any user other than
+  `pdatta` (e.g. Shujie's `/global/cfs/cdirs/m3763/shujie/...`, reachable via
+  `simrec/treffi_study/shujie/modules`). Check `stat -c %U` after `readlink -f`.
+
 - `ES_material/` and delivered CSV/metadata are read-only.
 - One step at a time: write a validator/check script in `logs/`, run it, save its `.txt` report, stop for user review.
 - Append each step to `logs/rsu_opt_endcap_20261004.md` (files changed, formulas, commands, report paths, open issues). Keep rejected attempts documented.
