@@ -2,9 +2,21 @@
 # Step 8q: regenerate the ACTS material map from epic_craterlake_tracking_only.xml, the same
 # XML used by the acceptance_v3_refplanes npsim campaign (without its zero-material,
 # non-ACTS reference-plane overlay) and by the planned EICrecon reprocessing.
-# Differs from the Step 8m wrapper only in the geometry checks and in exporting
+# Differs from the Step 8m wrapper in the geometry checks, in exporting
 # DETECTOR_CONFIG=epic_craterlake_tracking_only (Step 8m mapped epic_craterlake_material_map,
-# which adds DIRC/pfRICH/dRICH and other beamline/far-backward includes).
+# which adds DIRC/pfRICH/dRICH and other beamline/far-backward includes), and in the
+# output layout (below).
+#
+# Output layout (like matscan/): everything from one run goes to its own directory
+#   proj_svt_disk_tiling/matmap/<tag>/        tag = step8q_<UTC stamp> or step8q_smoke_<UTC stamp>
+#     material-map_map.cbor                   <- the map to give EICrecon (-Pacts:MaterialMap=...)
+#     provenance.txt, run_log.txt             geometry/software identity, full transcript
+#     *.root, *.json, plots/ Validation/ Surfaces/   intermediate products and validation plots
+#     (symlinks)                              runner inputs from scripts/material_map/
+# The upstream runner writes fixed file and directory names into its working directory, so it
+# is run with the run directory as working directory; nothing is written into
+# scripts/material_map/ and no earlier run is overwritten. The transcript is also copied to
+# proj_svt_disk_tiling/logs/material_map_<tag>.txt (tracked in git).
 #
 # Run inside eic_xl:26.09.0-stable with install/bin/thisepic.sh sourced, e.g.
 #   proj_svt_disk_tiling/refplanes/eic_exec.sh "bash proj_svt_disk_tiling/logs/regenerate_svt_material_map_step8q.sh 10 100"
@@ -12,8 +24,8 @@
 set -euo pipefail
 
 repo_root="/global/cfs/cdirs/m3763/pdatta/epic"
+proj="$repo_root/proj_svt_disk_tiling"
 material_dir="$repo_root/scripts/material_map"
-project_tmp="$repo_root/proj_svt_disk_tiling/tmp"
 nevents="${1:-1000}"
 nparticles="${2:-5000}"
 if [[ $# -gt 2 || ! "$nevents" =~ ^[1-9][0-9]*$ || ! "$nparticles" =~ ^[1-9][0-9]*$ ]]; then
@@ -22,9 +34,9 @@ if [[ $# -gt 2 || ! "$nevents" =~ ^[1-9][0-9]*$ || ! "$nparticles" =~ ^[1-9][0-9
 fi
 run_stamp="$(date -u +%Y%m%dT%H%M%SZ)"
 kind="step8q"; (( nevents * nparticles < 5000000 )) && kind="step8q_smoke"
-prefix="${kind}_${run_stamp}_"
-run_log="$repo_root/proj_svt_disk_tiling/logs/material_map_${kind}_${run_stamp}.txt"
-archive_dir="$project_tmp/retained/$(date -u +%Y-%m-%d)/material_map_plots_before_${run_stamp}"
+tag="${kind}_${run_stamp}"
+run_dir="$proj/matmap/$tag"
+git_log="$proj/logs/material_map_${tag}.txt"
 
 # Geometry identity: the map must come from the exact XML/commit used for the v3 simulation.
 export DETECTOR_CONFIG="epic_craterlake_tracking_only"
@@ -40,39 +52,41 @@ cmp -s "$repo_root/compact/tracking/silicon_disks_modules.xml" "$DETECTOR_PATH/c
   || { echo "ERROR: uncommitted geometry changes in compact/ or src/" >&2; exit 1; }
 acts_version="$(python -c 'import acts; v = acts.version; print(f"{v.major}.{v.minor}.{v.patch}")')"
 [[ "$acts_version" == "46.8.1" ]] || { echo "ERROR: ACTS $acts_version, expected 46.8.1 (26.09.0-stable)" >&2; exit 1; }
-[[ ! -e "$run_log" && ! -e "$material_dir/${prefix}geant4_material_tracks.root" ]] \
-  || { echo "ERROR: a run with this timestamp exists; retry" >&2; exit 1; }
+[[ ! -e "$run_dir" && ! -e "$git_log" ]] || { echo "ERROR: $run_dir exists; retry" >&2; exit 1; }
 
-# The runner recreates fixed-name plot directories; retain the previous ones first.
-mkdir -p "$archive_dir"
-for output_dir in plots Validation Surfaces; do
-  if [[ -e "$material_dir/$output_dir" ]]; then
-    mv "$material_dir/$output_dir" "$archive_dir/$output_dir"
-    printf '%s | scripts/material_map/%s/ | %s/%s/ | move | retain prior plots before %s map\n' \
-      "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$output_dir" "${archive_dir#"$repo_root/"}" "$output_dir" "$kind" \
-      >> "$project_tmp/file_actions.log"
-  fi
+# Run directory: link the runner's inputs (python drivers, cached and already patched ACTS
+# example scripts, ACTS patch files so the runner does not re-download/re-apply them,
+# DD4hep calibration/fieldmap caches). Outputs are then written here only.
+mkdir -p "$run_dir"
+for input in Examples epic.py geometry_epic.py material_mapping_epic.py material_recording_epic.py \
+             material_validation_epic.py materialmap_config.py 6010.diff 6012.diff calibrations fieldmaps; do
+  [[ -e "$material_dir/$input" ]] || { echo "ERROR: runner input $material_dir/$input missing" >&2; exit 1; }
+  ln -s "$material_dir/$input" "$run_dir/$input"
 done
+cd "$run_dir"
 
-cd "$material_dir"
-exec > >(tee "$run_log") 2>&1
-printf 'SVT %s material-map regeneration: %s\n' "$kind" "$run_stamp"
-printf 'Host=%s SLURM_JOB_ID=%s\n' "$(hostname)" "${SLURM_JOB_ID:-none}"
-printf 'HEAD=%s\nDETECTOR_PATH=%s\nDETECTOR_CONFIG=%s\nACTS=%s\nSamples=%s x %s\nPrefix=%s\n' \
-  "$(git -C "$repo_root" rev-parse HEAD)" "$DETECTOR_PATH" "$DETECTOR_CONFIG" "$acts_version" \
-  "$nevents" "$nparticles" "$prefix"
-printf 'Prior plots retained at %s\n' "$archive_dir"
-sha256sum "$xml" "$DETECTOR_PATH/compact/tracking/silicon_disks_modules.xml" \
-  "$DETECTOR_PATH/compact/tracking/definitions_craterlake.xml" "$material_dir/run_material_map_validation.sh"
+{
+  printf 'tag=%s\nhost=%s\nSLURM_JOB_ID=%s\n' "$tag" "$(hostname)" "${SLURM_JOB_ID:-none}"
+  printf 'EPIC HEAD=%s\nDETECTOR_PATH=%s\nDETECTOR_CONFIG=%s\nACTS=%s\nsamples=%s events x %s geantinos\n' \
+    "$(git -C "$repo_root" rev-parse HEAD)" "$DETECTOR_PATH" "$DETECTOR_CONFIG" "$acts_version" "$nevents" "$nparticles"
+  printf 'container=%s\n' "${EIC_SHELL_PREFIX:-eic_xl:26.09.0-stable (refplanes/eic_exec.sh)}"
+  sha256sum "$xml" "$DETECTOR_PATH/compact/tracking/silicon_disks_modules.xml" \
+    "$DETECTOR_PATH/compact/tracking/definitions_craterlake.xml" "$material_dir/run_material_map_validation.sh" \
+    "$proj/logs/regenerate_svt_material_map_step8q.sh"
+} > provenance.txt
+
+exec > >(tee run_log.txt) 2>&1
+printf 'SVT %s material-map regeneration in %s\n' "$kind" "$run_dir"
+cat provenance.txt
 
 # Skip validation with the old calibrations/materials-map: it belongs to a different geometry
 # (and the ACTS bindings rejected its binning in Step 8m).
-time bash ./run_material_map_validation.sh \
-  --nevents "$nevents" --nparticles "$nparticles" --prefix "$prefix" \
-  --skip-current-map-validation
+time bash "$material_dir/run_material_map_validation.sh" \
+  --nevents "$nevents" --nparticles "$nparticles" --skip-current-map-validation
 
-map_file="$material_dir/${prefix}material-map_map.cbor"
+map_file="$run_dir/material-map_map.cbor"
 test -s "$map_file" || { echo "ERROR: missing/empty map: $map_file" >&2; exit 1; }
 printf 'Completed map: %s\n' "$map_file"
-sha256sum "$map_file"
+sha256sum "$map_file" | tee -a provenance.txt
 echo 'Review the validation plots (Validation/regenerated, Surfaces/) before reconstruction.'
+cp run_log.txt "$git_log"

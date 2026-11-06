@@ -3597,3 +3597,18 @@ identifiers match the tracking-only geometry EICrecon builds.
 Full run: Slurm job 60930010 (1000 x 5000, same statistics as Step 8m), log
 `logs/material_map_step8q_<timestamp>.txt`, Slurm output `logs/slurm_material_map_step8q_60930010.out`.
 PENDING user review of `scripts/material_map/Validation/regenerated` and `Surfaces/` before the v3 reconstruction.
+
+Output reorganisation (2026-11-06, same day): the upstream runner writes fixed names into its working
+directory, so runs overwrote each other's plots and filled `scripts/material_map/` (68 GB).
+- `regenerate_svt_material_map_step8q.sh` now creates `matmap/<tag>/` (tag `step8q_<stamp>` or
+  `step8q_smoke_<stamp>`), symlinks the runner inputs there and runs the runner with that directory
+  as working directory, without a file prefix. Map: `matmap/<tag>/material-map_map.cbor`; also
+  `provenance.txt` and `run_log.txt`; transcript copied to `logs/material_map_<tag>.txt`.
+- Retest: smoke `matmap/step8q_smoke_20261106T220639Z/` (10 x 100); its map is byte-identical to the
+  first smoke map (sha256 `a64ae147…`), and nothing new was written to `scripts/material_map/`.
+- Job 60930010 was held during the change and released afterwards, so it runs the new wrapper.
+- `logs/organize_material_map_outputs_20261106.sh` (report `.txt`) moved earlier runs to
+  `matmap/{smoke_20261016T135951Z,smoke_20261016T140206Z,smoke_20261016T142017Z,production_20261016T144812Z,`
+  `step8m_20261020T164956Z,step8q_smoke_20261106T214810Z,unprefixed_20260719}/` (file names kept; moves in
+  `tmp/file_actions.log`). Symlinks remain at the old paths of the Step 8m and production CBOR maps
+  (the Step 8m one is the default in `simrec/run_sim.sh` and `simrec/acc_study/run_sim.sh`).

@@ -47,6 +47,18 @@ All material-scan outputs live in
 - The disk table (z, r_max, openings) in `disk_material_map.py` is hard-coded from
   `definitions_craterlake.xml`; material names are matched from (Z, rho) in `MATERIAL_NAMES`.
 
+## Material maps (ACTS)
+
+ACTS material-map runs live in `matmap/<run>/` (gitignored), one directory per run, e.g.
+`matmap/step8q_<UTC stamp>/material-map_map.cbor` (give this file to EICrecon via
+`-Pacts:MaterialMap=`), with `provenance.txt`, `run_log.txt`, the intermediate ROOT/JSON files and
+the validation plots (`plots/`, `Validation/`, `Surfaces/`). Make new maps with
+`logs/regenerate_svt_material_map_step8q.sh` (or `sbatch logs/submit_material_map_step8q.sh`);
+it runs the upstream `scripts/material_map/run_material_map_validation.sh` with the run directory
+as working directory, so nothing is written to `scripts/material_map/`. Older runs were moved
+there by `logs/organize_material_map_outputs_20261106.sh`; the Step 8m and production maps keep
+a symlink at their old `scripts/material_map/` path.
+
 ## Conventions that are easy to get wrong
 
 - CSV `x_origin_mm, y_origin_mm` = midpoint of the LEC/first-RSU boundary; module extends toward x = 0.

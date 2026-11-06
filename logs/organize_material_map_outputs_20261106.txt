@@ -1,0 +1,84 @@
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T135951Z_config-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T135951Z/smoke_20261016T135951Z_config-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T135951Z_geant4_material_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T135951Z/smoke_20261016T135951Z_geant4_material_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T135951Z_geometry-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T135951Z/smoke_20261016T135951Z_geometry-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_config-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_config-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_config-map_regenerated.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_config-map_regenerated.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_geant4_material_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_geant4_material_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_geometry-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_geometry-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_material-map_mapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_material-map_mapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_material-map_map.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_material-map_map.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_material-map_unmapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_material-map_unmapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_propagation_material_regenerated_propagated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_propagation_material_regenerated_propagated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T140206Z_propagation_material_regenerated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T140206Z/smoke_20261016T140206Z_propagation_material_regenerated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_config-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_config-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_config-map_regenerated.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_config-map_regenerated.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_geant4_material_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_geant4_material_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_geometry-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_geometry-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_material-map_map.cbor -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_material-map_map.cbor
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_material-map_mapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_material-map_mapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_material-map_map.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_material-map_map.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_material-map_unmapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_material-map_unmapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_propagation_material_regenerated_propagated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_propagation_material_regenerated_propagated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/smoke_20261016T142017Z_propagation_material_regenerated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/smoke_20261016T142017Z/smoke_20261016T142017Z_propagation_material_regenerated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_config-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_config-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_config-map_regenerated.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_config-map_regenerated.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_geant4_material_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_geant4_material_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_geometry-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_geometry-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_map.cbor -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_material-map_map.cbor
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_mapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_material-map_mapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_map.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_material-map_map.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_unmapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_material-map_unmapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_propagation_material_regenerated_propagated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_propagation_material_regenerated_propagated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_propagation_material_regenerated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_propagation_material_regenerated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_config-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_config-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_config-map_regenerated.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_config-map_regenerated.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_geant4_material_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_geant4_material_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_geometry-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_geometry-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_material-map_map.cbor -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_material-map_map.cbor
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_material-map_mapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_material-map_mapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_material-map_map.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_material-map_map.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_material-map_unmapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_material-map_unmapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_propagation_material_regenerated_propagated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_propagation_material_regenerated_propagated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_propagation_material_regenerated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_propagation_material_regenerated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_config-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_config-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_config-map_regenerated.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_config-map_regenerated.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_geant4_material_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_geant4_material_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_geometry-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_geometry-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_material-map_map.cbor -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_material-map_map.cbor
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_material-map_mapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_material-map_mapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_material-map_map.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_material-map_map.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_material-map_unmapped.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_material-map_unmapped.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_propagation_material_regenerated_propagated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_propagation_material_regenerated_propagated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8q_smoke_20261106T214810Z_propagation_material_regenerated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/step8q_smoke_20261106T214810Z_propagation_material_regenerated.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/plots -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/plots
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/Validation -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/Validation
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/Surfaces -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_smoke_20261106T214810Z/Surfaces
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/config-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/config-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/config-map_regenerated.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/config-map_regenerated.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/geant4_material_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/geant4_material_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/geometry-map.json -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/geometry-map.json
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/material-map.cbor -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/material-map.cbor
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/material-map_tracks.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/material-map_tracks.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/propagation_material_current.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/propagation_material_current.root
+moved /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/propagation_material_regenerated.root -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/unprefixed_20260719/propagation_material_regenerated.root
+symlink /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/step8m_20261020T164956Z_material-map_map.cbor -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8m_20261020T164956Z/step8m_20261020T164956Z_material-map_map.cbor
+symlink /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map/production_20261016T144812Z_material-map_map.cbor -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/production_20261016T144812Z/production_20261016T144812Z_material-map_map.cbor
+Remaining in /global/cfs/cdirs/m3763/pdatta/epic/scripts/material_map:
+5359.diff
+6010.diff
+6012.diff
+calibrations
+epic.py
+Examples
+fieldmaps
+geometry_epic.py
+.gitignore
+materialmap_config.py
+material_mapping_epic.py
+material_recording_epic.py
+material_validation_epic.py
+production_20261016T144812Z_material-map_map.cbor
+__pycache__
+readme.md
+run_material_map_validation.sh
+step8m_20261020T164956Z_material-map_map.cbor
