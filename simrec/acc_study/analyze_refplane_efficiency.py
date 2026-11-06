@@ -69,6 +69,11 @@ DEFINITIONS (one primary counts at most once per disk)
     the |y| view marks both boundary values.
   2D maps: true (x, y), --xy-bin-mm square bins (default 4 mm), all momenta,
     every primary that reached the plane (no position cut). 1D profiles (y, |y|, x): 1 mm bins; tan bins 0.05.
+    Map display (2026-11-06): a bin is drawn white if it has < --min-denominator-2d
+    entries, or if its efficiency is < --map-white-below-pct (20%) AND its centre is
+    outside the active-silicon outline (beyond the disk, beam-pipe hole). Real gaps
+    inside the outline keep their colour (--map-white-everywhere drops that condition).
+    Colour scale 80-100%; lower values use the bottom colour.
   Plane shape: no assumption that a plane is centred on the beam axis. The
     plane annulus (plane_map.csv v2 columns center_x_mm, center_y_mm,
     r_inner/r_outer_about_center_mm; a point is on the plane if
@@ -109,7 +114,7 @@ P_GROUPS = [(0.5, 1.0), (1.0, 3.0), (3.0, 20.01)]     # coarse groups for 1D cur
 LINE_EDGES = np.arange(-450.0, 450.0 + 1e-9, 1.0)      # y and x profiles, 1 mm
 ABS_EDGES = np.arange(0.0, 450.0 + 1e-9, 1.0)
 TAN_EDGES = np.round(np.arange(-1.5, 1.5 + 1e-9, 0.05), 10)
-SELECTIONS = ("active", "nomargin", "fid")
+SELECTIONS = ("fid", "active", "nomargin")   # plotting/table order
 DECOMP = ("accept", "sl_fid")
 DISK_ORDER = [row[0] for row in DISKS["negative"][::-1]] + [row[0] for row in DISKS["positive"]]
 # Old straight-line fiducial results (v8, all momenta) for the comparison table.
@@ -140,6 +145,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--outer-margin-mm", type=float, default=40.0)
     parser.add_argument("--inner-boundary", choices=["openings", "xml_rmin"], default="openings")
     parser.add_argument("--min-denominator-2d", type=int, default=20)
+    parser.add_argument("--map-white-below-pct", type=float, default=20.0,
+                        help="xy maps: draw a bin white if its efficiency is below this value [%%] and "
+                             "(unless --map-white-everywhere) its centre is outside the active outline.")
+    parser.add_argument("--map-white-everywhere", action="store_true",
+                        help="Apply --map-white-below-pct to every bin, including real gaps inside the "
+                             "active outline (hides genuine inefficiency; off by default).")
     parser.add_argument("--min-denominator-1d", type=int, default=100)
     parser.add_argument("--max-shards-per-side", type=int, help="Testing option.")
     return parser.parse_args()
@@ -495,35 +506,53 @@ def plot_vs_p(disk, c, vz):
 def draw_boundaries(ax, g, with_family=True):
     t = np.linspace(0, 2 * np.pi, 400)
     for xc, yc, r in g["openings"]:
-        ax.plot(xc + r * np.cos(t), yc + r * np.sin(t), "r-", lw=0.7)
-    ax.plot(g["rmax"] * np.cos(t), g["rmax"] * np.sin(t), "r-", lw=0.7)
+        ax.plot(xc + r * np.cos(t), yc + r * np.sin(t), "r-", lw=1.6)
+    ax.plot(g["rmax"] * np.cos(t), g["rmax"] * np.sin(t), "r-", lw=1.6)
     for r in g["fid"]:
-        ax.plot(r * np.cos(t), r * np.sin(t), "m--", lw=0.7)
+        ax.plot(r * np.cos(t), r * np.sin(t), "m--", lw=1.6)
+    # Inner and outer edges of the zero-material reference plane (annulus about its own centre).
     cx, cy = g["plane_centre"]
     for r in (g["plane_r_inner"], g["plane_r_outer"]):
-        ax.plot(cx + r * np.cos(t), cy + r * np.sin(t), color="0.4", ls=(0, (1, 2)), lw=0.7)
+        ax.plot(cx + r * np.cos(t), cy + r * np.sin(t), color="0.35", ls=(0, (1, 2)), lw=1.6)
     if with_family and g["family_a_y"] is not None:
         for y in g["family_a_y"]:
-            ax.axhline(y, color="c", ls=":", lw=0.8)
+            ax.axhline(y, color="c", ls=":", lw=1.6)
     if "active_outline" in g:
         limit, step, n = g["active_grid"]
         centres = -limit + step * (np.arange(n) + 0.5)
         ax.contour(centres, centres, g["active_outline"].T.astype(float), levels=[0.5],
-                   colors="orange", linewidths=0.6)
+                   colors="orange", linewidths=1.5)
 
 
-def plot_map(disk, c, g, xy_edges, vz, minimum):
+def plot_map(disk, c, g, xy_edges, vz, minimum, white_below_pct, white_everywhere):
     e = ratio(c["xy_num"], c["xy_den"], minimum)
-    fig, ax = plt.subplots(figsize=(7.5, 6.5))
+    # White (not drawn) where the efficiency is below the threshold: by default only for bins whose
+    # centre is outside the active-silicon outline (beyond the disk, beam-pipe hole), so that real
+    # gaps inside the silicon keep their colour.
+    centres = 0.5 * (xy_edges[1:] + xy_edges[:-1])
+    xx, yy = np.meshgrid(centres, centres, indexing="ij")
+    low = 100 * e < white_below_pct
+    if not white_everywhere:
+        low &= ~in_active_outline(g, xx.ravel(), yy.ravel()).reshape(xx.shape)
+    e = np.where(low, np.nan, e)
+    fig, ax = plt.subplots(figsize=(7.5, 7.6))
     mesh = ax.pcolormesh(xy_edges, xy_edges, 100 * e.T, vmin=80, vmax=100, cmap="viridis", shading="flat")
-    fig.colorbar(mesh, ax=ax, label="hit efficiency [%] (plane reached)")
+    fig.colorbar(mesh, ax=ax, extend="min", label="hit efficiency [%] (plane reached)")
     draw_boundaries(ax, g)
     lim = g["plane_rmax"] + abs(g["plane_centre"][0]) + 10
     ax.set_xlim(-lim, lim); ax.set_ylim(-lim, lim); ax.set_aspect("equal")
     ax.set_xlabel("true x at disk [mm]"); ax.set_ylabel("true y at disk [mm]")
-    ax.set_title(f"{disk}, vz={vz:+d} mm, all p, {xy_edges[1]-xy_edges[0]:g} mm bins "
-                 f"(masked < {minimum}); red XML, magenta fid, orange active, cyan A/B, grey dotted plane")
-    ax.title.set_fontsize(8)
+    where = "any bin" if white_everywhere else "bins outside the active outline"
+    ax.set_title(f"{disk}, vz={vz:+d} mm, all momenta, {xy_edges[1]-xy_edges[0]:g} mm bins\n"
+                 f"white: < {minimum} entries, or efficiency < {white_below_pct:g}% in {where}", fontsize=9)
+    from matplotlib.lines import Line2D
+    key = [Line2D([], [], color="r", lw=1.6, label="XML beam-pipe openings + rmax"),
+           Line2D([], [], color="m", ls="--", lw=1.6, label="fiducial annulus (fid)"),
+           Line2D([], [], color="orange", lw=1.5, label="active-silicon outline (active)"),
+           Line2D([], [], color="0.35", ls=(0, (1, 2)), lw=1.6, label="reference plane: inner/outer edge")]
+    if g["family_a_y"] is not None:
+        key.insert(3, Line2D([], [], color="c", ls=":", lw=1.6, label="row family A (36 mm) / B (33 mm) boundary"))
+    ax.legend(handles=key, loc="upper center", bbox_to_anchor=(0.5, -0.09), ncol=2, fontsize=7.5, frameon=False)
     fig.tight_layout()
     return fig
 
@@ -538,17 +567,17 @@ def plot_profiles(disk, c, g, vz, minimum):
         names = [("tanx", "tan theta_x = px/|pz|"), ("tany", "tan theta_y = py/|pz|")] if key == "tan" else [(key, "")]
         for name, tag in names:
             num, den = c[f"{name}_num"][k], c[f"{name}_den"][k]
-            ax.plot(centres, 100 * ratio(num.sum(0), den.sum(0), minimum), "-", lw=0.9,
+            ax.plot(centres, 100 * ratio(num.sum(0), den.sum(0), minimum), "-", lw=1.6,
                     label=f"all p {tag}".strip())
             if key != "tan":
                 for low, high in P_GROUPS:
                     rows = (P_EDGES[:-1] >= low - 1e-9) & (P_EDGES[1:] <= high + 1e-9)
-                    ax.plot(centres, 100 * ratio(num[rows].sum(0), den[rows].sum(0), minimum), "-", lw=0.6,
+                    ax.plot(centres, 100 * ratio(num[rows].sum(0), den[rows].sum(0), minimum), "-", lw=1.1,
                             alpha=0.8, label=f"{low:g}-{min(high, 20):g} GeV")
         if g["family_a_y"] is not None and key in ("y", "absy"):
             values = g["family_a_y"] if key == "y" else sorted({abs(v) for v in g["family_a_y"]})
             for v in values:
-                ax.axvline(v, color="c", ls=":", lw=1.0)
+                ax.axvline(v, color="c", ls=":", lw=1.6)
             ax.text(0.01, 0.02, "cyan: A(36 mm)/B(33 mm) boundary", transform=ax.transAxes, fontsize=7)
         ax.set_xlabel(label); ax.set_ylabel("hit efficiency [%]"); ax.set_ylim(70, 101)
         ax.grid(alpha=0.3); ax.legend(fontsize=6, loc="lower right")
@@ -558,15 +587,27 @@ def plot_profiles(disk, c, g, vz, minimum):
     return fig
 
 
-def plot_overview(integrated, vz):
-    fig, ax = plt.subplots(figsize=(10, 4.5))
+def plot_overview(integrated, vz, expected_pct=98.0):
+    """Three adjacent thin bars per disk (one per selection, SELECTIONS order) and the expected
+    efficiency as a horizontal reference line. The y axis does not start at 0."""
+    fig, ax = plt.subplots(figsize=(11, 4.8))
     x = np.arange(len(DISK_ORDER))
-    for offset, sel in zip((-0.2, 0.0, 0.2), SELECTIONS):
+    width = 0.24
+    lowest = 100.0
+    for k, sel in enumerate(SELECTIONS):
         t = integrated[integrated.selection == sel].set_index("disk").loc[DISK_ORDER]
-        ax.errorbar(x + offset, 100 * t.efficiency, yerr=100 * t.binomial_error, fmt="o", ms=4, label=sel)
+        values = 100 * t.efficiency.to_numpy()
+        lowest = min(lowest, np.nanmin(values))
+        bars = ax.bar(x + (k - 1) * width, values, width, yerr=100 * t.binomial_error, capsize=1.5,
+                      label=sel, edgecolor="black", linewidth=0.4)
+        ax.bar_label(bars, labels=[f"{v:.1f}" for v in values], fontsize=6, rotation=90, padding=2)
+    ax.axhline(expected_pct, color="red", ls="--", lw=1.4, label=f"expectation ({expected_pct:g}%)")
+    ax.set_ylim(5 * np.floor((lowest - 3) / 5), 101.5)
     ax.set_xticks(x, DISK_ORDER); ax.set_ylabel("hit efficiency [%] (plane reached)")
-    ax.set_title(f"Integrated hit efficiency, true crossing point, vz={vz:+d} mm, 0.5-20 GeV")
-    ax.grid(alpha=0.3); ax.legend()
+    ax.set_title(f"Integrated hit efficiency, true crossing point, vz={vz:+d} mm, 0.5-20 GeV "
+                 "(y axis does not start at 0)")
+    ax.grid(axis="y", alpha=0.3)
+    ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.08), ncol=4, frameon=False)
     fig.tight_layout()
     return fig
 
@@ -681,7 +722,8 @@ def main() -> None:
             for disk in DISK_ORDER:
                 c, g = counters[disk], geometry[disk]
                 for tag, fig in (("vs_p", plot_vs_p(disk, c, vz)),
-                                 ("map_xy", plot_map(disk, c, g, xy_edges, vz, args.min_denominator_2d)),
+                                 ("map_xy", plot_map(disk, c, g, xy_edges, vz, args.min_denominator_2d,
+                                                     args.map_white_below_pct, args.map_white_everywhere)),
                                  ("profiles", plot_profiles(disk, c, g, vz, args.min_denominator_1d))):
                     pdf.savefig(fig)
                     fig.savefig(out / f"{disk}_{tag}_{label}.png", dpi=130)

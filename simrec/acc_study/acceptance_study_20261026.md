@@ -758,3 +758,42 @@ inefficiency.
   outer module edges costs little, most on ED0/HD0.
 - A vs B rows at vz 0: A is 98.0–98.3%; B is lower on every disk, by 0.15
   points on ED4 up to 0.84 points on ED2.
+
+## 2026-11-06: plot presentation update (refplane_efficiency_v3)
+
+User requests, display only (numbers unchanged):
+- **xy maps, white threshold.**
+  - A bin is drawn white if its efficiency is < 20% AND its centre is outside
+    the active-silicon outline (beyond the disk, beam-pipe hole), in addition
+    to the existing < 20 entries mask.
+  - The threshold is NOT applied inside the outline. Real gaps there must stay
+    visible: 0.02–0.3% of inside bins are < 20% at vz = 0, but 3.8% on HD0 at
+    vz = +100 (the steep-incidence row gaps). Outside the outline, 88–96% of
+    bins are < 20%.
+  - Options: `--map-white-below-pct` (20) and `--map-white-everywhere` (off).
+  - The colour bar shows that values below 80% use the bottom colour.
+  - Partly covered 4 mm bins straddling the outline edge remain as a thin dark
+    rim.
+- **Map title and key.**
+  - The title is two lines: disk/vz/binning, then the white rule.
+  - The colour-word key is replaced by a legend with line samples under the
+    map.
+  - The grey dotted circles are the inner/outer edges of the reference plane
+    (annulus about its own centre, plane_map.csv). They are now labelled so.
+- **Line widths:** boundary lines 0.6–0.8 → 1.5–1.6; profile curves
+  0.9/0.6 → 1.6/1.1.
+- **Selection order:** fid → active → nomargin (`SELECTIONS`). The
+  `histograms.npz` selection axis follows this order; it is stored in the
+  `selections` array.
+- **Overview page.**
+  - Three adjacent thin bars per disk, with value labels.
+  - Red dashed reference line at the expected 98%.
+  - The y axis does not start at 0 (stated in the title).
+- **Run.**
+  - Command: `OUTPUT_DIR=results/refplane_efficiency_v3 ./run_refplane_efficiency.sh`.
+  - Log: `logs/refplane_efficiency_20261106T220223Z.log`.
+  - Check: every integrated efficiency and denominator is identical to v2 for
+    all three vertices.
+  - Test runs (2 shards, vz = +100) went to the session scratchpad. Their logs
+    are `logs/refplane_efficiency_20261106T2200*Z.log` and
+    `logs/refplane_efficiency_20261106T2201*Z.log`.
