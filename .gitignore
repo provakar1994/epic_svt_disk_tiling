@@ -9,6 +9,7 @@ __pycache__/
 /npsim
 /simrec/*
 !/simrec/acc_study/
+!/simrec/treffi_study/
 
 # Acceptance-study outputs and caches; keep the scripts, notebooks, and logs.
 /simrec/acc_study/extracted/
@@ -20,3 +21,9 @@ __pycache__/
 /simrec/acc_study/**/*.pyc
 /simrec/acc_study/*.root
 /simrec/acc_study/*.npz
+
+# Tracking performance study: keep scripts, logs and the PWG table; outputs are regenerated
+# by run_endcap_tracking_performance.sh. shujie/ is a reference copy of another user's
+# notebook plus a symlink to their live module directory.
+/simrec/treffi_study/out/
+/simrec/treffi_study/shujie/
