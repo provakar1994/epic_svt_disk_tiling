@@ -3612,3 +3612,9 @@ directory, so runs overwrote each other's plots and filled `scripts/material_map
   `step8m_20261020T164956Z,step8q_smoke_20261106T214810Z,unprefixed_20260719}/` (file names kept; moves in
   `tmp/file_actions.log`). Symlinks remain at the old paths of the Step 8m and production CBOR maps
   (the Step 8m one is the default in `simrec/run_sim.sh` and `simrec/acc_study/run_sim.sh`).
+
+Full run done (job 60930010, 2026-11-06 14:23-15:43 local, 80.9 min, exit 0): `matmap/step8q_20261106T222257Z/`
+(28 GB), map `material-map_map.cbor` sha256 `b5ce1f2e…`, transcript `logs/material_map_step8q_20261106T222257Z.txt`.
+Only error-like lines: the known `envelope26` bounding-box message. (`Surfaces/current/*` are empty
+directories, created by the runner even when the old-map validation is skipped.)
+PENDING user review of `Validation/regenerated/` and `Surfaces/regenerated/` before the v3 reconstruction.
