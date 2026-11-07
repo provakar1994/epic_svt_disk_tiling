@@ -241,3 +241,20 @@ Vacuum; their hit collections are ignored by EICrecon).
 - `run_endcap_tracking_performance.sh`: new `CAMPAIGN` (default acceptance_v1), `CAMPAIGN_LABEL`, `CONFIGS`;
   cache `treffi_study/reduced_<CAMPAIGN>/`. Run the analysis only after the job ends (the `rec_*.root`
   glob would also match `rec_*.tmp.*.root` files of running tasks).
+
+### 2026-11-06: v3 (Step 8q map) results vs v1 (Step 8m map)
+
+Reconstruction job 60936753: 300/300 tasks completed (5 min 50 s), every rec log loads the Step 8q map
+(sha256 `b5ce1f2e…`), no failures. Analysis: `run_v3_step8q_analysis_20261106.sh` -> `out/v3_fine_vz0_50files/`,
+`out/v3_pwg_vz0_50files/`, `out/v1_vs_v3_pwg_vz0_50files/pwg_resol_{dp,qop}_v1_vs_v3.png`; comparison
+`compare_v1_v3_20261106.py` -> `out/v1_vs_v3_pwg_vz0_50files/compare_v1_v3.txt`.
+
+- Every resolution and pull width agrees within statistics: sigma(v3)/sigma(v1) has median 0.995–1.010 for all
+  quantities and PWG eta bins (largest single-bin deviations at 3 < |eta| < 3.5, where statistics are low).
+- Pull widths are unchanged, e.g. q/p: 1.07–1.10 for |eta| < 3, 1.19 (forward) and 1.57 (backward) at 3–3.5.
+- Efficiency unchanged: integrated per p bin within 0.002; forward dip 1.6 < eta < 1.85 (p > 2 GeV, vz = 0)
+  0.7742 (v1) vs 0.7743 (v3); references 1.35–1.55 and 2.1–2.4 also unchanged.
+- Conclusion: the map / geometry inconsistency did not affect these results. The forward dip, the
+  above-requirement resolution and the >1 pulls are not caused by it. Caveat: identical results could also
+  mean the two maps hardly differ inside the tracker; a run with no material map would show how much the
+  map matters at all.
