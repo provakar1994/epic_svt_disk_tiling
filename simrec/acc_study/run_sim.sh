@@ -5,6 +5,8 @@
 #   ACC_XML       compact XML for npsim/eicrecon (default $DETECTOR_PATH/epic_craterlake_tracking_only.xml)
 #   ACC_STEERING  npsim --steeringFile (default: none). Command-line options below
 #                 still take precedence over values set in the steering file.
+#   ACC_MATERIAL_MAP  ACTS material map for eicrecon (default: the Step 8m map below). It must be
+#                 generated from the same XML used here (see proj_svt_disk_tiling/matmap/).
 set -euo pipefail
 
 show_usage() {
@@ -45,7 +47,8 @@ export OMP_NUM_THREADS=1
 
 xml="${ACC_XML:-$DETECTOR_PATH/epic_craterlake_tracking_only.xml}"
 steering_file="${ACC_STEERING:-}"
-material_map="$repo_root/scripts/material_map/step8m_20261020T164956Z_material-map_map.cbor"
+material_map="${ACC_MATERIAL_MAP:-$repo_root/scripts/material_map/step8m_20261020T164956Z_material-map_map.cbor}"
+[[ -z "${ACC_MATERIAL_MAP:-}" ]] || material_map="$(realpath -m -- "$material_map")"
 root_dir="$output_dir/rootfiles"
 log_dir="$output_dir/logs"
 sim_file="$root_dir/sim_${tag}.root"

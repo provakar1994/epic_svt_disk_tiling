@@ -221,3 +221,23 @@ backward | forward, one curve per p bin). The p-integrated efficiency is still w
 `bash redo_efficiency_plots_20261106.sh before_no_zoom "superseded: zoom panel and all-p curve removed (same file name)"`
 (the script now takes a retention label and reason); previous PNGs in
 `tmp/retained/2026-11-06/simrec/treffi_study/out_efficiency_before_no_zoom/`.
+
+### 2026-11-06: reconstruction of acceptance_v3_refplanes with the Step 8q map
+
+Goal: consistency (not yet the dip). Simulation, material map and reconstruction now all use the
+same geometry: installed `epic_craterlake_tracking_only.xml` (sha256 `c0141309…`, EPIC `311634084`,
+Step 8q). Map: `matmap/step8q_20261106T222257Z/material-map_map.cbor` (sha256 `b5ce1f2e…`, made from
+the tracking-only XML; see Step 10 in `logs/rsu_opt_endcap_20261004.md`). The v3 sim used the
+reference-plane overlay XML; reconstruction uses the plain XML (planes have no ACTS parameters and are
+Vacuum; their hit collections are ignored by EICrecon).
+
+- `simrec/acc_study/run_sim.sh`: new optional `ACC_MATERIAL_MAP` (default unchanged: Step 8m map).
+- `simrec/acc_study/prepare_recon_tasks_v3_step8q.sh` -> `task_lists/acceptance_v3_refplanes_rec_step8q/`
+  (300 recon tasks, 6 configurations x 50 chunks x 100k; outputs `rec_<tag>.root` next to the sim files).
+- Smoke test (500 events, vz0 forward chunk 001, `/pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/recon_smoke_v3_step8q/`):
+  map loaded, warning set identical to the v1 rec log, matched fraction 0.78 (v1 integrated ~0.77).
+- Submitted: `sbatch --time=01:00:00 --job-name=svt-v3-rec submit_premium_packed.sh task_lists/acceptance_v3_refplanes_rec_step8q/tasks.txt`
+  -> Slurm job 60936753 (4 premium nodes, one wave).
+- `run_endcap_tracking_performance.sh`: new `CAMPAIGN` (default acceptance_v1), `CAMPAIGN_LABEL`, `CONFIGS`;
+  cache `treffi_study/reduced_<CAMPAIGN>/`. Run the analysis only after the job ends (the `rec_*.root`
+  glob would also match `rec_*.tmp.*.root` files of running tasks).
