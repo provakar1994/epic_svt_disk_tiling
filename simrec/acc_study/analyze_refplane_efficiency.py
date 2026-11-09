@@ -114,7 +114,10 @@ P_GROUPS = [(0.5, 1.0), (1.0, 3.0), (3.0, 20.01)]     # coarse groups for 1D cur
 LINE_EDGES = np.arange(-450.0, 450.0 + 1e-9, 1.0)      # y and x profiles, 1 mm
 ABS_EDGES = np.arange(0.0, 450.0 + 1e-9, 1.0)
 TAN_EDGES = np.round(np.arange(-1.5, 1.5 + 1e-9, 0.05), 10)
-SELECTIONS = ("fid", "active", "nomargin")   # plotting/table order
+SELECTIONS = ("fid", "active", "nomargin")   # table order (all computed and written to CSV/summary)
+# Plotted selections (2026-11-09): nomargin is not plotted; its XML envelope includes untiled
+# area around the beam-hole cut-out and beyond the outer staircase, so it is not a module efficiency.
+PLOT_SELECTIONS = ("fid", "active")
 DECOMP = ("accept", "sl_fid")
 DISK_ORDER = [row[0] for row in DISKS["negative"][::-1]] + [row[0] for row in DISKS["positive"]]
 # Old straight-line fiducial results (v8, all momenta) for the comparison table.
@@ -482,7 +485,8 @@ def ratio(num, den, minimum):
 def plot_vs_p(disk, c, vz):
     centres = 0.5 * (P_EDGES[:-1] + np.minimum(P_EDGES[1:], 20.0))
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 4.5))
-    for k, sel in enumerate(SELECTIONS):
+    for sel in PLOT_SELECTIONS:
+        k = SELECTIONS.index(sel)
         e, err = binomial(c["p_num"][k], c["p_den"][k])
         a1.errorbar(centres, 100 * e, yerr=100 * err, fmt="o-", ms=3, capsize=2, label=f"true point: {sel}")
     k = DECOMP.index("sl_fid")
@@ -558,7 +562,7 @@ def plot_map(disk, c, g, xy_edges, vz, minimum, white_below_pct, white_everywher
 
 
 def plot_profiles(disk, c, g, vz, minimum):
-    k = SELECTIONS.index("nomargin")
+    k = SELECTIONS.index("active")
     fig, axes = plt.subplots(2, 2, figsize=(13, 8))
     panels = [("y", LINE_EDGES, "true y at disk [mm]"), ("absy", ABS_EDGES, "|true y| at disk [mm]"),
               ("x", LINE_EDGES, "true x at disk [mm]"), ("tan", TAN_EDGES, "local tan(theta) at plane")]
@@ -581,24 +585,25 @@ def plot_profiles(disk, c, g, vz, minimum):
             ax.text(0.01, 0.02, "cyan: A(36 mm)/B(33 mm) boundary", transform=ax.transAxes, fontsize=7)
         ax.set_xlabel(label); ax.set_ylabel("hit efficiency [%]"); ax.set_ylim(70, 101)
         ax.grid(alpha=0.3); ax.legend(fontsize=6, loc="lower right")
-    fig.suptitle(f"{disk}, vz={vz:+d} mm, selection nomargin (true point inside disk), "
+    fig.suptitle(f"{disk}, vz={vz:+d} mm, selection active (true point inside the active-silicon outline), "
                  f"bins with < {minimum} entries masked", fontsize=9)
     fig.tight_layout()
     return fig
 
 
 def plot_overview(integrated, vz, expected_pct=98.0):
-    """Three adjacent thin bars per disk (one per selection, SELECTIONS order) and the expected
-    efficiency as a horizontal reference line. The y axis does not start at 0."""
+    """Adjacent thin bars per disk (one per PLOT_SELECTIONS entry) and the expected efficiency as a
+    horizontal reference line. The y axis does not start at 0."""
     fig, ax = plt.subplots(figsize=(11, 4.8))
     x = np.arange(len(DISK_ORDER))
-    width = 0.24
+    width = 0.32
     lowest = 100.0
-    for k, sel in enumerate(SELECTIONS):
+    for k, sel in enumerate(PLOT_SELECTIONS):
         t = integrated[integrated.selection == sel].set_index("disk").loc[DISK_ORDER]
         values = 100 * t.efficiency.to_numpy()
         lowest = min(lowest, np.nanmin(values))
-        bars = ax.bar(x + (k - 1) * width, values, width, yerr=100 * t.binomial_error, capsize=1.5,
+        offset = (k - (len(PLOT_SELECTIONS) - 1) / 2) * width
+        bars = ax.bar(x + offset, values, width, yerr=100 * t.binomial_error, capsize=1.5,
                       label=sel, edgecolor="black", linewidth=0.4)
         ax.bar_label(bars, labels=[f"{v:.1f}" for v in values], fontsize=6, rotation=90, padding=2)
     ax.axhline(expected_pct, color="red", ls="--", lw=1.4, label=f"expectation ({expected_pct:g}%)")

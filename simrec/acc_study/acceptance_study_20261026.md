@@ -797,3 +797,31 @@ User requests, display only (numbers unchanged):
   - Test runs (2 shards, vz = +100) went to the session scratchpad. Their logs
     are `logs/refplane_efficiency_20261106T2200*Z.log` and
     `logs/refplane_efficiency_20261106T2201*Z.log`.
+
+## 2026-11-09: nomargin dropped from all plots (refplane_efficiency_v4)
+
+**Why.** The bump near y = 0 in the D1 y-profile (about 78%, falling below 70%
+at |y| ~ 15-50 mm) was a denominator artefact of nomargin, not inefficiency.
+- The 1D profiles used nomargin: true point outside the buffered opening
+  circle (r ~ 36.8 mm) and inside rmax, summed over x.
+- The modules stop in a rectangular cut-out around the hole, at |x| ~ 48 mm
+  for |y| < 30 and ~40 mm near |y| ~ 40 (52 / 40 mm on D2).
+- The untiled ring between the circle and the module ends is 20% of the
+  row's denominator at y = 0 and about 50% at |y| ~ 40, with ~0% efficiency.
+  On the silicon it is 96-99%.
+- Numbers from the v3 vz = 0 xy maps, 4 mm bins (scratchpad script
+  `y_profile_centre.py`).
+
+**Change (user request): nomargin is no longer plotted.**
+- New `PLOT_SELECTIONS = ("fid", "active")`.
+- The 1D profiles (y, |y|, x, tan theta) now use **active**.
+- Efficiency vs p shows fid and active only.
+- Overview: two adjacent bars per disk, with the 98% line.
+- nomargin is still computed and written to the CSVs and `summary.txt`
+  (traceability).
+
+**Run.**
+- Command: `OUTPUT_DIR=results/refplane_efficiency_v4 ./run_refplane_efficiency.sh`.
+- Log: `logs/refplane_efficiency_20261109T162934Z.log`.
+- Numbers are unchanged from v3.
+- HD1 vz = 0 y-profile: the centre region now reads ~97-100%.
