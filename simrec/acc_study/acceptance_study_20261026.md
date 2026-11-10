@@ -898,3 +898,15 @@ at |y| ~ 15-50 mm) was a denominator artefact of nomargin, not inefficiency.
     - All six HD0/HD1 curves are now monotonic and overlap within ~0.5 pt.
     - Plateau ~98.4-98.8%; ~96-97% at 0.4, ~93% at 0.6, ~89% at 0.8.
     - The previous v2 figure was moved to tmp/retained/2026-11-10/ (logged).
+  * slide1_schematic: zoom panel fixed (user: "sensors don't sit on the facets").
+    Now drawn to scale from the built geometry (outward-facing 33 mm-pitch rows):
+    - carbon outer surfaces at +/-3.0 mm, flat width 10.65 mm (sharp-corner model);
+    - 32 mm baseplate on the flat; active-Si centre at +/-3.596 mm, 18.514 mm wide;
+    - neighbouring rows alternate sides every 16.5 mm, giving a 2.0 mm sensor overlap.
+    Checks against geometry/active_silicon_rectangles.csv:
+    - Four sensor planes per disk: +/-3.0095 mm (inward-facing modules, sensor
+      toward the carbon; D2-D4) and +/-3.5955 mm (outward-facing).
+    - HD1 at x = 150 mm: rows alternate +3.596 / -3.596 mm with 2.01 mm overlaps.
+    - HD4 central A rows (x = 150 mm): overlaps of only 0.1-0.9 mm, and one
+      0.06 mm gap between y = 99.41 and 99.47 mm. These rows see shallow tracks.
+    The old figure was moved to tmp/retained/2026-11-10/ (logged).
