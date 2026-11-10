@@ -890,3 +890,11 @@ at |y| ~ 15-50 mm) was a denominator artefact of nomargin, not inefficiency.
   * Material (disk_material_map step8q; step8m agrees within 0.001%):
     <x/X0> on the annulus is 0.27-0.31% per disk (ED4 0.274%), about 61%
     carbon fibre and 21% silicon.
+  * slide4_incidence_angle (v3, talk/20261110_svt_dsc/slide4_incidence_angle_rowbins.py,
+    run_slide4_rowbins.sh): the sawtooth was bin/row aliasing. tan theta_y ~ y/L, so a
+    fixed tan bin spans a different number of 16.5 mm row spacings on each curve.
+    - Fix: recomputed from the per-track shards with per-curve bins of width
+      n * 16.5 mm / L (n = 1-3, width 0.09-0.13).
+    - All six HD0/HD1 curves are now monotonic and overlap within ~0.5 pt.
+    - Plateau ~98.4-98.8%; ~96-97% at 0.4, ~93% at 0.6, ~89% at 0.8.
+    - The previous v2 figure was moved to tmp/retained/2026-11-10/ (logged).
