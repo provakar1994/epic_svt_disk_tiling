@@ -607,7 +607,7 @@ def plot_overview(integrated, vz, expected_pct=98.0):
                       label=sel, edgecolor="black", linewidth=0.4)
         ax.bar_label(bars, labels=[f"{v:.1f}" for v in values], fontsize=6, rotation=90, padding=2)
     ax.axhline(expected_pct, color="red", ls="--", lw=1.4, label=f"expectation ({expected_pct:g}%)")
-    ax.set_ylim(5 * np.floor((lowest - 3) / 5), 101.5)
+    ax.set_ylim(5 * np.floor((lowest - 3) / 5), 100.3)
     ax.set_xticks(x, DISK_ORDER); ax.set_ylabel("hit efficiency [%] (plane reached)")
     ax.set_title(f"Integrated hit efficiency, true crossing point, vz={vz:+d} mm, 0.5-20 GeV "
                  "(y axis does not start at 0)")

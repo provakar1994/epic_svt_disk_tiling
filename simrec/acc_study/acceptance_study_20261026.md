@@ -825,3 +825,53 @@ at |y| ~ 15-50 mm) was a denominator artefact of nomargin, not inefficiency.
 - Log: `logs/refplane_efficiency_20261109T162934Z.log`.
 - Numbers are unchanged from v3.
 - HD1 vz = 0 y-profile: the centre region now reads ~97-100%.
+
+## 2026-11-10: talk figures (SVT DSC) and geometric check of the RSU-structure loss
+
+**Figures.**
+- Location: `results/talk/20261110_svt_dsc/` (PNG + PDF).
+- Scripts: `talk/20261110_svt_dsc/`, runners `run_slides_1_2.sh` and
+  `run_slides_3_4.sh`.
+- Fid selection only; reference-plane results v4; nothing from the
+  straight-line analysis.
+
+| Figure | Content |
+|---|---|
+| slide1_schematic | method and corrugation zoom |
+| slide2_ED4_map | ED4 x-y map, v_z = 0 |
+| slide2_ED4_vs_p | ED4 (ED3/ED2 faint) vs p |
+| slide3_vertex_bars | 10 disks x 3 vertices, y range 93-100 |
+| slide4_incidence_angle | HD0/HD1 fid efficiency vs \|tan theta_y\|, 0.10 bins |
+| slide4_incidence_angle_fine | 0.05-bin version: the nearest disk shows row/overlap aliasing |
+
+**Slide 4 result.** All six curves (HD0/HD1 x 3 vertices) collapse within
+~0.5 pt below \|tan theta_y\| = 0.5. Plateau ~98.3-98.9%, onset at
+0.35-0.40, ~94% at 0.5, ~90% at 0.7.
+
+**Geometric check (`check_rsu_geometric_coverage.{py,txt}`).**
+- Inputs: v_z = 0, 4 shards per side, fid annulus. Each true track is traced
+  through the as-built sensitive boxes, from
+  `geometry/active_silicon_rectangles.csv`.
+- RSU structure, from the box paths: 12 sensitive boxes per RSU
+  (2 x-halves x 3 tiles x 2 y-halves), each 3.571 x 9.197 mm, for all 12,719
+  RSUs.
+- Gaps: 0.02 / 0.08 mm in x and 0.12 mm in y inside an RSU; 0.08 mm between
+  RSUs.
+- Inactive fraction: 1 - (21.426 x 18.394)/(21.666 x 18.514) = 1.7487%,
+  confirmed on every disk.
+- (a) measured vs (b) geometric with the true direction agree to <= 0.06 pt on
+  all disks, so physics effects (secondaries, thresholds) are negligible.
+- (c) geometric at normal incidence = coverage built into the layout:
+  - D2-D4: 97.95-98.10%, so the layout explains the whole loss. Inclined
+    tracks even recover 0.2-0.4 pt on D3/D4 by covering gaps between modules.
+  - D0/D1: 98.35-98.49%, i.e. ~1.5-1.65 pt built in. The extra ~0.9-1.1 pt is
+    angle-dependent: steep tracks pass between rows on opposite faces. The
+    row overlap is 18.514 - 16.5 = 2.0 mm over ~6.6 mm in z, so
+    \|tan theta_y\| > ~0.3. This is inferred from the geometry.
+- (d) split of the normal-incidence loss:
+  - gaps inside one RSU: 1.25-1.4 pt;
+  - 0.08 mm RSU-RSU strips: ~0.3 pt;
+  - between modules / row ends: 0.25-0.42 pt on D2-D4, 0 on D0/D1.
+
+**Other.** `analyze_refplane_efficiency.py` overview y-axis top changed
+101.5 -> 100.3 (applies to future runs; v4 not regenerated).
