@@ -61,7 +61,7 @@ def folded_efficiency(npz, disk, rebin):
 def make_plot(rebin, suffix):
     fig, ax = plt.subplots(figsize=(10, 5.6))
     ax.axvspan(*ONSET_BAND, color="#f2c94c", alpha=0.25, lw=0, zorder=0)
-    ax.text(ONSET_BAND[1] + 0.01, 99.4, "onset of row-gap losses (0.35-0.40)",
+    ax.text(ONSET_BAND[1] + 0.01, 99.4, "onset of row-gap losses (19°–22°)",
             ha="left", va="center", fontsize=12, color="#7a5c00")
     ax.axhline(98.0, color="red", ls="--", lw=1.5, label="expected 98%", zorder=1)
 
@@ -84,13 +84,20 @@ def make_plot(rebin, suffix):
     # |tan| > 1.0 is not shown: only the 15 cm curve reaches it, at the fid outer edge
     ax.set_xlim(0, 1.0)
     ax.set_ylim(84 if rebin > 1 else 74, 100)
-    ax.set_xlabel(r"|tan $\theta_y$| at the disk (slope across module rows)", fontsize=14)
+    ax.set_xlabel(r"|tan $\theta_y$|   ($\theta_y$: incidence angle projected onto the vertical y–z plane)",
+                  fontsize=13)
+    # Same axis in degrees on top (theta_y = atan |tan theta_y|).
+    top = ax.secondary_xaxis("top", functions=(lambda t: np.degrees(np.arctan(t)),
+                                               lambda d: np.tan(np.radians(np.clip(d, 0, 89)))))
+    top.set_xticks([0, 10, 20, 30, 40])
+    top.set_xlabel(r"$\theta_y$ [deg]", fontsize=13)
+    top.tick_params(labelsize=12)
     ax.set_ylabel("Hit efficiency in fiducial annulus [%]", fontsize=14)
     ax.tick_params(labelsize=13)
     ax.grid(color="#e5e5e5", lw=0.8, zorder=0)
     ax.set_axisbelow(True)
     ax.spines[["top", "right"]].set_visible(False)
-    title = r"Row overlap stops covering the gap above |tan $\theta_y$| ≈ 0.35"
+    title = r"Row overlap stops covering the gap above $\theta_y$ ≈ 19° (|tan $\theta_y$| ≈ 0.35)"
     if rebin == 1:
         title = r"0.05 bins: 15 cm disk aliases row gaps (y ≈ L tan $\theta_y$)"
     ax.set_title(title, fontsize=16)

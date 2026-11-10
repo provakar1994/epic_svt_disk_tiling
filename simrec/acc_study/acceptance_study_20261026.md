@@ -875,3 +875,18 @@ at |y| ~ 15-50 mm) was a denominator artefact of nomargin, not inefficiency.
 
 **Other.** `analyze_refplane_efficiency.py` overview y-axis top changed
 101.5 -> 100.3 (applies to future runs; v4 not regenerated).
+
+- 2026-11-10 (talk revision):
+  * slide4_incidence_angle: x label is now "|tan theta_y| (theta_y: incidence
+    angle projected onto the vertical y-z plane)", with a top axis in degrees.
+    The onset is quoted as 19-22 deg. The previous slide4 files were moved to
+    tmp/retained/2026-11-10/ (logged).
+  * New backup_theta_y_all_disks: fid efficiency vs |tan theta_y| for D0-D4
+    (ED+HD summed, v_z = 0, 0.10 bins), plus the share of fid tracks with
+    theta_y >= 19 deg (from 0.05 bins): D0 35%, D1 23%, D2 11%, D3 3.5%,
+    D4 0.5%. The "20-25% vs <8%" figures quoted earlier used |tan| >= 0.4
+    (22 deg).
+  * Runner: talk/20261110_svt_dsc/run_slide4_and_backup_v2.sh.
+  * Material (disk_material_map step8q; step8m agrees within 0.001%):
+    <x/X0> on the annulus is 0.27-0.31% per disk (ED4 0.274%), about 61%
+    carbon fibre and 21% silicon.
