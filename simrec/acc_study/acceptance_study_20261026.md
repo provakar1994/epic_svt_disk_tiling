@@ -910,3 +910,11 @@ at |y| ~ 15-50 mm) was a denominator artefact of nomargin, not inefficiency.
     - HD4 central A rows (x = 150 mm): overlaps of only 0.1-0.9 mm, and one
       0.06 mm gap between y = 99.41 and 99.47 mm. These rows see shallow tracks.
     The old figure was moved to tmp/retained/2026-11-10/ (logged).
+  * slide1_schematic, second fix (user: active areas belong in the gaps; edges are
+    curved). The previous drawing wrongly put the modules on the same-side flats.
+    - The builder aligns module rows to OPPOSITE-side flat centres (XML comment
+      in silicon_disks_modules.xml), so each module bridges a channel: the
+      32 mm baseplate is glued to the two neighbouring same-side flats, and the
+      18.5 mm sensor sits over the ~22 mm channel opening.
+    - Bends are drawn with the 5 mm mid-surface radius (straight flat 6.5 mm).
+    - The 2 mm sensor overlap and the steep-track argument are unchanged.
