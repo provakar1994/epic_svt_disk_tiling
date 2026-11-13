@@ -1,0 +1,97 @@
+Step 11a staging  2026-11-12T03:13:00Z
+source: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/ES_material/20261110/transition
+dest:   /global/cfs/cdirs/m3763/pdatta/epic/compact/tracking/silicon_disks_tiling/20261110_ES
+copied 64 files
+
+sha256 check (source vs staged):
+  OK   rsu_opt/catalog.csv  6e10e02e4f89
+  OK   rsu_opt/disk_geometry_used.csv  540a0c19e187
+  OK   rsu_opt/ED0_metadata.txt  747e38b1a581
+  OK   rsu_opt/ED0_modules.csv  c701b4c98e1a
+  OK   rsu_opt/ED0_rows.csv  53ee9e5034b9
+  OK   rsu_opt/ED1_metadata.txt  28e05c1758eb
+  OK   rsu_opt/ED1_modules.csv  238e3e8b4452
+  OK   rsu_opt/ED1_rows.csv  d0cee0c05543
+  OK   rsu_opt/ED2_metadata.txt  735be6b695ce
+  OK   rsu_opt/ED2_modules.csv  415de6dc5f1d
+  OK   rsu_opt/ED2_rows.csv  7fb6a4f21145
+  OK   rsu_opt/ED3_metadata.txt  e49df9fae421
+  OK   rsu_opt/ED3_modules.csv  42128288e14d
+  OK   rsu_opt/ED3_rows.csv  7c8958eab58a
+  OK   rsu_opt/ED4_metadata.txt  38ad44d78071
+  OK   rsu_opt/ED4_modules.csv  c42f58299d3c
+  OK   rsu_opt/ED4_rows.csv  513df2cae962
+  OK   rsu_opt/HD0_metadata.txt  f71d7cf97488
+  OK   rsu_opt/HD0_modules.csv  b99aab6c67fe
+  OK   rsu_opt/HD0_rows.csv  28eb87b3aff4
+  OK   rsu_opt/HD1_metadata.txt  f7be7ac4745f
+  OK   rsu_opt/HD1_modules.csv  80a7f63a9147
+  OK   rsu_opt/HD1_rows.csv  0c5d3cf4ce34
+  OK   rsu_opt/HD2_metadata.txt  26593d737330
+  OK   rsu_opt/HD2_modules.csv  19cbce5da16b
+  OK   rsu_opt/HD2_rows.csv  b34bacae4a2b
+  OK   rsu_opt/HD3_metadata.txt  c335154ffd8b
+  OK   rsu_opt/HD3_modules.csv  c3ddefd56cdb
+  OK   rsu_opt/HD3_rows.csv  0f9796737dcc
+  OK   rsu_opt/HD4_metadata.txt  f8f807a33e2d
+  OK   rsu_opt/HD4_modules.csv  7ce338c76f8a
+  OK   rsu_opt/HD4_rows.csv  7333e96f7e79
+  OK   rsu6/catalog.csv  3637e26eeaef
+  OK   rsu6/disk_geometry_used.csv  540a0c19e187
+  OK   rsu6/ED0_metadata.txt  81cb0c48762c
+  OK   rsu6/ED0_modules.csv  8e743a881f88
+  OK   rsu6/ED0_rows.csv  53ee9e5034b9
+  OK   rsu6/ED1_metadata.txt  67ad343cf028
+  OK   rsu6/ED1_modules.csv  f61400f859f3
+  OK   rsu6/ED1_rows.csv  d0cee0c05543
+  OK   rsu6/ED2_metadata.txt  46b22e2c0fc5
+  OK   rsu6/ED2_modules.csv  b64d1cb27e3f
+  OK   rsu6/ED2_rows.csv  7fb6a4f21145
+  OK   rsu6/ED3_metadata.txt  078355afd8c3
+  OK   rsu6/ED3_modules.csv  2a77d71194b9
+  OK   rsu6/ED3_rows.csv  7c8958eab58a
+  OK   rsu6/ED4_metadata.txt  5e7aee642b74
+  OK   rsu6/ED4_modules.csv  c2ca3dc3f761
+  OK   rsu6/ED4_rows.csv  513df2cae962
+  OK   rsu6/HD0_metadata.txt  08176a3d0d0e
+  OK   rsu6/HD0_modules.csv  f226fee2114e
+  OK   rsu6/HD0_rows.csv  28eb87b3aff4
+  OK   rsu6/HD1_metadata.txt  00b9cd26b15a
+  OK   rsu6/HD1_modules.csv  429dbcbb69ce
+  OK   rsu6/HD1_rows.csv  0c5d3cf4ce34
+  OK   rsu6/HD2_metadata.txt  d79ee18d637c
+  OK   rsu6/HD2_modules.csv  b6c423ce5ff3
+  OK   rsu6/HD2_rows.csv  b34bacae4a2b
+  OK   rsu6/HD3_metadata.txt  8c8692db5cd8
+  OK   rsu6/HD3_modules.csv  6407602dc0bb
+  OK   rsu6/HD3_rows.csv  0f9796737dcc
+  OK   rsu6/HD4_metadata.txt  774c886f2081
+  OK   rsu6/HD4_modules.csv  ae3dd80a8a4b
+  OK   rsu6/HD4_rows.csv  7333e96f7e79
+mismatches: 0
+
+data rows per disk (modules / rows), excluding header:
+  rsu_opt: catalog types 12
+    ED4    256 modules   48 rows
+    ED3    258 modules   48 rows
+    ED2    259 modules   48 rows
+    ED1    236 modules   46 rows
+    ED0     78 modules   26 rows
+    HD0     78 modules   26 rows
+    HD1    236 modules   46 rows
+    HD2    259 modules   48 rows
+    HD3    254 modules   47 rows
+    HD4    250 modules   47 rows
+    total modules: 2164
+  rsu6: catalog types 8
+    ED4    252 modules   48 rows
+    ED3    256 modules   48 rows
+    ED2    258 modules   48 rows
+    ED1    236 modules   46 rows
+    ED0     76 modules   26 rows
+    HD0     76 modules   26 rows
+    HD1    236 modules   46 rows
+    HD2    258 modules   48 rows
+    HD3    254 modules   47 rows
+    HD4    248 modules   47 rows
+    total modules: 2150

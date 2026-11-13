@@ -1,0 +1,148 @@
+SVT step 12 build + ROOT checks: 2026-11-12 15:48:38 UTC
+Repository: /global/cfs/cdirs/m3763/pdatta/epic (commit ed30b5ef9 + working tree)
+Report directory: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z
+[PASS] build/install: DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+[PASS] installed == source XML: production selection unchanged
+[FAIL] no legacy rowwise_placement: installed XML still has a rowwise_placement attribute
+[PASS] installed 20261110_ES/rsu_opt: 10 *_rows.csv
+[PASS] installed 20261110_ES/rsu6: 10 *_rows.csv
+[PASS] installed 20261110-r_ES/rsu_opt: 10 *_rows.csv
+[PASS] installed 20261110-r_ES/rsu6: 10 *_rows.csv
+[PASS] overlay 20261110_ES_rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/rsu6
+[PASS] overlay 20261110-r_ES_rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/20261110-r_ES_rsu_opt
+[PASS] overlay 20261110-r_ES_rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/20261110-r_ES_rsu6
+
+== 20261110_ES/rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+[PASS] export 20261110_ES_rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110_ES_rsu_opt.root
+[PASS] builder warnings 20261110_ES_rsu_opt: 0 warnings, 0 skipping-module
+[PASS] placed modules 20261110_ES_rsu_opt: 2164 (= delivery)
+placed tiling modules: 2164  A600:214 A601:216 A610:195 A611:193 B500:66 B501:66 B510:68 B511:65 B600:273 B601:274 B610:268 B611:266
+[FAIL] corrugation vs rows 20261110_ES_rsu_opt: see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110_ES_rsu_opt.txt
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 93, in walk
+    matrix.LocalToMaster(local, master)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+TypeError: void TGeoMatrix::LocalToMaster(const Double_t* local, Double_t* master) =>
+    TypeError: could not convert argument 1 (could not convert argument to buffer or nullptr)
+[PASS] ROOT overlaps tracking_20261110_ES_rsu_opt: 0 ovlp lines (illegal=0 found in 0.436583 [sec])
+[PASS] ROOT overlaps craterlake_20261110_ES_rsu_opt: 0 ovlp lines (illegal=0 found in 0.803514 [sec])
+
+== 20261110_ES/rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/rsu6/epic_craterlake_tracking_only_rsu6.xml
+[PASS] export 20261110_ES_rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110_ES_rsu6.root
+[PASS] builder warnings 20261110_ES_rsu6: 0 warnings, 0 skipping-module
+[PASS] placed modules 20261110_ES_rsu6: 2150 (= delivery)
+placed tiling modules: 2150  A600:214 A601:216 A610:195 A611:193 B600:336 B601:338 B610:330 B611:328
+[FAIL] corrugation vs rows 20261110_ES_rsu6: see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110_ES_rsu6.txt
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 93, in walk
+    matrix.LocalToMaster(local, master)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+TypeError: void TGeoMatrix::LocalToMaster(const Double_t* local, Double_t* master) =>
+    TypeError: could not convert argument 1 (could not convert argument to buffer or nullptr)
+[PASS] ROOT overlaps tracking_20261110_ES_rsu6: 0 ovlp lines (illegal=0 found in 0.53681 [sec])
+[PASS] ROOT overlaps craterlake_20261110_ES_rsu6: 0 ovlp lines (illegal=0 found in 0.685219 [sec])
+
+== 20261110-r_ES/rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/20261110-r_ES_rsu_opt/epic_craterlake_tracking_only_20261110-r_ES_rsu_opt.xml
+[PASS] export 20261110-r_ES_rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110-r_ES_rsu_opt.root
+[PASS] builder warnings 20261110-r_ES_rsu_opt: 0 warnings, 0 skipping-module
+[PASS] placed modules 20261110-r_ES_rsu_opt: 2164 (= delivery)
+placed tiling modules: 2164  A600:193 A601:195 A610:216 A611:214 B500:65 B501:68 B510:66 B511:66 B600:266 B601:268 B610:274 B611:273
+[FAIL] corrugation vs rows 20261110-r_ES_rsu_opt: see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110-r_ES_rsu_opt.txt
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 93, in walk
+    matrix.LocalToMaster(local, master)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+TypeError: void TGeoMatrix::LocalToMaster(const Double_t* local, Double_t* master) =>
+    TypeError: could not convert argument 1 (could not convert argument to buffer or nullptr)
+[PASS] ROOT overlaps tracking_20261110-r_ES_rsu_opt: 0 ovlp lines (illegal=0 found in 0.526982 [sec])
+[PASS] ROOT overlaps craterlake_20261110-r_ES_rsu_opt: 0 ovlp lines (illegal=0 found in 0.681777 [sec])
+
+== 20261110-r_ES/rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/20261110-r_ES_rsu6/epic_craterlake_tracking_only_20261110-r_ES_rsu6.xml
+[PASS] export 20261110-r_ES_rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110-r_ES_rsu6.root
+[PASS] builder warnings 20261110-r_ES_rsu6: 0 warnings, 0 skipping-module
+[PASS] placed modules 20261110-r_ES_rsu6: 2150 (= delivery)
+placed tiling modules: 2150  A600:193 A601:195 A610:216 A611:214 B600:328 B601:330 B610:338 B611:336
+[FAIL] corrugation vs rows 20261110-r_ES_rsu6: see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110-r_ES_rsu6.txt
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 104, in walk
+    walk(child, child_matrix)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/inspect_svt_corrugation_step12.py", line 93, in walk
+    matrix.LocalToMaster(local, master)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+TypeError: void TGeoMatrix::LocalToMaster(const Double_t* local, Double_t* master) =>
+    TypeError: could not convert argument 1 (could not convert argument to buffer or nullptr)
+[PASS] ROOT overlaps tracking_20261110-r_ES_rsu6: 0 ovlp lines (illegal=0 found in 0.446159 [sec])
+[PASS] ROOT overlaps craterlake_20261110-r_ES_rsu6: 0 ovlp lines (illegal=0 found in 0.799159 [sec])
+
+===== Step 12 summary (2026-11-12 15:51:22 UTC) =====
+check                                    status detail
+build/install                            PASS  DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+installed == source XML                  PASS  production selection unchanged
+no legacy rowwise_placement              FAIL  installed XML still has a rowwise_placement attribute
+installed 20261110_ES/rsu_opt            PASS  10 *_rows.csv
+installed 20261110_ES/rsu6               PASS  10 *_rows.csv
+installed 20261110-r_ES/rsu_opt          PASS  10 *_rows.csv
+installed 20261110-r_ES/rsu6             PASS  10 *_rows.csv
+overlay 20261110_ES_rsu6                 PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/rsu6
+overlay 20261110-r_ES_rsu_opt            PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/20261110-r_ES_rsu_opt
+overlay 20261110-r_ES_rsu6               PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/overlay/20261110-r_ES_rsu6
+export 20261110_ES_rsu_opt               PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110_ES_rsu_opt.root
+builder warnings 20261110_ES_rsu_opt     PASS  0 warnings, 0 skipping-module
+placed modules 20261110_ES_rsu_opt       PASS  2164 (= delivery)
+corrugation vs rows 20261110_ES_rsu_opt  FAIL  see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110_ES_rsu_opt.txt
+ROOT overlaps tracking_20261110_ES_rsu_opt PASS  0 ovlp lines (illegal=0 found in 0.436583 [sec])
+ROOT overlaps craterlake_20261110_ES_rsu_opt PASS  0 ovlp lines (illegal=0 found in 0.803514 [sec])
+export 20261110_ES_rsu6                  PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110_ES_rsu6.root
+builder warnings 20261110_ES_rsu6        PASS  0 warnings, 0 skipping-module
+placed modules 20261110_ES_rsu6          PASS  2150 (= delivery)
+corrugation vs rows 20261110_ES_rsu6     FAIL  see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110_ES_rsu6.txt
+ROOT overlaps tracking_20261110_ES_rsu6  PASS  0 ovlp lines (illegal=0 found in 0.53681 [sec])
+ROOT overlaps craterlake_20261110_ES_rsu6 PASS  0 ovlp lines (illegal=0 found in 0.685219 [sec])
+export 20261110-r_ES_rsu_opt             PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110-r_ES_rsu_opt.root
+builder warnings 20261110-r_ES_rsu_opt   PASS  0 warnings, 0 skipping-module
+placed modules 20261110-r_ES_rsu_opt     PASS  2164 (= delivery)
+corrugation vs rows 20261110-r_ES_rsu_opt FAIL  see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110-r_ES_rsu_opt.txt
+ROOT overlaps tracking_20261110-r_ES_rsu_opt PASS  0 ovlp lines (illegal=0 found in 0.526982 [sec])
+ROOT overlaps craterlake_20261110-r_ES_rsu_opt PASS  0 ovlp lines (illegal=0 found in 0.681777 [sec])
+export 20261110-r_ES_rsu6                PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/epic_craterlake_tracking_only_20261110-r_ES_rsu6.root
+builder warnings 20261110-r_ES_rsu6      PASS  0 warnings, 0 skipping-module
+placed modules 20261110-r_ES_rsu6        PASS  2150 (= delivery)
+corrugation vs rows 20261110-r_ES_rsu6   FAIL  see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z/corrugation_20261110-r_ES_rsu6.txt
+ROOT overlaps tracking_20261110-r_ES_rsu6 PASS  0 ovlp lines (illegal=0 found in 0.446159 [sec])
+ROOT overlaps craterlake_20261110-r_ES_rsu6 PASS  0 ovlp lines (illegal=0 found in 0.799159 [sec])
+Report directory: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_step12_20261112T154838Z
+RESULT: FAIL (5 failed checks)

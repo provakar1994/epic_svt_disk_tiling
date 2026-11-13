@@ -1,0 +1,10 @@
+Job 61153767 task 0: scenario rsu_opt on nid004130
+SVT step 11e Geant4 overlap check (rsu_opt): 2026-11-12 04:08:42 UTC
+Repository: /global/cfs/cdirs/m3763/pdatta/epic (commit 311634084 + working tree)
+Detector configuration: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+Raw Geant4 log: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/check_svt_20261110_geant_raw_step11e_rsu_opt.txt
+checkOverlaps.py exit status: 0, wall time: 21 min
+Geant4 GeomVol1002 overlap warnings: 0
+G4Exception lines: 0
+skipping-module lines: 0
+RESULT: PASS (rsu_opt: no Geant4 overlaps at 0.1 mm)

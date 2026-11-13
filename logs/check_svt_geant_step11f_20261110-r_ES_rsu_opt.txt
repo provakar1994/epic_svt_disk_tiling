@@ -1,0 +1,35 @@
+SVT step 11f Geant4 overlap check (20261110-r_ES_rsu_opt): 2026-11-12 04:37:47 UTC
+Repository: /global/cfs/cdirs/m3763/pdatta/epic (commit 311634084 + working tree)
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/silicon_disks_modules_20261110-r_ES_rsu_opt.xml
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/epic_craterlake_tracking_only_20261110-r_ES_rsu_opt.xml
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/epic_craterlake_20261110-r_ES_rsu_opt.xml
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/provenance.txt
+  Generated: 2026-11-12T04:37:48+00:00 by /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/make_svt_overlay.sh 20261110-r_ES rsu_opt
+  EPIC checkout: /global/cfs/cdirs/m3763/pdatta/epic
+  EPIC commit: 311634084f0ff4229c25d6e8cadb6ff9c497c5d8 (si_disk_hole)
+  EPIC tracked changes (git status --short --untracked-files=no):
+     M compact/tracking/silicon_disks_modules.xml
+     M compact/tracking/silicon_disks_tiling/README.md
+     M scripts/material_map/run_material_map_validation.sh
+     M src/SiEndcapModuleTracker_geo.cpp
+  DETECTOR_PATH: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic   (load the overlay with this DETECTOR_PATH)
+  Replacement: 20261110_ES/rsu_opt -> 20261110-r_ES/rsu_opt
+    module_placements replaced: 6; all occurrences now pointing at 20261110-r_ES/rsu_opt: 6
+  Scenario directory: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261110-r_ES/rsu_opt (10 *_modules.csv files)
+  source sha256:
+    a60143e06c7941cfc13df87ff6cd954b9c52b61a2c3f325769c30cbf5a948750  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_modules.xml
+    c0141309c5f618eafdeacb66b4d8174d05e2dab815ed5c07ba947f5570bfb4fd  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+    ba6e856998b654a1b315ce2ecd0fa17103813c65f08662c9bfc153fc60dcc97c  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake.xml
+  scenario CSV/metadata sha256 (combined over sorted file list):
+    7c7d047c3a0d18281d1b5d39449f85762e7bc91a74d5c9570d6147d998c08da9  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261110-r_ES/rsu_opt
+  output sha256:
+    caa001d8285e6aac1ea75bcacd52f4f6533d0d66f9d11bc0c58fa60ad34effb5  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/silicon_disks_modules_20261110-r_ES_rsu_opt.xml
+    a9393418717d2e12feb5c70a6561b7fe10fb9546304c7530a08b4f2db07ac502  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/epic_craterlake_tracking_only_20261110-r_ES_rsu_opt.xml
+    4ac58b19f7e6af8322ea25b6159b03a99fe2c75ee09540bf25793d9c413761ab  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/epic_craterlake_20261110-r_ES_rsu_opt.xml
+Detector configuration: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/geant_step11f_overlay/20261110-r_ES_rsu_opt/epic_craterlake_tracking_only_20261110-r_ES_rsu_opt.xml
+Raw Geant4 log: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/check_svt_geant_raw_step11f_20261110-r_ES_rsu_opt.txt
+checkOverlaps.py exit status: 0, wall time: 18 min
+Geant4 GeomVol1002 overlap warnings: 0
+G4Exception lines: 0
+skipping-module lines: 0
+RESULT: PASS (20261110-r_ES_rsu_opt: no Geant4 overlaps at 0.1 mm)

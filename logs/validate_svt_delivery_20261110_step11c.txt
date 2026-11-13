@@ -1,0 +1,266 @@
+Step 11c validation of the 20261110 SVT endcap tiling delivery
+new: compact/tracking/silicon_disks_tiling/20261110_ES  old: compact/tracking/silicon_disks_tiling/20261001_ES
+
+==============================================================================
+Check 1: file completeness and consistency
+==============================================================================
+[PASS] 1.rsu_opt files present and headers as expected: 32 files
+[PASS] 1.rsu_opt disk_id matches file name (modules, rows, metadata) and metadata total_modules: module rows bad=0, rows bad=0, meta bad=[], count mismatches=[]
+[PASS] 1.rsu_opt unique (disk,row,mod) and (disk,row) keys: 2164 modules, duplicates=0; 430 rows, duplicates=0
+[PASS] 1.rsu_opt every module type in catalogue (catalogue type_id unique): 12 types, unknown=[], unused catalogue types=[]
+[PASS] 1.rsu_opt every module's (disk,row) present in rows.csv: missing=0
+[PASS] 1.rsu_opt disk_geometry_used.csv agrees with metadata z_center/outer_radius: bad=[]
+[PASS] 1.rsu6 files present and headers as expected: 32 files
+[PASS] 1.rsu6 disk_id matches file name (modules, rows, metadata) and metadata total_modules: module rows bad=0, rows bad=0, meta bad=[], count mismatches=[]
+[PASS] 1.rsu6 unique (disk,row,mod) and (disk,row) keys: 2150 modules, duplicates=0; 430 rows, duplicates=0
+[PASS] 1.rsu6 every module type in catalogue (catalogue type_id unique): 8 types, unknown=[], unused catalogue types=[]
+[PASS] 1.rsu6 every module's (disk,row) present in rows.csv: missing=0
+[PASS] 1.rsu6 disk_geometry_used.csv agrees with metadata z_center/outer_radius: bad=[]
+  module counts: new rsu_opt 2164, new rsu6 2150, old rsu_opt 2164, old all_6rsu 2160
+
+==============================================================================
+Check 2: chirality relabelling
+==============================================================================
+[PASS] 2.rsu_opt chirality NEGATIVE<->RIGHT, POSITIVE<->LEFT; facing and dimensions unchanged: 12 types matched, unmatched=[], label mismatches=[], other column diffs=[]
+    label pairs (new, old): count = {('NEGATIVE', 'RIGHT'): 6, ('POSITIVE', 'LEFT'): 6}
+[PASS] 2.rsu6 chirality NEGATIVE<->RIGHT, POSITIVE<->LEFT; facing and dimensions unchanged: 8 types matched, unmatched=[], label mismatches=[], other column diffs=[]
+    label pairs (new, old): count = {('NEGATIVE', 'RIGHT'): 4, ('POSITIVE', 'LEFT'): 4}
+
+==============================================================================
+Check 3: placement z with the new module stack
+==============================================================================
+  stack: sensor = 33.5 inactive + 14.0 active + 2.5 Cu = 50.0 um
+  OUTWARD u-intervals [mm]: baseplate +0.0800..+0.2300, film +0.2300..+0.2900, sensor +0.2900..+0.3400, kapton +0.2300..+0.3100, aluminum +0.3100..+0.3400
+  INWARD  u-intervals [mm]: baseplate -0.2300..-0.0800, film -0.0800..-0.0200, sensor -0.0200..+0.0300, kapton -0.0800..+0.0000, aluminum -0.2600..-0.2300
+  expected |z_sensor - z_baseplate|: OUTWARD 340.0 um (80+150+60+50), INWARD 30.0 um (60+50-80)
+  modules: 2164 = 1109 OUTWARD + 1055 INWARD
+[PASS] 3.rsu_opt OUTWARD |z_sensor - z_baseplate| = 0.340 mm: bad=0, observed values=[np.float64(0.34)]
+[PASS] 3.rsu_opt INWARD |z_sensor - z_baseplate| = 0.030 mm: bad=0, observed values=[np.float64(0.03)]
+[PASS] 3.rsu_opt INWARD z_baseplate == row facet_z: bad=0
+[PASS] 3.rsu_opt OUTWARD (z_baseplate - facet_z) * n = +0.230 mm: bad=0, observed=[np.float64(0.23)]
+[PASS] 3.rsu_opt module y_origin == row_y: bad=0
+    orientation: INWARD normals toward disk mid-plane 1055/1055; OUTWARD normals away from mid-plane 1109/1109
+    note: OUTWARD epoxy bottom (u=0) lies 0.230 mm off the facet plane = 0.080 epoxy + 0.150 baseplate of an INWARD module on the same plane
+  stack: sensor = 33.5 inactive + 14.0 active + 2.5 Cu = 50.0 um
+  OUTWARD u-intervals [mm]: baseplate +0.0800..+0.2300, film +0.2300..+0.2900, sensor +0.2900..+0.3400, kapton +0.2300..+0.3100, aluminum +0.3100..+0.3400
+  INWARD  u-intervals [mm]: baseplate -0.2300..-0.0800, film -0.0800..-0.0200, sensor -0.0200..+0.0300, kapton -0.0800..+0.0000, aluminum -0.2600..-0.2300
+  expected |z_sensor - z_baseplate|: OUTWARD 340.0 um (80+150+60+50), INWARD 30.0 um (60+50-80)
+  modules: 2150 = 1104 OUTWARD + 1046 INWARD
+[PASS] 3.rsu6 OUTWARD |z_sensor - z_baseplate| = 0.340 mm: bad=0, observed values=[np.float64(0.34)]
+[PASS] 3.rsu6 INWARD |z_sensor - z_baseplate| = 0.030 mm: bad=0, observed values=[np.float64(0.03)]
+[PASS] 3.rsu6 INWARD z_baseplate == row facet_z: bad=0
+[PASS] 3.rsu6 OUTWARD (z_baseplate - facet_z) * n = +0.230 mm: bad=0, observed=[np.float64(0.23)]
+[PASS] 3.rsu6 module y_origin == row_y: bad=0
+    orientation: INWARD normals toward disk mid-plane 1046/1046; OUTWARD normals away from mid-plane 1104/1104
+    note: OUTWARD epoxy bottom (u=0) lies 0.230 mm off the facet plane = 0.080 epoxy + 0.150 baseplate of an INWARD module on the same plane
+
+==============================================================================
+Check 4: old vs new placements
+==============================================================================
+  rsu_opt vs old rsu_opt: new 2164 modules, old 2164; keys only in new=0, only in old=0, matched=2164, matched with changed x/y/type=0
+  position-based (disk,row,x,y,type): removed=0, added=0
+    OUTWARD: 1109 same-position modules; along n: dz_baseplate values {0.23: 1109}, dz_sensor values {0.23: 1109}
+    INWARD: 1055 same-position modules; along n: dz_baseplate values {0.0: 1055}, dz_sensor values {0.0: 1055}
+[PASS] 4.rsu_opt vs old rsu_opt x, y, type identical for every (disk,row,mod): 2164 matched
+  rsu6 vs old all_6rsu: new 2150 modules, old 2160; keys only in new=0, only in old=10, matched=2150, matched with changed x/y/type=20
+  position-based (disk,row,x,y,type): removed=30, added=20
+    row changed: ED3 row 1: 3 modules ['B601', 'B611', 'B600'] -> 2 ['B601', 'B611']
+    row changed: ED3 row 46: 3 modules ['B610', 'B600', 'B611'] -> 2 ['B610', 'B600']
+    row changed: ED2 row 46: 3 modules ['B610', 'B600', 'B611'] -> 2 ['B610', 'B600']
+    row changed: ED0 row 3: 3 modules ['B611', 'B601', 'B610'] -> 2 ['B611', 'B601']
+    row changed: ED0 row 22: 3 modules ['B600', 'B610', 'B601'] -> 2 ['B600', 'B610']
+    row changed: HD0 row 3: 3 modules ['B600', 'B610', 'B601'] -> 2 ['B611', 'B601']
+    row changed: HD0 row 22: 3 modules ['B611', 'B601', 'B610'] -> 2 ['B611', 'B601']
+    row changed: HD2 row 46: 3 modules ['B611', 'B601', 'B610'] -> 2 ['B611', 'B601']
+    row changed: HD4 row 1: 3 modules ['B610', 'B600', 'B611'] -> 2 ['B610', 'B600']
+    row changed: HD4 row 45: 3 modules ['B611', 'B601', 'B610'] -> 2 ['B611', 'B601']
+    removed (old only): ED3 row 1 mod 0 B601 x=-135.8828 y=+384.7500
+    removed (old only): ED3 row 1 mod 1 B611 x=+64.9980 y=+384.7500
+    removed (old only): ED3 row 1 mod 2 B600 x=+135.8828 y=+384.7500
+    removed (old only): ED3 row 46 mod 0 B610 x=-131.9702 y=-386.2500
+    removed (old only): ED3 row 46 mod 1 B600 x=+64.9980 y=-386.2500
+    removed (old only): ED3 row 46 mod 2 B611 x=+131.9702 y=-386.2500
+    removed (old only): ED2 row 46 mod 0 B610 x=-139.6854 y=-383.2500
+    removed (old only): ED2 row 46 mod 1 B600 x=+64.9980 y=-383.2500
+    removed (old only): ED2 row 46 mod 2 B611 x=+139.6854 y=-383.2500
+    removed (old only): ED0 row 3 mod 0 B611 x=-131.8468 y=+156.7500
+    removed (old only): ED0 row 3 mod 1 B601 x=+64.9980 y=+156.7500
+    removed (old only): ED0 row 3 mod 2 B610 x=+131.8468 y=+156.7500
+    removed (old only): ED0 row 22 mod 0 B600 x=-131.8468 y=-156.7500
+    removed (old only): ED0 row 22 mod 1 B610 x=+64.9980 y=-156.7500
+    removed (old only): ED0 row 22 mod 2 B601 x=+131.8468 y=-156.7500
+    removed (old only): HD0 row 3 mod 0 B600 x=-131.8468 y=+156.7500
+    removed (old only): HD0 row 3 mod 1 B610 x=+64.9980 y=+156.7500
+    removed (old only): HD0 row 3 mod 2 B601 x=+131.8468 y=+156.7500
+    removed (old only): HD0 row 22 mod 0 B611 x=-131.8468 y=-156.7500
+    removed (old only): HD0 row 22 mod 1 B601 x=+64.9980 y=-156.7500
+    removed (old only): HD0 row 22 mod 2 B610 x=+131.8468 y=-156.7500
+    removed (old only): HD2 row 46 mod 0 B611 x=-139.6854 y=-383.2500
+    removed (old only): HD2 row 46 mod 1 B601 x=+64.9980 y=-383.2500
+    removed (old only): HD2 row 46 mod 2 B610 x=+139.6854 y=-383.2500
+    removed (old only): HD4 row 1 mod 0 B610 x=-131.9702 y=+386.2500
+    removed (old only): HD4 row 1 mod 1 B600 x=+64.9980 y=+386.2500
+    removed (old only): HD4 row 1 mod 2 B611 x=+131.9702 y=+386.2500
+    removed (old only): HD4 row 45 mod 0 B611 x=-131.9702 y=-386.2500
+    removed (old only): HD4 row 45 mod 1 B601 x=+64.9980 y=-386.2500
+    removed (old only): HD4 row 45 mod 2 B610 x=+131.9702 y=-386.2500
+    added (new only): ED3 row 1 mod 0 B601 x=-127.9960 y=+384.7500
+    added (new only): ED3 row 1 mod 1 B611 x=+127.9960 y=+384.7500
+    added (new only): ED3 row 46 mod 0 B610 x=-127.9960 y=-386.2500
+    added (new only): ED3 row 46 mod 1 B600 x=+127.9960 y=-386.2500
+    added (new only): ED2 row 46 mod 0 B610 x=-127.9960 y=-383.2500
+    added (new only): ED2 row 46 mod 1 B600 x=+127.9960 y=-383.2500
+    added (new only): ED0 row 3 mod 0 B611 x=-127.9960 y=+156.7500
+    added (new only): ED0 row 3 mod 1 B601 x=+127.9960 y=+156.7500
+    added (new only): ED0 row 22 mod 0 B600 x=-127.9960 y=-156.7500
+    added (new only): ED0 row 22 mod 1 B610 x=+127.9960 y=-156.7500
+    added (new only): HD0 row 3 mod 0 B611 x=-127.9960 y=+156.7500
+    added (new only): HD0 row 3 mod 1 B601 x=+127.9960 y=+156.7500
+    added (new only): HD0 row 22 mod 0 B611 x=-127.9960 y=-156.7500
+    added (new only): HD0 row 22 mod 1 B601 x=+127.9960 y=-156.7500
+    added (new only): HD2 row 46 mod 0 B611 x=-127.9960 y=-383.2500
+    added (new only): HD2 row 46 mod 1 B601 x=+127.9960 y=-383.2500
+    added (new only): HD4 row 1 mod 0 B610 x=-127.9960 y=+386.2500
+    added (new only): HD4 row 1 mod 1 B600 x=+127.9960 y=+386.2500
+    added (new only): HD4 row 45 mod 0 B611 x=-127.9960 y=-386.2500
+    added (new only): HD4 row 45 mod 1 B601 x=+127.9960 y=-386.2500
+    key changed: ED3 row 1 mod 0: B601 x=-135.8828 -> B601 x=-127.9960
+    key changed: ED3 row 1 mod 1: B611 x=+64.9980 -> B611 x=+127.9960
+    key changed: ED3 row 46 mod 0: B610 x=-131.9702 -> B610 x=-127.9960
+    key changed: ED3 row 46 mod 1: B600 x=+64.9980 -> B600 x=+127.9960
+    key changed: ED2 row 46 mod 0: B610 x=-139.6854 -> B610 x=-127.9960
+    key changed: ED2 row 46 mod 1: B600 x=+64.9980 -> B600 x=+127.9960
+    key changed: ED0 row 3 mod 0: B611 x=-131.8468 -> B611 x=-127.9960
+    key changed: ED0 row 3 mod 1: B601 x=+64.9980 -> B601 x=+127.9960
+    key changed: ED0 row 22 mod 0: B600 x=-131.8468 -> B600 x=-127.9960
+    key changed: ED0 row 22 mod 1: B610 x=+64.9980 -> B610 x=+127.9960
+    key changed: HD0 row 3 mod 0: B600 x=-131.8468 -> B611 x=-127.9960
+    key changed: HD0 row 3 mod 1: B610 x=+64.9980 -> B601 x=+127.9960
+    key changed: HD0 row 22 mod 0: B611 x=-131.8468 -> B611 x=-127.9960
+    key changed: HD0 row 22 mod 1: B601 x=+64.9980 -> B601 x=+127.9960
+    key changed: HD2 row 46 mod 0: B611 x=-139.6854 -> B611 x=-127.9960
+    key changed: HD2 row 46 mod 1: B601 x=+64.9980 -> B601 x=+127.9960
+    key changed: HD4 row 1 mod 0: B610 x=-131.9702 -> B610 x=-127.9960
+    key changed: HD4 row 1 mod 1: B600 x=+64.9980 -> B600 x=+127.9960
+    key changed: HD4 row 45 mod 0: B611 x=-131.9702 -> B611 x=-127.9960
+    key changed: HD4 row 45 mod 1: B601 x=+64.9980 -> B601 x=+127.9960
+    OUTWARD: 1094 same-position modules; along n: dz_baseplate values {0.23: 1094}, dz_sensor values {0.23: 1094}
+    INWARD: 1036 same-position modules; along n: dz_baseplate values {-0.0: 1036}, dz_sensor values {-0.0: 1036}
+[PASS] 4.rsu6 vs old all_6rsu differences enumerated (informational): removed=30, added=20, net=-10
+
+==============================================================================
+Check 5: rows.csv vs reconstructed lattice table
+==============================================================================
+[PASS] 5. rows.csv identical in rsu_opt and rsu6
+  per disk: new rows vs old lattice table (matched by row_index; old boundary rows -1/N excluded)
+  disk  nNew nOld(-bnd) max|dy|  rows with |dy|>1e-4               hp==pitch/2  facet_z-zc==-offset
+  ED4     48    48   0.7891  11..35 (24)                        True         True (same-sign: False)
+        dy[row] = 11:-0.6967, 12:+0.7594, 13:-0.4067, 14:+0.7891, 15:-0.1775, 16:+0.7576, 17:-0.0276, 18:+0.6462, 19:+0.0520, 20:+0.4641, 21:+0.0613, 22:+0.2111, 24:-0.7891, 25:-0.7653, 26:-0.7891, 27:-0.5048, 28:-0.7891, 29:-0.2444, 30:-0.7891, 31:+0.0161, 32:-0.7891, 33:+0.2765, 34:-0.7891, 35:+0.5370
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (21 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.5439..19.1661 mm (24 pairs)
+  ED3     48    48   0.7891  15..33 (18)                        True         True (same-sign: False)
+        dy[row] = 15:-0.4959, 16:+0.6753, 17:-0.2292, 18:+0.6223, 19:-0.0575, 20:+0.4734, 21:+0.0190, 22:+0.2285, 24:-0.7891, 25:-0.7342, 26:-0.7891, 27:-0.4150, 28:-0.7891, 29:-0.0957, 30:-0.7891, 31:+0.2235, 32:-0.7891, 33:+0.5427
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (27 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.6682..19.0126 mm (18 pairs)
+  ED2     48    48   0.7891  17..31 (14)                        True         True (same-sign: False)
+        dy[row] = 17:-0.6569, 18:+0.5426, 19:-0.2868, 20:+0.4772, 21:-0.0677, 22:+0.2592, 24:-0.7891, 25:-0.6731, 26:-0.7891, 27:-0.2385, 28:-0.7891, 29:+0.1961, 30:-0.7772, 31:+0.6424
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (31 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.5804..18.9733 mm (14 pairs)
+  ED1     46    46   0.0000  -                                  True         True (same-sign: False)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (45 pairs)
+  ED0     26    26   0.0000  -                                  True         True (same-sign: False)
+        (old table has no boundary rows for this disk)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (25 pairs)
+  HD0     26    26   0.0000  -                                  True         True (same-sign: False)
+        (old table has no boundary rows for this disk)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (25 pairs)
+  HD1     46    46   0.0000  -                                  True         True (same-sign: False)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (45 pairs)
+  HD2     48    48   0.7891  17..31 (14)                        True         True (same-sign: False)
+        dy[row] = 17:-0.5192, 18:+0.5717, 19:-0.2134, 20:+0.4779, 21:-0.0401, 22:+0.2501, 24:-0.7891, 25:-0.6922, 26:-0.7891, 27:-0.2936, 28:-0.7891, 29:+0.1050, 30:-0.7891, 31:+0.5035
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (31 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.7074..18.8941 mm (14 pairs)
+  HD3     47    47   0.7632  12..35 (23)                        True         True (same-sign: False)
+        dy[row] = 12:-0.6182, 13:+0.7552, 14:-0.3285, 15:+0.7632, 16:-0.1175, 17:+0.6918, 18:+0.0146, 19:+0.5410, 20:+0.0677, 21:+0.3104, 22:+0.0415, 24:-0.0415, 25:-0.3104, 26:-0.0677, 27:-0.5410, 28:-0.0146, 29:-0.6918, 30:+0.1175, 31:-0.7632, 32:+0.3285, 33:-0.7552, 34:+0.6182, 35:-0.0391
+        adjacent-row spacing for half_pitch 16.5: 16.4609..16.5000 mm (22 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.6266..19.0837 mm (22 pairs)
+  HD4     47    47   0.7891  8..39 (31)                         True         True (same-sign: False)
+        dy[row] = 8:-0.7119, 9:+0.7604, 10:-0.4655, 11:+0.7891, 12:-0.2475, 13:+0.7891, 14:-0.0296, 15:+0.7891, 16:+0.1273, 17:+0.7276, 18:+0.1583, 19:+0.5396, 20:+0.1352, 21:+0.2970, 22:+0.0580, 24:-0.0580, 25:-0.2970, 26:-0.1352, 27:-0.5396, 28:-0.1583, 29:-0.7276, 30:-0.1273, 31:-0.7891, 32:+0.0296, 33:-0.7891, 34:+0.2475, 35:-0.7891, 36:+0.4655, 37:-0.7604, 38:+0.7119, 39:-0.0391
+        adjacent-row spacing for half_pitch 16.5: 16.4609..16.5000 mm (14 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.5277..19.2259 mm (30 pairs)
+[PASS] 5. row count, half_pitch == pitch/2 and facet_z - z_center == -surface_offset on every disk
+  old 20261001 modules: z_baseplate - z_center == -surface_offset for all 2164: True
+  => sign convention: the old table's surface_offset is the carbon flat located AT the row y;
+     rows.csv facet_z (and every module's mounting plane) is the OPPOSITE surface, i.e. the plane of
+     the two neighbouring same-surface flats at y +/- half_pitch that carry the module edges.
+[PASS] 5. x_outer_mm == sqrt(outer_radius^2 - row_y^2) (half chord of the disk at row centre): mismatches=0
+  BLOCKED rows (row y band overlaps an opening primitive's y extent?)
+    ED4  opening |y|<=34.900: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[45.061, 27.211, 9.0, -9.789, -27.765, -45.789]; mismatches vs rule=[]
+    ED3  opening |y|<=34.900: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[45.019, 27.229, 9.0, -9.789, -27.734, -45.789]; mismatches vs rule=[]
+    ED2  opening |y|<=34.900: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[44.932, 27.259, 9.0, -9.789, -27.673, -45.789]; mismatches vs rule=[]
+    ED1  opening |y|<=31.750: BLOCKED rows [20, 21, 22, 23, 24, 25] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    ED0  opening |y|<=31.750: BLOCKED rows [10, 11, 12, 13, 14, 15] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    HD0  opening |y|<=31.750: BLOCKED rows [10, 11, 12, 13, 14, 15] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    HD1  opening |y|<=31.750: BLOCKED rows [20, 21, 22, 23, 24, 25] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    HD2  opening |y|<=37.136: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[44.96, 27.25, 9.0, -9.789, -27.692, -45.789]; mismatches vs rule=[]
+    HD3  opening |y|<=42.736: BLOCKED rows [20, 21, 22, 23, 24, 25, 26] y=[54.068, 36.31, 18.041, 0.0, -18.041, -36.31, -54.068]; mismatches vs rule=[]
+    HD4  opening |y|<=48.336: BLOCKED rows [20, 21, 22, 23, 24, 25, 26] y=[54.135, 36.297, 18.058, 0.0, -18.058, -36.297, -54.135]; mismatches vs rule=[]
+[PASS] 5. BLOCKED <=> |row_y - cy| < half_pitch + b for some opening primitive
+
+==============================================================================
+Check 6: bridge-FPC vs neighbouring LEC/REC film pairs
+==============================================================================
+  self-check: old Step 8d model on the old delivery
+  old all_6rsu (old stack): 8640 FPC boxes, 4320 end-film boxes, 14 intersections, 7 unique module pairs
+    ED3 46/0 B610 INWARD right_fpc_kapton vs 46/2 B611 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    ED3 46/2 B611 INWARD right_fpc_kapton vs 46/0 B610 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    ED0 3/0 B611 INWARD right_fpc_kapton vs 3/2 B610 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    ED0 3/2 B610 INWARD right_fpc_kapton vs 3/0 B611 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    ED0 22/0 B600 OUTWARD right_fpc_kapton vs 22/2 B601 OUTWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    ED0 22/2 B601 OUTWARD right_fpc_kapton vs 22/0 B600 OUTWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD0 3/0 B600 OUTWARD right_fpc_kapton vs 3/2 B601 OUTWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD0 3/2 B601 OUTWARD right_fpc_kapton vs 3/0 B600 OUTWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD0 22/0 B611 INWARD right_fpc_kapton vs 22/2 B610 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD0 22/2 B610 INWARD right_fpc_kapton vs 22/0 B611 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD4 1/0 B610 INWARD right_fpc_kapton vs 1/2 B611 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD4 1/2 B611 INWARD right_fpc_kapton vs 1/0 B610 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD4 45/0 B611 INWARD right_fpc_kapton vs 45/2 B610 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+    HD4 45/2 B610 INWARD right_fpc_kapton vs 45/0 B611 INWARD rec_film; overlap xyz = 1.5000,19.5620,0.0600 mm
+[PASS] 6. Step 8d reproduction: old all_6rsu has 7 pairs: 7 pairs
+  old rsu_opt (old stack): 8656 FPC boxes, 4328 end-film boxes, 0 intersections, 0 unique module pairs
+  new rsu6 (new stack): 8600 FPC boxes, 4300 end-film boxes, 0 intersections, 0 unique module pairs
+[PASS] 6.rsu6 no bridge-FPC/end-film intersections: 0 pairs; of the 7 old all_6rsu pairs (by disk,row,x) 0 persist
+  new rsu_opt (new stack): 8656 FPC boxes, 4328 end-film boxes, 0 intersections, 0 unique module pairs
+[PASS] 6.rsu_opt no bridge-FPC/end-film intersections: 0 pairs; of the 7 old all_6rsu pairs (by disk,row,x) 0 persist
+
+==============================================================================
+Check 7: inward bridge FPC vs carbon
+==============================================================================
+  rsu_opt: z intervals along the inward normal from the facet plane (positive into the channel / carbon side):
+    Kapton new -0.080..+0.000  (old Step 8e: -0.080..+0.000 without the 30 um translation)  overlap with carbon +0.000..+0.150: +0.000 mm
+    Al     new -0.260..-0.230  (old Step 8e: +0.000..+0.030 without the 30 um translation)  overlap with carbon +0.000..+0.150: -0.230 mm
+    baseplate -0.230..-0.080, film -0.080..-0.020, sensor -0.020..+0.030
+[PASS] 7.rsu_opt inward Al does not intersect the carbon flat; Kapton only touches: 2110 inward FPC rectangles; max z overlap Al -0.2300 mm, Kapton +0.0000 mm (0 = shared surface)
+  rsu_opt: y overlap of inward FPC rectangles with the neighbouring straight flats (B 6.36 / A 7.86 mm, centred on rows i+/-1 of rows.csv) -- for the record only
+    A left  FPC: 233/388 overlap a neighbouring flat in y, max 1.902 mm
+    A right FPC: 233/388 overlap a neighbouring flat in y, max 1.902 mm
+    B left  FPC: 631/667 overlap a neighbouring flat in y, max 0.219 mm
+    B right FPC: 631/667 overlap a neighbouring flat in y, max 0.219 mm
+    worst: HD4 row 8 mod 0 A611 left_fpc y=254.788..279.288, overlap 1.902 mm
+  rsu6: z intervals along the inward normal from the facet plane (positive into the channel / carbon side):
+    Kapton new -0.080..+0.000  (old Step 8e: -0.080..+0.000 without the 30 um translation)  overlap with carbon +0.000..+0.150: +0.000 mm
+    Al     new -0.260..-0.230  (old Step 8e: +0.000..+0.030 without the 30 um translation)  overlap with carbon +0.000..+0.150: -0.230 mm
+    baseplate -0.230..-0.080, film -0.080..-0.020, sensor -0.020..+0.030
+[PASS] 7.rsu6 inward Al does not intersect the carbon flat; Kapton only touches: 2092 inward FPC rectangles; max z overlap Al -0.2300 mm, Kapton +0.0000 mm (0 = shared surface)
+  rsu6: y overlap of inward FPC rectangles with the neighbouring straight flats (B 6.36 / A 7.86 mm, centred on rows i+/-1 of rows.csv) -- for the record only
+    A left  FPC: 233/388 overlap a neighbouring flat in y, max 1.902 mm
+    A right FPC: 233/388 overlap a neighbouring flat in y, max 1.902 mm
+    B left  FPC: 622/658 overlap a neighbouring flat in y, max 0.219 mm
+    B right FPC: 622/658 overlap a neighbouring flat in y, max 0.219 mm
+    worst: HD4 row 8 mod 0 A611 left_fpc y=254.788..279.288, overlap 1.902 mm
+
+==============================================================================
+Summary
+==============================================================================
+35/35 checks passed
+OVERALL: PASS

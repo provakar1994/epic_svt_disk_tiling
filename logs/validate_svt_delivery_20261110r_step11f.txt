@@ -1,0 +1,330 @@
+Step 11f validation of the 20261110 '-r' SVT endcap tiling package
+-r: compact/tracking/silicon_disks_tiling/20261110-r_ES  reference: compact/tracking/silicon_disks_tiling/20261110_ES
+
+==============================================================================
+Check 0: staging provenance
+==============================================================================
+[PASS] 0.rsu_opt staged files byte-identical to ES_material/20261110-r/transition/rsu_opt: 32 files, differing=[]
+[PASS] 0.rsu6 staged files byte-identical to ES_material/20261110-r/transition/rsu6: 32 files, differing=[]
+  rsu_opt flip_facing_build.log: 10 disk lines ending in 'flipped'
+  rsu6 flip_facing_build.log: 10 disk lines ending in 'flipped'
+
+==============================================================================
+A / 11c check 1: file completeness and consistency (-r)
+==============================================================================
+[PASS] 1.rsu_opt(-r) files present and headers as expected: 32 files
+[PASS] 1.rsu_opt(-r) disk_id matches file name (modules, rows, metadata) and metadata total_modules: module rows bad=0, rows bad=0, meta bad=[], count mismatches=[]
+[PASS] 1.rsu_opt(-r) unique (disk,row,mod) and (disk,row) keys: 2164 modules, duplicates=0; 430 rows, duplicates=0
+[PASS] 1.rsu_opt(-r) every module type in catalogue (catalogue type_id unique): 12 types, unknown=[], unused catalogue types=[]
+[PASS] 1.rsu_opt(-r) every module's (disk,row) present in rows.csv: missing=0
+[PASS] 1.rsu_opt(-r) disk_geometry_used.csv agrees with metadata z_center/outer_radius: bad=[]
+[PASS] 1.rsu6(-r) files present and headers as expected: 32 files
+[PASS] 1.rsu6(-r) disk_id matches file name (modules, rows, metadata) and metadata total_modules: module rows bad=0, rows bad=0, meta bad=[], count mismatches=[]
+[PASS] 1.rsu6(-r) unique (disk,row,mod) and (disk,row) keys: 2150 modules, duplicates=0; 430 rows, duplicates=0
+[PASS] 1.rsu6(-r) every module type in catalogue (catalogue type_id unique): 8 types, unknown=[], unused catalogue types=[]
+[PASS] 1.rsu6(-r) every module's (disk,row) present in rows.csv: missing=0
+[PASS] 1.rsu6(-r) disk_geometry_used.csv agrees with metadata z_center/outer_radius: bad=[]
+  module counts -r: rsu_opt 2164, rsu6 2150; 20261110_ES: rsu_opt 2164, rsu6 2150
+
+==============================================================================
+A / 11c check 3: placement z with the Step 11b stack (-r)
+==============================================================================
+  stack: sensor = 33.5 inactive + 14.0 active + 2.5 Cu = 50.0 um
+  OUTWARD u-intervals [mm]: baseplate +0.0800..+0.2300, film +0.2300..+0.2900, sensor +0.2900..+0.3400, kapton +0.2300..+0.3100, aluminum +0.3100..+0.3400
+  INWARD  u-intervals [mm]: baseplate -0.2300..-0.0800, film -0.0800..-0.0200, sensor -0.0200..+0.0300, kapton -0.0800..+0.0000, aluminum -0.2600..-0.2300
+  expected |z_sensor - z_baseplate|: OUTWARD 340.0 um (80+150+60+50), INWARD 30.0 um (60+50-80)
+  modules: 2164 = 1055 OUTWARD + 1109 INWARD
+[PASS] 3.rsu_opt(-r) OUTWARD |z_sensor - z_baseplate| = 0.340 mm: bad=0, observed values=[np.float64(0.34)]
+[PASS] 3.rsu_opt(-r) INWARD |z_sensor - z_baseplate| = 0.030 mm: bad=0, observed values=[np.float64(0.03)]
+[PASS] 3.rsu_opt(-r) INWARD z_baseplate == row facet_z: bad=0
+[PASS] 3.rsu_opt(-r) OUTWARD (z_baseplate - facet_z) * n = +0.230 mm: bad=0, observed=[np.float64(0.23)]
+[PASS] 3.rsu_opt(-r) module y_origin == row_y: bad=0
+    orientation: INWARD normals toward disk mid-plane 1109/1109; OUTWARD normals away from mid-plane 1055/1055
+    note: OUTWARD epoxy bottom (u=0) lies 0.230 mm off the facet plane = 0.080 epoxy + 0.150 baseplate of an INWARD module on the same plane
+    rsu_opt INWARD: normal toward disk mid-plane 1109/1109, away 0/1109
+    rsu_opt OUTWARD: normal toward disk mid-plane 0/1055, away 1055/1055
+[PASS] 3.rsu_opt(-r) facing label determines the normal direction consistently: same as 20261110_ES: INWARD -> mid-plane, OUTWARD -> away
+  stack: sensor = 33.5 inactive + 14.0 active + 2.5 Cu = 50.0 um
+  OUTWARD u-intervals [mm]: baseplate +0.0800..+0.2300, film +0.2300..+0.2900, sensor +0.2900..+0.3400, kapton +0.2300..+0.3100, aluminum +0.3100..+0.3400
+  INWARD  u-intervals [mm]: baseplate -0.2300..-0.0800, film -0.0800..-0.0200, sensor -0.0200..+0.0300, kapton -0.0800..+0.0000, aluminum -0.2600..-0.2300
+  expected |z_sensor - z_baseplate|: OUTWARD 340.0 um (80+150+60+50), INWARD 30.0 um (60+50-80)
+  modules: 2150 = 1046 OUTWARD + 1104 INWARD
+[PASS] 3.rsu6(-r) OUTWARD |z_sensor - z_baseplate| = 0.340 mm: bad=0, observed values=[np.float64(0.34)]
+[PASS] 3.rsu6(-r) INWARD |z_sensor - z_baseplate| = 0.030 mm: bad=0, observed values=[np.float64(0.03)]
+[PASS] 3.rsu6(-r) INWARD z_baseplate == row facet_z: bad=0
+[PASS] 3.rsu6(-r) OUTWARD (z_baseplate - facet_z) * n = +0.230 mm: bad=0, observed=[np.float64(0.23)]
+[PASS] 3.rsu6(-r) module y_origin == row_y: bad=0
+    orientation: INWARD normals toward disk mid-plane 1104/1104; OUTWARD normals away from mid-plane 1046/1046
+    note: OUTWARD epoxy bottom (u=0) lies 0.230 mm off the facet plane = 0.080 epoxy + 0.150 baseplate of an INWARD module on the same plane
+    rsu6 INWARD: normal toward disk mid-plane 1104/1104, away 0/1104
+    rsu6 OUTWARD: normal toward disk mid-plane 0/1046, away 1046/1046
+[PASS] 3.rsu6(-r) facing label determines the normal direction consistently: same as 20261110_ES: INWARD -> mid-plane, OUTWARD -> away
+
+==============================================================================
+A / 11c check 5: rows.csv, BLOCKED rule, vs reconstructed 20261001 lattice (-r)
+==============================================================================
+[PASS] 5. rows.csv identical in rsu_opt and rsu6
+  per disk: new rows vs old lattice table (matched by row_index; old boundary rows -1/N excluded)
+  disk  nNew nOld(-bnd) max|dy|  rows with |dy|>1e-4               hp==pitch/2  facet_z-zc==-offset
+  ED4     48    48   0.7891  11..35 (24)                        True         True (same-sign: False)
+        dy[row] = 11:-0.6967, 12:+0.7594, 13:-0.4067, 14:+0.7891, 15:-0.1775, 16:+0.7576, 17:-0.0276, 18:+0.6462, 19:+0.0520, 20:+0.4641, 21:+0.0613, 22:+0.2111, 24:-0.7891, 25:-0.7653, 26:-0.7891, 27:-0.5048, 28:-0.7891, 29:-0.2444, 30:-0.7891, 31:+0.0161, 32:-0.7891, 33:+0.2765, 34:-0.7891, 35:+0.5370
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (21 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.5439..19.1661 mm (24 pairs)
+  ED3     48    48   0.7891  15..33 (18)                        True         True (same-sign: False)
+        dy[row] = 15:-0.4959, 16:+0.6753, 17:-0.2292, 18:+0.6223, 19:-0.0575, 20:+0.4734, 21:+0.0190, 22:+0.2285, 24:-0.7891, 25:-0.7342, 26:-0.7891, 27:-0.4150, 28:-0.7891, 29:-0.0957, 30:-0.7891, 31:+0.2235, 32:-0.7891, 33:+0.5427
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (27 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.6682..19.0126 mm (18 pairs)
+  ED2     48    48   0.7891  17..31 (14)                        True         True (same-sign: False)
+        dy[row] = 17:-0.6569, 18:+0.5426, 19:-0.2868, 20:+0.4772, 21:-0.0677, 22:+0.2592, 24:-0.7891, 25:-0.6731, 26:-0.7891, 27:-0.2385, 28:-0.7891, 29:+0.1961, 30:-0.7772, 31:+0.6424
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (31 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.5804..18.9733 mm (14 pairs)
+  ED1     46    46   0.0000  -                                  True         True (same-sign: False)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (45 pairs)
+  ED0     26    26   0.0000  -                                  True         True (same-sign: False)
+        (old table has no boundary rows for this disk)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (25 pairs)
+  HD0     26    26   0.0000  -                                  True         True (same-sign: False)
+        (old table has no boundary rows for this disk)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (25 pairs)
+  HD1     46    46   0.0000  -                                  True         True (same-sign: False)
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (45 pairs)
+  HD2     48    48   0.7891  17..31 (14)                        True         True (same-sign: False)
+        dy[row] = 17:-0.5192, 18:+0.5717, 19:-0.2134, 20:+0.4779, 21:-0.0401, 22:+0.2501, 24:-0.7891, 25:-0.6922, 26:-0.7891, 27:-0.2936, 28:-0.7891, 29:+0.1050, 30:-0.7891, 31:+0.5035
+        adjacent-row spacing for half_pitch 16.5: 16.5000..16.5000 mm (31 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.7074..18.8941 mm (14 pairs)
+  HD3     47    47   0.7632  12..35 (23)                        True         True (same-sign: False)
+        dy[row] = 12:-0.6182, 13:+0.7552, 14:-0.3285, 15:+0.7632, 16:-0.1175, 17:+0.6918, 18:+0.0146, 19:+0.5410, 20:+0.0677, 21:+0.3104, 22:+0.0415, 24:-0.0415, 25:-0.3104, 26:-0.0677, 27:-0.5410, 28:-0.0146, 29:-0.6918, 30:+0.1175, 31:-0.7632, 32:+0.3285, 33:-0.7552, 34:+0.6182, 35:-0.0391
+        adjacent-row spacing for half_pitch 16.5: 16.4609..16.5000 mm (22 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.6266..19.0837 mm (22 pairs)
+  HD4     47    47   0.7891  8..39 (31)                         True         True (same-sign: False)
+        dy[row] = 8:-0.7119, 9:+0.7604, 10:-0.4655, 11:+0.7891, 12:-0.2475, 13:+0.7891, 14:-0.0296, 15:+0.7891, 16:+0.1273, 17:+0.7276, 18:+0.1583, 19:+0.5396, 20:+0.1352, 21:+0.2970, 22:+0.0580, 24:-0.0580, 25:-0.2970, 26:-0.1352, 27:-0.5396, 28:-0.1583, 29:-0.7276, 30:-0.1273, 31:-0.7891, 32:+0.0296, 33:-0.7891, 34:+0.2475, 35:-0.7891, 36:+0.4655, 37:-0.7604, 38:+0.7119, 39:-0.0391
+        adjacent-row spacing for half_pitch 16.5: 16.4609..16.5000 mm (14 pairs)
+        adjacent-row spacing for half_pitch 18.0: 16.5277..19.2259 mm (30 pairs)
+[PASS] 5. row count, half_pitch == pitch/2 and facet_z - z_center == -surface_offset on every disk
+  old 20261001 modules: z_baseplate - z_center == -surface_offset for all 2164: True
+  => sign convention: the old table's surface_offset is the carbon flat located AT the row y;
+     rows.csv facet_z (and every module's mounting plane) is the OPPOSITE surface, i.e. the plane of
+     the two neighbouring same-surface flats at y +/- half_pitch that carry the module edges.
+[PASS] 5. x_outer_mm == sqrt(outer_radius^2 - row_y^2) (half chord of the disk at row centre): mismatches=0
+  BLOCKED rows (row y band overlaps an opening primitive's y extent?)
+    ED4  opening |y|<=34.900: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[45.061, 27.211, 9.0, -9.789, -27.765, -45.789]; mismatches vs rule=[]
+    ED3  opening |y|<=34.900: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[45.019, 27.229, 9.0, -9.789, -27.734, -45.789]; mismatches vs rule=[]
+    ED2  opening |y|<=34.900: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[44.932, 27.259, 9.0, -9.789, -27.673, -45.789]; mismatches vs rule=[]
+    ED1  opening |y|<=31.750: BLOCKED rows [20, 21, 22, 23, 24, 25] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    ED0  opening |y|<=31.750: BLOCKED rows [10, 11, 12, 13, 14, 15] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    HD0  opening |y|<=31.750: BLOCKED rows [10, 11, 12, 13, 14, 15] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    HD1  opening |y|<=31.750: BLOCKED rows [20, 21, 22, 23, 24, 25] y=[41.25, 24.75, 8.25, -8.25, -24.75, -41.25]; mismatches vs rule=[]
+    HD2  opening |y|<=37.136: BLOCKED rows [21, 22, 23, 24, 25, 26] y=[44.96, 27.25, 9.0, -9.789, -27.692, -45.789]; mismatches vs rule=[]
+    HD3  opening |y|<=42.736: BLOCKED rows [20, 21, 22, 23, 24, 25, 26] y=[54.068, 36.31, 18.041, 0.0, -18.041, -36.31, -54.068]; mismatches vs rule=[]
+    HD4  opening |y|<=48.336: BLOCKED rows [20, 21, 22, 23, 24, 25, 26] y=[54.135, 36.297, 18.058, 0.0, -18.058, -36.297, -54.135]; mismatches vs rule=[]
+[PASS] 5. BLOCKED <=> |row_y - cy| < half_pitch + b for some opening primitive
+
+==============================================================================
+A / 11c check 6: bridge-FPC vs neighbouring LEC/REC film pairs (-r, new stack)
+==============================================================================
+  note: 11c check 6 (and the Step 8d audit) already tested every FPC against every other
+  module's end films on the same disk, with no facing filter; Section D widens the component set.
+  -r rsu_opt: 8656 FPC boxes, 4328 end-film boxes, 0 intersections, 0 unique module pairs
+[PASS] 6.rsu_opt(-r) no bridge-FPC/end-film intersections: 0 pairs
+  -r rsu6: 8600 FPC boxes, 4300 end-film boxes, 0 intersections, 0 unique module pairs
+[PASS] 6.rsu6(-r) no bridge-FPC/end-film intersections: 0 pairs
+
+==============================================================================
+A / 11c check 7: inward bridge FPC vs carbon (-r)
+==============================================================================
+  rsu_opt(-r): z intervals along the inward normal from the facet plane (positive into the channel / carbon side):
+    Kapton new -0.080..+0.000  (old Step 8e: -0.080..+0.000 without the 30 um translation)  overlap with carbon +0.000..+0.150: +0.000 mm
+    Al     new -0.260..-0.230  (old Step 8e: +0.000..+0.030 without the 30 um translation)  overlap with carbon +0.000..+0.150: -0.230 mm
+    baseplate -0.230..-0.080, film -0.080..-0.020, sensor -0.020..+0.030
+[PASS] 7.rsu_opt(-r) inward Al does not intersect the carbon flat; Kapton only touches: 2218 inward FPC rectangles; max z overlap Al -0.2300 mm, Kapton +0.0000 mm (0 = shared surface)
+  rsu_opt(-r): y overlap of inward FPC rectangles with the neighbouring straight flats (B 6.36 / A 7.86 mm, centred on rows i+/-1 of rows.csv) -- for the record only
+    A left  FPC: 290/430 overlap a neighbouring flat in y, max 1.902 mm
+    A right FPC: 290/430 overlap a neighbouring flat in y, max 1.902 mm
+    B left  FPC: 643/679 overlap a neighbouring flat in y, max 0.219 mm
+    B right FPC: 643/679 overlap a neighbouring flat in y, max 0.219 mm
+    worst: HD4 row 8 mod 1 A611 left_fpc y=254.788..279.288, overlap 1.902 mm
+  rsu6(-r): z intervals along the inward normal from the facet plane (positive into the channel / carbon side):
+    Kapton new -0.080..+0.000  (old Step 8e: -0.080..+0.000 without the 30 um translation)  overlap with carbon +0.000..+0.150: +0.000 mm
+    Al     new -0.260..-0.230  (old Step 8e: +0.000..+0.030 without the 30 um translation)  overlap with carbon +0.000..+0.150: -0.230 mm
+    baseplate -0.230..-0.080, film -0.080..-0.020, sensor -0.020..+0.030
+[PASS] 7.rsu6(-r) inward Al does not intersect the carbon flat; Kapton only touches: 2208 inward FPC rectangles; max z overlap Al -0.2300 mm, Kapton +0.0000 mm (0 = shared surface)
+  rsu6(-r): y overlap of inward FPC rectangles with the neighbouring straight flats (B 6.36 / A 7.86 mm, centred on rows i+/-1 of rows.csv) -- for the record only
+    A left  FPC: 290/430 overlap a neighbouring flat in y, max 1.902 mm
+    A right FPC: 290/430 overlap a neighbouring flat in y, max 1.902 mm
+    B left  FPC: 638/674 overlap a neighbouring flat in y, max 0.219 mm
+    B right FPC: 638/674 overlap a neighbouring flat in y, max 0.219 mm
+    worst: HD4 row 8 mod 1 A611 left_fpc y=254.788..279.288, overlap 1.902 mm
+
+==============================================================================
+B: -r versus 20261110_ES (same scenario)
+==============================================================================
+[PASS] B.rsu_opt same (disk,row,mod) keys; x_origin, y_origin identical per key: 2164 matched, unmatched=0, max|dx|=0.0, max|dy|=0.0 (exact compare)
+  rsu_opt type mapping 20261110_ES -> -r (count): A600->A611 214, A601->A610 216, A610->A601 195, A611->A600 193, B500->B511 66, B501->B510 66, B510->B501 68, B511->B500 65, B600->B611 273, B601->B610 274, B610->B601 268, B611->B600 266
+    A600 (OUTWARD, NEGATIVE) -> A611 (INWARD, POSITIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    A601 (OUTWARD, POSITIVE) -> A610 (INWARD, NEGATIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    A610 (INWARD, NEGATIVE) -> A601 (OUTWARD, POSITIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    A611 (INWARD, POSITIVE) -> A600 (OUTWARD, NEGATIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    B500 (OUTWARD, NEGATIVE) -> B511 (INWARD, POSITIVE); rsu_count 5->5, width 32.0->32.0, all other catalogue columns equal: True
+    B501 (OUTWARD, POSITIVE) -> B510 (INWARD, NEGATIVE); rsu_count 5->5, width 32.0->32.0, all other catalogue columns equal: True
+    B510 (INWARD, NEGATIVE) -> B501 (OUTWARD, POSITIVE); rsu_count 5->5, width 32.0->32.0, all other catalogue columns equal: True
+    B511 (INWARD, POSITIVE) -> B500 (OUTWARD, NEGATIVE); rsu_count 5->5, width 32.0->32.0, all other catalogue columns equal: True
+    B600 (OUTWARD, NEGATIVE) -> B611 (INWARD, POSITIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+    B601 (OUTWARD, POSITIVE) -> B610 (INWARD, NEGATIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+    B610 (INWARD, NEGATIVE) -> B601 (OUTWARD, POSITIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+    B611 (INWARD, POSITIVE) -> B600 (OUTWARD, NEGATIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+[PASS] B.rsu_opt each type maps to one type with facing AND chirality flipped, rsu_count/width/all dimensions kept: 12 mappings, bad=[], one-to-one=True
+  rsu_opt z changes (-r minus ES) along the OLD normal n_es (+ = toward where the old sensor faced):
+    old INWARD  (1055): normal reversed 1055/1055; dz_baseplate {-0.23: 1055}, dz_sensor {-0.6: 1055}
+    old OUTWARD (1109): normal reversed 1109/1109; dz_baseplate {-0.23: 1109}, dz_sensor {-0.6: 1109}
+[PASS] B.rsu_opt every module's normal reversed; one dz_baseplate and one dz_sensor value per old facing
+[PASS] B.rsu_opt <disk>_rows.csv byte-identical to 20261110_ES
+[PASS] B.rsu_opt disk_geometry_used.csv byte-identical to 20261110_ES
+[PASS] B.rsu_opt catalog.csv identical as a set of rows: 12 rows; only in -r=0, only in ES=0; same row order=False
+  rsu_opt metadata keys differing (ES -> -r): none
+[PASS] B.rsu_opt metadata differences listed (informational): 0 differing key(s) on 0 disk(s)
+[PASS] B.rsu6 same (disk,row,mod) keys; x_origin, y_origin identical per key: 2150 matched, unmatched=0, max|dx|=0.0, max|dy|=0.0 (exact compare)
+  rsu6 type mapping 20261110_ES -> -r (count): A600->A611 214, A601->A610 216, A610->A601 195, A611->A600 193, B600->B611 336, B601->B610 338, B610->B601 330, B611->B600 328
+    A600 (OUTWARD, NEGATIVE) -> A611 (INWARD, POSITIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    A601 (OUTWARD, POSITIVE) -> A610 (INWARD, NEGATIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    A610 (INWARD, NEGATIVE) -> A601 (OUTWARD, POSITIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    A611 (INWARD, POSITIVE) -> A600 (OUTWARD, NEGATIVE); rsu_count 6->6, width 35.0->35.0, all other catalogue columns equal: True
+    B600 (OUTWARD, NEGATIVE) -> B611 (INWARD, POSITIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+    B601 (OUTWARD, POSITIVE) -> B610 (INWARD, NEGATIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+    B610 (INWARD, NEGATIVE) -> B601 (OUTWARD, POSITIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+    B611 (INWARD, POSITIVE) -> B600 (OUTWARD, NEGATIVE); rsu_count 6->6, width 32.0->32.0, all other catalogue columns equal: True
+[PASS] B.rsu6 each type maps to one type with facing AND chirality flipped, rsu_count/width/all dimensions kept: 8 mappings, bad=[], one-to-one=True
+  rsu6 z changes (-r minus ES) along the OLD normal n_es (+ = toward where the old sensor faced):
+    old INWARD  (1046): normal reversed 1046/1046; dz_baseplate {-0.23: 1046}, dz_sensor {-0.6: 1046}
+    old OUTWARD (1104): normal reversed 1104/1104; dz_baseplate {-0.23: 1104}, dz_sensor {-0.6: 1104}
+[PASS] B.rsu6 every module's normal reversed; one dz_baseplate and one dz_sensor value per old facing
+[PASS] B.rsu6 <disk>_rows.csv byte-identical to 20261110_ES
+[PASS] B.rsu6 disk_geometry_used.csv byte-identical to 20261110_ES
+[PASS] B.rsu6 catalog.csv identical as a set of rows: 8 rows; only in -r=0, only in ES=0; same row order=False
+  rsu6 metadata keys differing (ES -> -r): none
+[PASS] B.rsu6 metadata differences listed (informational): 0 differing key(s) on 0 disk(s)
+
+==============================================================================
+C: physical interpretation
+==============================================================================
+  Geometry: each row's facet_z (rows.csv) is on one of the two outer faces of the 6 mm
+  corrugated disk (facet_z - z_center = +-3 mm).  INWARD module: z_baseplate = facet, sensor
+  toward the disk mid-plane; OUTWARD: z_baseplate = facet + 0.230 along n, sensor away from it.
+  rsu_opt: every module keeps its (disk,row), hence the same row facet_z and the same disk face
+    old INWARD : (z_baseplate - facet_z)*n  ES {0.0: 1055}  -r {0.23: 1055}
+               sensor plane height above the disk face, (z_sensor - facet_z)*sign(facet_z - z_center) [+ = outside the disk]:  ES {-0.03: 1055}  -r {0.57: 1055}
+               sensor-plane move outward from the disk (-r minus ES): {0.6: 1055}
+    old OUTWARD: (z_baseplate - facet_z)*n  ES {0.23: 1109}  -r {0.0: 1109}
+               sensor plane height above the disk face, (z_sensor - facet_z)*sign(facet_z - z_center) [+ = outside the disk]:  ES {0.57: 1109}  -r {-0.03: 1109}
+               sensor-plane move outward from the disk (-r minus ES): {-0.6: 1109}
+  rsu_opt: sensor planes per disk face, count of modules per (z_sensor - facet_z)*face value:
+    disk  face   ES {plane: n}                     -r {plane: n}
+    ED4  -3mm  {-0.03: 62, 0.57: 66}             {-0.03: 66, 0.57: 62}
+    ED4  +3mm  {-0.03: 66, 0.57: 62}             {-0.03: 62, 0.57: 66}
+    ED3  -3mm  {-0.03: 63, 0.57: 66}             {-0.03: 66, 0.57: 63}
+    ED3  +3mm  {-0.03: 66, 0.57: 63}             {-0.03: 63, 0.57: 66}
+    ED2  -3mm  {-0.03: 63, 0.57: 66}             {-0.03: 66, 0.57: 63}
+    ED2  +3mm  {-0.03: 66, 0.57: 64}             {-0.03: 64, 0.57: 66}
+    ED1  -3mm  {-0.03: 55, 0.57: 63}             {-0.03: 63, 0.57: 55}
+    ED1  +3mm  {-0.03: 63, 0.57: 55}             {-0.03: 55, 0.57: 63}
+    ED0  -3mm  {-0.03: 22, 0.57: 17}             {-0.03: 17, 0.57: 22}
+    ED0  +3mm  {-0.03: 17, 0.57: 22}             {-0.03: 22, 0.57: 17}
+    HD0  -3mm  {-0.03: 17, 0.57: 22}             {-0.03: 22, 0.57: 17}
+    HD0  +3mm  {-0.03: 22, 0.57: 17}             {-0.03: 17, 0.57: 22}
+    HD1  -3mm  {-0.03: 57, 0.57: 61}             {-0.03: 61, 0.57: 57}
+    HD1  +3mm  {-0.03: 55, 0.57: 63}             {-0.03: 63, 0.57: 55}
+    HD2  -3mm  {-0.03: 60, 0.57: 70}             {-0.03: 70, 0.57: 60}
+    HD2  +3mm  {-0.03: 63, 0.57: 66}             {-0.03: 66, 0.57: 63}
+    HD3  -3mm  {-0.03: 58, 0.57: 68}             {-0.03: 68, 0.57: 58}
+    HD3  +3mm  {-0.03: 62, 0.57: 66}             {-0.03: 66, 0.57: 62}
+    HD4  -3mm  {-0.03: 58, 0.57: 68}             {-0.03: 68, 0.57: 58}
+    HD4  +3mm  {-0.03: 60, 0.57: 64}             {-0.03: 64, 0.57: 60}
+  rsu_opt: INWARD/OUTWARD counts per disk (ES -> -r)
+    ED4  INWARD  128 ->  128, OUTWARD  128 ->  128
+    ED3  INWARD  129 ->  129, OUTWARD  129 ->  129
+    ED2  INWARD  129 ->  130, OUTWARD  130 ->  129
+    ED1  INWARD  118 ->  118, OUTWARD  118 ->  118
+    ED0  INWARD   39 ->   39, OUTWARD   39 ->   39
+    HD0  INWARD   39 ->   39, OUTWARD   39 ->   39
+    HD1  INWARD  112 ->  124, OUTWARD  124 ->  112
+    HD2  INWARD  123 ->  136, OUTWARD  136 ->  123
+    HD3  INWARD  120 ->  134, OUTWARD  134 ->  120
+    HD4  INWARD  118 ->  132, OUTWARD  132 ->  118
+    total INWARD 1055 -> 1109, OUTWARD 1109 -> 1055
+[PASS] C.rsu_opt in-plane x/y box of every modelled component (LEC/REC film, both bridge FPCs, AncASIC) identical ES vs -r per key: 15148 boxes, max |d(x,y edge)| = 5.68e-14 mm
+  rsu6: every module keeps its (disk,row), hence the same row facet_z and the same disk face
+    old INWARD : (z_baseplate - facet_z)*n  ES {-0.0: 1046}  -r {0.23: 1046}
+               sensor plane height above the disk face, (z_sensor - facet_z)*sign(facet_z - z_center) [+ = outside the disk]:  ES {-0.03: 1046}  -r {0.57: 1046}
+               sensor-plane move outward from the disk (-r minus ES): {0.6: 1046}
+    old OUTWARD: (z_baseplate - facet_z)*n  ES {0.23: 1104}  -r {-0.0: 1104}
+               sensor plane height above the disk face, (z_sensor - facet_z)*sign(facet_z - z_center) [+ = outside the disk]:  ES {0.57: 1104}  -r {-0.03: 1104}
+               sensor-plane move outward from the disk (-r minus ES): {-0.6: 1104}
+  rsu6: sensor planes per disk face, count of modules per (z_sensor - facet_z)*face value:
+    disk  face   ES {plane: n}                     -r {plane: n}
+    ED4  -3mm  {-0.03: 61, 0.57: 65}             {-0.03: 65, 0.57: 61}
+    ED4  +3mm  {-0.03: 65, 0.57: 61}             {-0.03: 61, 0.57: 65}
+    ED3  -3mm  {-0.03: 62, 0.57: 66}             {-0.03: 66, 0.57: 62}
+    ED3  +3mm  {-0.03: 66, 0.57: 62}             {-0.03: 62, 0.57: 66}
+    ED2  -3mm  {-0.03: 62, 0.57: 66}             {-0.03: 66, 0.57: 62}
+    ED2  +3mm  {-0.03: 66, 0.57: 64}             {-0.03: 64, 0.57: 66}
+    ED1  -3mm  {-0.03: 55, 0.57: 63}             {-0.03: 63, 0.57: 55}
+    ED1  +3mm  {-0.03: 63, 0.57: 55}             {-0.03: 55, 0.57: 63}
+    ED0  -3mm  {-0.03: 21, 0.57: 17}             {-0.03: 17, 0.57: 21}
+    ED0  +3mm  {-0.03: 17, 0.57: 21}             {-0.03: 21, 0.57: 17}
+    HD0  -3mm  {-0.03: 17, 0.57: 21}             {-0.03: 21, 0.57: 17}
+    HD0  +3mm  {-0.03: 21, 0.57: 17}             {-0.03: 17, 0.57: 21}
+    HD1  -3mm  {-0.03: 57, 0.57: 61}             {-0.03: 61, 0.57: 57}
+    HD1  +3mm  {-0.03: 55, 0.57: 63}             {-0.03: 63, 0.57: 55}
+    HD2  -3mm  {-0.03: 60, 0.57: 70}             {-0.03: 70, 0.57: 60}
+    HD2  +3mm  {-0.03: 62, 0.57: 66}             {-0.03: 66, 0.57: 62}
+    HD3  -3mm  {-0.03: 58, 0.57: 68}             {-0.03: 68, 0.57: 58}
+    HD3  +3mm  {-0.03: 62, 0.57: 66}             {-0.03: 66, 0.57: 62}
+    HD4  -3mm  {-0.03: 58, 0.57: 68}             {-0.03: 68, 0.57: 58}
+    HD4  +3mm  {-0.03: 58, 0.57: 64}             {-0.03: 64, 0.57: 58}
+  rsu6: INWARD/OUTWARD counts per disk (ES -> -r)
+    ED4  INWARD  126 ->  126, OUTWARD  126 ->  126
+    ED3  INWARD  128 ->  128, OUTWARD  128 ->  128
+    ED2  INWARD  128 ->  130, OUTWARD  130 ->  128
+    ED1  INWARD  118 ->  118, OUTWARD  118 ->  118
+    ED0  INWARD   38 ->   38, OUTWARD   38 ->   38
+    HD0  INWARD   38 ->   38, OUTWARD   38 ->   38
+    HD1  INWARD  112 ->  124, OUTWARD  124 ->  112
+    HD2  INWARD  122 ->  136, OUTWARD  136 ->  122
+    HD3  INWARD  120 ->  134, OUTWARD  134 ->  120
+    HD4  INWARD  116 ->  132, OUTWARD  132 ->  116
+    total INWARD 1046 -> 1104, OUTWARD 1104 -> 1046
+[PASS] C.rsu6 in-plane x/y box of every modelled component (LEC/REC film, both bridge FPCs, AncASIC) identical ES vs -r per key: 15050 boxes, max |d(x,y edge)| = 0.00e+00 mm
+
+==============================================================================
+D: all-component pair audit, any facing combination
+==============================================================================
+  Component model: 11c build_boxes (left/right bridge FPC Kapton and Al, LEC and REC end films,
+  Step 11b z stack) + AncASIC (glue+chip, x/y from the Step 11b builder relative to the left FPC).
+  Not covered: the builder's upright-electronics y flip for rows at y <= 0 (Step 8j) and the
+  RSU-referenced FPC top edge (Step 8k) -- the 11c model references the module edge instead;
+  RSU silicon tile pattern, the corrugated carbon itself (beyond 11c check 7), cables/services.
+  Boxes are axis-aligned; touching faces are not hits.
+  Coarse extension (second audit per scenario): module body = baseplate..sensor top as one slab over
+  the full module footprint, plus the OUTWARD external epoxy as the builder's two 2.5 mm edge lines.
+  Rejected first version (2026-11-11): OUTWARD epoxy as a full-footprint layer gave 1677 (rsu_opt) /
+  1664 (rsu6) pairs in BOTH ES and -r, all INWARD back-side Al (0.030 mm z overlap) vs a same-row
+  OUTWARD neighbour's epoxy -- an artefact, since the builder places that epoxy as edge lines only.
+  rsu_opt 20261110_ES components (FPC Kapton/Al, LEC/REC film, AncASIC): 15148 boxes, 0 intersecting pairs
+  rsu_opt -r components (FPC Kapton/Al, LEC/REC film, AncASIC): 15148 boxes, 0 intersecting pairs
+[PASS] D.rsu_opt -r: no component-component intersection between different modules (any facing combination): -r 0 pairs, ES 0; new in -r 0, gone in -r 0
+  rsu_opt 20261110_ES module body (full-footprint slab + outward epoxy lines) vs body/components: 19530 boxes, 0 intersecting pairs
+  rsu_opt -r module body (full-footprint slab + outward epoxy lines) vs body/components: 19422 boxes, 0 intersecting pairs
+    body pairs new in -r: 0, gone in -r: 0
+[PASS] D.rsu_opt (coarse, informational) module body/epoxy-line boxes: -r has no more pairs than the ROOT-overlap-clean 20261110_ES control: -r 0, ES 0
+  rsu6 20261110_ES components (FPC Kapton/Al, LEC/REC film, AncASIC): 15050 boxes, 0 intersecting pairs
+  rsu6 -r components (FPC Kapton/Al, LEC/REC film, AncASIC): 15050 boxes, 0 intersecting pairs
+[PASS] D.rsu6 -r: no component-component intersection between different modules (any facing combination): -r 0 pairs, ES 0; new in -r 0, gone in -r 0
+  rsu6 20261110_ES module body (full-footprint slab + outward epoxy lines) vs body/components: 19408 boxes, 0 intersecting pairs
+  rsu6 -r module body (full-footprint slab + outward epoxy lines) vs body/components: 19292 boxes, 0 intersecting pairs
+    body pairs new in -r: 0, gone in -r: 0
+[PASS] D.rsu6 (coarse, informational) module body/epoxy-line boxes: -r has no more pairs than the ROOT-overlap-clean 20261110_ES control: -r 0, ES 0
+
+==============================================================================
+Summary
+==============================================================================
+54/54 checks passed
+OVERALL: PASS

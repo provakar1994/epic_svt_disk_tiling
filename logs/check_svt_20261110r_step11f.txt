@@ -1,0 +1,46 @@
+SVT step 11f 20261110-r_ES build + ROOT checks: 2026-11-12 04:31:18 UTC
+Repository: /global/cfs/cdirs/m3763/pdatta/epic (commit 311634084 + working tree)
+Report directory: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_20261110r_step11f_20261112T043117Z
+[PASS] build/install: DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+[PASS] installed == source XML: production selection unchanged
+[PASS] installed 20261110-r_ES/rsu_opt: 10 *_modules.csv
+[PASS] installed 20261110-r_ES/rsu6: 10 *_modules.csv
+[PASS] overlay rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/scenario_overlay/20261110-r_ES_rsu_opt
+[PASS] overlay rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/scenario_overlay/20261110-r_ES_rsu6
+
+== 20261110-r_ES/rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/scenario_overlay/20261110-r_ES_rsu_opt/epic_craterlake_tracking_only_20261110-r_ES_rsu_opt.xml
+[PASS] export rsu_opt: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_20261110r_step11f_20261112T043117Z/epic_craterlake_tracking_only_r_rsu_opt.root
+[PASS] builder warnings rsu_opt: 0 warnings, 0 skipping-module
+[PASS] placed modules rsu_opt: 2164 (= delivery)
+placed tiling modules: 2164  A600:193 A601:195 A610:216 A611:214 B500:65 B501:68 B510:66 B511:66 B600:266 B601:268 B610:274 B611:273
+[PASS] ROOT overlaps tracking_r_rsu_opt: 0 ovlp lines (illegal=0 found in 0.585764 [sec])
+[PASS] ROOT overlaps craterlake_r_rsu_opt: 0 ovlp lines (illegal=0 found in 0.926189 [sec])
+
+== 20261110-r_ES/rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/scenario_overlay/20261110-r_ES_rsu6/epic_craterlake_tracking_only_20261110-r_ES_rsu6.xml
+[PASS] export rsu6: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_20261110r_step11f_20261112T043117Z/epic_craterlake_tracking_only_r_rsu6.root
+[PASS] builder warnings rsu6: 0 warnings, 0 skipping-module
+[PASS] placed modules rsu6: 2150 (= delivery)
+placed tiling modules: 2150  A600:193 A601:195 A610:216 A611:214 B600:328 B601:330 B610:338 B611:336
+[PASS] ROOT overlaps tracking_r_rsu6: 0 ovlp lines (illegal=0 found in 0.595262 [sec])
+[PASS] ROOT overlaps craterlake_r_rsu6: 0 ovlp lines (illegal=0 found in 0.857417 [sec])
+
+===== Step 11f summary (2026-11-12 04:32:27 UTC) =====
+check                                    status detail
+build/install                            PASS  DETECTOR_PATH=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+installed == source XML                  PASS  production selection unchanged
+installed 20261110-r_ES/rsu_opt          PASS  10 *_modules.csv
+installed 20261110-r_ES/rsu6             PASS  10 *_modules.csv
+overlay rsu_opt                          PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/scenario_overlay/20261110-r_ES_rsu_opt
+overlay rsu6                             PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/scenario_overlay/20261110-r_ES_rsu6
+export rsu_opt                           PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_20261110r_step11f_20261112T043117Z/epic_craterlake_tracking_only_r_rsu_opt.root
+builder warnings rsu_opt                 PASS  0 warnings, 0 skipping-module
+placed modules rsu_opt                   PASS  2164 (= delivery)
+ROOT overlaps tracking_r_rsu_opt         PASS  0 ovlp lines (illegal=0 found in 0.585764 [sec])
+ROOT overlaps craterlake_r_rsu_opt       PASS  0 ovlp lines (illegal=0 found in 0.926189 [sec])
+export rsu6                              PASS  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_20261110r_step11f_20261112T043117Z/epic_craterlake_tracking_only_r_rsu6.root
+builder warnings rsu6                    PASS  0 warnings, 0 skipping-module
+placed modules rsu6                      PASS  2150 (= delivery)
+ROOT overlaps tracking_r_rsu6            PASS  0 ovlp lines (illegal=0 found in 0.595262 [sec])
+ROOT overlaps craterlake_r_rsu6          PASS  0 ovlp lines (illegal=0 found in 0.857417 [sec])
+Report directory: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/tmp/svt_20261110r_step11f_20261112T043117Z
+RESULT: COMPLETE (next: sbatch logs/submit_svt_geant_step11f.sh)
