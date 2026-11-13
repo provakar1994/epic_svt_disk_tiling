@@ -1,0 +1,8 @@
+=== tracking part, 2026-11-13T09:39:58-08:00
+Rec-campaign gate: 2026-11-13T17:39:58+00:00 /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13_rsu6 map sha256 c4cf9a3a575e2f963cec3f142f67bbaed5647799ea4d5ecee46c88efb046a415
+  [ok] vz_000mm_eta_m3p8_to_m0p6: rec files 50/50, *.tmp.* 0, empty 0, missing logs 0, logs without the map sha256 0, logs without Finished 0
+  [ok] vz_000mm_eta_p0p6_to_p3p8: rec files 50/50, *.tmp.* 0, empty 0, missing logs 0, logs without the map sha256 0, logs without Finished 0
+GATE: PASS
+rsu6 XML in rec logs: 100/100
+Check only: gate passed, outputs free. Nothing run.
+=== tracking part finished, 2026-11-13T09:40:00-08:00

@@ -1,0 +1,18 @@
+Started: 2026-11-13T04:50:05+00:00
+Overlay XML: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml
+sha256: 8ab139844aabf1faae8d9b44a55c347b40b6b8ec9c4751dd4403f24c4593a83f
+Plane XML sha256: 172cc1e1f9fa9c8ad12b1cf898a694b220a68845d12758f8099a55e062a64631
+Step 13 identity check: 2026-11-13T04:50:05+00:00
+  [ok]   EPIC HEAD = 78ade46865d06250fe601c5b56189e37735f75b1
+  [ok]   checkout compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   installed share/epic/compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   install/lib/libepic.so sha256 = 9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87
+  tiling in installed XML: silicon_disks_tiling/20261110_ES/rsu_opt 
+Identity: PASS
+dd_web_display exit status: 0
+export files in /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/out_9c:
+-rw-rw---- 1 pdatta m3763 2632875 Nov 12 20:50 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/out_9c/detector_geometry.root
+checkOverlaps exit status: 0
+ROOT 'ovlp' lines: 0
+Info in <TGeoNodeMatrix::CheckOverlaps>: Number of illegal overlaps/extrusions : 0 found in 0.719917 [sec]
+Finished: 2026-11-13T04:50:18+00:00

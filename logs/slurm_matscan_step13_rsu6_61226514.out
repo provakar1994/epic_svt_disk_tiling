@@ -1,0 +1,23 @@
+Step 14a (Step 13 geometry, rsu6) per-disk material scan: step13_rsu6_20261113T143518Z  host=nid004085  SLURM_JOB_ID=61226514
+EPIC HEAD=78ade46865d06250fe601c5b56189e37735f75b1  dirty(src,compact)=0
+XML=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_material_map_rsu6.xml  events=1000 tracks/event=1500 per slice
+80c74aae7c88c2786f99fbeb3035561a81021b652b941ab6f9d8d88b0fcc06de  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_material_map_rsu6.xml
+6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_modules.xml
+9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87  /global/cfs/cdirs/m3763/pdatta/epic/install/lib/libepic.so
+9ef0fc00a690c8a49b6cb48c533255c94ae8cf2c8f5e627c2109342112e4023a  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/definitions_craterlake.xml
+f04d878a84c29a5ed4a7b689a1cb96eebdbf04b1d1f0f5a073b5731e0c1dd439  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/record_svt_disk_material_step8q.py
+b954e96753d71f40c31958e9d16d58de644fe05415ec5bf3a77eea5db99cadaa  /global/cfs/cdirs/m3763/pdatta/epic/scripts/subdetector_tests/disk_material_map.py
+1edc4fe92b790b6cfcc30b66b22467253bfad1ceee5b5d61a77fd4d3f44a6e36  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/run_svt_disk_material_scan_step13_rsu6.sh
+7bfe44276ceffc81989055f504f4f331c8970a99b99368f0a126a9e099c95567  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/silicon_disks_modules_rsu6.xml
+514626924423195ada03fc2d143b8177f075096ec692021e863b5f11e6e1e1f6  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/provenance_step14a.txt
+519b6c9af73e94d56ad787f7e932efcb9e1b85c4781f694ebf68cb438dcf1b11  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/count_svt_modules_step14a.py
+SVT_MODULE_COUNT 2150  xml=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_material_map_rsu6.xml
+  per type: A600 214, A601 216, A610 195, A611 193, B600 336, B601 338, B610 330, B611 328
+slice 0: eta [-4.25, -2.575] seed 13101 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice0_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice0_recording.log)
+slice 1: eta [-2.575, -0.90] seed 13102 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice1_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice1_recording.log)
+slice 2: eta [0.90, 2.575] seed 13103 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice2_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice2_recording.log)
+slice 3: eta [2.575, 4.25] seed 13104 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice3_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice3_recording.log)
+slice 0: done (06:52:51    Sequencer      INFO      Processed 1000 events in 971.935471 s (wall clock))
+slice 1: done (06:51:09    Sequencer      INFO      Processed 1000 events in 896.038124 s (wall clock))
+slice 2: done (06:54:24    Sequencer      INFO      Processed 1000 events in 1090.304227 s (wall clock))
+slice 3: FAILED, see /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_rsu6_20261113T143518Z/recording/step13_rsu6_20261113T143518Z_slice3_recording.log

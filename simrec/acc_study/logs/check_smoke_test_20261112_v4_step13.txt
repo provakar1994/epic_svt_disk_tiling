@@ -1,0 +1,161 @@
+check_smoke_test_20261112_v4_step13: 2026-11-13T05:01:27+00:00
+Step 13 identity check: 2026-11-13T05:01:27+00:00
+  [ok]   EPIC HEAD = 78ade46865d06250fe601c5b56189e37735f75b1
+  [ok]   checkout compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   installed share/epic/compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   install/lib/libepic.so sha256 = 9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87
+  tiling in installed XML: silicon_disks_tiling/20261110_ES/rsu_opt 
+Identity: PASS
+Smoke test of acceptance_v4_step13, 2026-11-13T05:00:14+00:00 on login21
+Task file: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13/tasks.txt (sha256 8f424f0facb0f1c6b4a0f3952947a51e4a98bd3f5dfe7a075cb0d97486fd96fe)
+Command 1: ACC_XML=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml ACC_STEERING=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/npsim_refplanes_steering.py /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/run_sim.sh sim /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/vz_p100mm_eta_p0p6_to_p3p8 vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200 200 100 0.6 3.8 44002001 
+Command 2: ACC_XML=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml ACC_STEERING=/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/npsim_refplanes_steering.py /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/run_sim.sh sim /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/vz_p100mm_eta_m3p8_to_m0p6 vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200 200 100 -3.8 -0.6 44003001 
+Wall time for both tasks (parallel): 68 s
+plane map: f58184021f161080b7487a610993bc5d472dc64730c25c85b8bc9ed9b6d3dd67  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/plane_map.csv
+
+== 2. logs ==
+-- sim_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200
+  sim file: -rw-rw---- 1 pdatta pdatta 474650 Nov 12 21:01 /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/vz_p100mm_eta_m3p8_to_m0p6/rootfiles/sim_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.root
+  Started: 2026-11-12T21:00:16-08:00
+  Events: 200
+  Vertex z: 100 mm
+  Eta: [-3.8, -0.6]
+  Seed: 44003001
+  Compact XML: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml
+  Steering file: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/npsim_refplanes_steering.py
+  Finished: 2026-11-12T21:01:15-08:00
+  sha256 8ab139844aabf1faae8d9b44a55c347b40b6b8ec9c4751dd4403f24c4593a83f  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml
+  sha256 23665eab1460debf7aacfcab02a54b0a42fec604866545123f802dedb1cb1133  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/npsim_refplanes_steering.py
+  GenerationInit   WARN  +++ Finished run 0 after 200 events (200 events in total)
+  G4Exception lines: 0
+  fatal lines (case-insensitive): 0
+  Traceback lines: 0
+  distinct lines containing 'error' (case-insensitive):
+          1 Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+-- sim_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200
+  sim file: -rw-rw---- 1 pdatta pdatta 726086 Nov 12 21:01 /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/vz_p100mm_eta_p0p6_to_p3p8/rootfiles/sim_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.root
+  Started: 2026-11-12T21:00:16-08:00
+  Events: 200
+  Vertex z: 100 mm
+  Eta: [0.6, 3.8]
+  Seed: 44002001
+  Compact XML: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml
+  Steering file: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/npsim_refplanes_steering.py
+  Finished: 2026-11-12T21:01:22-08:00
+  sha256 8ab139844aabf1faae8d9b44a55c347b40b6b8ec9c4751dd4403f24c4593a83f  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml
+  sha256 23665eab1460debf7aacfcab02a54b0a42fec604866545123f802dedb1cb1133  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/npsim_refplanes_steering.py
+  GenerationInit   WARN  +++ Finished run 0 after 200 events (200 events in total)
+  G4Exception lines: 0
+  fatal lines (case-insensitive): 0
+  Traceback lines: 0
+  distinct lines containing 'error' (case-insensitive):
+          1 Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+Wall time for both tasks (parallel): 68 s
+
+== 3. collections ==
+sim_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.root: 200 events
+  [ok] MCParticles: 792 entries
+  [ok] SVTDiskRefPlaneHits: 868 entries
+  [ok] TrackerEndcapHits: 676 entries
+  [ok] SiBarrelHits: 70 entries
+  [ok] VertexBarrelHits: 272 entries
+sim_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.root: 200 events
+  [ok] MCParticles: 2416 entries
+  [ok] SVTDiskRefPlaneHits: 1892 entries
+  [ok] TrackerEndcapHits: 713 entries
+  [ok] SiBarrelHits: 39 entries
+  [ok] VertexBarrelHits: 12 entries
+collections: PASS
+
+== 4. Step 9e checks (refplanes/step13/check_smoke_9e.py) ==
+
+=== sim_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (200 events)
+  [ok] B: all 868 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.05000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 36.80-456.28 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 9.19e-18 GeV, exactly zero: 99/868)
+  info: plane-hit pathLength [mm] min/median/max = 0.0000/0.1031/4.5618
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 646/868 = 74.4% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 38/200
+  [ok] D: all 2 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 2/646 primary-linked hits)
+  [ok] C: clean primary hits (644): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9864, 0.9974, 0.9992, 0.9998, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 646
+  F: clean primary hits per (primary, plane): 1x: 644
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 499/499 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 145/644
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 9.08e-07 GeV, n=676)
+
+=== filter assignment in sim_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== sim_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (200 events)
+  [ok] B: all 1892 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.05000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 37.34-462.09 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 4.05e-18 GeV, exactly zero: 1058/1892)
+  info: plane-hit pathLength [mm] min/median/max = 0.0000/0.1079/3.4955
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 638/1892 = 33.7% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 66/200
+  [ok] D: all 23 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 23/638 primary-linked hits)
+  [FAIL] C: clean primary hits (615): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9219, 0.9881, 0.9985, 0.9998, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 632, 2x: 3
+  F: clean primary hits per (primary, plane): 1x: 615
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 466/466 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 149/615
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 3.95e-07 GeV, n=713)
+
+=== filter assignment in sim_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== summary ===
+                                                    file  events  plane_hits  on_primary  si_pairs  matched crossings
+sim_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.root     200         868         646       499      499  {1: 644}
+sim_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.root     200        1892         638       466      466  {1: 615}
+
+Step 9e smoke checks: FAIL (1)
+  failed: C: clean primary hits (615): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9219, 0.9881, 0.9985, 0.9998, 0.9999, 1.0000
+check_smoke_9e exit status: 1
+
+== 5. extraction + validate_refplanes_shards_20261106.py ==
+vz_p100mm_eta_m3p8_to_m0p6: extracting 1 files
+  [01/01] particles_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.npz: 200 particles, plane collection present, plane hits 868 total / 644 accepted / 222 dropped (not primary) / 2 secondary-flagged
+vz_p100mm_eta_p0p6_to_p3p8: extracting 1 files
+  [01/01] particles_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.npz: 200 particles, plane collection present, plane hits 1,892 total / 615 accepted / 1,254 dropped (not primary) / 9 secondary-flagged
+Wrote /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/extracted/extraction_manifest_vz_p100mm.csv
+extract exit status: 0
+=== vz_p100mm_eta_m3p8_to_m0p6/particles_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.npz: 200 primaries, plane collection present True, plane hits total 868, accepted 644, dropped (not primary) 222, secondary-flagged 2, other side 0
+  disk reached si_hit hit_no_pl multi  max|dz|    r_min..r_max (plane rmin..rmax) off_pl p_pl/p_gen med,min  t>0  |dr| med/90
+  ED0      103     72         0     0    0.000   36.846..242.295  (36.757..250)      0    1.000,0.998     True  0.841/1.618 
+  ED1      138    104         0     0    0.000   36.804..423.262  (36.757..425)      0    1.000,0.986     True  0.792/1.890 
+  ED2      136    103         0     0    0.000   37.334..445.545  (36.757..450)      0    1.000,0.997     True  0.630/1.277 
+  ED3      136    109         0     0    0.000   44.862..433.433  (38.5..450)      0    1.000,0.996     True  0.545/1.131 
+  ED4      131    111         0     0    0.000   52.922..448.031  (38.5..450)      0    1.000,0.996     True  0.386/1.008 
+=== vz_p100mm_eta_p0p6_to_p3p8/particles_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.npz: 200 primaries, plane collection present True, plane hits total 1892, accepted 615, dropped (not primary) 1254, secondary-flagged 9, other side 14
+  disk reached si_hit hit_no_pl multi  max|dz|    r_min..r_max (plane rmin..rmax) off_pl p_pl/p_gen med,min  t>0  |dr| med/90
+  HD0       82     53         0     0    0.000   37.344..224.769  (36.757..250)      0    1.000,0.997     True  1.876/3.084 
+  HD1      122    103         0     0    0.000   38.294..414.410  (36.757..425)      0    1.000,0.997     True  1.069/2.367 
+  HD2      138    105         0     0    0.000   39.822..440.844  (39.048..450)      0    1.000,0.992     True  0.810/1.838 
+  HD3      138     99         0     0    0.000   39.492..449.735  (39.045..450)      0    1.000,0.922     True  0.626/1.243 
+  HD4      135    106         0     0    0.000   51.223..453.456  (39.042..450)      0    1.000,0.922     True  0.511/1.048 
+Total problems (silicon hit without plane + off-plane first crossings + |dz| > 0.5 mm): 0
+OVERALL: PASS
+validate_refplanes_shards exit status: 0
+Finished: 2026-11-13T05:01:36+00:00

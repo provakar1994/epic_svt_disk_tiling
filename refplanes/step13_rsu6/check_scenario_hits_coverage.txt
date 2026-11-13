@@ -1,0 +1,15 @@
+Step 14b: check_scenario_hits_rsu6.py on the rsu6 refplane-gate samples, 2026-11-13T14:29:17+00:00
+rsu6: 154800 boxes from /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv
+rsu_opt: 152628 boxes from /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13.csv
+sim_overlay_fwd.root: 37972 endcap hits | inside rsu6 boxes 37972 (1.0000) | inside rsu_opt boxes 37100 (0.9770)
+sim_overlay_bwd.root: 36345 endcap hits | inside rsu6 boxes 36345 (1.0000) | inside rsu_opt boxes 35517 (0.9772)
+TOTAL: rsu6 74317/74317 = 1.0000 | rsu_opt 72617/74317 = 0.9771
+Scenario-from-hits gate (rsu6 == 1, rsu_opt < 0.99): PASS
+exit status: 0
+-- negative control: Step 13 rsu_opt coverage samples (expected FAIL: rsu6 fraction < 1)
+rsu6: 154800 boxes from /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv
+rsu_opt: 152628 boxes from /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13.csv
+sim_overlay_fwd.root: 36750 endcap hits | inside rsu6 boxes 36618 (0.9964) | inside rsu_opt boxes 36750 (1.0000)
+TOTAL: rsu6 36618/36750 = 0.9964 | rsu_opt 36750/36750 = 1.0000
+Scenario-from-hits gate (rsu6 == 1, rsu_opt < 0.99): FAIL
+exit status: 1

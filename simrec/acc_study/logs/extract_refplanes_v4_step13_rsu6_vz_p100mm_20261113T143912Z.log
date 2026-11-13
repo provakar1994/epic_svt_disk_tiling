@@ -1,0 +1,12 @@
+Started: 2026-11-13T06:39:13-08:00
+Campaign root: /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261113_v4_step13_rsu6
+Output dir:    /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261113_v4_step13_rsu6/analysis_test_20261113/extracted
+Sim files per side: 1 (gate passed)
+f58184021f161080b7487a610993bc5d472dc64730c25c85b8bc9ed9b6d3dd67  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/plane_map.csv
+ef01bfd7c69e8e496138b707ec329cc086772be57498fbb44387d5aea586aef8  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extract_disk_particles_refplanes.py
+vz_p100mm_eta_m3p8_to_m0p6: extracting 1 files
+  [01/01] particles_vz_p100mm_eta_m3p8_to_m0p6_chunk_001_smoke_n200.npz: 200 particles, plane collection present, plane hits 961 total / 709 accepted / 244 dropped (not primary) / 7 secondary-flagged
+vz_p100mm_eta_p0p6_to_p3p8: extracting 1 files
+  [01/01] particles_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.npz: 200 particles, plane collection present, plane hits 1,457 total / 641 accepted / 803 dropped (not primary) / 9 secondary-flagged
+Wrote /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261113_v4_step13_rsu6/analysis_test_20261113/extracted/extraction_manifest_vz_p100mm.csv
+Finished: 2026-11-13T06:39:16-08:00

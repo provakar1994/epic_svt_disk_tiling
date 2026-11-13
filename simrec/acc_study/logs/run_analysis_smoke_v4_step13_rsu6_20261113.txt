@@ -1,0 +1,29 @@
+extraction exit status: 0
+efficiency exit status: 0
+result files: 39
+compare exit status: 0
+[rsu_opt] /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/refplane_efficiency_v5/vz_p100mm
+    extracted root: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extracted/acceptance_v4_step13
+    plane map: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/plane_map.csv
+    rows csv: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu_opt.csv
+    active outline: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13.csv; grid 0.5 mm, closing 1 mm
+[rsu6] /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261113_v4_step13_rsu6/analysis_test_20261113/results/vz_p100mm
+    extracted root: /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261113_v4_step13_rsu6/analysis_test_20261113/extracted
+    plane map: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/plane_map.csv
+    rows csv: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu6.csv
+    active outline: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv; grid 0.5 mm, closing 1 mm
+
+=== vertex z = +100 mm: efficiency [%] rsu_opt -> rsu6, diff +- independent-sample binomial error [points] ===
+fid denominators identical on 0/10 disks (identical only for truly paired primaries; not expected with npsim's shared random stream)
+
+fid:
+  ED4  rsu_opt  98.32 (N= 2477632)  rsu6  99.12 (N=     113)  diff  +0.79 +- 0.88  pull   +0.9
+  ED3  rsu_opt  98.29 (N= 2558473)  rsu6  99.12 (N=     114)  diff  +0.83 +- 0.87  pull   +1.0
+  ED2  rsu_opt  98.18 (N= 2622027)  rsu6 100.00 (N=     116)  diff  +1.82 +- 0.01  pull +220.7
+  ED1  rsu_opt  97.97 (N= 2478050)  rsu6  95.74 (N=      94)  diff  -2.22 +- 2.08  pull   -1.1
+  ED0  rsu_opt  98.29 (N= 1528770)  rsu6 100.00 (N=      49)  diff  +1.71 +- 0.01  pull +163.0
+  HD0  rsu_opt  94.54 (N= 1270182)  rsu6 100.00 (N=      54)  diff  +5.46 +- 0.02  pull +270.8
+  HD1  rsu_opt  96.86 (N= 2326685)  rsu6  98.91 (N=      92)  diff  +2.06 +- 1.08  pull   +1.9
+  HD2  rsu_opt  97.95 (N= 2489788)  rsu6  96.04 (N=     101)  diff  -1.91 +- 1.94  pull   -1.0
+  HD3  rsu_opt  98.30 (N= 2324747)  rsu6  98.92 (N=      93)  diff  +0.62 +- 1.07  pull   +0.6
+  HD4  rsu_opt  98.38 (N= 2148327)  rsu6  97.56 (N=      82)  diff  -0.82 +- 1.70  pull   -0.5

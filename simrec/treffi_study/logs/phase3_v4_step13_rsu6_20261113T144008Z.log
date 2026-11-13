@@ -1,0 +1,6 @@
+=== tracking part, 2026-11-13T06:40:09-08:00
+Rec-campaign gate: 2026-11-13T14:40:09+00:00 /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13_rsu6 map sha256 0000000000000000000000000000000000000000000000000000000000000001
+  [FAIL] vz_000mm_eta_m3p8_to_m0p6: rec files 0/50, *.tmp.* 0, empty 0, missing logs 0, logs without the map sha256 0, logs without Finished 0
+  [FAIL] vz_000mm_eta_p0p6_to_p3p8: rec files 0/50, *.tmp.* 0, empty 0, missing logs 0, logs without the map sha256 0, logs without Finished 0
+GATE: FAIL
+ERROR: rec campaign not ready

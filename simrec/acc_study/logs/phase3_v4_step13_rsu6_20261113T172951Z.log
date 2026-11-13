@@ -1,0 +1,383 @@
+=== acceptance part, 2026-11-13T09:29:51-08:00
+  vz_000mm_eta_m3p8_to_m0p6: sim files 50/50, sim_*.tmp.* 0
+  vz_000mm_eta_p0p6_to_p3p8: sim files 50/50, sim_*.tmp.* 0
+  vz_p100mm_eta_m3p8_to_m0p6: sim files 50/50, sim_*.tmp.* 0
+  vz_p100mm_eta_p0p6_to_p3p8: sim files 50/50, sim_*.tmp.* 0
+  vz_m100mm_eta_m3p8_to_m0p6: sim files 50/50, sim_*.tmp.* 0
+  vz_m100mm_eta_p0p6_to_p3p8: sim files 50/50, sim_*.tmp.* 0
+Acceptance gate: PASS
+Extraction finished: 2026-11-13T09:42:39-08:00
+Started: 2026-11-13T09:42:40-08:00
+Extracted root: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extracted/acceptance_v4_step13_rsu6 ; output: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/refplane_efficiency_v5_rsu6 ; vertices: 0 100 -100
+f58184021f161080b7487a610993bc5d472dc64730c25c85b8bc9ed9b6d3dd67  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/plane_map.csv
+9ef0fc00a690c8a49b6cb48c533255c94ae8cf2c8f5e627c2109342112e4023a  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/../../../compact/tracking/definitions_craterlake.xml
+b2cb6aca1e00140c4a45974d7c8a234c2dec861ca4464b362c492ac04dd37981  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu6.csv
+ee2469ebdec7ec551fc744791c7f1fe79ccc128bcfb648cfef9639b0852ddccd  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv
+121c420d2124d755722ca27e6a45d66193808889abc6c092090378208882d9bd  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/analyze_refplane_efficiency.py
+active outline ED4: {'boxes': 18144, 'box_area_sum_mm2': 595894.0841279998, 'union_area_mm2': 493130.25, 'outline_area_mm2': 507425.5}
+active outline ED3: {'boxes': 18432, 'box_area_sum_mm2': 605352.720384, 'union_area_mm2': 496968.25, 'outline_area_mm2': 511117.75}
+active outline ED2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495681.75, 'outline_area_mm2': 510774.25}
+active outline ED1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434914.0, 'outline_area_mm2': 450157.0}
+active outline ED0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120004.0, 'outline_area_mm2': 124301.5}
+active outline HD0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120121.0, 'outline_area_mm2': 124319.0}
+active outline HD1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434811.0, 'outline_area_mm2': 450156.0}
+active outline HD2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495196.75, 'outline_area_mm2': 510187.0}
+active outline HD3: {'boxes': 18288, 'box_area_sum_mm2': 600623.4022559999, 'union_area_mm2': 495389.0, 'outline_area_mm2': 507005.25}
+active outline HD4: {'boxes': 17856, 'box_area_sum_mm2': 586435.4478719999, 'union_area_mm2': 493211.0, 'outline_area_mm2': 505937.5}
+vz_000mm_eta_m3p8_to_m0p6: 50 shards
+vz_000mm_eta_p0p6_to_p3p8: 50 shards
+Reference-plane hit efficiency, vertex z = +0 mm
+extracted root: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extracted/acceptance_v4_step13_rsu6
+plane map: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/plane_map.csv
+geometry xml: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/../../../compact/tracking/definitions_craterlake.xml
+rows csv: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu6.csv
+inner boundary (nomargin): openings; fid margins 30/40 mm; xy bins 4 mm
+active outline: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv; grid 0.5 mm, closing 1 mm
+provenance: {"shards": 100, "particles": 10000000, "shards_without_plane_collection": 0, "plane_hits_total": 58119559, "plane_hits_accepted": 33212529, "plane_hits_dropped_not_primary": 24070945, "plane_hits_secondary_flagged": 592331, "plane_hits_other_side": 243754}
+
+Integrated efficiency [%] (denominator = plane reached), binomial errors:
+selection                       fid                    active                  nomargin
+disk                                                                                   
+ED4         98.33+-0.01 (N=2476812)   98.12+-0.01 (N=2946450)   86.08+-0.02 (N=3363608)
+ED3         98.26+-0.01 (N=2551335)   98.03+-0.01 (N=2960314)   81.81+-0.02 (N=3552904)
+ED2         98.06+-0.01 (N=2600909)   97.81+-0.01 (N=2932297)   79.33+-0.02 (N=3621945)
+ED1         97.59+-0.01 (N=2426519)   97.40+-0.01 (N=2882562)   81.94+-0.02 (N=3440120)
+ED0         97.71+-0.01 (N=1461802)   97.09+-0.01 (N=1952341)   74.93+-0.03 (N=2556052)
+HD0         97.71+-0.01 (N=1455802)   97.04+-0.01 (N=1942282)   74.78+-0.03 (N=2546230)
+HD1         97.57+-0.01 (N=2417132)   97.36+-0.01 (N=2871407)   81.82+-0.02 (N=3430334)
+HD2         98.12+-0.01 (N=2510301)   97.88+-0.01 (N=2897175)   81.19+-0.02 (N=3499935)
+HD3         98.38+-0.01 (N=2322661)   98.23+-0.01 (N=2773766)   82.61+-0.02 (N=3306970)
+HD4         98.39+-0.01 (N=2143411)   98.25+-0.01 (N=2696593)   88.18+-0.02 (N=3012205)
+
+Comparison with straight-line fiducial efficiency [%], all momenta:
+      published_v8_straight_line_fid  straight_line_fid_this_sample  sl_fid_reached_fraction  sl_fid_hit_given_reached  true_point_fid  true_point_nomargin  true_fid_minus_straight_line_fid
+disk                                                                                                                                                                                         
+ED4                            96.39                          96.40                    98.04                     98.33           98.33                86.08                              1.93
+ED3                            96.56                          96.57                    98.29                     98.26           98.26                81.81                              1.69
+ED2                            96.63                          96.67                    98.59                     98.06           98.06                79.33                              1.39
+ED1                            96.51                          96.53                    98.91                     97.59           97.59                81.94                              1.07
+ED0                            96.61                          96.91                    99.18                     97.71           97.71                74.93                              0.81
+HD0                            96.25                          96.53                    98.79                     97.71           97.71                74.78                              1.18
+HD1                            96.10                          96.11                    98.50                     97.57           97.57                81.82                              1.46
+HD2                            96.33                          96.35                    98.20                     98.12           98.12                81.19                              1.77
+HD3                            96.26                          96.29                    97.88                     98.38           98.38                82.61                              2.09
+HD4                            96.05                          96.06                    97.63                     98.38           98.39                88.18                              2.34
+
+True-point fid efficiency [%] vs p (rows disk, columns p bin GeV):
+p_bin  0.5-0.6  0.6-0.7  0.7-0.8  0.8-0.9  0.9-1    1-2    2-3    3-5    5-7    7-9   9-11  11-13  13-15  15-17  17-19  19-20
+disk                                                                                                                         
+ED4      97.94    98.19    98.31    98.39  98.19  98.27  98.33  98.34  98.38  98.31  98.34  98.32  98.34  98.32  98.33  98.35
+ED3      98.10    98.37    97.89    98.30  98.03  98.19  98.25  98.26  98.27  98.29  98.29  98.23  98.28  98.22  98.28  98.27
+ED2      98.06    97.95    97.97    98.12  98.08  98.05  98.03  98.04  98.06  98.05  98.05  98.10  98.06  98.08  98.09  98.03
+ED1      97.61    97.69    97.56    97.65  97.37  97.52  97.52  97.59  97.62  97.64  97.64  97.59  97.61  97.59  97.56  97.55
+ED0      97.57    97.95    97.68    97.95  97.67  97.66  97.54  97.73  97.74  97.63  97.75  97.77  97.68  97.74  97.81  97.67
+HD0      97.51    97.66    97.63    97.86  97.48  97.75  97.72  97.65  97.66  97.72  97.74  97.67  97.76  97.68  97.76  97.76
+HD1      97.37    97.53    97.70    97.36  97.69  97.51  97.58  97.59  97.60  97.54  97.56  97.59  97.56  97.57  97.62  97.62
+HD2      97.97    98.10    98.27    97.94  97.99  98.06  98.09  98.12  98.14  98.11  98.18  98.14  98.12  98.14  98.11  98.05
+HD3      98.21    98.55    98.16    98.41  98.16  98.34  98.36  98.37  98.41  98.35  98.42  98.43  98.35  98.38  98.37  98.36
+HD4      98.21    98.29    98.16    98.43  98.36  98.33  98.38  98.38  98.43  98.37  98.41  98.43  98.39  98.37  98.41  98.42
+
+Straight-line fid (old definition, this sample) minus true-point fid [points] vs p:
+p_bin  0.5-0.6  0.6-0.7  0.7-0.8  0.8-0.9  0.9-1   1-2   2-3   3-5   5-7   7-9  9-11  11-13  13-15  15-17  17-19  19-20
+disk                                                                                                                   
+ED4      -5.00    -4.87    -3.99    -4.04  -3.99 -3.13 -2.49 -2.13 -1.91 -1.81 -1.72  -1.66  -1.66  -1.61  -1.61  -1.56
+ED3      -4.30    -4.22    -3.41    -3.41  -3.36 -2.68 -2.20 -1.84 -1.68 -1.59 -1.49  -1.46  -1.47  -1.43  -1.43  -1.36
+ED2      -3.64    -3.34    -2.83    -2.80  -2.68 -2.20 -1.79 -1.51 -1.38 -1.32 -1.24  -1.20  -1.22  -1.18  -1.16  -1.14
+ED1      -2.61    -2.34    -2.09    -2.14  -2.07 -1.63 -1.33 -1.15 -1.07 -1.03 -0.96  -0.94  -0.95  -0.93  -0.90  -0.89
+ED0      -1.71    -1.61    -1.38    -1.60  -1.55 -1.15 -0.96 -0.87 -0.82 -0.78 -0.74  -0.73  -0.72  -0.70  -0.70  -0.70
+HD0      -2.07    -1.71    -1.63    -1.84  -1.80 -1.60 -1.37 -1.25 -1.22 -1.20 -1.11  -1.08  -1.07  -1.07  -1.08  -1.06
+HD1      -2.90    -2.78    -2.36    -2.59  -2.60 -2.09 -1.75 -1.58 -1.49 -1.40 -1.36  -1.32  -1.30  -1.26  -1.30  -1.28
+HD2      -3.86    -3.77    -3.40    -3.46  -3.33 -2.72 -2.18 -1.90 -1.78 -1.70 -1.62  -1.57  -1.53  -1.50  -1.54  -1.53
+HD3      -5.03    -4.87    -4.24    -4.21  -4.00 -3.27 -2.62 -2.27 -2.10 -1.99 -1.90  -1.83  -1.80  -1.74  -1.78  -1.76
+HD4      -5.96    -5.77    -4.92    -5.12  -4.66 -3.86 -2.98 -2.52 -2.36 -2.20 -2.10  -2.03  -1.98  -1.91  -1.97  -1.97
+
+Family A (36 mm) vs B (33 mm) efficiency [%], all momenta, disks 2-4:
+family                            A_36mm                   B_33mm
+disk selection                                                   
+ED2  active      98.05+-0.01 (N=2038905)   97.27+-0.02 (N=893392)
+     fid         98.29+-0.01 (N=1751307)   97.58+-0.02 (N=849602)
+     nomargin    74.92+-0.03 (N=2671676)   91.73+-0.03 (N=950269)
+ED3  active      98.08+-0.01 (N=2309696)   97.85+-0.02 (N=650618)
+     fid         98.28+-0.01 (N=1943921)   98.18+-0.02 (N=607414)
+     nomargin    79.64+-0.02 (N=2848034)   90.59+-0.03 (N=704870)
+ED4  active      98.13+-0.01 (N=2567730)   98.07+-0.02 (N=378720)
+     fid         98.31+-0.01 (N=2133182)   98.46+-0.02 (N=343630)
+     nomargin    86.03+-0.02 (N=2932321)   86.44+-0.05 (N=431287)
+HD2  active      98.05+-0.01 (N=1999620)   97.49+-0.02 (N=897555)
+     fid         98.29+-0.01 (N=1657305)   97.79+-0.02 (N=852996)
+     nomargin    77.18+-0.03 (N=2544637)   91.86+-0.03 (N=955298)
+HD3  active      98.26+-0.01 (N=2318665)   98.08+-0.02 (N=455101)
+     fid         98.38+-0.01 (N=1907616)   98.39+-0.02 (N=415045)
+     nomargin    81.55+-0.02 (N=2800187)   88.44+-0.04 (N=506783)
+HD4  active      98.26+-0.01 (N=2496443)   98.12+-0.03 (N=200150)
+     fid         98.38+-0.01 (N=1977430)   98.56+-0.03 (N=165981)
+     nomargin    88.68+-0.02 (N=2772463)   82.42+-0.08 (N=239742)
+
+Diagnostics per disk: family-A y range; hits without plane crossing; multi-crossing primaries;
+first crossings off the plane annulus (must be 0); median |true point - mean silicon hit| (5% sample);
+max |plane z - z_plane|; median (min) |p_plane|/p_gen (5% sample);
+median denominator per occupied 2D bin inside the disk (nomargin);
+silicon-hit primaries whose true point is outside the active outline
+
+Active-silicon outline per disk (areas in mm2): sensitive-box sum, union of both faces, filled outline:
+  ED4: {'boxes': 18144, 'box_area_sum_mm2': 595894.0841279998, 'union_area_mm2': 493130.25, 'outline_area_mm2': 507425.5}
+  ED3: {'boxes': 18432, 'box_area_sum_mm2': 605352.720384, 'union_area_mm2': 496968.25, 'outline_area_mm2': 511117.75}
+  ED2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495681.75, 'outline_area_mm2': 510774.25}
+  ED1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434914.0, 'outline_area_mm2': 450157.0}
+  ED0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120004.0, 'outline_area_mm2': 124301.5}
+  HD0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120121.0, 'outline_area_mm2': 124319.0}
+  HD1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434811.0, 'outline_area_mm2': 450156.0}
+  HD2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495196.75, 'outline_area_mm2': 510187.0}
+  HD3: {'boxes': 18288, 'box_area_sum_mm2': 600623.4022559999, 'union_area_mm2': 495389.0, 'outline_area_mm2': 507005.25}
+  HD4: {'boxes': 17856, 'box_area_sum_mm2': 586435.4478719999, 'union_area_mm2': 493211.0, 'outline_area_mm2': 505937.5}
+
+  ED4: A=(-215.463, 233.3033), hit_without_plane=0, multi_crossing=11, off_plane=0, hits outside active outline=4252/2895362, med|dr|=0.458 mm, max|dz_plane|=0.0469 mm, med p_plane/p_gen=0.9997 (min 0.661), med 2D den=40, z_disk=-1020 (nominal -1020), z_plane=-1014
+  ED3: A=(-179.4573, 161.5041), hit_without_plane=0, multi_crossing=7, off_plane=0, hits outside active outline=4737/2906666, med|dr|=0.533 mm, max|dz_plane|=0.0491 mm, med p_plane/p_gen=0.9997 (min 0.799), med 2D den=40, z_disk=-850 (nominal -850), z_plane=-844
+  ED2: A=(-143.3576, 125.3431), hit_without_plane=1, multi_crossing=8, off_plane=0, hits outside active outline=5361/2873387, med|dr|=0.670 mm, max|dz_plane|=0.0497 mm, med p_plane/p_gen=0.9998 (min 0.883), med 2D den=39, z_disk=-650 (nominal -650), z_plane=-644
+  ED1: A=None, hit_without_plane=3, multi_crossing=6, off_plane=0, hits outside active outline=11082/2818666, med|dr|=0.824 mm, max|dz_plane|=0.0493 mm, med p_plane/p_gen=0.9998 (min 0.870), med 2D den=41, z_disk=-450 (nominal -450), z_plane=-444
+  ED0: A=None, hit_without_plane=0, multi_crossing=1, off_plane=0, hits outside active outline=19788/1915303, med|dr|=1.159 mm, max|dz_plane|=0.0499 mm, med p_plane/p_gen=0.9999 (min 0.848), med 2D den=122, z_disk=-250 (nominal -250), z_plane=-244
+  HD0: A=None, hit_without_plane=4, multi_crossing=1, off_plane=0, hits outside active outline=19295/1904137, med|dr|=1.161 mm, max|dz_plane|=0.0492 mm, med p_plane/p_gen=0.9998 (min 0.705), med 2D den=122, z_disk=250 (nominal 250), z_plane=244
+  HD1: A=None, hit_without_plane=7, multi_crossing=3, off_plane=0, hits outside active outline=11124/2806728, med|dr|=0.840 mm, max|dz_plane|=0.0479 mm, med p_plane/p_gen=0.9998 (min 0.564), med 2D den=41, z_disk=450 (nominal 450), z_plane=444
+  HD2: A=(-143.4965, 125.4808), hit_without_plane=2, multi_crossing=4, off_plane=0, hits outside active outline=5772/2841542, med|dr|=0.646 mm, max|dz_plane|=0.0497 mm, med p_plane/p_gen=0.9997 (min 0.798), med 2D den=39, z_disk=700 (nominal 700), z_plane=694
+  HD3: A=(-206.3818, 206.3818), hit_without_plane=0, multi_crossing=8, off_plane=0, hits outside active outline=7227/2731795, med|dr|=0.527 mm, max|dz_plane|=0.0394 mm, med p_plane/p_gen=0.9997 (min 0.585), med 2D den=40, z_disk=950 (nominal 950), z_plane=944
+  HD4: A=(-278.2881, 278.2881), hit_without_plane=1, multi_crossing=9, off_plane=0, hits outside active outline=6718/2656216, med|dr|=0.441 mm, max|dz_plane|=0.0411 mm, med p_plane/p_gen=0.9996 (min 0.499), med 2D den=40, z_disk=1200 (nominal 1200), z_plane=1194
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/refplane_efficiency_v5_rsu6/vz_000mm
+vz_p100mm_eta_m3p8_to_m0p6: 50 shards
+vz_p100mm_eta_p0p6_to_p3p8: 50 shards
+Reference-plane hit efficiency, vertex z = +100 mm
+extracted root: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extracted/acceptance_v4_step13_rsu6
+plane map: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/plane_map.csv
+geometry xml: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/../../../compact/tracking/definitions_craterlake.xml
+rows csv: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu6.csv
+inner boundary (nomargin): openings; fid margins 30/40 mm; xy bins 4 mm
+active outline: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv; grid 0.5 mm, closing 1 mm
+provenance: {"shards": 100, "particles": 10000000, "shards_without_plane_collection": 0, "plane_hits_total": 64661995, "plane_hits_accepted": 32695246, "plane_hits_dropped_not_primary": 31162500, "plane_hits_secondary_flagged": 569588, "plane_hits_other_side": 234661}
+
+Integrated efficiency [%] (denominator = plane reached), binomial errors:
+selection                       fid                    active                  nomargin
+disk                                                                                   
+ED4         98.33+-0.01 (N=2476000)   98.13+-0.01 (N=2945364)   89.77+-0.02 (N=3224049)
+ED3         98.30+-0.01 (N=2557497)   98.08+-0.01 (N=2966612)   84.13+-0.02 (N=3463471)
+ED2         98.19+-0.01 (N=2621639)   97.95+-0.01 (N=2953419)   79.48+-0.02 (N=3645347)
+ED1         97.98+-0.01 (N=2479321)   97.79+-0.01 (N=2938025)   82.35+-0.02 (N=3500481)
+ED0         98.51+-0.01 (N=1528810)   97.93+-0.01 (N=2033546)   75.26+-0.03 (N=2666085)
+HD0         94.85+-0.02 (N=1272061)   94.26+-0.02 (N=1725901)   73.15+-0.03 (N=2262618)
+HD1         96.84+-0.01 (N=2327926)   96.65+-0.01 (N=2776509)   81.22+-0.02 (N=3320774)
+HD2         97.93+-0.01 (N=2491088)   97.67+-0.01 (N=2873708)   81.03+-0.02 (N=3472224)
+HD3         98.32+-0.01 (N=2325427)   98.17+-0.01 (N=2775791)   82.35+-0.02 (N=3318305)
+HD4         98.41+-0.01 (N=2148989)   98.25+-0.01 (N=2706748)   87.74+-0.02 (N=3038588)
+
+Comparison with straight-line fiducial efficiency [%], all momenta:
+      published_v8_straight_line_fid  straight_line_fid_this_sample  sl_fid_reached_fraction  sl_fid_hit_given_reached  true_point_fid  true_point_nomargin  true_fid_minus_straight_line_fid
+disk                                                                                                                                                                                         
+ED4                            96.14                          96.15                    97.78                     98.33           98.33                89.77                              2.18
+ED3                            96.37                          96.37                    98.04                     98.29           98.30                84.13                              1.93
+ED2                            96.58                          96.57                    98.36                     98.18           98.19                79.48                              1.61
+ED1                            96.67                          96.68                    98.67                     97.98           97.98                82.35                              1.31
+ED0                            97.24                          97.48                    98.96                     98.51           98.51                75.26                              1.03
+HD0                            93.23                          93.62                    98.71                     94.85           94.85                73.15                              1.23
+HD1                            95.66                          95.68                    98.81                     96.84           96.84                81.22                              1.16
+HD2                            96.60                          96.61                    98.66                     97.93           97.93                81.03                              1.31
+HD3                            96.85                          96.88                    98.54                     98.32           98.32                82.35                              1.44
+HD4                            96.63                          96.64                    98.21                     98.40           98.41                87.74                              1.77
+
+True-point fid efficiency [%] vs p (rows disk, columns p bin GeV):
+p_bin  0.5-0.6  0.6-0.7  0.7-0.8  0.8-0.9  0.9-1    1-2    2-3    3-5    5-7    7-9   9-11  11-13  13-15  15-17  17-19  19-20
+disk                                                                                                                         
+ED4      98.38    98.16    98.24    98.34  98.30  98.26  98.33  98.34  98.34  98.31  98.34  98.36  98.32  98.33  98.31  98.41
+ED3      98.07    98.14    98.27    98.27  98.23  98.23  98.28  98.34  98.29  98.30  98.31  98.31  98.30  98.29  98.31  98.30
+ED2      98.10    98.03    98.17    97.95  98.15  98.12  98.16  98.21  98.19  98.18  98.17  98.19  98.17  98.23  98.19  98.22
+ED1      97.85    97.91    97.97    98.02  98.13  97.98  97.94  97.96  97.98  98.01  97.99  98.04  97.97  97.97  97.96  98.01
+ED0      98.41    98.43    98.43    98.49  98.30  98.56  98.54  98.54  98.52  98.49  98.52  98.52  98.47  98.50  98.51  98.46
+HD0      94.82    94.99    94.42    94.37  94.59  94.81  94.96  94.80  94.85  94.86  94.90  94.82  94.86  94.89  94.83  94.86
+HD1      96.87    96.87    97.04    96.98  96.80  96.83  96.91  96.86  96.90  96.76  96.85  96.83  96.81  96.82  96.84  96.76
+HD2      97.65    97.86    97.95    98.10  97.80  97.95  97.93  97.93  97.93  97.99  97.92  97.91  97.91  97.92  97.93  97.93
+HD3      98.06    98.34    98.23    98.32  98.22  98.21  98.27  98.32  98.37  98.36  98.33  98.34  98.37  98.31  98.29  98.32
+HD4      98.43    98.24    98.30    98.30  98.42  98.41  98.47  98.37  98.40  98.40  98.42  98.41  98.39  98.41  98.46  98.40
+
+Straight-line fid (old definition, this sample) minus true-point fid [points] vs p:
+p_bin  0.5-0.6  0.6-0.7  0.7-0.8  0.8-0.9  0.9-1   1-2   2-3   3-5   5-7   7-9  9-11  11-13  13-15  15-17  17-19  19-20
+disk                                                                                                                   
+ED4      -5.60    -5.22    -4.91    -4.48  -4.43 -3.62 -2.83 -2.38 -2.18 -2.08 -1.91  -1.88  -1.84  -1.85  -1.85  -1.73
+ED3      -4.81    -4.42    -4.30    -3.88  -3.78 -3.15 -2.50 -2.09 -1.92 -1.84 -1.69  -1.66  -1.64  -1.65  -1.64  -1.52
+ED2      -4.03    -3.66    -3.68    -3.05  -3.25 -2.61 -2.04 -1.74 -1.62 -1.54 -1.42  -1.40  -1.40  -1.39  -1.37  -1.27
+ED1      -3.12    -2.70    -2.78    -2.41  -2.36 -2.04 -1.65 -1.42 -1.34 -1.24 -1.16  -1.15  -1.16  -1.14  -1.13  -1.02
+ED0      -2.41    -1.83    -2.16    -1.78  -1.68 -1.59 -1.22 -1.13 -1.04 -0.97 -0.96  -0.92  -0.91  -0.90  -0.88  -0.82
+HD0      -2.03    -1.68    -1.67    -1.48  -1.72 -1.62 -1.42 -1.27 -1.26 -1.20 -1.18  -1.15  -1.14  -1.11  -1.15  -1.13
+HD1      -2.45    -1.89    -2.07    -1.86  -1.93 -1.71 -1.39 -1.24 -1.16 -1.10 -1.05  -1.04  -1.02  -1.03  -1.05  -1.02
+HD2      -3.48    -2.59    -2.72    -2.47  -2.30 -2.13 -1.62 -1.46 -1.31 -1.25 -1.14  -1.13  -1.13  -1.16  -1.12  -1.12
+HD3      -4.27    -3.27    -3.41    -3.27  -2.93 -2.45 -1.88 -1.62 -1.41 -1.34 -1.22  -1.22  -1.20  -1.24  -1.18  -1.16
+HD4      -5.33    -4.20    -4.31    -4.20  -3.71 -3.09 -2.31 -2.00 -1.73 -1.65 -1.51  -1.47  -1.45  -1.49  -1.42  -1.40
+
+Family A (36 mm) vs B (33 mm) efficiency [%], all momenta, disks 2-4:
+family                            A_36mm                   B_33mm
+disk selection                                                   
+ED2  active      98.05+-0.01 (N=2042315)   97.74+-0.02 (N=911104)
+     fid         98.27+-0.01 (N=1755722)   98.02+-0.01 (N=865917)
+     nomargin    74.93+-0.03 (N=2675236)   92.04+-0.03 (N=970111)
+ED3  active      98.07+-0.01 (N=2308266)   98.08+-0.02 (N=658346)
+     fid         98.28+-0.01 (N=1943888)   98.35+-0.02 (N=613609)
+     nomargin    82.45+-0.02 (N=2748950)   90.60+-0.03 (N=714521)
+ED4  active      98.12+-0.01 (N=2564558)   98.22+-0.02 (N=380806)
+     fid         98.29+-0.01 (N=2130657)   98.56+-0.02 (N=345343)
+     nomargin    90.28+-0.02 (N=2790068)   86.48+-0.05 (N=433981)
+HD2  active      98.03+-0.01 (N=1992279)   96.87+-0.02 (N=881429)
+     fid         98.29+-0.01 (N=1651837)   97.21+-0.02 (N=839251)
+     nomargin    77.16+-0.03 (N=2536125)   91.50+-0.03 (N=936099)
+HD3  active      98.25+-0.01 (N=2320595)   97.74+-0.02 (N=455196)
+     fid         98.38+-0.01 (N=1909385)   98.08+-0.02 (N=416042)
+     nomargin    81.27+-0.02 (N=2812594)   88.38+-0.05 (N=505711)
+HD4  active      98.27+-0.01 (N=2504327)   97.94+-0.03 (N=202421)
+     fid         98.40+-0.01 (N=1981006)   98.48+-0.03 (N=167983)
+     nomargin    88.20+-0.02 (N=2796344)   82.41+-0.08 (N=242244)
+
+Diagnostics per disk: family-A y range; hits without plane crossing; multi-crossing primaries;
+first crossings off the plane annulus (must be 0); median |true point - mean silicon hit| (5% sample);
+max |plane z - z_plane|; median (min) |p_plane|/p_gen (5% sample);
+median denominator per occupied 2D bin inside the disk (nomargin);
+silicon-hit primaries whose true point is outside the active outline
+
+Active-silicon outline per disk (areas in mm2): sensitive-box sum, union of both faces, filled outline:
+  ED4: {'boxes': 18144, 'box_area_sum_mm2': 595894.0841279998, 'union_area_mm2': 493130.25, 'outline_area_mm2': 507425.5}
+  ED3: {'boxes': 18432, 'box_area_sum_mm2': 605352.720384, 'union_area_mm2': 496968.25, 'outline_area_mm2': 511117.75}
+  ED2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495681.75, 'outline_area_mm2': 510774.25}
+  ED1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434914.0, 'outline_area_mm2': 450157.0}
+  ED0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120004.0, 'outline_area_mm2': 124301.5}
+  HD0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120121.0, 'outline_area_mm2': 124319.0}
+  HD1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434811.0, 'outline_area_mm2': 450156.0}
+  HD2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495196.75, 'outline_area_mm2': 510187.0}
+  HD3: {'boxes': 18288, 'box_area_sum_mm2': 600623.4022559999, 'union_area_mm2': 495389.0, 'outline_area_mm2': 507005.25}
+  HD4: {'boxes': 17856, 'box_area_sum_mm2': 586435.4478719999, 'union_area_mm2': 493211.0, 'outline_area_mm2': 505937.5}
+
+  ED4: A=(-215.463, 233.3033), hit_without_plane=0, multi_crossing=5, off_plane=0, hits outside active outline=3767/2894120, med|dr|=0.418 mm, max|dz_plane|=0.0356 mm, med p_plane/p_gen=0.9997 (min 0.676), med 2D den=41, z_disk=-1020 (nominal -1020), z_plane=-1014
+  ED3: A=(-179.4573, 161.5041), hit_without_plane=0, multi_crossing=3, off_plane=0, hits outside active outline=4380/2913899, med|dr|=0.477 mm, max|dz_plane|=0.0430 mm, med p_plane/p_gen=0.9997 (min 0.767), med 2D den=40, z_disk=-850 (nominal -850), z_plane=-844
+  ED2: A=(-143.3576, 125.3431), hit_without_plane=2, multi_crossing=3, off_plane=0, hits outside active outline=4486/2897473, med|dr|=0.586 mm, max|dz_plane|=0.0496 mm, med p_plane/p_gen=0.9997 (min 0.210), med 2D den=40, z_disk=-650 (nominal -650), z_plane=-644
+  ED1: A=None, hit_without_plane=2, multi_crossing=5, off_plane=0, hits outside active outline=9510/2882505, med|dr|=0.693 mm, max|dz_plane|=0.0478 mm, med p_plane/p_gen=0.9998 (min 0.807), med 2D den=43, z_disk=-450 (nominal -450), z_plane=-444
+  ED0: A=None, hit_without_plane=1, multi_crossing=3, off_plane=0, hits outside active outline=15012/2006375, med|dr|=0.854 mm, max|dz_plane|=0.0495 mm, med p_plane/p_gen=0.9998 (min 0.773), med 2D den=133, z_disk=-250 (nominal -250), z_plane=-244
+  HD0: A=None, hit_without_plane=1, multi_crossing=1, off_plane=0, hits outside active outline=28348/1655217, med|dr|=1.816 mm, max|dz_plane|=0.0498 mm, med p_plane/p_gen=0.9998 (min 0.906), med 2D den=98, z_disk=250 (nominal 250), z_plane=244
+  HD1: A=None, hit_without_plane=8, multi_crossing=5, off_plane=0, hits outside active outline=13515/2696979, med|dr|=1.036 mm, max|dz_plane|=0.0500 mm, med p_plane/p_gen=0.9998 (min 0.556), med 2D den=37, z_disk=450 (nominal 450), z_plane=444
+  HD2: A=(-143.4965, 125.4808), hit_without_plane=4, multi_crossing=4, off_plane=0, hits outside active outline=6646/2813468, med|dr|=0.747 mm, max|dz_plane|=0.0464 mm, med p_plane/p_gen=0.9998 (min 0.777), med 2D den=38, z_disk=700 (nominal 700), z_plane=694
+  HD3: A=(-206.3818, 206.3818), hit_without_plane=0, multi_crossing=6, off_plane=0, hits outside active outline=7727/2732600, med|dr|=0.589 mm, max|dz_plane|=0.0494 mm, med p_plane/p_gen=0.9998 (min 0.408), med 2D den=40, z_disk=950 (nominal 950), z_plane=944
+  HD4: A=(-278.2881, 278.2881), hit_without_plane=1, multi_crossing=5, off_plane=0, hits outside active outline=6692/2665960, med|dr|=0.479 mm, max|dz_plane|=0.0410 mm, med p_plane/p_gen=0.9997 (min 0.360), med 2D den=41, z_disk=1200 (nominal 1200), z_plane=1194
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/refplane_efficiency_v5_rsu6/vz_p100mm
+vz_m100mm_eta_m3p8_to_m0p6: 50 shards
+vz_m100mm_eta_p0p6_to_p3p8: 50 shards
+Reference-plane hit efficiency, vertex z = -100 mm
+extracted root: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/extracted/acceptance_v4_step13_rsu6
+plane map: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/plane_map.csv
+geometry xml: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/../../../compact/tracking/definitions_craterlake.xml
+rows csv: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu6.csv
+inner boundary (nomargin): openings; fid margins 30/40 mm; xy bins 4 mm
+active outline: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv; grid 0.5 mm, closing 1 mm
+provenance: {"shards": 100, "particles": 10000000, "shards_without_plane_collection": 0, "plane_hits_total": 51343862, "plane_hits_accepted": 32839626, "plane_hits_dropped_not_primary": 17663239, "plane_hits_secondary_flagged": 596185, "plane_hits_other_side": 244812}
+
+Integrated efficiency [%] (denominator = plane reached), binomial errors:
+selection                       fid                    active                  nomargin
+disk                                                                                   
+ED4         98.29+-0.01 (N=2473065)   98.09+-0.01 (N=2943224)   84.13+-0.02 (N=3436893)
+ED3         98.17+-0.01 (N=2539908)   97.93+-0.01 (N=2948262)   81.72+-0.02 (N=3539548)
+ED2         97.81+-0.01 (N=2568166)   97.54+-0.01 (N=2897877)   79.09+-0.02 (N=3582102)
+ED1         96.84+-0.01 (N=2335105)   96.68+-0.01 (N=2784581)   81.27+-0.02 (N=3328956)
+ED0         94.86+-0.02 (N=1281644)   94.35+-0.02 (N=1734514)   73.32+-0.03 (N=2271340)
+HD0         98.54+-0.01 (N=1523353)   97.93+-0.01 (N=2022785)   75.19+-0.03 (N=2654372)
+HD1         97.97+-0.01 (N=2467554)   97.76+-0.01 (N=2926248)   82.21+-0.02 (N=3491426)
+HD2         98.23+-0.01 (N=2525185)   98.00+-0.01 (N=2912077)   81.30+-0.02 (N=3516585)
+HD3         98.39+-0.01 (N=2324471)   98.24+-0.01 (N=2774820)   83.72+-0.02 (N=3264221)
+HD4         98.38+-0.01 (N=2139172)   98.26+-0.01 (N=2676436)   88.73+-0.02 (N=2970834)
+
+Comparison with straight-line fiducial efficiency [%], all momenta:
+      published_v8_straight_line_fid  straight_line_fid_this_sample  sl_fid_reached_fraction  sl_fid_hit_given_reached  true_point_fid  true_point_nomargin  true_fid_minus_straight_line_fid
+disk                                                                                                                                                                                         
+ED4                            96.64                          96.64                    98.32                     98.29           98.29                84.13                              1.65
+ED3                            96.80                          96.80                    98.61                     98.17           98.17                81.72                              1.37
+ED2                            96.74                          96.76                    98.93                     97.81           97.81                79.09                              1.05
+ED1                            96.05                          96.09                    99.22                     96.84           96.84                81.27                              0.76
+ED0                            93.98                          94.33                    99.44                     94.86           94.86                73.32                              0.53
+HD0                            96.93                          97.22                    98.66                     98.54           98.54                75.19                              1.32
+HD1                            96.25                          96.28                    98.27                     97.97           97.97                82.21                              1.70
+HD2                            96.21                          96.22                    97.96                     98.23           98.23                81.30                              2.01
+HD3                            96.02                          96.04                    97.62                     98.38           98.39                83.72                              2.35
+HD4                            95.71                          95.71                    97.29                     98.37           98.38                88.73                              2.68
+
+True-point fid efficiency [%] vs p (rows disk, columns p bin GeV):
+p_bin  0.5-0.6  0.6-0.7  0.7-0.8  0.8-0.9  0.9-1    1-2    2-3    3-5    5-7    7-9   9-11  11-13  13-15  15-17  17-19  19-20
+disk                                                                                                                         
+ED4      98.19    98.16    98.22    98.30  98.34  98.28  98.26  98.30  98.28  98.30  98.33  98.25  98.30  98.31  98.33  98.27
+ED3      98.25    98.23    98.24    98.04  98.29  98.18  98.22  98.18  98.17  98.14  98.16  98.20  98.18  98.15  98.19  98.16
+ED2      97.70    97.66    97.54    97.83  97.92  97.79  97.85  97.80  97.82  97.82  97.80  97.80  97.82  97.79  97.84  97.80
+ED1      96.85    96.45    96.96    96.96  96.99  96.88  96.83  96.84  96.84  96.88  96.83  96.82  96.83  96.87  96.84  96.82
+ED0      95.32    94.89    94.67    94.79  95.18  94.76  94.67  94.94  94.87  94.85  94.81  94.84  94.86  94.92  94.87  94.89
+HD0      98.44    98.45    98.49    98.52  98.51  98.50  98.59  98.54  98.54  98.54  98.53  98.53  98.57  98.54  98.53  98.62
+HD1      98.10    97.90    97.94    98.01  97.86  97.96  98.05  97.97  97.93  97.96  98.00  97.94  97.96  97.98  98.02  97.95
+HD2      98.14    98.23    98.20    98.17  98.21  98.20  98.25  98.21  98.20  98.27  98.23  98.23  98.24  98.22  98.27  98.20
+HD3      98.14    98.43    98.20    98.31  98.46  98.37  98.40  98.46  98.37  98.40  98.44  98.36  98.36  98.38  98.37  98.40
+HD4      98.31    98.34    98.34    98.46  98.25  98.37  98.38  98.34  98.36  98.43  98.38  98.42  98.36  98.40  98.39  98.40
+
+Straight-line fid (old definition, this sample) minus true-point fid [points] vs p:
+p_bin  0.5-0.6  0.6-0.7  0.7-0.8  0.8-0.9  0.9-1   1-2   2-3   3-5   5-7   7-9  9-11  11-13  13-15  15-17  17-19  19-20
+disk                                                                                                                   
+ED4      -4.70    -4.11    -3.31    -3.52  -3.17 -2.76 -2.15 -1.83 -1.63 -1.52 -1.45  -1.45  -1.40  -1.39  -1.40  -1.31
+ED3      -3.82    -3.51    -2.49    -2.87  -2.69 -2.29 -1.80 -1.50 -1.35 -1.25 -1.23  -1.20  -1.16  -1.17  -1.15  -1.09
+ED2      -2.89    -2.59    -1.82    -2.18  -1.97 -1.75 -1.38 -1.14 -1.03 -0.95 -0.97  -0.93  -0.91  -0.88  -0.89  -0.82
+ED1      -2.08    -1.71    -1.37    -1.55  -1.34 -1.24 -0.93 -0.83 -0.75 -0.68 -0.70  -0.68  -0.67  -0.64  -0.63  -0.61
+ED0      -1.22    -1.09    -1.07    -0.76  -0.95 -0.80 -0.60 -0.56 -0.54 -0.47 -0.51  -0.49  -0.49  -0.48  -0.44  -0.47
+HD0      -2.59    -2.55    -2.11    -2.27  -2.23 -1.96 -1.63 -1.42 -1.30 -1.28 -1.19  -1.20  -1.19  -1.20  -1.15  -1.17
+HD1      -3.55    -3.38    -3.22    -2.97  -2.77 -2.53 -2.05 -1.83 -1.66 -1.64 -1.55  -1.53  -1.53  -1.54  -1.46  -1.45
+HD2      -4.55    -4.16    -4.01    -3.71  -3.55 -3.07 -2.49 -2.18 -1.97 -1.93 -1.80  -1.77  -1.77  -1.80  -1.73  -1.68
+HD3      -5.90    -5.24    -5.08    -4.30  -4.35 -3.67 -2.92 -2.56 -2.31 -2.23 -2.09  -2.04  -2.06  -2.09  -2.01  -1.98
+HD4      -7.30    -6.30    -6.20    -5.19  -5.02 -4.28 -3.35 -2.89 -2.61 -2.51 -2.38  -2.32  -2.33  -2.36  -2.25  -2.26
+
+Family A (36 mm) vs B (33 mm) efficiency [%], all momenta, disks 2-4:
+family                            A_36mm                   B_33mm
+disk selection                                                   
+ED2  active      98.01+-0.01 (N=2025115)   96.43+-0.02 (N=872762)
+     fid         98.29+-0.01 (N=1737464)   96.80+-0.02 (N=830702)
+     nomargin    74.87+-0.03 (N=2655840)   91.19+-0.03 (N=926262)
+ED3  active      98.06+-0.01 (N=2304252)   97.46+-0.02 (N=644010)
+     fid         98.29+-0.01 (N=1938006)   97.81+-0.02 (N=601902)
+     nomargin    79.62+-0.02 (N=2842218)   90.31+-0.04 (N=697330)
+ED4  active      98.13+-0.01 (N=2566732)   97.78+-0.02 (N=376492)
+     fid         98.31+-0.01 (N=2131364)   98.22+-0.02 (N=341701)
+     nomargin    83.81+-0.02 (N=3008733)   86.33+-0.05 (N=428160)
+HD2  active      98.06+-0.01 (N=1999492)   97.88+-0.02 (N=912585)
+     fid         98.28+-0.01 (N=1658262)   98.13+-0.01 (N=866923)
+     nomargin    77.16+-0.03 (N=2544806)   92.14+-0.03 (N=971779)
+HD3  active      98.25+-0.01 (N=2313795)   98.22+-0.02 (N=461025)
+     fid         98.36+-0.01 (N=1903823)   98.52+-0.02 (N=420648)
+     nomargin    82.83+-0.02 (N=2750652)   88.50+-0.04 (N=513569)
+HD4  active      98.26+-0.01 (N=2473733)   98.21+-0.03 (N=202703)
+     fid         98.37+-0.01 (N=1970981)   98.58+-0.03 (N=168191)
+     nomargin    89.30+-0.02 (N=2727853)   82.41+-0.08 (N=242981)
+
+Diagnostics per disk: family-A y range; hits without plane crossing; multi-crossing primaries;
+first crossings off the plane annulus (must be 0); median |true point - mean silicon hit| (5% sample);
+max |plane z - z_plane|; median (min) |p_plane|/p_gen (5% sample);
+median denominator per occupied 2D bin inside the disk (nomargin);
+silicon-hit primaries whose true point is outside the active outline
+
+Active-silicon outline per disk (areas in mm2): sensitive-box sum, union of both faces, filled outline:
+  ED4: {'boxes': 18144, 'box_area_sum_mm2': 595894.0841279998, 'union_area_mm2': 493130.25, 'outline_area_mm2': 507425.5}
+  ED3: {'boxes': 18432, 'box_area_sum_mm2': 605352.720384, 'union_area_mm2': 496968.25, 'outline_area_mm2': 511117.75}
+  ED2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495681.75, 'outline_area_mm2': 510774.25}
+  ED1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434914.0, 'outline_area_mm2': 450157.0}
+  ED0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120004.0, 'outline_area_mm2': 124301.5}
+  HD0: {'boxes': 5472, 'box_area_sum_mm2': 179714.088864, 'union_area_mm2': 120121.0, 'outline_area_mm2': 124319.0}
+  HD1: {'boxes': 16992, 'box_area_sum_mm2': 558059.539104, 'union_area_mm2': 434811.0, 'outline_area_mm2': 450156.0}
+  HD2: {'boxes': 18576, 'box_area_sum_mm2': 610082.0385120001, 'union_area_mm2': 495196.75, 'outline_area_mm2': 510187.0}
+  HD3: {'boxes': 18288, 'box_area_sum_mm2': 600623.4022559999, 'union_area_mm2': 495389.0, 'outline_area_mm2': 507005.25}
+  HD4: {'boxes': 17856, 'box_area_sum_mm2': 586435.4478719999, 'union_area_mm2': 493211.0, 'outline_area_mm2': 505937.5}
+
+  ED4: A=(-215.463, 233.3033), hit_without_plane=1, multi_crossing=6, off_plane=0, hits outside active outline=4485/2891379, med|dr|=0.505 mm, max|dz_plane|=0.0352 mm, med p_plane/p_gen=0.9997 (min 0.641), med 2D den=40, z_disk=-1020 (nominal -1020), z_plane=-1014
+  ED3: A=(-179.4573, 161.5041), hit_without_plane=2, multi_crossing=7, off_plane=0, hits outside active outline=5390/2892573, med|dr|=0.598 mm, max|dz_plane|=0.0483 mm, med p_plane/p_gen=0.9998 (min 0.685), med 2D den=39, z_disk=-850 (nominal -850), z_plane=-844
+  ED2: A=(-143.3576, 125.3431), hit_without_plane=5, multi_crossing=7, off_plane=0, hits outside active outline=6545/2833049, med|dr|=0.779 mm, max|dz_plane|=0.0457 mm, med p_plane/p_gen=0.9998 (min 0.806), med 2D den=37, z_disk=-650 (nominal -650), z_plane=-644
+  ED1: A=None, hit_without_plane=2, multi_crossing=7, off_plane=0, hits outside active outline=13330/2705468, med|dr|=1.019 mm, max|dz_plane|=0.0499 mm, med p_plane/p_gen=0.9999 (min 0.670), med 2D den=37, z_disk=-450 (nominal -450), z_plane=-444
+  ED0: A=None, hit_without_plane=1, multi_crossing=1, off_plane=0, hits outside active outline=28893/1665406, med|dr|=1.791 mm, max|dz_plane|=0.0493 mm, med p_plane/p_gen=0.9999 (min 0.892), med 2D den=98, z_disk=-250 (nominal -250), z_plane=-244
+  HD0: A=None, hit_without_plane=5, multi_crossing=4, off_plane=0, hits outside active outline=14859/1995737, med|dr|=0.859 mm, max|dz_plane|=0.0490 mm, med p_plane/p_gen=0.9998 (min 0.837), med 2D den=132, z_disk=250 (nominal 250), z_plane=244
+  HD1: A=None, hit_without_plane=1, multi_crossing=7, off_plane=0, hits outside active outline=9497/2870325, med|dr|=0.711 mm, max|dz_plane|=0.0476 mm, med p_plane/p_gen=0.9997 (min 0.575), med 2D den=42, z_disk=450 (nominal 450), z_plane=444
+  HD2: A=(-143.4965, 125.4808), hit_without_plane=0, multi_crossing=6, off_plane=0, hits outside active outline=5027/2858994, med|dr|=0.569 mm, max|dz_plane|=0.0425 mm, med p_plane/p_gen=0.9997 (min 0.840), med 2D den=40, z_disk=700 (nominal 700), z_plane=694
+  HD3: A=(-206.3818, 206.3818), hit_without_plane=0, multi_crossing=3, off_plane=0, hits outside active outline=6659/2732765, med|dr|=0.479 mm, max|dz_plane|=0.0476 mm, med p_plane/p_gen=0.9996 (min 0.754), med 2D den=40, z_disk=950 (nominal 950), z_plane=944
+  HD4: A=(-278.2881, 278.2881), hit_without_plane=1, multi_crossing=8, off_plane=0, hits outside active outline=6279/2636157, med|dr|=0.408 mm, max|dz_plane|=0.0499 mm, med p_plane/p_gen=0.9996 (min 0.858), med 2D den=40, z_disk=1200 (nominal 1200), z_plane=1194
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/refplane_efficiency_v5_rsu6/vz_m100mm
+Finished: 2026-11-13T09:51:16-08:00
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/results/refplane_efficiency_v5_rsu6/compare_rsu_opt_vs_rsu6.txt
+=== acceptance part finished, 2026-11-13T09:51:21-08:00

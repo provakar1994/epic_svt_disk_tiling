@@ -1,0 +1,30 @@
+Generated: 2026-11-13T14:08:48+00:00 by /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/make_refplanes_xml_step13_rsu6.sh
+EPIC checkout: /global/cfs/cdirs/m3763/pdatta/epic
+EPIC commit: 78ade46865d06250fe601c5b56189e37735f75b1 (si_disk_hole)
+EPIC tracked changes (git status --short --untracked-files=no):
+   M scripts/material_map/run_material_map_validation.sh
+DETECTOR_PATH: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic
+source sha256: 453fda16a335bb8735e8e6f616ba16f5f4970b573417818691bc0afa5ec19065  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_tracking_only_rsu6.xml
+plane XML sha256: 172cc1e1f9fa9c8ad12b1cf898a694b220a68845d12758f8099a55e062a64631  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/silicon_disks_refplanes.xml
+output sha256: d4e190425bba19e18c74c0cac76e481d2904c6cf7d038313312b38f4c57175d8  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/generated/epic_craterlake_tracking_only_rsu6_refplanes.xml
+Step 13 identity check: 2026-11-13T14:08:48+00:00
+  [ok]   EPIC HEAD = 78ade46865d06250fe601c5b56189e37735f75b1
+  [ok]   checkout compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   installed share/epic/compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   install/lib/libepic.so sha256 = 9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87
+  tiling in installed XML: silicon_disks_tiling/20261110_ES/rsu_opt 
+Identity: PASS
+rsu6 overlay check: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6
+  [ok]   provenance EPIC commit = 78ade46865d06250fe601c5b56189e37735f75b1
+  [ok]   provenance replacement = 20261110_ES/rsu_opt -> 20261110_ES/rsu6
+  [ok]   provenance source silicon_disks_modules.xml = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   provenance sha256 epic_craterlake_tracking_only_rsu6.xml = 453fda16a335bb8735e8e6f616ba16f5f4970b573417818691bc0afa5ec19065
+  [ok]   actual sha256 epic_craterlake_tracking_only_rsu6.xml = 453fda16a335bb8735e8e6f616ba16f5f4970b573417818691bc0afa5ec19065
+  [ok]   provenance sha256 silicon_disks_modules_rsu6.xml = 7bfe44276ceffc81989055f504f4f331c8970a99b99368f0a126a9e099c95567
+  [ok]   actual sha256 silicon_disks_modules_rsu6.xml = 7bfe44276ceffc81989055f504f4f331c8970a99b99368f0a126a9e099c95567
+  [ok]   provenance sha256 epic_craterlake_rsu6.xml = 7c9e04c1c01506389f292ea042e57e09fdba8bec2e28683af27a95858911f7bb
+  [ok]   actual sha256 epic_craterlake_rsu6.xml = 7c9e04c1c01506389f292ea042e57e09fdba8bec2e28683af27a95858911f7bb
+  [ok]   installed 20261110_ES/rsu6 combined sha256 = e4d6cc88b60290f24a44965a03f284f830c9b60052716ebbc3648bc8a6d389dd
+  provenance.txt sha256 = ca9d23b5d035d86433eeb5d9836ba96364502c62b735140515464d3432408692
+  module_placements in overlay:  6 silicon_disks_tiling/20261110_ES/rsu6 
+Identity rsu6: PASS

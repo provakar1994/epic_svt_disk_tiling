@@ -1,0 +1,23 @@
+EPIC HEAD=78ade46865d06250fe601c5b56189e37735f75b1
+tiling=compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt  scan dz=5.0 mm
+ED4: OK  z=-1020 rmax=430 lepton=(0,33.5) hadron=(25.6303,14.285)
+    modules=256 disk_id={0} (expected 0)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [-1023.230, -1016.770]  outside dz window: 0  z sign matches table: True
+ED3: OK  z=-850 rmax=430 lepton=(0,33.5) hadron=(21.3795,14.285)
+    modules=258 disk_id={1} (expected 1)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [-853.230, -846.770]  outside dz window: 0  z sign matches table: True
+ED2: OK  z=-650 rmax=430 lepton=(0,31.757) hadron=(0,31.757)
+    modules=259 disk_id={2} (expected 2)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [-653.230, -646.770]  outside dz window: 0  z sign matches table: True
+ED1: OK  z=-450 rmax=405 lepton=(0,31.757) hadron=(0,31.757)
+    modules=236 disk_id={3} (expected 3)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [-453.230, -446.770]  outside dz window: 0  z sign matches table: True
+ED0: OK  z=-250 rmax=230 lepton=(0,31.757) hadron=(0,31.757)
+    modules=78 disk_id={4} (expected 4)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [-253.230, -246.770]  outside dz window: 0  z sign matches table: True
+HD0: OK  z=250 rmax=230 lepton=(0,31.757) hadron=(0,31.757)
+    modules=78 disk_id={5} (expected 5)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [246.770, 253.230]  outside dz window: 0  z sign matches table: True
+HD1: OK  z=450 rmax=405 lepton=(0,31.757) hadron=(0,31.757)
+    modules=236 disk_id={6} (expected 6)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [446.770, 453.230]  outside dz window: 0  z sign matches table: True
+HD2: OK  z=700 rmax=430 lepton=(0,31.757) hadron=(-0.990167,35.0378)
+    modules=259 disk_id={7} (expected 7)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [696.770, 703.230]  outside dz window: 0  z sign matches table: True
+HD3: OK  z=950 rmax=430 lepton=(0,31.757) hadron=(-6.61612,40.6611)
+    modules=254 disk_id={8} (expected 8)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [946.770, 953.230]  outside dz window: 0  z sign matches table: True
+HD4: OK  z=1200 rmax=430 lepton=(0,31.757) hadron=(-12.2421,46.2843)
+    modules=250 disk_id={9} (expected 9)  z_sensor-|z_disk| in [-3.570, +3.570] mm  z_baseplate in [1196.770, 1203.230]  outside dz window: 0  z sign matches table: True
+RESULT: table matches definitions_craterlake.xml at HEAD

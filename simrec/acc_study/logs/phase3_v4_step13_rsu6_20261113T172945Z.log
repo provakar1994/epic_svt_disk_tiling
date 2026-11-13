@@ -1,0 +1,8 @@
+=== acceptance part, 2026-11-13T09:29:45-08:00
+  vz_000mm_eta_m3p8_to_m0p6: sim files 50/50, sim_*.tmp.* 0
+  vz_000mm_eta_p0p6_to_p3p8: sim files 50/50, sim_*.tmp.* 0
+  vz_p100mm_eta_m3p8_to_m0p6: sim files 50/50, sim_*.tmp.* 0
+  vz_p100mm_eta_p0p6_to_p3p8: sim files 50/50, sim_*.tmp.* 0
+  vz_m100mm_eta_m3p8_to_m0p6: sim files 50/50, sim_*.tmp.* 0
+  vz_m100mm_eta_p0p6_to_p3p8: sim files 50/50, sim_*.tmp.* 0
+Acceptance gate: PASS

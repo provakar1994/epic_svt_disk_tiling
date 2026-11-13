@@ -1,0 +1,24 @@
+Started: 2026-11-13T05:12:03+00:00
+sim_overlay_fwd.root: 29847 primary-linked silicon hits
+sim_overlay_bwd.root: 31061 primary-linked silicon hits
+sim_vz0_bwd.root: 295 primary-linked silicon hits
+sim_vz0_fwd.root: 333 primary-linked silicon hits
+sim_vz100_bwd.root: 330 primary-linked silicon hits
+sim_vz100_fwd.root: 293 primary-linked silicon hits
+sim_vzm100_bwd.root: 297 primary-linked silicon hits
+sim_vzm100_fwd.root: 283 primary-linked silicon hits
+disk  primaries  hits  si_rmin_mm  v1_hole_primaries  v1_hole_frac  v1_beyond_rout_hits  v1_max_hole_depth_mm  v2_hole_primaries  v2_hole_frac  v2_beyond_rout_hits  v2_max_hole_depth_mm
+ ED0       3906  5000    47.04037                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ ED1       5843  6929    47.04884                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ ED2       5997  6691    50.00384                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ ED3       6034  6685    50.68864                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ ED4       6027  6678    50.72372                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ HD0       3845  5010    46.95364                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ HD1       5742  6822    46.78851                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ HD2       5885  6594    49.48134                  0       0.00000                    0               0.00000                  0       0.00000                    0               0.00000
+ HD3       5674  6287    49.52167                 22       0.00388                    0               2.75533                  0       0.00000                    0               0.00000
+ HD4       5506  6043    52.11752                 99       0.01798                    0              11.40848                  0       0.00000                    0               0.00000
+
+hole_frac = fraction of primaries with a silicon hit on the disk that have >= 1 silicon hit inside the
+plane hole; max_hole_depth = deepest such hit below the plane inner edge (about the annulus centre).
+exit status: 0

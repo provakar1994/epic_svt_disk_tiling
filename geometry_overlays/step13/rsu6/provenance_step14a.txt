@@ -1,0 +1,55 @@
+Step 14a frozen rsu6 overlay, checked 2026-11-13T14:04:57+00:00 by proj_svt_disk_tiling/logs/make_svt_overlay_step14a_rsu6.sh
+EPIC HEAD=78ade46865d06250fe601c5b56189e37735f75b1
+diff /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_tracking_only_rsu6.xml
+    138c138
+    <   <include ref="${DETECTOR_PATH}/compact/tracking/silicon_disks_modules.xml"/>
+    ---
+    >   <include ref="/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/silicon_disks_modules_rsu6.xml"/>
+diff /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake.xml /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_rsu6.xml
+    139c139
+    <   <include ref="${DETECTOR_PATH}/compact/tracking/silicon_disks_modules.xml"/>
+    ---
+    >   <include ref="/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/silicon_disks_modules_rsu6.xml"/>
+diff /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_material_map.xml /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_material_map_rsu6.xml
+    133c133
+    <   <include ref="${DETECTOR_PATH}/compact/tracking/silicon_disks_modules.xml"/>
+    ---
+    >   <include ref="/global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/silicon_disks_modules_rsu6.xml"/>
+diff installed modules XML vs overlay modules XML (rsu_opt -> rsu6 path components only):
+    267c267
+    <       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt" format="tiling-directory"/>
+    ---
+    >       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu6" format="tiling-directory"/>
+    302c302
+    <       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt" format="tiling-directory"/>
+    ---
+    >       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu6" format="tiling-directory"/>
+    396c396
+    <       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt" format="tiling-directory"/>
+    ---
+    >       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu6" format="tiling-directory"/>
+    427c427
+    <       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt" format="tiling-directory"/>
+    ---
+    >       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu6" format="tiling-directory"/>
+    458c458
+    <       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt" format="tiling-directory"/>
+    ---
+    >       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu6" format="tiling-directory"/>
+    531c531
+    <       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt" format="tiling-directory"/>
+    ---
+    >       <module_placements file="compact/tracking/silicon_disks_tiling/20261110_ES/rsu6" format="tiling-directory"/>
+installed inputs sha256:
+  6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_modules.xml
+  c0141309c5f618eafdeacb66b4d8174d05e2dab815ed5c07ba947f5570bfb4fd  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+  ba6e856998b654a1b315ce2ecd0fa17103813c65f08662c9bfc153fc60dcc97c  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake.xml
+  dabd097dfdac464a4bf90f1a3961ac4f070d2101115925987f3ba02bdc72a46b  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_material_map.xml
+  9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87  /global/cfs/cdirs/m3763/pdatta/epic/install/lib/libepic.so
+rsu6 tiling directory (combined sha256 over sorted files):
+  e4d6cc88b60290f24a44965a03f284f830c9b60052716ebbc3648bc8a6d389dd
+overlay sha256:
+  7bfe44276ceffc81989055f504f4f331c8970a99b99368f0a126a9e099c95567  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/silicon_disks_modules_rsu6.xml
+  453fda16a335bb8735e8e6f616ba16f5f4970b573417818691bc0afa5ec19065  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_tracking_only_rsu6.xml
+  7c9e04c1c01506389f292ea042e57e09fdba8bec2e28683af27a95858911f7bb  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_rsu6.xml
+  80c74aae7c88c2786f99fbeb3035561a81021b652b941ab6f9d8d88b0fcc06de  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_material_map_rsu6.xml

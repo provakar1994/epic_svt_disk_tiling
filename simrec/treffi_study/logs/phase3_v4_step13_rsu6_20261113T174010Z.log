@@ -1,0 +1,252 @@
+=== tracking part, 2026-11-13T09:40:10-08:00
+Rec-campaign gate: 2026-11-13T17:40:10+00:00 /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13_rsu6 map sha256 c4cf9a3a575e2f963cec3f142f67bbaed5647799ea4d5ecee46c88efb046a415
+  [ok] vz_000mm_eta_m3p8_to_m0p6: rec files 50/50, *.tmp.* 0, empty 0, missing logs 0, logs without the map sha256 0, logs without Finished 0
+  [ok] vz_000mm_eta_p0p6_to_p3p8: rec files 50/50, *.tmp.* 0, empty 0, missing logs 0, logs without the map sha256 0, logs without Finished 0
+GATE: PASS
+rsu6 XML in rec logs: 100/100
+Started: 2026-11-13T09:40:11-08:00  map sha256 c4cf9a3a575e2f963cec3f142f67bbaed5647799ea4d5ecee46c88efb046a415
+# 2026-11-13T09:40:12-08:00 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/run_endcap_tracking_performance.sh v4_rsu6_fine_vz0_50files 50
+# CAMPAIGN=acceptance_v4_step13_rsu6 campaign_dir=/pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13_rsu6 reduced_dir=/pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6
+# ETA_EDGES=1.0 1.5 2.0 2.5 3.0 3.5 P_EDGES=default EFF_P_EDGES=default EFF_ETA_WIDTH=default EFF_ONLY=0 configs=vz_000mm_eta_m3p8_to_m0p6 vz_000mm_eta_p0p6_to_p3p8
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_001_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76700, 'n_matched': 76348, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_002_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76812, 'n_matched': 76484, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_003_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76552, 'n_matched': 76187, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_004_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76749, 'n_matched': 76395, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_005_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76733, 'n_matched': 76376, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_006_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76523, 'n_matched': 76146, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_007_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76709, 'n_matched': 76351, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_008_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76588, 'n_matched': 76223, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_009_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76706, 'n_matched': 76366, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_010_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76700, 'n_matched': 76397, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_011_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76802, 'n_matched': 76442, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_012_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76670, 'n_matched': 76313, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_013_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76825, 'n_matched': 76461, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_014_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76903, 'n_matched': 76532, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_015_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76948, 'n_matched': 76597, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_016_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 77009, 'n_matched': 76637, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_017_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76752, 'n_matched': 76405, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_018_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76837, 'n_matched': 76495, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_019_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76455, 'n_matched': 76086, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_020_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76788, 'n_matched': 76404, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_021_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76795, 'n_matched': 76432, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_022_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76762, 'n_matched': 76415, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_023_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76737, 'n_matched': 76342, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_024_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76645, 'n_matched': 76284, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_025_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76755, 'n_matched': 76417, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_026_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76885, 'n_matched': 76538, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_027_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76882, 'n_matched': 76529, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_028_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76910, 'n_matched': 76527, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_029_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76843, 'n_matched': 76484, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_030_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76566, 'n_matched': 76184, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_031_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76840, 'n_matched': 76504, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_032_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76600, 'n_matched': 76244, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_033_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76780, 'n_matched': 76392, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_034_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76529, 'n_matched': 76195, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_035_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76786, 'n_matched': 76409, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_036_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76579, 'n_matched': 76195, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_037_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76563, 'n_matched': 76183, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_038_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76981, 'n_matched': 76673, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_039_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76654, 'n_matched': 76313, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_040_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 77032, 'n_matched': 76682, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_041_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76580, 'n_matched': 76222, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_042_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76359, 'n_matched': 76022, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_043_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76890, 'n_matched': 76581, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_044_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76748, 'n_matched': 76410, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_045_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76767, 'n_matched': 76429, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_046_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76726, 'n_matched': 76405, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_047_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76658, 'n_matched': 76316, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_048_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76758, 'n_matched': 76371, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_049_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76634, 'n_matched': 76286, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_m3p8_to_m0p6_chunk_050_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76630, 'n_matched': 76304, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_001_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76700, 'n_matched': 76296, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_002_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76936, 'n_matched': 76538, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_003_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76893, 'n_matched': 76488, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_004_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76800, 'n_matched': 76386, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_005_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76915, 'n_matched': 76534, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_006_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76911, 'n_matched': 76520, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_007_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76750, 'n_matched': 76343, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_008_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76582, 'n_matched': 76189, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_009_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76900, 'n_matched': 76536, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_010_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76595, 'n_matched': 76212, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_011_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76736, 'n_matched': 76340, 'index_alignment_fraction': np.float64(1.0)}  (2 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_012_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76886, 'n_matched': 76474, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_013_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76886, 'n_matched': 76480, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_014_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76960, 'n_matched': 76545, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_015_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76935, 'n_matched': 76550, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_016_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76901, 'n_matched': 76537, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_017_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 77078, 'n_matched': 76698, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_018_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76968, 'n_matched': 76551, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_019_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76640, 'n_matched': 76262, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_020_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76841, 'n_matched': 76457, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_021_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76954, 'n_matched': 76540, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_022_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76954, 'n_matched': 76566, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_023_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76959, 'n_matched': 76549, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_024_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 77167, 'n_matched': 76755, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_025_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76790, 'n_matched': 76406, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_026_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76552, 'n_matched': 76169, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_027_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76809, 'n_matched': 76432, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_028_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76686, 'n_matched': 76310, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_029_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76980, 'n_matched': 76588, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_030_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76897, 'n_matched': 76475, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_031_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76935, 'n_matched': 76544, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_032_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76906, 'n_matched': 76541, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_033_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76689, 'n_matched': 76309, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_034_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76871, 'n_matched': 76490, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_035_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76757, 'n_matched': 76333, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_036_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76967, 'n_matched': 76557, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_037_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76786, 'n_matched': 76407, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_038_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 77064, 'n_matched': 76648, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_039_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76881, 'n_matched': 76499, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_040_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76548, 'n_matched': 76124, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_041_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76699, 'n_matched': 76329, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_042_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76502, 'n_matched': 76109, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_043_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 77050, 'n_matched': 76684, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_044_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76859, 'n_matched': 76504, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_045_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76929, 'n_matched': 76557, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_046_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 77059, 'n_matched': 76695, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_047_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76588, 'n_matched': 76188, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_048_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76985, 'n_matched': 76582, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_049_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76716, 'n_matched': 76317, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+[reduce] rec_vz_000mm_eta_p0p6_to_p3p8_chunk_050_n100000: {'n_events': 100000, 'n_primaries': 100000, 'n_tracks': 76884, 'n_matched': 76486, 'index_alignment_fraction': np.float64(1.0)}  (1 s)
+Total primaries: 10000000, matched: 7641562, valid track params: 7641562, primaries with >1 matched track: 79
+# Efficiency check for v4_rsu6_fine_vz0_50files: 1 < |eta| < 3.8
+# side  p_bin[GeV]  n_gen  n_matched  efficiency
+backward  0.5 < p < 1 GeV           112200     45883  0.4089
+backward  1 < p < 2 GeV             224717    157061  0.6989
+backward  2 < p < 5 GeV             673474    516854  0.7674
+backward  5 < p < 10 GeV           1121512    880001  0.7847
+backward  10 < p < 20 GeV          2243995   1774932  0.7910
+backward  all p (0.5-20 GeV)       4375898   3374731  0.7712
+forward   0.5 < p < 1 GeV           111975     38909  0.3475
+forward   1 < p < 2 GeV             224511    151766  0.6760
+forward   2 < p < 5 GeV             673899    517021  0.7672
+forward   5 < p < 10 GeV           1120778    881062  0.7861
+forward   10 < p < 20 GeV          2244586   1784428  0.7950
+forward   all p (0.5-20 GeV)       4375749   3373186  0.7709
+Wrote plots and /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/out/v4_rsu6_fine_vz0_50files/summary_v4_rsu6_fine_vz0_50files.csv
+# 2026-11-13T09:48:54-08:00 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/run_endcap_tracking_performance.sh v4_rsu6_pwg_vz0_50files 50
+# CAMPAIGN=acceptance_v4_step13_rsu6 campaign_dir=/pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13_rsu6 reduced_dir=/pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6
+# ETA_EDGES=1.0 2.5 3.0 3.5 P_EDGES=default EFF_P_EDGES=default EFF_ETA_WIDTH=default EFF_ONLY=0 configs=vz_000mm_eta_m3p8_to_m0p6 vz_000mm_eta_p0p6_to_p3p8
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_001_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_002_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_003_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_004_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_005_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_006_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_007_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_008_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_009_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_010_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_011_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_012_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_013_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_014_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_015_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_016_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_017_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_018_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_019_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_020_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_021_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_022_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_023_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_024_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_025_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_026_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_027_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_028_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_029_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_030_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_031_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_032_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_033_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_034_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_035_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_036_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_037_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_038_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_039_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_040_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_041_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_042_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_043_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_044_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_045_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_046_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_047_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_048_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_049_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_m3p8_to_m0p6_chunk_050_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_001_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_002_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_003_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_004_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_005_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_006_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_007_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_008_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_009_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_010_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_011_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_012_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_013_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_014_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_015_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_016_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_017_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_018_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_019_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_020_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_021_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_022_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_023_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_024_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_025_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_026_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_027_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_028_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_029_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_030_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_031_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_032_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_033_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_034_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_035_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_036_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_037_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_038_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_039_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_040_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_041_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_042_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_043_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_044_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_045_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_046_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_047_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_048_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_049_n100000.npz: 100000 primaries
+[cache] /pscratch/sd/p/pdatta/svt_disk_tiling/treffi_study/reduced_acceptance_v4_step13_rsu6/rec_vz_000mm_eta_p0p6_to_p3p8_chunk_050_n100000.npz: 100000 primaries
+Total primaries: 10000000, matched: 7641562, valid track params: 7641562, primaries with >1 matched track: 79
+# Efficiency check for v4_rsu6_pwg_vz0_50files: 1 < |eta| < 3.8
+# side  p_bin[GeV]  n_gen  n_matched  efficiency
+backward  0.5 < p < 1 GeV           112200     45883  0.4089
+backward  1 < p < 2 GeV             224717    157061  0.6989
+backward  2 < p < 5 GeV             673474    516854  0.7674
+backward  5 < p < 10 GeV           1121512    880001  0.7847
+backward  10 < p < 20 GeV          2243995   1774932  0.7910
+backward  all p (0.5-20 GeV)       4375898   3374731  0.7712
+forward   0.5 < p < 1 GeV           111975     38909  0.3475
+forward   1 < p < 2 GeV             224511    151766  0.6760
+forward   2 < p < 5 GeV             673899    517021  0.7672
+forward   5 < p < 10 GeV           1120778    881062  0.7861
+forward   10 < p < 20 GeV          2244586   1784428  0.7950
+forward   all p (0.5-20 GeV)       4375749   3373186  0.7709
+Wrote plots and /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/out/v4_rsu6_pwg_vz0_50files/summary_v4_rsu6_pwg_vz0_50files.csv
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/out/v4_rsu6_pwg_vz0_50files/pwg_dp_vs_p_v4_rsu6_pwg_vz0_50files.png
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/out/v4_rsu6_pwg_vz0_50files/pwg_qop_vs_p_v4_rsu6_pwg_vz0_50files.png
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/out/v4_rsu6_vs_rsuopt_pwg_vz0_50files/pwg_resol_dp_rsuopt_vs_rsu6.png
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/out/v4_rsu6_vs_rsuopt_pwg_vz0_50files/pwg_resol_qop_rsuopt_vs_rsu6.png
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/treffi_study/out/v4_rsu6_vs_rsuopt_pwg_vz0_50files/compare_rsuopt_vs_rsu6.txt
+Finished: 2026-11-13T09:53:41-08:00
+=== tracking part finished, 2026-11-13T09:53:41-08:00

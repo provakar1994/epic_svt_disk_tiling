@@ -1,0 +1,31 @@
+Started: 2026-11-13T05:03:18+00:00
+Overlay XML: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13/generated/epic_craterlake_tracking_only_refplanes.xml
+sha256: 8ab139844aabf1faae8d9b44a55c347b40b6b8ec9c4751dd4403f24c4593a83f
+Plane XML sha256: 172cc1e1f9fa9c8ad12b1cf898a694b220a68845d12758f8099a55e062a64631
+Step 13 identity check: 2026-11-13T05:03:18+00:00
+  [ok]   EPIC HEAD = 78ade46865d06250fe601c5b56189e37735f75b1
+  [ok]   checkout compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   installed share/epic/compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   install/lib/libepic.so sha256 = 9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87
+  tiling in installed XML: silicon_disks_tiling/20261110_ES/rsu_opt 
+Identity: PASS
+checkOverlaps.py exit status: 0
+Geant4 GeomVol1002 overlap warnings: 0
+G4Exception lines: 0
+-- tail of raw log --
+Geant4UI         INFO  +++ ConstructGeometry> Install Geant4 control directory:/ddg4/ConstructGeometry/
+
+ hInelastic QGSP_BERT  Thresholds: 
+    1) between BERT  and FTF/P over the interval 3 to 6 GeV. 
+    2) between FTF/P and QGS/P over the interval 12 to 25 GeV. 
+  -- quasiElastic: 1 for QGS  and 0 for FTF
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+UI               INFO  ++ Executing pre-run statement: /geometry/test/resolution 10000
+UI               INFO  ++ Executing pre-run statement: /geometry/test/tolerance 0.1
+UI               INFO  ++ Executing pre-run statement: /geometry/test/verbosity 0
+UI               INFO  ++ Executing pre-run statement: /geometry/test/run
+Running geometry overlaps check...
+Geometry overlaps check completed !
+
+Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.
+Finished: 2026-11-13T05:22:58+00:00

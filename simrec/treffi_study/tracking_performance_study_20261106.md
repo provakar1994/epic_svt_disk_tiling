@@ -301,3 +301,27 @@ the container runs 1.41.0, defaults not re-checked there):
 - Ambiguity solver: max 1 shared hit, >= 4 measurements.
 - Association weight (ActsToTracks): fraction of the track's measurements (outliers excluded) whose sim hit
   belongs to the MCParticle; barrel, MPGD and TOF hits all count.
+
+### 2026-11-13: Step 14b, rsu6 vs rsu_opt (20261110_ES), vz = 0, 50 files per side
+
+Inputs: rsu_opt = `acceptance_v4_step13` + map cba82219…; rsu6 = `acceptance_v4_step13_rsu6`, rec with the rsu6
+tracking overlay (453fda16…) and rsu6 map c4cf9a3a… (all 300 rec logs show it). Driver
+`../run_v4_step13_rsu6_phase3.sh`; report `out/v4_rsu6_vs_rsuopt_pwg_vz0_50files/compare_rsuopt_vs_rsu6.txt`.
+Follow-up script `compare_eff_vs_eta_rsuopt_rsu6.py` -> `out/v4_rsu6_vs_rsuopt_pwg_vz0_50files/eff_vs_eta_p2.txt`.
+Samples are independent (npsim shared random stream), errors are independent-sample binomial.
+- Resolutions/pulls: median sigma(rsu6)/sigma(rsu_opt) 0.990-1.011 in every quantity and PWG eta bin: unchanged.
+- Efficiency, 1 < |eta| < 3.8: backward 0.7697 -> 0.7712 (+0.0015 +- 0.0003), forward 0.7657 -> 0.7709
+  (+0.0052 +- 0.0003); every p bin goes up.
+- Forward dip 1.6-1.85 (p > 2 GeV): 0.7773 -> 0.8293 (+0.0521 +- 0.0009). References: 1.35-1.55 +0.0011,
+  2.1-2.4 +0.0003.
+- Per 0.1 in |eta| (p > 2 GeV): the whole gain sits in the known low-efficiency (CKF-failure) windows:
+  forward 1.6-1.7 +0.049, 1.7-1.8 +0.071, 1.8-1.9 +0.010; backward 1.3-1.4 +0.017, 1.6-1.7 +0.014,
+  1.4-1.6 / 1.7-1.8 +0.004..0.007. Where the efficiency is already ~0.98 (|eta| > 1.9) nothing changes
+  (|diff| <= 0.002).
+- Not a silicon-coverage effect: straight lines from the origin hit D0 active silicon in 98.4 % (rsu_opt) vs
+  98.8 % (rsu6) of 1.6 < eta < 1.85 (scratch estimate from the active-silicon rectangle dumps), and the dip
+  failures were shown (2026-11-06) to have all disk hits with seeds but no CKF track.
+- Interpretation (not confirmed): the dip is a reconstruction (CKF/navigation) failure, and its size depends
+  on the ACTS surface layout of the disks; rsu6 (different module count/placement on every disk, 6-RSU only
+  on D0) happens to trigger it less often. This should NOT be read as a detector advantage of rsu6 until the
+  dip itself is understood (CKF debug rerun on failed events, as proposed 2026-11-06).

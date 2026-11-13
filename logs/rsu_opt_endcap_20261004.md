@@ -3934,3 +3934,211 @@ Geant4 result: 4/4 PASS, 0 GeomVol1002 warnings at 0.1 mm (Slurm 61198813, 17-19
   logs). Downstream reruns approved for 20261110_ES/rsu_opt only (no -r): ACTS material map, disk
   material scan, acceptance campaign acceptance_v4_step13 (copy of v3 settings) + recon with the Step 13
   map, refplane efficiency and tracking performance vs v3. Results in the sections below.
+
+### Step 13d: material map and scan preparation (2026-11-12)
+
+Geometry identity (from `logs/freeze_install_step13.txt`): EPIC HEAD 78ade4686, tiling 20261110_ES/rsu_opt,
+installed `silicon_disks_modules.xml` sha256 6d04bd66..., `install/lib/libepic.so` sha256 9ccf1a66...,
+clean src/ and compact/. The top-level `epic_craterlake_tracking_only.xml` sha (c0141309...) is the same as
+Step 8q (it only includes other files), so both scripts now check HEAD + module XML + libepic instead.
+`scripts/material_map/run_material_map_validation.sh` left as is (uncommitted local edit, sha 99f36d28...,
+same file as Step 8q; recorded in provenance). install/ not rebuilt.
+
+Scripts (copies of the Step 8q ones; 8q scripts unchanged):
+- `logs/regenerate_svt_material_map_step13.sh`: tags `step13_<stamp>` / `step13_smoke_<stamp>`, expected HEAD
+  78ade4686, sha checks of module XML and libepic (libepic sha also in provenance.txt). Rest unchanged
+  (DETECTOR_CONFIG=epic_craterlake_tracking_only, `matmap/<tag>/` layout).
+- `logs/submit_material_map_step13.sh`: 1000 x 5000, 4 cpus, 48G, time 05:00:00 (8q took 81 min).
+- `logs/run_svt_disk_material_scan_step13.sh`: same 4 eta slices, 1000 x 1500 per slice, recorder
+  `record_svt_disk_material_step8q.py` reused, seeds 13101-13104, prefix `step13_<stamp>` (`step13_smoke_<stamp>`
+  when events x tracks < 1e6), report `logs/svt_disk_material_scan_<prefix>.txt`. The bend_radius grep is
+  replaced by HEAD / clean-tree / module-XML / libepic checks; comparison against
+  `matscan/disk_material_map/step8q_20261106T153414Z/disk_material_summary.json` (labels Step8q vs Step13).
+- `logs/submit_svt_disk_material_scan_step13.sh`: Slurm wrapper (m3763, shared, cpu, 8 cpus, 32G, 03:00:00,
+  `logs/slurm_matscan_step13_%j.out`); passes optional `[events [tracks]]` through.
+- `logs/check_disk_table_step13.py` -> `check_disk_table_step13.txt`: DISKS table in
+  `scripts/subdetector_tests/disk_material_map.py` vs `definitions_craterlake.xml` at HEAD (z, r_max, opening
+  centres/radii minus the 5 mm buffer, opening y = 0) and vs the delivery `disk_geometry_used.csv`:
+  all 10 disks match (definitions_craterlake.xml unchanged since c5da03dcf). Delivered z_sensor within
+  +-3.57 mm of the disk z for every module (scan window dz = 5 mm).
+
+Smoke tests:
+- Material map `step13_smoke_20261113T044843Z` (10 x 100, login21 via `refplanes/eic_exec.sh`): completed,
+  `matmap/step13_smoke_20261113T044843Z/material-map_map.cbor` 15.5 MB, transcript
+  `logs/material_map_step13_smoke_20261113T044843Z.txt`, real 13m37s (8q smoke 6m29s; this one ran
+  concurrently with the scan smoke on the login node). Warnings identical to the 8q smoke
+  (13x Fontconfig cache, 4x TGeoVoxelFinder "Wrong bounding box for volume envelope26").
+- Disk scan `step13_smoke_20261113T044842Z` (20 x 200 per slice, login21): end to end OK, 6m12s, report
+  `logs/svt_disk_material_scan_step13_smoke_20261113T044842Z.txt`, output
+  `matscan/disk_material_map/step13_smoke_20261113T044842Z/`. The comparison with 8q is statistically
+  meaningless at 16k tracks.
+- Disk scan batch smoke `step13_smoke_20261113T051208Z` (5 x 50 per slice, Slurm 61212603 on nid004103,
+  `sbatch --time=00:30:00 --job-name=svt-matscan-13-smoke logs/submit_svt_disk_material_scan_step13.sh 5 50`):
+  COMPLETED in 9m22s, MaxRSS 8.5 GB; the 4 eic_exec.sh containers and the conda step both work inside the
+  job (`logs/slurm_matscan_step13_61212603.out`). Step 8q full scan took ~36 min end to end (recording
+  12-20 min per slice, maps ~13 min), so 03:00:00 has margin.
+
+Submit (not yet submitted; from /global/cfs/cdirs/m3763/pdatta/epic):
+    sbatch proj_svt_disk_tiling/logs/submit_material_map_step13.sh
+    sbatch proj_svt_disk_tiling/logs/submit_svt_disk_material_scan_step13.sh
+- Submitted (coordinator, 2026-11-13 ~05:25 UTC, after reviewing the Step 13d smokes): material map
+  Slurm 61213413 (`submit_material_map_step13.sh`), disk material scan Slurm 61213414
+  (`sbatch --mem=64G submit_svt_disk_material_scan_step13.sh`; 64G instead of 32G because the 5x50
+  smoke job already reached MaxRSS 8.5 GB and the full-scan memory was never measured).
+
+### Step 13g: material map and scan results (2026-11-12/13)
+
+Read-only analysis; no geometry, install or Slurm changes.
+- Disk scan: Slurm 61213414, `matscan/disk_material_map/step13_20261113T065150Z/` (6.0M geantinos,
+  0.90<|eta|<4.25, seeds 13101-13104), report `logs/svt_disk_material_scan_step13_20261113T065150Z.txt`.
+  Reference `step8q_20261106T153414Z`.
+- ACTS map: Slurm 61213413 (67 min), `matmap/step13_20261113T054800Z/material-map_map.cbor`
+  sha256 `cba82219…`, transcript `logs/material_map_step13_20261113T054800Z.txt`. Reference
+  `matmap/step8q_20261106T222257Z/` (`b5ce1f2e…`).
+- Scripts: `logs/run_dump_svt_module_rects_step13g.sh` -> `logs/dump_svt_module_rects_step13g.py` (container,
+  PyROOT: every module daughter box of `out/visualize_8q.root` and `out/visualize_step13.root` as a global x-y
+  rectangle -> `matscan/disk_material_map/step13g_geometry_rects/{step8q,step13}_module_rects.csv`);
+  `logs/analyze_material_step13_vs_8q.py` (host, conda tracking) -> `logs/analyze_material_step13_vs_8q.txt`.
+  First dump run was wrong (6 modules got their parent's identity matrix because `TGeoIterator::Skip()` was
+  called before `GetCurrentMatrix()`); fixed, rerun, all 2164 modules within 3.8 mm of their disk z.
+  Caveat: `out/visualize_8q.root` (2026-11-09) has no provenance file; it is the only export between
+  311634084 and Step 11, and it has 2164 modules and 36 um inactive Si as expected.
+
+Per-disk mean x/X0 on the annulus [% X0], Step 8q -> Step 13:
+
+| disk | 8q | 13 | change |
+|---|---|---|---|
+| ED4 | 0.2736 | 0.2706 | -1.09 % |
+| ED3 | 0.2765 | 0.2735 | -1.06 % |
+| ED2 | 0.2763 | 0.2734 | -1.05 % |
+| ED1 | 0.2953 | 0.2920 | -1.12 % |
+| ED0 | 0.3140 | 0.3113 | -0.86 % |
+| HD0 | 0.3140 | 0.3114 | -0.83 % |
+| HD1 | 0.2952 | 0.2921 | -1.04 % |
+| HD2 | 0.2822 | 0.2792 | -1.07 % |
+| HD3 | 0.2789 | 0.2760 | -1.03 % |
+| HD4 | 0.2810 | 0.2782 | -1.00 % |
+
+Explanation. Matching all 68453 module boxes between the two exports (module type, module x-y, key,
+order) shows only two changes: (1) every `inactive_si` box 36.0 -> 33.5 um (Step 11b; all 12719 RSUs);
+(2) the left/right bridge-FPC Kapton and Al footprints of the 1077 top-half modules (mod_y > 0), which
+moved from 2.1-2.8 mm toward y = 0 to 2.1-2.8 mm away from it (Step 13b); they now reach 14.05 mm from
+the RSU centre line away from y = 0, as on the bottom half. Module count, x-y and all other footprints and
+thicknesses are identical (the 20261001 -> 20261110 delivery change keeps x, y and types, Step 11c). Module
+centres moved in z by +-2.5 or +-47.5 um (dropped clearance/offset, Cu inside 50 um), irrelevant for x/X0.
+The AncASIC (300 um Si, 15 mm long in y) is centred on the module y origin in both exports, so the flip
+does not move it. The FPC split (c20bb1646) moves the Al to the baseplate back with the same footprint:
+no x/X0 change.
+
+Prediction: geantinos uniform in eta and phi give a track-weighted mean of x/X0 proportional to
+(t/X0) * Integral dA/r^2 over the box (track density ~ |z|/(r^2 sqrt(r^2+z^2)) times path factor
+sqrt(r^2+z^2)/|z|), restricted to the scan region (r < r_max + 2 mm, outside both openings + 5 mm).
+- Silicon: RSU Si 50 -> 47.5 um is exactly 0.950 (-5.0 %). The RSU is 90 % of the 1/r^2-weighted Si
+  (AncASIC 5-6 %, LEC/REC the rest; area-only 85.7 %), so predicted -4.51..-4.55 % per disk; observed
+  -4.36..-4.61 % (10-disk means: obs -4.51 %, pred -4.52 %). The Si change is entirely the thickness.
+- Al and Kapton (same footprint, so identical relative changes): equal area, but the top-half FPCs moved
+  ~5 mm to larger |y| (larger r) where the 1/r^2 weight is lower; predicted -2.35..-2.72 %, observed
+  -2.08..-2.94 % (means -2.51 / -2.41 %), estimated stat. error of the difference ~0.27 %. HD3/HD4 (large
+  openings): bottom half pred 0.00 %, obs -0.50/-0.16 %; top half pred -4.8/-4.7 %, obs -4.4/-5.0 %. On the
+  other disks the bottom-half number also changes because some top-row FPCs near y = 0 used to reach
+  across y = 0. So the flip changes the annulus average (by redistribution in r, not in total material).
+- Cu and glue: no geometry change, observed within +-0.3 % (noise level). CarbonFiber: baseplates
+  unchanged; observed -0.09..+0.04 % except ED0/HD0 +0.26 % (Step 12 rows.csv adds 2 rim flats on D0).
+- Total: sum of share(8q) x predicted change (CF observed) gives -0.89..-1.10 %, observed -0.83..-1.12 %,
+  agreement within 0.06 % on every disk; ~0.95 % of the ~1.05 % is silicon.
+- Scan x-y maps: correlation of the y>0 map with the mirrored y<0 map rises for Al/Kapton (e.g. HD3
+  0.834 -> 0.982, ED4 0.756 -> 0.859) while Si stays the same: the top-half FPC material now mirrors
+  the bottom half, as intended.
+
+Map review (Step 13 vs Step 8q): same warnings only (13 Fontconfig, 4 TGeoVoxelFinder `envelope26`), same
+plot sets (plots 32, Validation/regenerated 18, Surfaces map/prop/ratio 59 each, 1D 118, dist 59;
+`Surfaces/current/*` empty in both, the old-map validation is skipped); config: 35 mapped surfaces,
+identical binning; config differs only in a few volume half-lengths (1115.6025 -> 1115.5675 mm,
+455.6025 -> 455.5675 mm, i.e. -35 um). Map ROOT: 59 surfaces, 588832 bins in both. 18 surfaces change by
+more than 0.3 % (bin-mean t/X0), all SVT endcap disk approach surfaces (binning 12x10/12x20/180x100),
+by -0.24..-1.09 % (most about -1.0 %), matching the scan. Map (propagation) vs Geant4 (mapped) total
+t_X0 vs eta is identical for both maps to <0.1 %: e.g. [1.0,1.5) -2.45/-2.46 %, [2.0,2.5) -17.2 %
+both, [2.5,3.0) -21.75 % both, [-3.0,-2.5) -29.7 % both; 0.05-bin rms of map/geant-1 in 1<eta<3.5
+26.4 % (8q) vs 26.6 % (13). These large deviations at 2<|eta|<3 are inherited, not caused by Step 13
+(same recording seed: Geant4 t_X0 per eta bin differs by <= 0.08 % between the runs).
+Verdict: the Step 13 map is structurally identical to the Step 8q map, its SVT disk surfaces change
+consistently with the geometry, and nothing new appears in the logs; usable for the Step 13
+reconstruction to the same extent as the Step 8q map. Validation PDFs were not opened visually here.
+
+Open: statistical error of the scan per-disk means estimated, not computed (Si estimate unreliable,
+coverage > 1 with front/back overlap); `visualize_8q.root` provenance inferred; the pre-existing map
+vs Geant4 deviations at 2<|eta|<3 deserve a separate look (not SVT-disk specific).
+
+### Step 13h: overnight downstream results (2026-11-13)
+
+Summary: `logs/overnight_step13_summary_20261113.md`. Sim 61213457 (300/300), recon 61217238 (300/300,
+Step 13 map cba82219…). Acceptance (refplane_efficiency_v5) and tracking (v3_vs_v4_pwg_vz0_50files) agree
+with v3 to <= 0.1 pt / <= 1.5 % except a small significant steep-track acceptance gain on D0/D1 at
+displaced vertices (+0.05 to +0.11 pt, 3-5 sigma), not yet traced.
+
+### Step 14a: rsu6 material map and scan preparation (2026-11-13)
+
+Goal: ACTS map + per-disk scan for 20261110_ES/rsu6 on the Step 13 geometry, to compare with the rsu_opt
+Step 13 results (Step 13g). install/ not rebuilt (Step 13 freeze: HEAD 78ade4686, modules XML 6d04bd66…,
+libepic 9ccf1a66…); no upstream or Step 13/8q script edited; full jobs NOT submitted.
+
+Frozen overlay `geometry_overlays/step13/rsu6/` (shared with the parallel rsu6 campaign). It was created by
+the other agent (`make_svt_overlay.sh 20261110_ES rsu6`, OVERLAY_ROOT=geometry_overlays/step13,
+provenance.txt 14:04:50Z) 7 s before `logs/make_svt_overlay_step14a_rsu6.sh` got there; that script reused it,
+added `epic_craterlake_material_map_rsu6.xml` (installed epic_craterlake_material_map.xml with the same
+include substitution) and wrote `provenance_step14a.txt` (transcript `logs/make_svt_overlay_step14a_rsu6.txt`):
+diff vs installed = exactly the one SVT modules include line for all three top-level XMLs; modules XML diff =
+the 6 module_placements rsu_opt -> rsu6 only. sha256: silicon_disks_modules_rsu6.xml 7bfe4427…,
+epic_craterlake_tracking_only_rsu6.xml 453fda16…, epic_craterlake_rsu6.xml 7c9e04c1…,
+epic_craterlake_material_map_rsu6.xml 80c74aae…; rsu6 tiling dir combined e4d6cc88….
+
+Scripts (copies of the Step 13 ones):
+- `logs/count_svt_modules_step14a.py`: DD4hep-loads an XML, counts A6xx/B5xx/B6xx module placements, exits 1
+  if != expected. Check: installed tracking-only 2164 (12 types), rsu6 overlay 2150 (8 types, no B5xx).
+- `logs/regenerate_svt_material_map_step13_rsu6.sh` (tags step13_rsu6[_smoke]_<stamp>): the upstream runner
+  always uses `${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml`, so DETECTOR_PATH stays the install and
+  DETECTOR_CONFIG=`../../../proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_tracking_only_rsu6`
+  (relative to DETECTOR_PATH; readlink -f must equal the overlay, overlay shas checked). Before the runner it
+  runs the module count from the run dir (requires 2150; `SVT_MODULE_COUNT` line in run_log.txt).
+- `logs/submit_material_map_step13_rsu6.sh`: as Step 13 (4 cpu, 48G, 05:00:00), job svt-matmap-13-rsu6.
+- `logs/run_svt_disk_material_scan_step13_rsu6.sh`: recording XML = epic_craterlake_material_map_rsu6.xml,
+  same slices and seeds 13101-13104 as Step 13, module count (2150) in a container from scripts/material_map
+  before recording, comparison vs `matscan/disk_material_map/step13_20261113T065150Z` (labels rsu_opt / rsu6).
+- `logs/submit_svt_disk_material_scan_step13_rsu6.sh`: --mem=64G, 8 cpu, 03:00:00.
+
+Smoke tests (login21, run concurrently):
+- Map `step13_rsu6_smoke_20261113T140717Z` (10 x 100): OK, 7m12s, `matmap/step13_rsu6_smoke_20261113T140717Z/
+  material-map_map.cbor` 15.5 MB (sha ec647650…), transcript `logs/material_map_step13_rsu6_smoke_20261113T140717Z.txt`;
+  run_log has `SVT_MODULE_COUNT 2150` for the same XML path; warnings identical to the rsu_opt smoke
+  (13 Fontconfig, 4 envelope26); same plot counts (Surfaces map_plot 51, Validation/regenerated 18).
+- Scan `step13_rsu6_smoke_20261113T140721Z` (20 x 200 per slice): OK, 5m50s, `SVT_MODULE_COUNT 2150`,
+  report `logs/svt_disk_material_scan_step13_rsu6_smoke_20261113T140721Z.txt`. Paired check against the rsu_opt
+  smoke with the same seeds (`logs/compare_smoke_step14a_rsu_opt_vs_rsu6.txt`): identical tracks per disk
+  (e.g. ED4 5605/5605), so the samples are paired; x/X0 change within +-0.4 % on 8 disks but +8.05 % ED0 and
+  +7.78 % HD0 (all materials up, Si/glue/Cu +11-13 %, CF +6 %) — 4k tracks only, but paired; to be checked
+  on the full scan (rsu6 D0 tiling replaces the B5xx modules; overlap/coverage near the opening?).
+
+Submit (not submitted; from /global/cfs/cdirs/m3763/pdatta/epic):
+    sbatch proj_svt_disk_tiling/logs/submit_material_map_step13_rsu6.sh
+    sbatch proj_svt_disk_tiling/logs/submit_svt_disk_material_scan_step13_rsu6.sh
+Open: the overlay's module_placements paths are relative and resolve cwd-first (run dir / scripts/material_map
+have no compact/, so the install copy is used; the module count from the same cwd confirms this).
+- Step 14a submitted by the coordinator after reviewing the smokes (2026-11-13): rsu6 map and scan jobs
+  (IDs in `squeue`/sacct as svt-matmap-*rsu6* / svt-matscan-*rsu6*; see the slurm_*.out files in logs/).
+- Step 14a results (2026-11-13): rsu6 map Slurm 61226513 COMPLETED 1:07, `matmap/step13_rsu6_20261113T143431Z/`
+  (2150 modules confirmed). rsu6 scan Slurm 61226514 FAILED: slice 3 (eta 2.575..4.25) killed (OOM, 4 parallel
+  recordings in 64G) at ~700/1000 events; slices 0-2 complete. Recovery:
+  `logs/rerun_svt_disk_material_scan_step13_rsu6_slice3.sh` (slice 3 alone, same seed 13104, partial file
+  retained under tmp/retained/2026-11-13/), Slurm 61228502.
+- Step 14a scan result (2026-11-13): slice-3 rerun Slurm 61228502 COMPLETED 0:36:45 (1000 events), maps and
+  comparison in `matscan/disk_material_map/step13_rsu6_20261113T143518Z/`, report
+  `logs/svt_disk_material_scan_step13_rsu6_slice3_rerun.txt`. Paired with rsu_opt (identical tracks per disk).
+  rsu6 vs rsu_opt mean x/X0 on the annulus: ED4..ED1 and HD1..HD4 within -0.09..+0.40 %; ED0 0.3113 -> 0.3355
+  (+7.77 %), HD0 0.3114 -> 0.3356 (+7.77 %): Si +9.9 %, glue +10.5 %, Cu +11.8 %, CF +6.5 %, Al/Kapton +2.1 %.
+  Explanation (from the delivered modules CSVs): on D0 rsu_opt uses 56 five-RSU (5xx) + 22 six-RSU (6xx) modules
+  = 412 RSUs; rsu6 uses 76 six-RSU modules = 456 RSUs (+10.7 %), i.e. the 6-RSU modules run further into the
+  annulus/overlap. Matches the Si/glue/Cu increase; CF rises less because the corrugated frame is shared.
+  Other disks have the same RSU totals up to small row-end differences (e.g. ED1: 18 5xx in rsu_opt).
+  rsu6 map: `matmap/step13_rsu6_20261113T143431Z/material-map_map.cbor` sha256
+  c4cf9a3a575e2f963cec3f142f67bbaed5647799ea4d5ecee46c88efb046a415; provenance lists the rsu6 tracking overlay
+  453fda16…. 

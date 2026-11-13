@@ -1,0 +1,51 @@
+Started: 2026-11-13T14:09:44+00:00
+Identity rsu6: PASS
+Info in <TGeoManager::TGeoManager>: Geometry default, Detector Geometry created
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CloseGeometry>: 1593943 nodes/ 4682 volume UID's in Detector Geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+  InnerTrackerEndcapN    modules = 76
+  MiddleTrackerEndcapN   modules = 236
+  OuterTrackerEndcapN    modules = 766
+  InnerTrackerEndcapP    modules = 76
+  MiddleTrackerEndcapP   modules = 236
+  OuterTrackerEndcapP    modules = 760
+Geometry: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/refplanes/step13_rsu6/generated/epic_craterlake_tracking_only_rsu6_refplanes.xml
+SVT endcap modules total = 2150 (expected 2150): PASS
+exit status: 0
+Info in <TGeoManager::TGeoManager>: Geometry default, Detector Geometry created
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CloseGeometry>: 1593916 nodes/ 4655 volume UID's in Detector Geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+  InnerTrackerEndcapN    modules = 76
+  MiddleTrackerEndcapN   modules = 236
+  OuterTrackerEndcapN    modules = 766
+  InnerTrackerEndcapP    modules = 76
+  MiddleTrackerEndcapP   modules = 236
+  OuterTrackerEndcapP    modules = 760
+Geometry: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_tracking_only_rsu6.xml
+SVT endcap modules total = 2150 (expected 2150): PASS
+exit status: 0
+Info in <TGeoManager::TGeoManager>: Geometry default, Detector Geometry created
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CloseGeometry>: 1585619 nodes/ 4659 volume UID's in Detector Geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+  InnerTrackerEndcapN    modules = 78
+  MiddleTrackerEndcapN   modules = 236
+  OuterTrackerEndcapN    modules = 773
+  InnerTrackerEndcapP    modules = 78
+  MiddleTrackerEndcapP   modules = 236
+  OuterTrackerEndcapP    modules = 763
+Geometry: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+SVT endcap modules total = 2164 (expected 2164): PASS
+exit status: 0
+Finished: 2026-11-13T14:10:04+00:00

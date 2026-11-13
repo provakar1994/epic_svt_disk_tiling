@@ -1,0 +1,91 @@
+Started: Fri Nov 13 02:13:38 PM UTC 2026 ; xml: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6/epic_craterlake_tracking_only_rsu6.xml
+Step 13 identity check: 2026-11-13T14:13:38+00:00
+  [ok]   EPIC HEAD = 78ade46865d06250fe601c5b56189e37735f75b1
+  [ok]   checkout compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   installed share/epic/compact/tracking/silicon_disks_modules.xml sha256 = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   install/lib/libepic.so sha256 = 9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87
+  tiling in installed XML: silicon_disks_tiling/20261110_ES/rsu_opt 
+Identity: PASS
+rsu6 overlay check: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/geometry_overlays/step13/rsu6
+  [ok]   provenance EPIC commit = 78ade46865d06250fe601c5b56189e37735f75b1
+  [ok]   provenance replacement = 20261110_ES/rsu_opt -> 20261110_ES/rsu6
+  [ok]   provenance source silicon_disks_modules.xml = 6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b
+  [ok]   provenance sha256 epic_craterlake_tracking_only_rsu6.xml = 453fda16a335bb8735e8e6f616ba16f5f4970b573417818691bc0afa5ec19065
+  [ok]   actual sha256 epic_craterlake_tracking_only_rsu6.xml = 453fda16a335bb8735e8e6f616ba16f5f4970b573417818691bc0afa5ec19065
+  [ok]   provenance sha256 silicon_disks_modules_rsu6.xml = 7bfe44276ceffc81989055f504f4f331c8970a99b99368f0a126a9e099c95567
+  [ok]   actual sha256 silicon_disks_modules_rsu6.xml = 7bfe44276ceffc81989055f504f4f331c8970a99b99368f0a126a9e099c95567
+  [ok]   provenance sha256 epic_craterlake_rsu6.xml = 7c9e04c1c01506389f292ea042e57e09fdba8bec2e28683af27a95858911f7bb
+  [ok]   actual sha256 epic_craterlake_rsu6.xml = 7c9e04c1c01506389f292ea042e57e09fdba8bec2e28683af27a95858911f7bb
+  [ok]   installed 20261110_ES/rsu6 combined sha256 = e4d6cc88b60290f24a44965a03f284f830c9b60052716ebbc3648bc8a6d389dd
+  provenance.txt sha256 = ca9d23b5d035d86433eeb5d9836ba96364502c62b735140515464d3432408692
+  module_placements in overlay:  6 silicon_disks_tiling/20261110_ES/rsu6 
+Identity rsu6: PASS
+== 1. active-silicon dump (container) ==
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+SENSITIVE_BOXES 154800 {'ED0': 5472, 'ED1': 16992, 'ED2': 18576, 'ED3': 18432, 'ED4': 18144, 'HD0': 5472, 'HD1': 16992, 'HD2': 18576, 'HD3': 18288, 'HD4': 17856}
+ee2469ebdec7ec551fc744791c7f1fe79ccc128bcfb648cfef9639b0852ddccd  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv
+== 2. row families (conda tracking) ==
+make_row_families exit status: 0
+Tiling directory: /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_tiling/20261110_ES/rsu6
+  513df2cae962eb1952bbe3ed98e7170aa3def7e1327f5e6faa492beffe327201  ED4_rows.csv
+    ED4: 48 rows (25 A / 23 B; 6 BLOCKED), z_center -1020, family-A y range [-215.46, 233.30)
+  7c8958eab58a46583261bd3d4d0ceac34c9bd39e8f2e2cd05b1f47a78a9959a1  ED3_rows.csv
+    ED3: 48 rows (19 A / 29 B; 6 BLOCKED), z_center -850, family-A y range [-179.46, 161.50)
+  7fb6a4f2114580e0b6160cd5f97ca1b822cd95e98ba6fef2fa80101af2a7de27  ED2_rows.csv
+    ED2: 48 rows (15 A / 33 B; 6 BLOCKED), z_center -650, family-A y range [-143.36, 125.34)
+  d0cee0c05543d0acdae8017b7cd945b50106e0f03380c74304f9059c8c23f0f6  ED1_rows.csv
+    ED1: 46 rows (0 A / 46 B; 6 BLOCKED), z_center -450, family-A y range none
+  53ee9e5034b980fe74ef50c77e8087ef860d66efbb6c971ea31386bc42b3ef3d  ED0_rows.csv
+    ED0: 26 rows (0 A / 26 B; 6 BLOCKED), z_center -250, family-A y range none
+  28eb87b3aff4a45919f906c0e1a50c40a4bce2c7dd2507d994dde289d12f0c3a  HD0_rows.csv
+    HD0: 26 rows (0 A / 26 B; 6 BLOCKED), z_center 250, family-A y range none
+  0c5d3cf4ce34acaffb77e900bd834c587768974826669c284e13da9c32928da2  HD1_rows.csv
+    HD1: 46 rows (0 A / 46 B; 6 BLOCKED), z_center 450, family-A y range none
+  b34bacae4a2bf5d95bff21fd98f8f69e16cc811634e26b24763d9ac3d8fd0312  HD2_rows.csv
+    HD2: 48 rows (15 A / 33 B; 6 BLOCKED), z_center 700, family-A y range [-143.50, 125.48)
+  0f9796737dccfc4de498760e571b5a274fa672180298dd479549b6e44ec7c15d  HD3_rows.csv
+    HD3: 47 rows (23 A / 24 B; 7 BLOCKED), z_center 950, family-A y range [-206.38, 206.38)
+  7333e96f7e7900eeb0173f80ba33ab669fda1a4c689a0da8f0f16a2a44470756  HD4_rows.csv
+    HD4: 47 rows (31 A / 16 B; 7 BLOCKED), z_center 1200, family-A y range [-278.29, 278.29)
+
+y-convention check against /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/active_silicon_rectangles_step13_rsu6.csv (sha256 ee2469ebdec7...):
+  |box y centre - nearest row_y| [mm]: median / 99th percentile, same y vs flipped y
+  ED4:  18144 boxes   same  4.659 /  4.659   flipped  4.658 /  6.159
+  ED3:  18432 boxes   same  4.659 /  4.659   flipped  4.659 /  6.159
+  ED2:  18576 boxes   same  4.659 /  4.659   flipped  4.659 /  6.159
+  ED1:  16992 boxes   same  4.659 /  4.659   flipped  4.659 /  4.659
+  ED0:   5472 boxes   same  4.659 /  4.659   flipped  4.659 /  4.659
+  HD0:   5472 boxes   same  4.659 /  4.659   flipped  4.659 /  4.659
+  HD1:  16992 boxes   same  4.659 /  4.659   flipped  4.659 /  4.659
+  HD2:  18576 boxes   same  4.659 /  4.659   flipped  4.659 /  6.159
+  HD3:  18288 boxes   same  4.659 /  4.659   flipped  4.659 /  4.698
+  HD4:  17856 boxes   same  4.659 /  4.659   flipped  4.659 /  4.698
+
+Wrote /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu6.csv (430 rows), sha256 b2cb6aca1e00140c4a45974d7c8a234c2dec861ca4464b362c492ac04dd37981
+b2cb6aca1e00140c4a45974d7c8a234c2dec861ca4464b362c492ac04dd37981  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/geometry/row_families_20261110_ES_rsu6.csv
+== 3. rsu6 vs rsu_opt inputs ==
+  ED4_rows.csv: rsu6 IDENTICAL to rsu_opt
+  ED3_rows.csv: rsu6 IDENTICAL to rsu_opt
+  ED2_rows.csv: rsu6 IDENTICAL to rsu_opt
+  ED1_rows.csv: rsu6 IDENTICAL to rsu_opt
+  ED0_rows.csv: rsu6 IDENTICAL to rsu_opt
+  HD0_rows.csv: rsu6 IDENTICAL to rsu_opt
+  HD1_rows.csv: rsu6 IDENTICAL to rsu_opt
+  HD2_rows.csv: rsu6 IDENTICAL to rsu_opt
+  HD3_rows.csv: rsu6 IDENTICAL to rsu_opt
+  HD4_rows.csv: rsu6 IDENTICAL to rsu_opt
+  converted row-family table: IDENTICAL to row_families_20261110_ES_rsu_opt.csv
+  active boxes per disk: rsu_opt total 152628, rsu6 total 154800
+      rsu_opt   rsu6
+disk                
+ED0      4944   5472
+ED1     16776  16992
+ED2     18432  18576
+ED3     18360  18432
+ED4     18228  18144
+HD0      4944   5472
+HD1     16776  16992
+HD2     18432  18576
+HD3     17952  18288
+HD4     17784  17856
+Finished: Fri Nov 13 02:13:59 PM UTC 2026

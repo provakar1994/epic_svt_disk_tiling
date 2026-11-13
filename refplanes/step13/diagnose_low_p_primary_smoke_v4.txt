@@ -1,0 +1,10 @@
+Started: 2026-11-13T05:01:54+00:00
+File: /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/vz_p100mm_eta_p0p6_to_p3p8/rootfiles/sim_vz_p100mm_eta_p0p6_to_p3p8_chunk_001_smoke_n200.root
+2 clean primary plane hits with ratio < 0.95
+
+--- event 129, mc_index 0: p_gen = 0.886 GeV, eta = 3.715
+    MCParticle {'simulator_status': 67108864.0, 'endpoint_x_mm': -59.419, 'endpoint_y_mm': -277.377, 'endpoint_z_mm': 4021.921, 'endpoint_px_GeV': -0.009, 'endpoint_py_GeV': -0.062, 'endpoint_pz_GeV': 0.808}
+where   z_mm  time_ns    p_hit    ratio  energy_deposit_GeV  by_sec
+  HD3  944.0 2.856862 0.816961 0.921918        1.140572e-20   False
+  HD4 1194.0 3.705240 0.816908 0.921858        1.140545e-20   False
+exit status: 0

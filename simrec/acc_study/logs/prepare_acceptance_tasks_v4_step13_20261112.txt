@@ -1,0 +1,5 @@
+Seed overlap with 4 earlier manifest(s): none
+Prepared: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13/tasks.txt (300 tasks, 300 unique seeds)
+Manifest: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13/manifest.tsv
+Output:   /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13
+Submit (from /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study): sbatch --job-name=svt-v4-sim submit_premium_packed.sh task_lists/acceptance_v4_step13/tasks.txt

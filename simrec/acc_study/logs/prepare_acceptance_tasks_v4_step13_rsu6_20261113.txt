@@ -1,0 +1,8 @@
+Paired manifest: byte-identical to /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13/manifest.tsv (sha256 9ea33962edc37d68489bb540df8cc81b8febe18e65f362d62d88b572fd3b255b)
+Seed overlap with 4 other manifest(s): none
+Seed overlap allowed by design: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13/manifest.tsv (paired sim manifest)
+Seed overlap allowed by design: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13_rec_step13/manifest.tsv (recon of acceptance_v4_step13, no event generation)
+Prepared: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13_rsu6/tasks.txt (300 tasks, 300 unique seeds)
+Manifest: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study/task_lists/acceptance_v4_step13_rsu6/manifest.tsv
+Output:   /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13_rsu6
+Submit (from /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/simrec/acc_study): sbatch --time=04:00:00 --job-name=svt-v4r6-sim submit_premium_packed.sh task_lists/acceptance_v4_step13_rsu6/tasks.txt

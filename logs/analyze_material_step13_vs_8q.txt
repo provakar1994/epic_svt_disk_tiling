@@ -1,0 +1,320 @@
+Step 13g material analysis: Step 8q -> Step 13 (EPIC 311634084 -> 78ade4686)
+scans: step8q_20261106T153414Z -> step13_20261113T065150Z
+maps : step8q_20261106T222257Z -> step13_20261113T054800Z
+
+====================================================================================================
+A. Per-disk mean x/X0 on the annulus (scan), Step 8q -> Step 13
+====================================================================================================
+stat. error estimate: sigma_rel(mean) ~ sqrt((1-f)/(f N)) with f = fraction of tracks crossing the
+material (from C below for each material); for the total the per-track spread is dominated by
+carbon/silicon coverage, so the total's error is quoted from the silicon estimate (upper bound).
+disk    8q[%X0]   13[%X0]   change   N_ann 8q  N_ann 13
+ED4      0.2736    0.2706   -1.09%    2108906   2110609
+ED3      0.2765    0.2735   -1.06%    2104412   2104997
+ED2      0.2763    0.2734   -1.05%    2116258   2117439
+ED1      0.2953    0.2920   -1.12%    2006430   2007121
+ED0      0.3140    0.3113   -0.86%    1499067   1499076
+HD0      0.3140    0.3114   -0.83%    1499024   1499303
+HD1      0.2952    0.2921   -1.04%    2007931   2008525
+HD2      0.2822    0.2792   -1.07%    2054441   2052817
+HD3      0.2789    0.2760   -1.03%    1977735   1975315
+HD4      0.2810    0.2782   -1.00%    1904682   1903600
+
+====================================================================================================
+C0. Geometry dump sanity (module boxes)
+====================================================================================================
+-- 8q: 68453 boxes, 2164 modules, max |z_box - z_disk| = 3.83 mm
+                                            size   mean
+key                       material                     
+active_si                 Silicon          12719   14.0
+ancasic                   Silicon           2164  300.0
+ancasic_glue              SVT_Endcap_Glue   2164   80.0
+component                 CarbonFiber       2164  150.0
+cu                        Copper           12719    2.5
+external_epoxy_high       SVT_Endcap_Glue   2164   80.0
+external_epoxy_low        SVT_Endcap_Glue   2164   80.0
+inactive_si               Silicon          12719   36.0
+lec                       Silicon           2164   50.0
+lec_glue                  SVT_Endcap_Glue   2164   60.0
+left_bridge_fpc_aluminum  Aluminum          2164   30.0
+left_bridge_fpc_kapton    Kapton            2164   80.0
+rec                       Silicon           2164   50.0
+rec_glue                  SVT_Endcap_Glue   2164   60.0
+right_bridge_fpc_aluminum Aluminum          2164   30.0
+right_bridge_fpc_kapton   Kapton            2164   80.0
+rsu_glue                  SVT_Endcap_Glue   2164   60.0
+-- 13: 68453 boxes, 2164 modules, max |z_box - z_disk| = 3.77 mm
+                                            size   mean
+key                       material                     
+active_si                 Silicon          12719   14.0
+ancasic                   Silicon           2164  300.0
+ancasic_glue              SVT_Endcap_Glue   2164   80.0
+component                 CarbonFiber       2164  150.0
+cu                        Copper           12719    2.5
+external_epoxy_high       SVT_Endcap_Glue   2164   80.0
+external_epoxy_low        SVT_Endcap_Glue   2164   80.0
+inactive_si               Silicon          12719   33.5
+lec                       Silicon           2164   50.0
+lec_glue                  SVT_Endcap_Glue   2164   60.0
+left_bridge_fpc_aluminum  Aluminum          2164   30.0
+left_bridge_fpc_kapton    Kapton            2164   80.0
+rec                       Silicon           2164   50.0
+rec_glue                  SVT_Endcap_Glue   2164   60.0
+right_bridge_fpc_aluminum Aluminum          2164   30.0
+right_bridge_fpc_kapton   Kapton            2164   80.0
+rsu_glue                  SVT_Endcap_Glue   2164   60.0
+module centre z shift Step13 - Step8q (um, sign: + = away from z = 0): -47.5: 458, -2.5: 442, +2.5: 522, +47.5: 553
+
+boxes matched by (module, key): 68453 of 68453/68453
+boxes whose x-y footprint changed, by key and module half (mod_y > 0 = top):
+key                        mod_y_a
+left_bridge_fpc_aluminum   True       1077
+left_bridge_fpc_kapton     True       1077
+right_bridge_fpc_aluminum  True       1077
+right_bridge_fpc_kapton    True       1077
+boxes whose thickness changed: {'inactive_si': '12719 (36.0->33.5 um)'}
+
+====================================================================================================
+C1. Silicon: thickness-only expectation and 1/r^2-weighted prediction vs scan
+====================================================================================================
+RSU silicon (inactive+active) 36+14 = 50 um -> 33.5+14 = 47.5 um: ratio 47.5/50 = 0.9500 (-5.00 %).
+Silicon in the scan also contains LEC/REC (50 um, unchanged) and the AncASIC (300 um, unchanged
+thickness, moved in y on top-half modules). Area-only prediction (all disks, no weighting):
+  8q: Si volume [cm^3] by key: active_si 75.48, ancasic 32.14, inactive_si 194.08, lec 9.53, rec 3.18; total 314.40
+  13: Si volume [cm^3] by key: active_si 75.48, ancasic 32.14, inactive_si 180.61, lec 9.53, rec 3.18; total 300.92
+  area-only total Si ratio = 0.9571 (-4.29 %); RSU share of Step 8q Si = 0.857
+
+disk    Si obs  Si pred pred thick-only RSU share ASIC share
+ED4     -4.58%   -4.51%          -4.51%     0.903      0.061
+ED3     -4.49%   -4.51%          -4.51%     0.903      0.061
+ED2     -4.52%   -4.51%          -4.51%     0.903      0.061
+ED1     -4.59%   -4.55%          -4.55%     0.910      0.054
+ED0     -4.39%   -4.52%          -4.52%     0.903      0.056
+HD0     -4.36%   -4.52%          -4.52%     0.903      0.056
+HD1     -4.54%   -4.55%          -4.55%     0.910      0.054
+HD2     -4.61%   -4.51%          -4.51%     0.902      0.061
+HD3     -4.59%   -4.51%          -4.51%     0.901      0.062
+HD4     -4.47%   -4.51%          -4.51%     0.901      0.062
+
+====================================================================================================
+C2. All materials: 1/r^2-weighted geometry prediction vs scan (whole annulus and y halves)
+====================================================================================================
+obs = scan summary (share x mean, as in the scan report); obs_top/obs_bot from x-y map bins (y>0 / y<0);
+pred = module boxes only (CarbonFiber pred covers the 150 um baseplates, not the corrugated frame).
+sig = estimated 1-sigma stat. error of the Step13/Step8q difference, sqrt(2*(1-f)/(f N_ann)),
+f = coverage = sum(I)/I_annulus of that material's boxes (overlaps counted twice -> f slightly high).
+-- ED4  (N_ann 8q/13 = 2108906/2110609)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.58%  -4.51%  0.02% |  -4.52%   -4.51% |  -4.41%   -4.51%
+   Aluminum          -2.28%  -2.59%  0.27% |  -1.92%   -2.52% |  -2.39%   -2.67%
+   Kapton            -2.25%  -2.59%  0.27% |  -1.90%   -2.52% |  -2.35%   -2.67%
+   Copper            -0.07%  +0.00%    n/a |  -0.02%   +0.00% |  +0.12%   +0.00%
+   SVT_Endcap_Glue   -0.15%  +0.00%    n/a |  -0.07%   +0.00% |  +0.01%   +0.00%
+   CarbonFiber       -0.08%  +0.00%    n/a |  -0.00%   +0.00% |  +0.09%   +0.00%
+-- ED3  (N_ann 8q/13 = 2104412/2104997)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.49%  -4.51%  0.02% |  -4.45%   -4.51% |  -4.40%   -4.51%
+   Aluminum          -2.19%  -2.57%  0.27% |  -1.66%   -2.35% |  -2.56%   -2.79%
+   Kapton            -2.15%  -2.57%  0.27% |  -1.62%   -2.35% |  -2.54%   -2.79%
+   Copper            -0.02%  +0.00%    n/a |  +0.00%   +0.00% |  +0.09%   +0.00%
+   SVT_Endcap_Glue   +0.01%  +0.00%    n/a |  +0.08%   +0.00% |  +0.07%   +0.00%
+   CarbonFiber       -0.09%  +0.00%    n/a |  -0.07%   +0.00% |  +0.03%   +0.00%
+-- ED2  (N_ann 8q/13 = 2116258/2117439)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.52%  -4.51%  0.02% |  -4.50%   -4.51% |  -4.41%   -4.52%
+   Aluminum          -2.08%  -2.53%  0.27% |  -1.40%   -2.19% |  -2.61%   -2.87%
+   Kapton            -2.05%  -2.53%  0.27% |  -1.33%   -2.19% |  -2.62%   -2.87%
+   Copper            -0.05%  +0.00%    n/a |  +0.00%   +0.00% |  +0.03%   +0.00%
+   SVT_Endcap_Glue   -0.06%  +0.00%    n/a |  -0.15%   +0.00% |  +0.15%   +0.00%
+   CarbonFiber       -0.03%  +0.00%    n/a |  -0.02%   +0.00% |  +0.09%   +0.00%
+-- ED1  (N_ann 8q/13 = 2006430/2007121)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.59%  -4.55%  0.00% |  -4.47%   -4.55% |  -4.64%   -4.55%
+   Aluminum          -2.45%  -2.35%  0.27% |  -2.48%   -2.18% |  -2.35%   -2.51%
+   Kapton            -2.45%  -2.35%  0.27% |  -2.48%   -2.18% |  -2.35%   -2.51%
+   Copper            +0.01%  +0.00%    n/a |  +0.09%   +0.00% |  +0.00%   +0.00%
+   SVT_Endcap_Glue   -0.11%  +0.00%    n/a |  +0.01%   +0.00% |  -0.17%   +0.00%
+   CarbonFiber       -0.04%  +0.00%    n/a |  +0.06%   +0.00% |  -0.06%   +0.00%
+-- ED0  (N_ann 8q/13 = 1499067/1499076)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.39%  -4.52%  0.00% |  -4.29%   -4.51% |  -4.47%   -4.52%
+   Aluminum          -2.94%  -2.72%  0.29% |  -2.29%   -2.15% |  -3.57%   -3.29%
+   Kapton            -2.92%  -2.72%  0.29% |  -2.37%   -2.15% |  -3.44%   -3.29%
+   Copper            +0.05%  +0.00%    n/a |  +0.06%   +0.00% |  +0.04%   +0.00%
+   SVT_Endcap_Glue   +0.03%  +0.00%    n/a |  +0.13%   +0.00% |  -0.05%   +0.00%
+   CarbonFiber       +0.26%  +0.00%    n/a |  +0.34%   +0.00% |  +0.19%   +0.00%
+-- HD0  (N_ann 8q/13 = 1499024/1499303)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.36%  -4.52%  0.00% |  -4.20%   -4.51% |  -4.48%   -4.52%
+   Aluminum          -2.28%  -2.72%  0.29% |  -2.06%   -2.15% |  -2.47%   -3.29%
+   Kapton            -2.29%  -2.72%  0.29% |  -2.05%   -2.15% |  -2.50%   -3.29%
+   Copper            +0.06%  +0.00%    n/a |  +0.40%   +0.00% |  -0.25%   +0.00%
+   SVT_Endcap_Glue   +0.15%  +0.00%    n/a |  +0.33%   +0.00% |  +0.01%   +0.00%
+   CarbonFiber       +0.26%  +0.00%    n/a |  +0.50%   +0.00% |  +0.06%   +0.00%
+-- HD1  (N_ann 8q/13 = 2007931/2008525)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.54%  -4.55%  0.00% |  -4.51%   -4.55% |  -4.52%   -4.55%
+   Aluminum          -2.37%  -2.35%  0.27% |  -2.57%   -2.18% |  -2.13%   -2.51%
+   Kapton            -2.36%  -2.35%  0.27% |  -2.57%   -2.18% |  -2.09%   -2.51%
+   Copper            +0.06%  +0.00%    n/a |  +0.13%   +0.00% |  +0.03%   +0.00%
+   SVT_Endcap_Glue   +0.07%  +0.00%    n/a |  +0.16%   +0.00% |  +0.03%   +0.00%
+   CarbonFiber       +0.04%  +0.00%    n/a |  +0.19%   +0.00% |  -0.05%   +0.00%
+-- HD2  (N_ann 8q/13 = 2054441/2052817)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.61%  -4.51%  0.01% |  -4.46%   -4.51% |  -4.82%   -4.51%
+   Aluminum          -2.50%  -2.44%  0.27% |  -1.88%   -2.14% |  -3.16%   -2.75%
+   Kapton            -2.45%  -2.44%  0.27% |  -1.78%   -2.14% |  -3.16%   -2.75%
+   Copper            -0.01%  +0.00%    n/a |  +0.10%   +0.00% |  -0.17%   +0.00%
+   SVT_Endcap_Glue   +0.00%  +0.00%    n/a |  +0.17%   +0.00% |  -0.22%   +0.00%
+   CarbonFiber       -0.04%  +0.00%    n/a |  +0.04%   +0.00% |  -0.17%   +0.00%
+-- HD3  (N_ann 8q/13 = 1977735/1975315)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.59%  -4.51%  0.02% |  -4.54%   -4.51% |  -4.74%   -4.51%
+   Aluminum          -2.42%  -2.43%  0.28% |  -4.40%   -4.80% |  -0.50%   +0.00%
+   Kapton            -2.45%  -2.43%  0.28% |  -4.46%   -4.80% |  -0.51%   +0.00%
+   Copper            -0.00%  +0.00%    n/a |  -0.00%   +0.00% |  -0.11%   +0.00%
+   SVT_Endcap_Glue   -0.06%  +0.00%    n/a |  -0.01%   +0.00% |  -0.22%   +0.00%
+   CarbonFiber       -0.00%  +0.00%    n/a |  +0.02%   +0.00% |  -0.14%   +0.00%
+-- HD4  (N_ann 8q/13 = 1904682/1903600)
+   material             obs    pred    sig | obs_top pred_top | obs_bot pred_bot
+   Silicon           -4.47%  -4.51%  0.02% |  -4.43%   -4.51% |  -4.49%   -4.51%
+   Aluminum          -2.65%  -2.39%  0.28% |  -5.03%   -4.72% |  -0.16%   +0.00%
+   Kapton            -2.61%  -2.39%  0.28% |  -5.02%   -4.72% |  -0.10%   +0.00%
+   Copper            +0.03%  +0.00%    n/a |  +0.17%   +0.00% |  -0.08%   +0.00%
+   SVT_Endcap_Glue   -0.02%  +0.00%    n/a |  -0.01%   +0.00% |  +0.01%   +0.00%
+   CarbonFiber       +0.01%  +0.00%    n/a |  +0.09%   +0.00% |  -0.03%   +0.00%
+
+mean over the 10 disks (obs / pred):
+                  obs  pred
+mat                        
+Aluminum        -2.41 -2.51
+CarbonFiber      0.03  0.00
+Copper           0.00  0.00
+Kapton          -2.40 -2.51
+SVT_Endcap_Glue -0.01  0.00
+Silicon         -4.51 -4.52
+
+====================================================================================================
+C3. Total x/X0: predicted change from module boxes (scan shares of Step 8q) vs observed
+====================================================================================================
+pred_total = sum_m share_m(8q) * pred_m   (CarbonFiber taken as observed, since the corrugated frame
+changed in Step 12 and is not in the box dump)
+ED4   obs  -1.09%  pred  -1.07%   (of which Silicon  -0.95%)
+ED3   obs  -1.06%  pred  -1.08%   (of which Silicon  -0.96%)
+ED2   obs  -1.05%  pred  -1.05%   (of which Silicon  -0.96%)
+ED1   obs  -1.12%  pred  -1.10%   (of which Silicon  -1.01%)
+ED0   obs  -0.86%  pred  -0.89%   (of which Silicon  -0.96%)
+HD0   obs  -0.83%  pred  -0.89%   (of which Silicon  -0.96%)
+HD1   obs  -1.04%  pred  -1.05%   (of which Silicon  -1.01%)
+HD2   obs  -1.07%  pred  -1.05%   (of which Silicon  -0.96%)
+HD3   obs  -1.03%  pred  -1.01%   (of which Silicon  -0.94%)
+HD4   obs  -1.00%  pred  -1.00%   (of which Silicon  -0.94%)
+
+====================================================================================================
+D. Step 13 FPC/AncASIC flip: where the electronics moved (geometry) and x-y map symmetry (scan)
+====================================================================================================
+  per box key: mean y offset of the box centre from the module y origin, signed + = away from y = 0,
+  and how far the box reaches away from y = 0 (mm); top = mod_y > 0, bot = mod_y < 0
+  8q  left_bridge_fpc_kapton   dy_away top  -2.77 bot  +2.79 | reach top   8.50 bot  14.07
+  8q  right_bridge_fpc_kapton  dy_away top  -2.13 bot  +2.15 | reach top   9.78 bot  14.07
+  8q  ancasic                  dy_away top  +0.00 bot  -0.00 | reach top   7.50 bot   7.50
+  8q  inactive_si              dy_away top  +0.00 bot  -0.00 | reach top   9.78 bot   9.78
+  13  left_bridge_fpc_kapton   dy_away top  +2.77 bot  +2.79 | reach top  14.05 bot  14.07
+  13  right_bridge_fpc_kapton  dy_away top  +2.13 bot  +2.15 | reach top  14.05 bot  14.07
+  13  ancasic                  dy_away top  -0.00 bot  -0.00 | reach top   7.50 bot   7.50
+  13  inactive_si              dy_away top  +0.00 bot  -0.00 | reach top   9.78 bot   9.78
+  (module y origin = LEC/first-RSU boundary midpoint, i.e. the RSU centre line)
+
+  scan x-y maps: correlation of the y>0 map with the mirrored (y -> -y) y<0 map, per material.
+  Expected: Step 13 FPC (Al/Kapton) maps become mirror-symmetric like Si/carbon (if the delivery is
+  y-symmetric), Step 8q not.
+  disk  mat        8q corr  13 corr
+  ED4   Aluminum     0.756    0.859
+  ED4   Kapton       0.756    0.860
+  ED4   Silicon      0.815    0.810
+  ED1   Aluminum     0.686    0.737
+  ED1   Kapton       0.686    0.738
+  ED1   Silicon      0.489    0.489
+  ED0   Aluminum     0.623    0.683
+  ED0   Kapton       0.624    0.682
+  ED0   Silicon      0.513    0.501
+  HD0   Aluminum     0.636    0.677
+  HD0   Kapton       0.636    0.679
+  HD0   Silicon      0.513    0.508
+  HD3   Aluminum     0.834    0.982
+  HD3   Kapton       0.834    0.982
+  HD3   Silicon      0.979    0.978
+
+====================================================================================================
+E. ACTS material map review: Step 8q map vs Step 13 map
+====================================================================================================
+-- 8q: run_log 2665 lines; warning/error-like lines:
+       13  Fontconfig error: No writable cache directories
+        4  Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+     real	80m52.484s | Completed map: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step8q_20261106T222257Z/material-map_map.cbor
+     plots: 32 files
+     Validation/regenerated: 18 files
+     Surfaces/regenerated/map_plot: 59 files
+     Surfaces/regenerated/ratio_plot: 59 files
+     Surfaces/1D_plot: 118 files
+     Surfaces/dist_plot: 59 files
+-- 13: run_log 2666 lines; warning/error-like lines:
+       13  Fontconfig error: No writable cache directories
+        4  Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+     real	66m52.034s | Completed map: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matmap/step13_20261113T054800Z/material-map_map.cbor
+     plots: 32 files
+     Validation/regenerated: 18 files
+     Surfaces/regenerated/map_plot: 59 files
+     Surfaces/regenerated/ratio_plot: 59 files
+     Surfaces/1D_plot: 118 files
+     Surfaces/dist_plot: 59 files
+-- config-map_regenerated.json 8q: 35 entries with mapMaterial=true
+-- config-map_regenerated.json 13: 35 entries with mapMaterial=true
+   binnings identical between maps: True
+
+material-map_map.root: surfaces 8q 59, 13 59, same names: True
+total bins 8q 588832, 13 588832
+per surface: bins, filled bins, unweighted bin-mean t/X0 [%] and change (|change| > 0.3 % or bin count change):
+   vol22_bou0_lay2_app1_sen0      (12, 10) filled   120->  120  0.3305 -> 0.3289   -0.48%  <--
+   vol22_bou0_lay2_app2_sen0      (12, 10) filled   120->  120  0.1625 -> 0.1609   -1.01%  <--
+   vol22_bou0_lay4_app1_sen0      (12, 20) filled   240->  240  0.1746 -> 0.1729   -0.95%  <--
+   vol22_bou0_lay4_app2_sen0      (12, 20) filled   240->  240  0.1615 -> 0.1599   -0.98%  <--
+   vol22_bou0_lay6_app1_sen0      (12, 20) filled   240->  240  0.1592 -> 0.1576   -1.04%  <--
+   vol22_bou0_lay6_app2_sen0      (12, 20) filled   240->  240  0.1605 -> 0.1590   -0.94%  <--
+   vol24_bou0_lay2_app1_sen0    (180, 100) filled 17946->17946  0.1611 -> 0.1594   -1.04%  <--
+   vol24_bou0_lay2_app2_sen0    (180, 100) filled 17913->17920  0.1625 -> 0.1609   -0.98%  <--
+   vol32_bou0_lay2_app1_sen0    (180, 100) filled 17857->17859  0.1659 -> 0.1641   -1.08%  <--
+   vol32_bou0_lay2_app2_sen0    (180, 100) filled 17853->17871  0.2229 -> 0.2214   -0.67%  <--
+   vol36_bou0_lay2_app1_sen0    (180, 100) filled 17943->17942  0.7569 -> 0.7551   -0.24%  <--
+   vol36_bou0_lay2_app2_sen0    (180, 100) filled 17860->17864  0.1659 -> 0.1641   -1.09%  <--
+   vol41_bou0_lay2_app1_sen0    (180, 100) filled 17913->17920  0.1624 -> 0.1608   -0.98%  <--
+   vol41_bou0_lay2_app2_sen0    (180, 100) filled 17943->17943  0.1601 -> 0.1584   -1.06%  <--
+   vol42_bou0_lay2_app1_sen0      (12, 20) filled   240->  240  0.1599 -> 0.1584   -0.95%  <--
+   vol42_bou0_lay2_app2_sen0      (12, 20) filled   240->  240  0.1590 -> 0.1574   -1.03%  <--
+   vol42_bou0_lay4_app1_sen0      (12, 20) filled   240->  240  0.1561 -> 0.1546   -1.00%  <--
+   vol42_bou0_lay4_app2_sen0      (12, 20) filled   240->  240  0.1562 -> 0.1547   -1.01%  <--
+
+map (propagation_material_regenerated) vs Geant4 (material-map_mapped) total t_X0 vs eta,
+as in Mat_map.C (Comp_Val_geant_mat_X0_Eta / Ratio_Val_geant_mat_X0_Eta), 0.5-wide eta bins:
+     eta bin |  8q geant    8q map  map/g-1 |  13 geant    13 map  map/g-1 | geant 13/8q-1
+[-4.0,-3.5) |   95.2002   91.7474   -3.63% |   95.2002   91.7474   -3.63% |        -0.00%
+[-3.5,-3.0) |   14.7230   14.2769   -3.03% |   14.7229   14.2768   -3.03% |        -0.00%
+[-3.0,-2.5) |    1.0464    0.7353  -29.73% |    1.0462    0.7352  -29.73% |        -0.01%
+[-2.5,-2.0) |    0.1795    0.2214  +23.30% |    0.1794    0.2212  +23.32% |        -0.08%
+[-2.0,-1.5) |    0.6253    0.6290   +0.59% |    0.6251    0.6288   +0.59% |        -0.02%
+[-1.5,-1.0) |    0.4527    0.4302   -4.97% |    0.4525    0.4301   -4.96% |        -0.03%
+[-1.0,-0.5) |    0.3518    0.3277   -6.85% |    0.3519    0.3278   -6.86% |        +0.02%
+[-0.5,+0.0) |    0.1885    0.1881   -0.18% |    0.1885    0.1881   -0.18% |        -0.01%
+[+0.0,+0.5) |    0.1862    0.1860   -0.07% |    0.1861    0.1860   -0.05% |        -0.02%
+[+0.5,+1.0) |    0.3497    0.3261   -6.75% |    0.3497    0.3261   -6.76% |        +0.01%
+[+1.0,+1.5) |    1.1908    1.1616   -2.45% |    1.1907    1.1615   -2.46% |        -0.01%
+[+1.5,+2.0) |    0.5179    0.5638   +8.87% |    0.5177    0.5637   +8.89% |        -0.04%
+[+2.0,+2.5) |    0.2689    0.2226  -17.22% |    0.2687    0.2224  -17.22% |        -0.08%
+[+2.5,+3.0) |   22.6194   17.6994  -21.75% |   22.6193   17.6993  -21.75% |        -0.00%
+[+3.0,+3.5) |  125.4392  124.6002   -0.67% |  125.4391  124.5981   -0.67% |        -0.00%
+[+3.5,+4.0) |  250.2529  254.3784   +1.65% |  250.2528  254.3791   +1.65% |        -0.00%
+eta in (+1.0,+3.5) 8q : 0.05-bin map/geant - 1: mean +5.06%, rms 26.42%, max |.| 128.00%
+eta in (+1.0,+3.5) 13 : 0.05-bin map/geant - 1: mean +5.09%, rms 26.56%, max |.| 129.29%
+eta in (-3.5,-1.0) 8q : 0.05-bin map/geant - 1: mean +1.01%, rms 5.11%, max |.| 25.33%
+eta in (-3.5,-1.0) 13 : 0.05-bin map/geant - 1: mean +1.02%, rms 5.10%, max |.| 25.26%
+tracks: 8q geant 2498587, 8q map 5000000, 13 geant 2498587, 13 map 5000000

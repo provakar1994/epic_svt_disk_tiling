@@ -1,0 +1,198 @@
+Step 13 per-disk material scan: step13_smoke_20261113T044842Z  host=login21  SLURM_JOB_ID=none
+EPIC HEAD=78ade46865d06250fe601c5b56189e37735f75b1  dirty(src,compact)=0
+XML=/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_material_map.xml  events=20 tracks/event=200 per slice
+dabd097dfdac464a4bf90f1a3961ac4f070d2101115925987f3ba02bdc72a46b  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_material_map.xml
+6d04bd66e5524c9cbdfec34c0e15064463af2000501a925063dc577ccfd1b27b  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/silicon_disks_modules.xml
+9ccf1a6690903c009fe167383d14eb81c170c2ed29d212d674a6c73886e5cc87  /global/cfs/cdirs/m3763/pdatta/epic/install/lib/libepic.so
+9ef0fc00a690c8a49b6cb48c533255c94ae8cf2c8f5e627c2109342112e4023a  /global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/tracking/definitions_craterlake.xml
+f04d878a84c29a5ed4a7b689a1cb96eebdbf04b1d1f0f5a073b5731e0c1dd439  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/record_svt_disk_material_step8q.py
+b954e96753d71f40c31958e9d16d58de644fe05415ec5bf3a77eea5db99cadaa  /global/cfs/cdirs/m3763/pdatta/epic/scripts/subdetector_tests/disk_material_map.py
+e2855ff15d89a46041d553552b0e5abc7468a486e045735a6bbc4b0c7fd9364f  /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/logs/run_svt_disk_material_scan_step13.sh
+slice 0: eta [-4.25, -2.575] seed 13101 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice0_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice0_recording.log)
+slice 1: eta [-2.575, -0.90] seed 13102 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice1_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice1_recording.log)
+slice 2: eta [0.90, 2.575] seed 13103 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice2_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice2_recording.log)
+slice 3: eta [2.575, 4.25] seed 13104 -> /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice3_geant4_material_tracks.root (log /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice3_recording.log)
+slice 0: done (20:50:11    Sequencer      INFO      Processed 20 events in 34.620586 s (wall clock))
+slice 1: done (20:50:13    Sequencer      INFO      Processed 20 events in 35.953159 s (wall clock))
+slice 2: done (20:50:13    Sequencer      INFO      Processed 20 events in 36.452182 s (wall clock))
+slice 3: done (20:50:13    Sequencer      INFO      Processed 20 events in 35.508945 s (wall clock))
+-rw-rw---- 1 pdatta m3763  7221551 Nov 12 20:50 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice0_geant4_material_tracks.root
+-rw-rw---- 1 pdatta m3763 14041394 Nov 12 20:50 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice1_geant4_material_tracks.root
+-rw-rw---- 1 pdatta m3763 14368086 Nov 12 20:50 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice2_geant4_material_tracks.root
+-rw-rw---- 1 pdatta m3763  9557099 Nov 12 20:50 /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice3_geant4_material_tracks.root
+processed 4000 tracks
+processed 8000 tracks
+processed 12000 tracks
+processed 15999 tracks
+input: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z/recording/step13_smoke_20261113T044842Z_slice*_geant4_material_tracks.root
+tracks: 15999
+dz: 5.0 mm, r_margin: 2.0 mm
+
+disk     z[mm]  tracks_on_annulus  <x/X0>[%]      steps
+ED4      -1020               5605     0.2686      41378
+ED3       -850               5576     0.2713      41291
+ED2       -650               5574     0.2730      40938
+ED1       -450               5304     0.2950      41695
+ED0       -250               3978     0.3125      31690
+HD0        250               3985     0.3098      31685
+HD1        450               5272     0.2925      40980
+HD2        700               5433     0.2755      40429
+HD3        950               5281     0.2741      39661
+HD4       1200               5106     0.2790      39130
+
+material breakdown: share of the disk X0 and mean x/X0 on the annulus per material
+(names matched from (effective Z, density), see MATERIAL_NAMES in the script)
+-- ED4
+   CarbonFiber               62.27 %   ~0.1673 % X0
+   Silicon                   20.05 %   ~0.0539 % X0
+   SVT_Endcap_Glue            8.58 %   ~0.0230 % X0
+   Copper                     6.25 %   ~0.0168 % X0
+   Aluminum                   1.55 %   ~0.0042 % X0
+   Kapton                     1.29 %   ~0.0035 % X0
+-- ED3
+   CarbonFiber               62.16 %   ~0.1686 % X0
+   Silicon                   20.18 %   ~0.0548 % X0
+   SVT_Endcap_Glue            8.80 %   ~0.0239 % X0
+   Copper                     6.24 %   ~0.0169 % X0
+   Aluminum                   1.43 %   ~0.0039 % X0
+   Kapton                     1.19 %   ~0.0032 % X0
+-- ED2
+   CarbonFiber               61.63 %   ~0.1683 % X0
+   Silicon                   20.60 %   ~0.0562 % X0
+   SVT_Endcap_Glue            8.74 %   ~0.0239 % X0
+   Copper                     6.35 %   ~0.0173 % X0
+   Aluminum                   1.47 %   ~0.0040 % X0
+   Kapton                     1.22 %   ~0.0033 % X0
+-- ED1
+   CarbonFiber               59.68 %   ~0.1760 % X0
+   Silicon                   21.57 %   ~0.0636 % X0
+   SVT_Endcap_Glue            9.34 %   ~0.0276 % X0
+   Copper                     6.74 %   ~0.0199 % X0
+   Aluminum                   1.46 %   ~0.0043 % X0
+   Kapton                     1.21 %   ~0.0036 % X0
+-- ED0
+   CarbonFiber               61.20 %   ~0.1912 % X0
+   Silicon                   20.59 %   ~0.0643 % X0
+   SVT_Endcap_Glue            9.02 %   ~0.0282 % X0
+   Copper                     6.25 %   ~0.0195 % X0
+   Aluminum                   1.60 %   ~0.0050 % X0
+   Kapton                     1.35 %   ~0.0042 % X0
+-- HD0
+   CarbonFiber               61.57 %   ~0.1907 % X0
+   Silicon                   20.30 %   ~0.0629 % X0
+   SVT_Endcap_Glue            8.94 %   ~0.0277 % X0
+   Copper                     6.33 %   ~0.0196 % X0
+   Aluminum                   1.57 %   ~0.0049 % X0
+   Kapton                     1.30 %   ~0.0040 % X0
+-- HD1
+   CarbonFiber               59.89 %   ~0.1752 % X0
+   Silicon                   21.53 %   ~0.0630 % X0
+   SVT_Endcap_Glue            9.30 %   ~0.0272 % X0
+   Copper                     6.67 %   ~0.0195 % X0
+   Aluminum                   1.43 %   ~0.0042 % X0
+   Kapton                     1.20 %   ~0.0035 % X0
+-- HD2
+   CarbonFiber               61.91 %   ~0.1706 % X0
+   Silicon                   20.22 %   ~0.0557 % X0
+   SVT_Endcap_Glue            8.83 %   ~0.0243 % X0
+   Copper                     6.24 %   ~0.0172 % X0
+   Aluminum                   1.52 %   ~0.0042 % X0
+   Kapton                     1.28 %   ~0.0035 % X0
+-- HD3
+   CarbonFiber               62.43 %   ~0.1711 % X0
+   Silicon                   20.14 %   ~0.0552 % X0
+   SVT_Endcap_Glue            8.67 %   ~0.0238 % X0
+   Copper                     6.27 %   ~0.0172 % X0
+   Aluminum                   1.36 %   ~0.0037 % X0
+   Kapton                     1.13 %   ~0.0031 % X0
+-- HD4
+   CarbonFiber               62.43 %   ~0.1742 % X0
+   Silicon                   20.21 %   ~0.0564 % X0
+   SVT_Endcap_Glue            8.57 %   ~0.0239 % X0
+   Copper                     6.19 %   ~0.0173 % X0
+   Aluminum                   1.41 %   ~0.0039 % X0
+   Kapton                     1.18 %   ~0.0033 % X0
+disk    Step8q [%X0]   Step13 [%X0]    change   tracks Step8q/Step13
+ED4           0.2736         0.2686    -1.84 %   2108906/5605
+ED3           0.2765         0.2713    -1.87 %   2104412/5576
+ED2           0.2763         0.2730    -1.17 %   2116258/5574
+ED1           0.2953         0.2950    -0.13 %   2006430/5304
+ED0           0.3140         0.3125    -0.48 %   1499067/3978
+HD0           0.3140         0.3098    -1.34 %   1499024/3985
+HD1           0.2952         0.2925    -0.92 %   2007931/5272
+HD2           0.2822         0.2755    -2.37 %   2054441/5433
+HD3           0.2789         0.2741    -1.71 %   1977735/5281
+HD4           0.2810         0.2790    -0.71 %   1904682/5106
+
+per material: mean x/X0 contribution on the annulus [% X0] and relative change
+-- ED4
+   CarbonFiber              0.16811   0.16726    -0.50 %
+   Silicon                  0.05762   0.05387    -6.51 %
+   SVT_Endcap_Glue          0.02363   0.02304    -2.53 %
+   Copper                   0.01697   0.01679    -1.01 %
+   Aluminum                 0.00397   0.00417    +4.93 %
+   Kapton                   0.00332   0.00347    +4.49 %
+-- ED3
+   CarbonFiber              0.16927   0.16864    -0.37 %
+   Silicon                  0.05854   0.05475    -6.48 %
+   SVT_Endcap_Glue          0.02402   0.02387    -0.60 %
+   Copper                   0.01725   0.01694    -1.77 %
+   Aluminum                 0.00402   0.00388    -3.68 %
+   Kapton                   0.00336   0.00322    -4.37 %
+-- ED2
+   CarbonFiber              0.16861   0.16825    -0.21 %
+   Silicon                  0.05880   0.05624    -4.35 %
+   SVT_Endcap_Glue          0.02413   0.02387    -1.09 %
+   Copper                   0.01732   0.01732    -0.00 %
+   Aluminum                 0.00403   0.00400    -0.76 %
+   Kapton                   0.00337   0.00333    -1.09 %
+-- ED1
+   CarbonFiber              0.17454   0.17602    +0.85 %
+   Silicon                  0.06585   0.06362    -3.39 %
+   SVT_Endcap_Glue          0.02725   0.02756    +1.13 %
+   Copper                   0.01953   0.01989    +1.84 %
+   Aluminum                 0.00445   0.00430    -3.33 %
+   Kapton                   0.00372   0.00357    -3.92 %
+-- ED0
+   CarbonFiber              0.18997   0.19125    +0.67 %
+   Silicon                  0.06705   0.06434    -4.04 %
+   SVT_Endcap_Glue          0.02791   0.02817    +0.95 %
+   Copper                   0.01975   0.01955    -1.04 %
+   Aluminum                 0.00509   0.00500    -1.83 %
+   Kapton                   0.00426   0.00421    -1.19 %
+-- HD0
+   CarbonFiber              0.19002   0.19072    +0.37 %
+   Silicon                  0.06704   0.06287    -6.21 %
+   SVT_Endcap_Glue          0.02788   0.02770    -0.63 %
+   Copper                   0.01976   0.01961    -0.76 %
+   Aluminum                 0.00507   0.00486    -4.14 %
+   Kapton                   0.00424   0.00402    -5.13 %
+-- HD1
+   CarbonFiber              0.17444   0.17516    +0.41 %
+   Silicon                  0.06586   0.06296    -4.39 %
+   SVT_Endcap_Glue          0.02721   0.02719    -0.09 %
+   Copper                   0.01954   0.01950    -0.20 %
+   Aluminum                 0.00444   0.00417    -6.01 %
+   Kapton                   0.00371   0.00350    -5.66 %
+-- HD2
+   CarbonFiber              0.17241   0.17055    -1.08 %
+   Silicon                  0.06006   0.05571    -7.24 %
+   SVT_Endcap_Glue          0.02459   0.02433    -1.07 %
+   Copper                   0.01767   0.01720    -2.68 %
+   Aluminum                 0.00407   0.00419    +2.97 %
+   Kapton                   0.00341   0.00352    +3.31 %
+-- HD3
+   CarbonFiber              0.17214   0.17115    -0.58 %
+   Silicon                  0.05834   0.05522    -5.34 %
+   SVT_Endcap_Glue          0.02387   0.02376    -0.48 %
+   Copper                   0.01715   0.01720    +0.29 %
+   Aluminum                 0.00404   0.00372    -7.86 %
+   Kapton                   0.00338   0.00310    -8.37 %
+-- HD4
+   CarbonFiber              0.17344   0.17418    +0.43 %
+   Silicon                  0.05875   0.05637    -4.05 %
+   SVT_Endcap_Glue          0.02404   0.02390    -0.58 %
+   Copper                   0.01727   0.01728    +0.04 %
+   Aluminum                 0.00406   0.00395    -2.87 %
+   Kapton                   0.00340   0.00331    -2.74 %
+outputs: /global/cfs/cdirs/m3763/pdatta/epic/proj_svt_disk_tiling/matscan/disk_material_map/step13_smoke_20261113T044842Z

@@ -1,0 +1,5 @@
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    144 100    144   0      0   5513      0                              0100    144 100    144   0      0   5217      0                              0100    144 100    144   0      0   4960      0                              0
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+[2026-11-12 20:50:09.362] [info] running in batch mode to export geometry 

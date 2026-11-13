@@ -1,0 +1,181 @@
+Started: 2026-11-13T14:16:48+00:00
+
+=== sim_vz0_bwd.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (100 events)
+  [ok] B: all 433 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.05000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 36.90-445.97 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 3.63e-18 GeV, exactly zero: 28/433)
+  info: plane-hit pathLength [mm] min/median/max = 0.0000/0.1025/0.9121
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 359/433 = 82.9% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 17/100
+  [ok] D: all 0 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 0/359 primary-linked hits)
+  [ok] C: clean primary hits (359): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9927, 0.9942, 0.9990, 0.9998, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 359
+  F: clean primary hits per (primary, plane): 1x: 359
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 291/291 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 68/359
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 1.01e-06 GeV, n=380)
+
+=== filter assignment in sim_vz0_bwd.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== sim_vz0_fwd.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (100 events)
+  [ok] B: all 453 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.05000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 37.02-457.67 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 1.51e-18 GeV, exactly zero: 62/453)
+  info: plane-hit pathLength [mm] min/median/max = 0.0000/0.1048/2.1196
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 339/453 = 74.8% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 29/100
+  [ok] D: all 2 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 2/339 primary-linked hits)
+  [ok] C: clean primary hits (337): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9868, 0.9874, 0.9988, 0.9997, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 339
+  F: clean primary hits per (primary, plane): 1x: 337
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 268/268 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 69/337
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 8.76e-07 GeV, n=382)
+
+=== filter assignment in sim_vz0_fwd.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== sim_vz100_bwd.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (100 events)
+  [ok] B: all 421 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.00000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 37.30-449.37 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 1.44e-18 GeV, exactly zero: 56/421)
+  info: plane-hit pathLength [mm] min/median/max = 0.1001/0.1022/2.8159
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 333/421 = 79.1% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 21/100
+  [ok] D: all 10 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 10/333 primary-linked hits)
+  [ok] C: clean primary hits (323): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9894, 0.9953, 0.9987, 0.9998, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 329, 2x: 2
+  F: clean primary hits per (primary, plane): 1x: 323
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 255/255 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 68/323
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 1.12e-06 GeV, n=325)
+
+=== filter assignment in sim_vz100_bwd.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== sim_vz100_fwd.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (100 events)
+  [ok] B: all 929 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.05000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 36.99-455.06 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 1.37e-17 GeV, exactly zero: 459/929)
+  info: plane-hit pathLength [mm] min/median/max = 0.0000/0.1107/4.8593
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 340/929 = 36.6% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 29/100
+  [ok] D: all 24 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 24/340 primary-linked hits)
+  [ok] C: clean primary hits (316): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9830, 0.9863, 0.9989, 0.9998, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 316, 2x: 12
+  F: clean primary hits per (primary, plane): 1x: 316
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 248/248 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 68/316
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 1.01e-06 GeV, n=401)
+
+=== filter assignment in sim_vz100_fwd.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== sim_vzm100_bwd.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (100 events)
+  [ok] B: all 644 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.05000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 36.81-467.19 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 2.43e-18 GeV, exactly zero: 216/644)
+  info: plane-hit pathLength [mm] min/median/max = 0.0000/0.1074/3.0266
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 331/644 = 51.4% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 20/100
+  [ok] D: all 0 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 0/331 primary-linked hits)
+  [ok] C: clean primary hits (331): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9977, 0.9983, 0.9994, 0.9998, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 331
+  F: clean primary hits per (primary, plane): 1x: 331
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 262/262 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 69/331
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 9.05e-07 GeV, n=382)
+
+=== filter assignment in sim_vzm100_bwd.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== sim_vzm100_fwd.root ===
+  [ok] A: SVTDiskRefPlaneHits in collections (100 events)
+  [ok] B: all 494 plane hits map to plane_map.csv (unknown: 0)
+  [ok] B: max |z - z_plane| = 0.05000 mm (<= 0.05)
+  [ok] B: r_in <= distance to annulus centre <= r_out for all hits (beam-axis r range 37.00-452.26 mm)
+  [ok] B: eDep < 1e-12 GeV (1 meV) for all plane hits (max 6.65e-19 GeV, exactly zero: 147/494)
+  info: plane-hit pathLength [mm] min/median/max = 0.0000/0.1021/1.6922
+  [ok] D: every plane hit has a valid MCParticle relation
+  info D: 313/494 = 63.4% of plane hits point to the generatorStatus==1 primary; events with any non-primary plane hit: 26/100
+  [ok] D: all 22 primary-linked hits with |p| ratio < 0.9 carry producedBySecondary (bit set on 22/313 primary-linked hits)
+  [ok] C: clean primary hits (291): |p_hit|/|p_gen| quantiles (0,1,10,50,90,100%) = 0.9964, 0.9972, 0.9989, 0.9997, 0.9999, 1.0000
+  info: clean hits with ratio > 1.0001: 0
+  F: all primary-linked hits per (primary, plane): 1x: 297, 2x: 3, 3x: 2, 4x: 1
+  F: clean primary hits per (primary, plane): 1x: 291
+  [ok] E: (primary, disk) with silicon hit that also have a plane hit: 215/215 = 100.0%
+  info: (primary, disk) with plane hit but no silicon hit: 76/291
+  [ok] G: TrackerEndcapHits all eDep > 0 (min 1.04e-06 GeV, n=298)
+
+=== filter assignment in sim_vzm100_fwd.log ===
+  default-filter SDs: 30 -> filters ['edep0']
+  pattern-mapped: []
+  no-filter messages: []
+  [ok] G: no default filter on SVTDiskRefPlanes SDs
+  [ok] G: the 6 SVT endcap SDs keep npsim's default filter: [('InnerTrackerEndcapN', 'edep0'), ('InnerTrackerEndcapP', 'edep0'), ('MiddleTrackerEndcapN', 'edep0'), ('MiddleTrackerEndcapP', 'edep0'), ('OuterTrackerEndcapN', 'edep0'), ('OuterTrackerEndcapP', 'edep0')]
+  [ok] G: every default-filtered SD uses edep0 (npsim default)
+  [ok] G: no filter attached via pattern to plane SDs
+  [ok] G: all 7 plane SDs appear in the log
+
+=== summary ===
+               file  events  plane_hits  on_primary  si_pairs  matched crossings
+   sim_vz0_bwd.root     100         433         359       291      291  {1: 359}
+   sim_vz0_fwd.root     100         453         339       268      268  {1: 337}
+ sim_vz100_bwd.root     100         421         333       255      255  {1: 323}
+ sim_vz100_fwd.root     100         929         340       248      248  {1: 316}
+sim_vzm100_bwd.root     100         644         331       262      262  {1: 331}
+sim_vzm100_fwd.root     100         494         313       215      215  {1: 291}
+
+Step 9e smoke checks: PASS
+exit status: 0

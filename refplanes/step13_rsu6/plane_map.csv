@@ -1,0 +1,11 @@
+disk,side,z_disk_mm,z_plane_mm,rmin_mm,rmax_mm,system,barrel,layer,center_x_mm,center_y_mm,r_inner_about_center_mm,r_outer_about_center_mm,uncovered_max_depth_mm,uncovered_area_mm2,note
+ED0,negative,-250.000,-244.000,36.757,250.000,55,2,0,0.000,0.000,36.757,250.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+ED1,negative,-450.000,-444.000,36.757,425.000,55,2,1,0.000,0.000,36.757,425.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+ED2,negative,-650.000,-644.000,36.757,450.000,55,2,2,0.000,0.000,36.757,450.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+ED3,negative,-850.000,-844.000,38.500,450.000,86,2,0,1.082,0.000,39.582,451.082,2.111,230.2,"openings not nested: enclosing circle leaves a sliver; lepton (x=0.000, y=0.000, r=38.500) hadron (x=21.379, y=0.000, r=19.285) mm"
+ED4,negative,-1020.000,-1014.000,38.500,450.000,87,2,0,3.208,0.000,41.708,453.208,6.048,645.8,"openings not nested: enclosing circle leaves a sliver; lepton (x=0.000, y=0.000, r=38.500) hadron (x=25.630, y=0.000, r=19.285) mm"
+HD0,positive,250.000,244.000,36.757,250.000,54,3,0,0.000,0.000,36.757,250.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+HD1,positive,450.000,444.000,36.757,425.000,54,3,1,0.000,0.000,36.757,425.000,0.000,0.0,"coincident openings; lepton (x=0.000, y=0.000, r=36.757) hadron (x=0.000, y=0.000, r=36.757) mm"
+HD2,positive,700.000,694.000,39.048,450.000,56,3,0,-0.990,0.000,40.038,450.990,0.000,0.0,"lepton inside hadron opening; lepton (x=0.000, y=0.000, r=36.757) hadron (x=-0.990, y=0.000, r=40.038) mm"
+HD3,positive,950.000,944.000,39.045,450.000,57,3,0,-6.616,0.000,45.661,456.616,0.000,0.0,"lepton inside hadron opening; lepton (x=0.000, y=0.000, r=36.757) hadron (x=-6.616, y=0.000, r=45.661) mm"
+HD4,positive,1200.000,1194.000,39.042,450.000,58,3,0,-12.242,0.000,51.284,462.242,0.000,0.0,"lepton inside hadron opening; lepton (x=0.000, y=0.000, r=36.757) hadron (x=-12.242, y=0.000, r=51.284) mm"

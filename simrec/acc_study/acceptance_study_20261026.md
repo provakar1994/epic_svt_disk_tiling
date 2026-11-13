@@ -918,3 +918,272 @@ at |y| ~ 15-50 mm) was a denominator artefact of nomargin, not inefficiency.
       18.5 mm sensor sits over the ~22 mm channel opening.
     - Bends are drawn with the 5 mm mid-surface radius (straight flat 6.5 mm).
     - The 2 mm sensor overlap and the steep-track argument are unchanged.
+
+## Step 13e: acceptance_v4_step13 preparation (2026-11-12)
+
+Prepared by an agent for the coordinator. Goal: rerun the acceptance_v3_refplanes campaign on the
+Step 13 SVT endcap geometry. The sim campaign was NOT submitted. Nothing was committed. No v3 file
+was edited, moved or overwritten (no retention moves were needed; all Step 13 files are new).
+
+**Geometry identity** (`refplanes/step13/identity_check_step13.sh`, values from
+`logs/freeze_install_step13.txt`): EPIC HEAD 78ade46865d0 (20261110_ES/rsu_opt), checkout and
+installed `silicon_disks_modules.xml` sha256 6d04bd66..., `install/lib/libepic.so` sha256 9ccf1a66....
+The top-level `epic_craterlake_tracking_only.xml` (c0141309...) is unchanged from v3 and does not
+identify the geometry. install/ was not rebuilt. Every Step 13 runner and both task-list scripts
+refuse to run if this check fails.
+
+**Reference-plane overlay (Step 13)**: new directory `proj_svt_disk_tiling/refplanes/step13/`.
+- `generated/epic_craterlake_tracking_only_refplanes.xml` (sha256 8ab13984...) + provenance sidecar,
+  made by `make_refplanes_xml_step13.sh` (copy of `make_refplanes_xml.sh`; refuses to overwrite).
+- `silicon_disks_refplanes.xml` and `npsim_refplanes_steering.py` are byte-identical copies of the
+  v3 files (sha256 172cc1e1... / 23665eab...), kept here so the v4 inputs are frozen.
+- Plane positions: all plane z/radii are expressions of `definitions_craterlake.xml` constants
+  (disk z, rmin/rmax, beam-pipe openings), which are unchanged between EPIC 311634084 and 78ade4686
+  (only silicon_disks_modules.xml, the tiling CSVs and SiEndcapModuleTracker_geo.cpp changed; the
+  disk layer envelope is still z_disk +/- 5 mm). The regenerated `step13/plane_map.csv` is
+  byte-identical to v3 `refplanes/plane_map.csv` (sha256 f5818402...). **No plane moved.**
+- The v3 overlay in `refplanes/generated/` is untouched.
+
+**Gates (Step 13 copies of the v3 checks; reports in `refplanes/step13/`)**
+- `plane_clearance_9a.txt`: PASS (clearance table identical to v3; gap plane-to-envelope 0.95 mm).
+- `validate_refplanes_9b.txt`: Step 9b validator PASS; plane_map identical to v3.
+- `plane_clearance_9a_crosscheck.txt`: PASS (0 non-world points in every plane slab).
+- `check_refplanes_9c_root.txt`: dd_web_display export OK; ROOT checkOverlaps 0.01: 0 'ovlp' lines,
+  0 illegal overlaps.
+- `check_refplanes_9c_geant4.txt` (Slurm 61212507, `submit_geant4_9c_step13.sh`, 05:03-05:23 UTC):
+  checkOverlaps.py -t 0.1 exit 0, 0 GeomVol1002, 0 G4Exception. PASS.
+- `check_smoke_9e.txt` (6 x 100 events, same seeds as v3, `run_smoke_9e.sh`; output
+  /pscratch/sd/p/pdatta/svt_disk_tiling/refplanes_step13/smoke/): **PASS** on all sub-gates
+  (v3 failed two self-imposed sub-gates as written on a physical low-p primary). E: 100 % of silicon
+  (primary, disk) pairs have a plane hit in all 6 files.
+- `check_plane_coverage.txt` (2 x 10k overlay, vz = 0, seeds 201/202, `run_coverage_samples_step13.sh`,
+  output .../refplanes_step13/coverage_9f/, + the 6 smoke files): v2 planes: 0 primaries with a
+  silicon hit in the plane hole on every disk, 0 hits beyond r_out (as v3).
+
+**Task list**: `prepare_acceptance_tasks_v4_step13.sh` (copy of prepare_acceptance_tasks_refplanes.sh)
+-> `task_lists/acceptance_v4_step13/{tasks.txt,manifest.tsv,identity_check.txt}`.
+- Same physics as v3 (pi+, 0.5-20 GeV, eta 0.6..3.8 / -3.8..-0.6, vz 0/+100/-100 mm, 6 configs x 50
+  chunks x 100k = 30M); manifest columns other than the seed are identical to v3 (diffed in a dry run).
+- Seeds 44000001-44005050 (base 44000000); no overlap with the 4 earlier manifests.
+- ACC_XML/ACC_STEERING = the step13 overlay/steering; tasks.txt header records the ACC_XML sha256 and
+  the identity check. Output root /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13/.
+- Generation log: `logs/prepare_acceptance_tasks_v4_step13_20261112.txt`.
+
+**Smoke test of the real task lines**: `run_smoke_test_20261112_v4_step13.sh` ran tasks 101 and 151
+(vz = +100, chunk 001, both eta signs) through run_sim.sh exactly as listed, with 200 events and the
+output moved to /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/. Two tasks
+because the extractor needs both sides of a vertex. Checks: `check_smoke_test_20261112_v4_step13.sh`
+-> `logs/check_smoke_test_20261112_v4_step13.txt`.
+- Both completed (68 s wall for both in parallel, mostly initialisation); 200 events each.
+- SVTDiskRefPlaneHits, TrackerEndcapHits, SiBarrelHits, VertexBarrelHits, MCParticles present and
+  non-empty. 0 G4Exception, 0 fatal, 0 Traceback lines.
+- `validate_refplanes_shards_20261106.py` on the extracted shards (Step 13 plane map): OVERALL PASS,
+  0 silicon hits without a plane crossing, 0 off-plane first crossings, max |dz| 0.
+- check_smoke_9e.py on these two files: all gates pass except the self-imposed C sub-gate
+  (clean min |p_plane|/|p_gen| >= 0.95) in the forward file: one primary (event 129, 0.886 GeV,
+  eta 3.715) has HD3 and HD4 hits both at 0.922. `refplanes/step13/diagnose_low_p_primary_smoke_v4.txt`:
+  same signature as the v3 case judged physical (very forward primary along the beam pipe, momentum
+  lost before HD3, both planes agree, the particle continues). Not treated as a plane defect.
+- Timing: the Step 13 6 x 100-event smoke runs took 51-57 s each (v3: 48-52 s); the 10k coverage runs
+  took 18-21 min (v3 9f overlay: 15-17 min), on a heavily loaded login node (load ~60). Not a clean
+  comparison; v3 needed 2h40m of a 3h limit, so --time=04:00:00 is recommended as a margin.
+
+**Submit (coordinator; not done here)**, from simrec/acc_study:
+`sbatch --time=04:00:00 --job-name=svt-v4-sim submit_premium_packed.sh task_lists/acceptance_v4_step13/tasks.txt`
+
+**Reconstruction (prepared, not run)**: `prepare_recon_tasks_v4_step13.sh MATERIAL_MAP_CBOR
+EXPECTED_SHA256 [TASK_LIST_NAME]` (copy of prepare_recon_tasks_v3_step8q.sh; default name
+acceptance_v4_step13_rec_step13; reads task_lists/acceptance_v4_step13/manifest.tsv; checks the map
+sha256 and the Step 13 identity; refuses before writing anything if any of the 300 sim files is
+missing). Then `sbatch --time=01:00:00 --job-name=svt-v4-rec submit_premium_packed.sh
+task_lists/acceptance_v4_step13_rec_step13/tasks.txt`.
+
+**Open items for the analysis of v4**
+- `run_extract_refplanes.sh` and `run_refplane_efficiency.sh` default to the v3 campaign root,
+  `extracted/acceptance_v3_refplanes`, and `refplanes/plane_map.csv` (identical content); pass the v4
+  campaign root and new output dirs explicitly.
+- `run_refplane_efficiency.sh` hard-codes the 20261001 rows table
+  (`20261001_ES/SVT_endcap_corrugation_rows_33_36.csv`) for the A/B row-family split; Step 13 uses
+  per-disk `20261110_ES/rsu_opt/<disk>_rows.csv`. A v4 copy is needed before the family A/B results
+  are meaningful.
+- Submitted (coordinator, 2026-11-13 ~05:40 UTC, after reviewing the Step 13e gates): sim campaign
+  Slurm 61213457 (`sbatch --time=04:00:00 --job-name=svt-v4-sim submit_premium_packed.sh
+  task_lists/acceptance_v4_step13/tasks.txt`). Material map 61213413 and disk scan 61213414 run in
+  parallel (logs/rsu_opt_endcap_20261004.md, Step 13d). Recon follows once both sim and map finish.
+
+## Step 13f: v4 analysis scripts prepared (2026-11-13)
+
+Prepared by an agent; nothing run at full scale, nothing committed, no v3 script or result edited
+(all new files; no retention moves). Sim job 61213457 was still running.
+
+**New inputs for the Step 13 geometry**
+- `geometry/active_silicon_rectangles_step13.csv` (sha256 1bbdb45d...), from
+  `run_dump_active_silicon_step13.sh` (Step 13 copy of run_dump_active_silicon.sh: identity check
+  first, refuses to overwrite; eic_xl 26.09.0 container, 19 s). Log
+  `logs/dump_active_silicon_step13_20261113T052629Z.log`. Same box counts per disk as the v3 dump and
+  identical box xy centres; sensor z moved by 0.036 mm (Step 13 stack). The active outline is
+  therefore the same in xy, but v4 uses its own dump.
+- `geometry/row_families_20261110_ES_rsu_opt.csv` (sha256 b2cb6aca...), from
+  `make_row_families_20261110.py` (report `logs/make_row_families_20261110.txt`). The delivered
+  `20261110_ES/rsu_opt/<disk>_rows.csv` has no family column (schema disk_id,row_index,row_type,
+  x_outer_mm,row_y_mm,facet_z_mm,half_pitch_mm), so the converter writes the analysis format:
+  pitch = 2 half_pitch, family A if 36 mm, B if 33 mm, surface_offset = z_center - facet_z;
+  BLOCKED rows kept. Check against the Step 13 sensitive boxes: |box y centre - nearest row_y| is
+  4.659 mm (half an RSU) on every box with y as given, and up to 6.16 mm with y flipped on the
+  asymmetric disks, so row_y is global EPIC y (as for 20261001). Family-A y ranges differ from the
+  20261001 table by < 1 mm (ED4 [-215.46, 233.30) vs [-216, 234)).
+
+**Scripts (acc_study)**
+- `run_extract_refplanes_v4_step13.sh <vz>`: copy of run_extract_refplanes.sh; v4 campaign root,
+  `extracted/acceptance_v4_step13`, `refplanes/step13/plane_map.csv`; refuses unless 50 sim files and
+  no sim_*.tmp.* per side (EXPECTED_FILES_PER_SIDE override for smoke tests).
+- `run_refplane_efficiency_v4_step13.sh [vz...]`: copy of run_refplane_efficiency.sh; output
+  `results/refplane_efficiency_v5/`, the rows and active CSVs above, step13 plane map; refuses
+  without extraction manifest and 50 shards per side. analyze_refplane_efficiency.py is unchanged
+  and already has the v4 presentation (nomargin not plotted).
+- `compare_refplane_v3_v4.py`: v3 = `results/refplane_efficiency_v4` (newest v3 presentation,
+  numbers equal to v1-v3), v4 = `results/refplane_efficiency_v5`. Per vertex and disk: fid, active,
+  nomargin, family A/B (fid, active), sl_fid reached fraction and straight-line efficiency;
+  v3, v4, diff +- sqrt(e3(1-e3)/N3 + e4(1-e4)/N4) and pull. Counts from the CSVs; the summary.txt
+  integrated table is parsed and must agree to 0.01 points.
+- Driver `../run_v4_step13_phase3.sh STEP13_MAP_SHA256|none [all|acceptance|tracking] [--check-only]`
+  (extraction of 3 vertices in parallel, analysis, comparison; then the tracking part). All steps
+  run in conda `tracking`, as in v3. Logs: `logs/phase3_v4_step13_<UTC>.log` + the per-step logs.
+
+**Smoke test** (200-event vz = +100 files, both sides; output
+`/pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/smoke_20261112_v4_step13/analysis_test_20261113/`):
+extraction (log `logs/extract_refplanes_v4_step13_vz_p100mm_20261113T0528*Z.log`), analysis (50 s,
+log `logs/refplane_efficiency_v4_step13_20261113T0529*Z.log`; 39 files incl. overview with fid/active
+bars only) and comparison against v3 vz = +100 all ran without errors. Numbers meaningless (N ~ 100).
+Gates refused correctly on the running campaign (0/50 sim files, 50 sim_*.tmp.*). `--check-only` runs
+of the driver left small gate logs in `logs/phase3_v4_step13_20261113T0534*Z.log` (the first one shows
+a since-fixed false "output exists" line).
+
+**After sim + recon**, from `simrec/`: `./run_v4_step13_phase3.sh <map sha256>` (or
+`./run_v4_step13_phase3.sh none acceptance` as soon as the sim is done). Expected ~40 min on a login
+node from the v3 logs (extraction ~16 min, analysis ~9 min, tracking ~15 min).
+- Sim 61213457: COMPLETED 02:38:45, 300/300 task logs "Completed task", 0 logs with
+  G4Exception/Traceback/FATAL/Segmentation; sim file sizes equal v3 (e.g. vz0 fwd chunk 001 250.0 vs 250.9 MB).
+- Recon: `./prepare_recon_tasks_v4_step13.sh matmap/step13_20261113T054800Z/material-map_map.cbor cba82219…`
+  -> task_lists/acceptance_v4_step13_rec_step13 (300 tasks), Slurm 61217238. Acceptance analysis started in
+  parallel: `simrec/run_v4_step13_phase3.sh none acceptance`.
+
+## 2026-11-13: acceptance_v4_step13 results (refplane_efficiency_v5)
+
+`results/refplane_efficiency_v5/compare_v3_v4.{txt,csv}`. vz = 0 fid: v4 - v3 within -0.01..+0.06 pt on
+all disks. Displaced vertices: ED1 +0.08 (4.7 sigma) and ED0 +0.09 at vz = -100; HD0 +0.11 (3.9 sigma) and
+HD1 +0.05 at vz = +100 -- steep tracks on the disk nearest the vertex; cause not yet traced (row layout /
+Step 12 corrugation suspected). Summary: `logs/overnight_step13_summary_20261113.md`.
+
+## Step 14b: acceptance_v4_step13_rsu6 preparation (2026-11-13)
+
+Prepared by an agent for the coordinator: the acceptance_v4_step13 campaign for the 20261110_ES/**rsu6**
+tiling scenario on the same frozen Step 13 install (EPIC 78ade4686, modules XML 6d04bd66..., libepic.so
+9ccf1a66...; install/ not rebuilt). Sim campaign NOT submitted, nothing committed, no v3/v4 script edited
+(all new files/copies; no retention moves needed).
+
+**Geometry**: frozen overlay `proj_svt_disk_tiling/geometry_overlays/step13/rsu6/` made by
+`refplanes/step13_rsu6/make_geometry_overlay_rsu6.sh` (= `logs/make_svt_overlay.sh 20261110_ES rsu6`,
+OVERLAY_ROOT=geometry_overlays/step13, run from refplanes/step13_rsu6/, DETECTOR_PATH = install); report
+`make_geometry_overlay_rsu6.txt`. tracking-only XML sha256 453fda16..., provenance.txt sha256 ca9d23b5....
+The Step 14a material agent uses the same directory (it added `provenance_step14a.txt` and a material-map XML).
+The installed and source 20261110_ES/rsu6 CSVs are identical (diff -r), so the CWD question is moot, but
+every rsu6 runner still starts in a directory without `compact/` (container wrapper
+`refplanes/step13_rsu6/eic_exec_rsu6.sh` cds to step13_rsu6/; task lines start with `cd simrec/acc_study &&`).
+Identity: `refplanes/step13_rsu6/identity_check_step13_rsu6.sh` = Step 13 identity + overlay provenance
+(commit, replacement, three overlay sha256 vs provenance and frozen values, installed rsu6 CSV set sha256).
+
+**Reference-plane overlay** `refplanes/step13_rsu6/` (copies of the step13 gates; plane XML and steering
+byte-identical): `generated/epic_craterlake_tracking_only_rsu6_refplanes.xml` (sha256 d4e19042...) = rsu6
+tracking-only overlay + the plane include after the absolute silicon_disks_modules_rsu6.xml include.
+Gates (`run_gates_static_step13_rsu6.sh`, reports in step13_rsu6/):
+- 9a clearance PASS (table identical to step13); 9a cross-check PASS (0 non-world points).
+- 9b validator PASS; plane_map.csv IDENTICAL to step13 (f5818402...).
+- 9c ROOT: 0 ovlp, 0 illegal overlaps. 9c Geant4 (Slurm 61226451, 17m44s, `submit_geant4_9c_step13_rsu6.sh`):
+  exit 0, 0 GeomVol1002, 0 G4Exception.
+- 9e smoke (6 x 100 ev, seeds 101-106, /pscratch/.../refplanes_step13_rsu6/smoke): PASS, E = 100 % in all files.
+- Plane coverage (2 x 10k, seeds 201/202 + smoke files): v2 planes 0 hole primaries, 0 beyond r_out.
+- New: `count_svt_modules.sh` (DD4hep, module DetElements): rsu6 overlay and rsu6 refplane overlay 2150
+  (N 76/236/766, P 76/236/760), installed rsu_opt 2164.
+
+**Task list** `prepare_acceptance_tasks_v4_step13_rsu6.sh` -> `task_lists/acceptance_v4_step13_rsu6/`
+(log `logs/prepare_acceptance_tasks_v4_step13_rsu6_20261113.txt`). Physics identical to v4; task lines equal
+v4's apart from the `cd` prefix, ACC_XML/ACC_STEERING and the output root (diffed in a dry run). Seeds
+44000001-44005050, deliberately the same as acceptance_v4_step13: manifest.tsv must be byte-identical to
+v4's (sha256 9ea33962...). The seed-overlap check allows only that paired manifest and task lists derived
+from it that generate no events (all tasks `run_sim.sh recon` on the v4 output root, i.e.
+acceptance_v4_step13_rec_step13 -- it repeats the v4 seeds); tested: a fake overlapping manifest and an
+altered paired manifest are both rejected. Output /pscratch/sd/p/pdatta/svt_disk_tiling/acc_study/acceptance_v4_step13_rsu6/.
+
+**Seed caveat (important)**: same seeds do NOT give identical primaries. npsim (no
+`--random.enableEventSeed`) draws gun and transport from one random stream; in smoke task 151 events 0-1
+have identical primaries, from event 2 on they differ (rsu_opt vs rsu6). The two campaigns are
+statistically equivalent but effectively independent; the comparison scripts use independent-sample errors.
+A truly paired design would need `--random.enableEventSeed` in BOTH scenarios (i.e. rerunning rsu_opt).
+
+**Smoke test** `run_smoke_test_20261113_v4_step13_rsu6.sh` (tasks 101 + 151, 200 events, 57 s) and
+`check_smoke_test_20261113_v4_step13_rsu6.sh` -> `logs/check_smoke_test_20261113_v4_step13_rsu6.txt`:
+200 events each, 0 G4Exception/fatal/Traceback; 9e checks PASS; shard validation OVERALL PASS (0 problems).
+Collections: the forward file has 0 SiBarrelHits (v4: 39) -- a statistical effect of the different
+primaries (only 1 primary below eta 0.7 vs 8 in v4; the barrel is reached from vz = +100 only near eta 0.6);
+the rsu6 coverage sample has 2381 SiBarrelHits per 10k (rsu_opt 2229). Not a geometry defect.
+Proof of rsu6: (1) sim logs record ACC_XML sha256 d4e19042... (rsu6 refplane overlay); (2)
+`check_scenario_hits_rsu6.py`: 1421/1421 TrackerEndcapHits inside rsu6 active boxes vs 1384/1421 (97.4 %)
+inside rsu_opt boxes; on the 10k coverage samples 74317/74317 vs 97.7 %; negative control (Step 13 rsu_opt
+sample): rsu6 99.64 %, rsu_opt 100 % (report `refplanes/step13_rsu6/check_scenario_hits_coverage.txt`).
+
+**Submit (coordinator; not done)**, from simrec/acc_study:
+`sbatch --time=04:00:00 --job-name=svt-v4r6-sim submit_premium_packed.sh task_lists/acceptance_v4_step13_rsu6/tasks.txt`
+
+**Recon (prepared, not run)**: `prepare_recon_tasks_v4_step13_rsu6.sh MAP_CBOR SHA256 [NAME]` (default
+acceptance_v4_step13_rsu6_rec_step13). Sets ACC_XML = rsu6 tracking-only overlay (run_sim.sh recon passes it
+to eicrecon as -Pdd4hep:xml_files; v4 left it unset = installed rsu_opt), requires the map's provenance.txt
+to list 453fda16..., checks identity, refuses before writing if any sim file is missing (tested). Then
+`sbatch --time=01:00:00 --job-name=svt-v4r6-rec submit_premium_packed.sh task_lists/<name>/tasks.txt`.
+
+**Analysis prep**
+- `run_geometry_inputs_v4_step13_rsu6.sh`: `geometry/active_silicon_rectangles_step13_rsu6.csv` (rsu6 overlay
+  dump, 154800 boxes vs 152628 rsu_opt; sha256 ee2469eb...) and `geometry/row_families_20261110_ES_rsu6.csv`
+  (from the installed rsu6 rows). The delivered rsu6 `<disk>_rows.csv` are byte-identical to rsu_opt's on
+  all 10 disks, so the converted table equals the rsu_opt one (b2cb6aca...). Log
+  `logs/geometry_inputs_v4_step13_rsu6_20261113T141338Z.log`.
+- Copies: `run_extract_refplanes_v4_step13_rsu6.sh`, `run_refplane_efficiency_v4_step13_rsu6.sh` (->
+  results/refplane_efficiency_v5_rsu6), `../treffi_study/run_v4_step13_rsu6_analysis_20261113.sh` (->
+  treffi_study/out/v4_rsu6_*; extra gate: every vz = 0 rec log lists the rsu6 XML sha256; refuses the v3 and
+  rsu_opt map sha256), driver `../run_v4_step13_rsu6_phase3.sh RSU6_MAP_SHA256|none [all|acceptance|tracking] [--check-only]`.
+- Comparisons (A = rsu_opt v4, B = rsu6 v4, configurable dirs/labels): `compare_refplane_scenarios.py`
+  (reuses compare_refplane_v3_v4.py functions) and `../treffi_study/compare_tracking_scenarios_20261113.py`
+  (reuses compare_v3_v4_20261113.py); both self-tested on the rsu_opt outputs (diff 0).
+- Chain smoke test `run_analysis_smoke_v4_step13_rsu6.sh` on the 200-event files: extraction, analysis (39
+  files) and comparison ran without errors (output .../smoke_20261113_v4_step13_rsu6/analysis_test_20261113/).
+  The driver `--check-only` refuses correctly (0/50 sim files).
+
+**After sim + recon**, from simrec/: `./run_v4_step13_rsu6_phase3.sh none acceptance` (as soon as the sim is
+done), then `./run_v4_step13_rsu6_phase3.sh <rsu6 map sha256> tracking`.
+- Coordinator (2026-11-13): seeds kept equal to v4 (44000001-44005050) although they do NOT pair the
+  samples (npsim draws gun and transport from one stream; primaries diverge after event 1). The two
+  campaigns are effectively independent; the comparison uses independent binomial errors, which is
+  correct. True pairing (--random.enableEventSeed in both) judged not worth rerunning rsu_opt.
+  Sim submitted: `sbatch --time=04:00:00 --job-name=svt-v4r6-sim submit_premium_packed.sh
+  task_lists/acceptance_v4_step13_rsu6/tasks.txt`.
+
+- Step 14b progress (2026-11-13): sim `acceptance_v4_step13_rsu6` Slurm 61227160 COMPLETED 2:40:50; 300/300 sim files,
+  300/300 logs end with "Finished:"; only error lines are the known envelope26 bounding-box message (all 300) and
+  two Geant4 GeomField1001 "proposed step is zero" warnings (vz+100 chunk 048, vz-100 chunk 049; runs finished).
+  Recon tasks `task_lists/acceptance_v4_step13_rsu6_rec_step13` (ACC_XML = rsu6 tracking overlay 453fda16…,
+  ACC_MATERIAL_MAP = matmap/step13_rsu6_20261113T143431Z, sha256 c4cf9a3a…), submitted as Slurm 61232634.
+  Acceptance phase-3 gate PASS; `../run_v4_step13_rsu6_phase3.sh none acceptance` started (login node).
+
+- Step 14b acceptance result (2026-11-13): `results/refplane_efficiency_v5_rsu6/compare_rsu_opt_vs_rsu6.{txt,csv}`
+  (rsu6 analysed with its own plane map, rows table and active-silicon outline; independent-sample errors).
+  - D0 is the only real difference: fid ED0/HD0 +0.27/+0.24 pt at vz=0 (97.45 -> 97.71 %, 12-15 sigma),
+    +0.22..+0.34 pt at vz=+-100; active +0.20 pt. Delivered tiling: D0 has 76 six-RSU modules (456 RSUs) in rsu6
+    vs 56 five-RSU + 22 six-RSU (412 RSUs) in rsu_opt.
+  - All other disks within +-0.03 pt (fid/active), except nomargin (full annulus) ED4 -0.16 pt (vz=0, 6 sigma),
+    -0.17 (+100), -0.09 (-100): ED4 has 252 modules in rsu6 vs 256 in rsu_opt (1512 vs 1519 RSUs).
+  - Cost (material scan): D0 x/X0 +7.8 % (0.311 -> 0.336 % X0); other disks within +0.4 %.
+- Step 14b plots (2026-11-13): `talk/20261113_rsu6_compare/rsu_opt_vs_rsu6_vertex_bars.py` (runner
+  `run_rsu_opt_vs_rsu6_vertex_bars.sh`) -> `results/talk/20261113_rsu6_compare/rsu_opt_vs_rsu6_fid_efficiency.pdf`
+  (5 pages: slide-3-style vertex bars for rsu_opt and rsu6; rsu_opt vs rsu6 per vertex -10/0/+10 cm with
+  difference and pull per disk), page PNGs and the printed table `rsu_opt_vs_rsu6_vertex_bars.txt`. Inputs:
+  results/refplane_efficiency_v5{,_rsu6}/vz_*/integrated_efficiency.csv, selection fid.
