@@ -7,6 +7,8 @@ separate from EPIC (detached in EPIC commit `7cb35391f`).
 
 ## Read first
 
+0. `HANDOFF.md` — entry point since the 2026-11-13 handover: status, how-tos, open items,
+   and which of the documents below matter. Start there.
 1. `logs/rsu_opt_endcap_20261004.md` — canonical implementation log. Read the
    last few sections for current status before doing anything.
 2. `logs/plan_rsu_opt_endcap_20261004.md` — plan for the `rsu_opt` delivery.

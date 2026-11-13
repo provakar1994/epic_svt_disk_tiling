@@ -1,0 +1,73 @@
+diff --git a/scripts/material_map/run_material_map_validation.sh b/scripts/material_map/run_material_map_validation.sh
+index 5958798ba..ff9453c8e 100755
+--- a/scripts/material_map/run_material_map_validation.sh
++++ b/scripts/material_map/run_material_map_validation.sh
+@@ -3,7 +3,9 @@ set -e
+ # script for material map validation with ACTS python bindings
+ # run as : ./run_material_map_validation.sh --nevents 1000
+ # Shujie Li, 03. 2024 (https://github.com/eic/snippets/pull/3)
+-DETECTOR_CONFIG="epic_craterlake_material_map"
++# DETECTOR_CONFIG may be set by the caller (e.g. epic_craterlake_tracking_only) so the map
++# is built from the same XML used for simulation and reconstruction.
++DETECTOR_CONFIG="${DETECTOR_CONFIG:-epic_craterlake_material_map}"
+ # Check if DETECTOR_PATH are set
+ if [[ -z ${DETECTOR_PATH} ]] ; then
+   echo "You must set \$DETECTOR_PATH before running this script."
+@@ -84,6 +86,7 @@ export ACTS_SEQUENCER_DISABLE_FPEMON=1
+ nevents=1000
+ nparticles=5000
+ verbose=0
++skip_current=0
+ prefix=""
+ suffix=""
+ 
+@@ -94,6 +97,7 @@ function print_the_help {
+   echo "          --nparticles    Number of particles per event (default: $nparticles)"
+   echo "          --prefix        Prefix for generated filenames (default: empty)"
+   echo "          --suffix        Suffix for generated filenames (default: empty)"
++  echo "          --skip-current-map-validation  Skip validation with calibrations/materials-map"
+   echo "          -v,--verbose    Enable verbose output"
+   echo "          -h,--help       Print this message"
+   echo ""
+@@ -128,6 +132,10 @@ do
+       shift # past value
+       shift
+       ;;
++    --skip-current-map-validation)
++      skip_current=1
++      shift
++      ;;
+     -v|--verbose)
+       verbose=1
+       shift
+@@ -207,16 +215,20 @@ echo "::group::----Prepare validation rootfile--------"
+ # Use the generated material map (Acts appends _map to the base name during generation,
+ # so we need to use matFileBase_map for validation)
+ python material_validation_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --outputName ${propFile}_regenerated --matFileBase ${matFileBase}_map -n ${nevents}  -t ${nparticles}
++if [[ "$skip_current" -eq 0 ]]; then
+ python material_validation_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --outputName ${propFile}_current --matFileBase calibrations/materials-map -n ${nevents} -t ${nparticles}
++fi
+ echo "::endgroup::"
+ 
+ echo "::group::-------Comparison plots---------"
+ rm -rf Validation/regenerated
+ mkdir -p Validation/regenerated
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map.C'("'${propFile}_regenerated'.root","'${trackFile}'","Validation/regenerated")'
++if [[ "$skip_current" -eq 0 ]]; then
+ rm -rf Validation/current
+ mkdir -p Validation/current
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map.C'("'${propFile}_current'.root","'${trackFile}'","Validation/current")'
++fi
+ 
+ rm -rf Surfaces
+ mkdir -p Surfaces/regenerated/ratio_plot
+@@ -229,7 +241,9 @@ mkdir -p Surfaces/dist_plot
+ mkdir -p Surfaces/1D_plot
+ 
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C'("'${propFile}_regenerated'.root","'${trackFile}'",-1,"Surfaces/regenerated/ratio_plot","Surfaces/regenerated/prop_plot","Surfaces/regenerated/map_plot","'${geoFile}'")'
++if [[ "$skip_current" -eq 0 ]]; then
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C'("'${propFile}_current'.root","'${trackFile}'",-1,"Surfaces/current/ratio_plot","Surfaces/current/prop_plot","Surfaces/current/map_plot","'${geoFile}'")'
++fi
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_dist.C'("'${trackFile}'",-1,"Surfaces/dist_plot","'${geoFile}'")'
+ root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_1D.C'("'${trackFile}'",-1,"Surfaces/1D_plot","'${geoFile}'")'
+ echo "::endgroup::"

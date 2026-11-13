@@ -1,0 +1,249 @@
+#!/bin/bash
+set -e
+# script for material map validation with ACTS python bindings
+# run as : ./run_material_map_validation.sh --nevents 1000
+# Shujie Li, 03. 2024 (https://github.com/eic/snippets/pull/3)
+# DETECTOR_CONFIG may be set by the caller (e.g. epic_craterlake_tracking_only) so the map
+# is built from the same XML used for simulation and reconstruction.
+DETECTOR_CONFIG="${DETECTOR_CONFIG:-epic_craterlake_material_map}"
+# Check if DETECTOR_PATH are set
+if [[ -z ${DETECTOR_PATH} ]] ; then
+  echo "You must set \$DETECTOR_PATH before running this script."
+  exit -1
+fi
+
+# Download required Acts files
+ACTS_VERSION="v46.8.1"
+ACTS_URL="https://github.com/acts-project/acts/raw/"
+ACTS_FILES=(
+  "Examples/Scripts/Python/geometry.py"
+  "Examples/Scripts/Python/material_mapping.py"
+  "Examples/Scripts/Python/material_recording.py"
+  "Examples/Scripts/Python/material_validation.py"
+  "Examples/Scripts/MaterialMapping/writeMapConfig.py"
+  "Examples/Scripts/MaterialMapping/configureMap.py"
+  "Examples/Scripts/MaterialMapping/GeometryVisualisationAndMaterialHandling.py"
+  "Examples/Scripts/MaterialMapping/Mat_map.C"
+  "Examples/Scripts/MaterialMapping/Mat_map_surface_plot.C"
+  "Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C"
+  "Examples/Scripts/MaterialMapping/Mat_map_surface_plot_dist.C"
+  "Examples/Scripts/MaterialMapping/Mat_map_surface_plot_1D.C"
+  "Examples/Scripts/MaterialMapping/Mat_map_detector_plot.C" # this file is not used, but we need it for patch below
+  "Examples/Scripts/MaterialMapping/materialPlotHelper.cpp"
+  "Examples/Scripts/MaterialMapping/materialPlotHelper.hpp"
+)
+for file in ${ACTS_FILES[@]} ; do
+  if [ ! -f ${file} ] ; then
+    curl --silent --location --create-dirs --output ${file} ${ACTS_URL}/${ACTS_VERSION}/${file}
+    if [ "${file}" = "Examples/Scripts/MaterialMapping/Mat_map.C" ] ; then
+      # help with B0 being cropped
+      patch -p1 <<EOF
+diff -aru a/Examples/Scripts/MaterialMapping/Mat_map.C b/Examples/Scripts/MaterialMapping/Mat_map.C
+--- a/Examples/Scripts/MaterialMapping/Mat_map.C
++++ b/Examples/Scripts/MaterialMapping/Mat_map.C
+@@ -145,7 +145,8 @@
+
+     // 2D map for Validation input
+     TCanvas *VM = new TCanvas("VM","Validation Map") ;
+-    Val_file->Draw("mat_y:mat_z","std::abs(mat_x)<1");
++    Val_file->Draw("sqrt(mat_x**2+mat_y**2):mat_z>>mat_map1","(mat_z>-5000)&(mat_z<8000)");
++    VM->SetGrid();
+
+     eta_0->Draw("Same");
+     eta_1p->Draw("Same");
+EOF
+    fi
+  fi
+done
+# Patch function is possibly unused but retained for future use
+function patch_acts() {
+  local url="$1"
+  local file="$(basename "$1")"
+  if [ ! -e "$file" ]; then
+    wget "$url"
+    patch -p1 --forward --input="$file" || git apply --whitespace=nowarn "$file"
+  fi
+}
+patch_acts https://github.com/acts-project/acts/pull/6010.diff  # geo_id encoding
+patch_acts https://github.com/acts-project/acts/pull/6012.diff  # cbor support
+export PYTHONPATH=$PWD/Examples/Scripts/Python:$PYTHONPATH
+
+# FIXME
+# Disable ACTS FpeMonitor due to unexplained FPEINV in RootMaterialTrackReader
+# FPE summary for Reader: RootMaterialTrackReader
+# FLTINV: (2 times)
+#  0# Acts::MaterialSlab::MaterialSlab(Acts::Material const&, float) in /opt/local/python/acts/../../lib/libActsCore.so
+#  1# ActsExamples::RootMaterialTrackReader::read(ActsExamples::AlgorithmContext const&) in /opt/local/python/acts/../../lib/libActsExamplesIoRoot.so
+#  2# ActsExamples::Sequencer::run()::$_0::operator()() const::{lambda(tbb::blocked_range<unsigned long> const&)#1}::operator()(tbb::blocked_range<unsigned long> const&) const in /opt/local/python/acts/../../lib/libActsExamplesFramework.so
+#  3# ActsExamples::Sequencer::run()::$_0::operator()() const in /opt/local/python/acts/../../lib/libActsExamplesFramework.so
+#  4# ActsExamples::Sequencer::run() in /opt/local/python/acts/../../lib/libActsExamplesFramework.so
+#  5# 0x000070B51DE55640 in /opt/local/python/acts/ActsPythonBindings.cpython-310-x86_64-linux-gnu.so
+#  6# 0x000070B51DE49ACD in /opt/local/python/acts/ActsPythonBindings.cpython-310-x86_64-linux-gnu.so
+#  7# cfunction_call at Objects/methodobject.c:543
+export ACTS_SEQUENCER_DISABLE_FPEMON=1
+
+# Default arguments
+nevents=1000
+nparticles=5000
+verbose=0
+skip_current=0
+prefix=""
+suffix=""
+
+function print_the_help {
+  echo "USAGE:    [--nevents <int>] [--nparticles <int>] [--prefix <str>] [--suffix <str>]"
+  echo "OPTIONAL ARGUMENTS:"
+  echo "          --nevents       Number of events (default: $nevents)"
+  echo "          --nparticles    Number of particles per event (default: $nparticles)"
+  echo "          --prefix        Prefix for generated filenames (default: empty)"
+  echo "          --suffix        Suffix for generated filenames (default: empty)"
+  echo "          --skip-current-map-validation  Skip validation with calibrations/materials-map"
+  echo "          -v,--verbose    Enable verbose output"
+  echo "          -h,--help       Print this message"
+  echo ""
+  echo "  Run material map validation."
+  exit
+}
+
+while [[ $# -gt 0 ]]
+do
+  key="$1"
+  case $key in
+    -h|--help)
+      print_the_help
+      ;;
+    --nevents)
+      nevents=$2
+      shift # past value
+      shift
+      ;;
+    --nparticles)
+      nparticles=$2
+      shift # past value
+      shift
+      ;;
+    --prefix)
+      prefix=$2
+      shift # past value
+      shift
+      ;;
+    --suffix)
+      suffix=$2
+      shift # past value
+      shift
+      ;;
+    --skip-current-map-validation)
+      skip_current=1
+      shift
+      ;;
+    -v|--verbose)
+      verbose=1
+      shift
+      ;;
+    *)    # unknown option
+      #POSITIONAL+=("$1") # save it in an array for later
+      echo "unknown option $1"
+      print_the_help
+      shift # past argument
+      ;;
+  esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+recordingFile="${prefix}geant4_material_tracks${suffix}.root"
+geoFile="${prefix}geometry-map${suffix}.json"
+matFileBase="${prefix}material-map${suffix}"
+matFileFormats="cbor root"  # Generate both CBOR and ROOT output formats
+trackFile="${prefix}material-map${suffix}_mapped.root"
+propFile="${prefix}propagation_material${suffix}"
+
+echo "::group::----GEANTINO SCAN------"
+# output geant4_material_tracks.root
+# The result of the geantino scan will be a root file containing material tracks. Those contain the direction and production vertex of the geantino, the total material accumulated and all the interaction points in the detector.
+python material_recording_epic.py -i ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml -n ${nevents} -t ${nparticles} -o ${recordingFile}
+echo "::endgroup::"
+
+echo "::group::-----MAPPING Configuration-----"
+# map geometry to ${geoFile}
+python geometry_epic.py -i ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml -o "${geoFile%.json}"
+
+# take ${geoFile} and read out ${prefix}config-map${suffix}.json
+configFile="${prefix}config-map${suffix}.json"
+configFileRegen="${prefix}config-map${suffix}_regenerated.json"
+python Examples/Scripts/MaterialMapping/writeMapConfig.py ${geoFile} ${configFile}
+
+# turn on approaches and beampipe surfaces for material mapping
+# you can always manually adjust the mapmaterial flag and binnings in ${configFile}
+python materialmap_config.py -i ${configFile} -o ${configFileRegen}
+
+# turn ${geoFile} into modified ${geoFile} with material binnings
+python Examples/Scripts/MaterialMapping/configureMap.py ${geoFile} ${configFileRegen}
+
+# generate figures to display tracking layers and volumes as seen by ACTS
+rm -rf plots
+mkdir -p plots
+python Examples/Scripts/MaterialMapping/GeometryVisualisationAndMaterialHandling.py --geometry ${geoFile}
+echo "::endgroup::"
+
+
+# input: geant4_material_tracks.root, geometry-map.json
+# output: material-maps.json or cbor. This is the material map that you want to provide to EICrecon, i.e.  -Pacts:MaterialMap=XXX  .Please --matFile to specify the name and type
+#         material-maps_tracks.root(recorded steps from geantino, for validation purpose)
+if [[ "$verbose" -eq 1 ]]; then
+
+  echo "::group::----MAPPING Debugging-----"
+  echo "Volumes by name:"
+  jq -r '.Volumes.entries[] | "vol=\(.volume): \(.value.NAME)"' geometry-map.json
+  echo "Volume surfaces:"
+  jq -r '.Surfaces.entries[] | select(.boundary != null) | "vol=\(.volume)|bnd=\(.boundary): \(.value.type) \(.value.bounds.type) \(.value.bounds.values) rot=\(.value.transform.rotation) pos=\(.value.transform.translation)"' geometry-map.json
+  echo "Layer surfaces:"
+  jq -r '.Surfaces.entries[] | select(.volume < 40 and .layer != null) | "vol=\(.volume)|lay=\(.layer): \(.value.type) \(.value.bounds.type) \(.value.bounds.values) rot=\(.value.transform.rotation) pos=\(.value.transform.translation)"' geometry-map.json
+  echo "::endgroup::"
+
+  sed -i 's/acts\.logging\.INFO/acts.logging.VERBOSE/g' Examples/Scripts/Python/material_mapping.py
+  sed -i 's/navigator = Navigator($/&level=acts.logging.VERBOSE,/' Examples/Scripts/Python/material_mapping.py
+  sed -i 's/propagator = Propagator(stepper, navigator)$/propagator = Propagator(stepper, navigator, loglevel=acts.logging.VERBOSE)/' Examples/Scripts/Python/material_mapping.py
+fi
+
+echo "::group::----MAPPING------------"
+matFormatArgs="--matFileFormat ${matFileFormats}"
+python material_mapping_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --geoFile ${geoFile} --matFileBase ${matFileBase} --inputRootFile ${recordingFile} ${matFormatArgs}
+echo "::endgroup::"
+
+echo "::group::----Prepare validation rootfile--------"
+# output propagation-material.root
+# Use the generated material map (Acts appends _map to the base name during generation,
+# so we need to use matFileBase_map for validation)
+python material_validation_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --outputName ${propFile}_regenerated --matFileBase ${matFileBase}_map -n ${nevents}  -t ${nparticles}
+if [[ "$skip_current" -eq 0 ]]; then
+python material_validation_epic.py --xmlFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --outputName ${propFile}_current --matFileBase calibrations/materials-map -n ${nevents} -t ${nparticles}
+fi
+echo "::endgroup::"
+
+echo "::group::-------Comparison plots---------"
+rm -rf Validation/regenerated
+mkdir -p Validation/regenerated
+root -l -b -q Examples/Scripts/MaterialMapping/Mat_map.C'("'${propFile}_regenerated'.root","'${trackFile}'","Validation/regenerated")'
+if [[ "$skip_current" -eq 0 ]]; then
+rm -rf Validation/current
+mkdir -p Validation/current
+root -l -b -q Examples/Scripts/MaterialMapping/Mat_map.C'("'${propFile}_current'.root","'${trackFile}'","Validation/current")'
+fi
+
+rm -rf Surfaces
+mkdir -p Surfaces/regenerated/ratio_plot
+mkdir -p Surfaces/regenerated/prop_plot
+mkdir -p Surfaces/regenerated/map_plot
+mkdir -p Surfaces/current/ratio_plot
+mkdir -p Surfaces/current/prop_plot
+mkdir -p Surfaces/current/map_plot
+mkdir -p Surfaces/dist_plot
+mkdir -p Surfaces/1D_plot
+
+root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C'("'${propFile}_regenerated'.root","'${trackFile}'",-1,"Surfaces/regenerated/ratio_plot","Surfaces/regenerated/prop_plot","Surfaces/regenerated/map_plot","'${geoFile}'")'
+if [[ "$skip_current" -eq 0 ]]; then
+root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_ratio.C'("'${propFile}_current'.root","'${trackFile}'",-1,"Surfaces/current/ratio_plot","Surfaces/current/prop_plot","Surfaces/current/map_plot","'${geoFile}'")'
+fi
+root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_dist.C'("'${trackFile}'",-1,"Surfaces/dist_plot","'${geoFile}'")'
+root -l -b -q Examples/Scripts/MaterialMapping/Mat_map_surface_plot_1D.C'("'${trackFile}'",-1,"Surfaces/1D_plot","'${geoFile}'")'
+echo "::endgroup::"

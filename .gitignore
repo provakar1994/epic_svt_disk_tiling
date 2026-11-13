@@ -11,6 +11,9 @@ __pycache__/
 /simrec/*
 !/simrec/acc_study/
 !/simrec/treffi_study/
+# phase-3 drivers of the Step 13/14 campaigns (run acceptance + tracking analyses)
+!/simrec/run_v4_step13_phase3.sh
+!/simrec/run_v4_step13_rsu6_phase3.sh
 
 # Acceptance-study outputs and caches; keep the scripts, notebooks, and logs.
 /simrec/acc_study/extracted/
