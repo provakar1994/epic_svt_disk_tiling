@@ -1,0 +1,8 @@
+scenario: /global/cfs/cdirs/m3763/pdatta/epic/compact/tracking/silicon_disks_tiling/20261110_ES/rsu_opt
+modules: 2164
+H = det[LEC->REC, FPC side, sensor normal]; +1 = slide-13 'right handed'
+
+ 1077  delivery_parity_ok  LEC_outer  local_y->sign(y)  FPC_to_midplane  H_opposite_mirror  y>0
+       e.g. ED4 row 0 mod 0 B511 x_eng=-55.89 y=407.25 normal=+1
+ 1087  delivery_parity_ok  LEC_outer  local_y->sign(y)  FPC_to_rim  H_matches_mirror  y<=0
+       e.g. ED4 row 24 mod 0 A601 x_eng=-409.13 y=-9.79 normal=-1

@@ -27,7 +27,10 @@ Older notes (`SVT_ENDCAP_CORRUGATED_MODULE_LOG.md`, `*_HANDOFF.md`,
 
 - `src/SiEndcapModuleTracker_geo.cpp` — module builder and `tiling-directory` reader.
 - `compact/tracking/silicon_disks_modules.xml` — module dimensions/stack constants.
-- `compact/tracking/silicon_disks/{rsu_opt,all_6rsu}/` — byte-for-byte copies of the delivery.
+- `compact/tracking/silicon_disks_tiling/<delivery>/<scenario>/` — byte-for-byte copies of the deliveries:
+  `20261110_ES/{rsu_opt,rsu6}` (production: rsu_opt), `20261110-r_ES/{rsu_opt,rsu6}` (facing-flipped,
+  systematics), `20261001_ES/{rsu_opt,all_6rsu}` (old). Non-production ones load via
+  `logs/make_svt_overlay.sh <delivery> <scenario>`; visual exports via `logs/make_svt_visualize.sh`.
 - `compact/tracking/definitions_craterlake.xml` — disk z, radii, physical beampipe openings.
 
 ## Material scans
@@ -65,7 +68,12 @@ a symlink at their old `scripts/material_map/` path.
 - CSV `z_baseplate_mm` is really the corrugation/facet reference surface, not the baseplate center.
 - Engineer frame to EPIC: `x_EPIC = -x_engineer`; this reflection swaps LEFT/RIGHT chirality.
 - Physical beampipe openings come from the EPIC beam pipe (+5 mm buffer); the delivery's openings only validate source placements.
-- Disk IDs 0–9 map to ED4, ED3, ED2, ED1, ED0, HD0, HD1, HD2, HD3b, HD4 (file is `HD3b_modules.csv`).
+- Disk IDs 0–9 map to ED4, ED3, ED2, ED1, ED0, HD0, HD1, HD2, HD3, HD4 (`HD3_*` files; `HD3b_*` in 20261001).
+- Corrugation (Step 12): frames read `<disk>_rows.csv` from the tiling directory; flat edges = webs centered
+  halfway between rows (our assumption). FPC: Kapton on the sensor side, Al on the baseplate back (all modules).
+- Handedness (Step 13): follow Ernst's POSITIVE/NEGATIVE rule (module_cad_export.py); every bridge FPC points
+  away from y = 0. The Module Definitions PDF Left/Right labels are inconsistent (logs/module_handedness_convention_20261112.md).
+- Delivered placements are used as supplied (no z offsets) since Step 11b; RSU = 33.5 inactive + 14 active + 2.5 Cu um.
 - Modeled sensitive area is intentionally 1.7487% below the catalogue area (inactive strips retained).
 - ACTS material map must be generated from the same detector XML used for reconstruction.
 

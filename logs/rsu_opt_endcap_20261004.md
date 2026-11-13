@@ -3618,3 +3618,319 @@ Full run done (job 60930010, 2026-11-06 14:23-15:43 local, 80.9 min, exit 0): `m
 Only error-like lines: the known `envelope26` bounding-box message. (`Surfaces/current/*` are empty
 directories, created by the runner even when the old-map validation is skipped.)
 PENDING user review of `Validation/regenerated/` and `Surfaces/regenerated/` before the v3 reconstruction.
+
+### Step 11a: stage the 2026-11-10 delivery (2026-11-11)
+
+New delivery `ES_material/20261110/` (README.docx: use `transition/` rsu6 or rsu_opt; adds
+per-disk `*_rows.csv` corrugation rows and the outward/inward module z offset).
+Staged as a parallel delivery `compact/tracking/silicon_disks_tiling/20261110_ES/{rsu_opt,rsu6}/`
+(64 files: catalog, disk_geometry_used, 10x modules/rows/metadata; byte-identical, cp -p) by
+`logs/stage_svt_tiling_20261110_step11a.sh`, report `logs/stage_svt_tiling_20261110_step11a.txt`.
+`20261001_ES/` untouched; XML still selects `20261001_ES/rsu_opt`. New `20261110_ES/README.md`.
+
+Comparison 20261001 rsu_opt -> 20261110 transition/rsu_opt (all 10 disks, matched on
+disk/row/mod): same module count, types, x, y. OUTWARD modules: z_baseplate and z_sensor shifted
+by |dz| = 0.23 mm; z_baseplate - facet_z(rows.csv) = +/-0.23 (was 0); INWARD unchanged (= facet_z).
+Sign of the shift relative to the facing direction not yet checked.
+Interface changes for the loader (TODO next): `HD3b` -> `HD3` file names; catalogue chirality
+`RIGHT/LEFT` -> `NEGATIVE/POSITIVE`; drop the provisional 0.230 mm opposing-face offset (now in the
+data; keep only to be confirmed: the 0.030 mm inward clearance); read `<disk>_rows.csv`
+(row_y, facet_z, half_pitch 16.5/18, BLOCKED/UNBLOCKED) instead of
+`SVT_endcap_corrugation_rows_33_36.csv`. rsu6 = 2150 modules (old all_6rsu had 2160).
+
+### Step 11b: adopt the 20261110 delivery in the builder (2026-11-11, overnight)
+
+Plan: `logs/overnight_plan_20261111.md`. User requests: items 1-3 of Step 11a, Cu inside the 50 um
+sensor, inward FPC split (Kapton front / Al back, provider suggestion 1), then overlap checks for
+rsu_opt and rsu6 ("all_6rsu" of this delivery) and a visualization ROOT file. Not committed.
+
+Pre-checks (host, pandas, run interactively; numbers reproduced by the Step 11c validator):
+- Outward shift sign: for all 1109 (rsu_opt) / 1104 (rsu6) outward modules
+  `sign(z_sensor - z_baseplate) * (z_baseplate - facet_z) = +0.230 mm`, i.e. 0.23 mm away from the
+  carbon along the module normal — identical to the old code offset. Inward: z_baseplate == facet_z.
+- `<disk>_rows.csv` identical for rsu_opt and rsu6; row_y == module y_origin exactly. Versus the
+  reconstructed lattice table: max |dy| 0.789 mm (ED4/3/2, HD2/4), 0.763 (HD3), 0 (ED1/0, HD0/1),
+  always in the A (half pitch 18) region; half_pitch == pitch/2 everywhere; 6-7 BLOCKED rows/disk.
+  The corrugation is still built from the 20261001 table (rows.csv adoption deferred, Step 12).
+
+Files changed (EPIC repo, uncommitted):
+- `src/SiEndcapModuleTracker_geo.cpp`
+  1. Disk 8 files: `HD3_*`, falling back to `HD3b_*` when only those exist (20261001 still loads).
+     The support-table key `HD3b` in `source_corrugation_disk_key` is unchanged (it indexes the
+     20261001 corrugation table).
+  2. Catalogue chirality accepts `NEGATIVE`/`POSITIVE` (mapped to right/left, same as RIGHT/LEFT).
+  3. Sensor: check `inactive + active + Cu == SiEndcapTilingSensor_thickness`; Cu placed as the
+     top 2.5 um of the 50 um component (`copper_center_z = top - Cu/2`); sensor branch = film + 50 um.
+  4. New `ModuleTemplate::baseplate_bottom_offset` (outward: 80 um epoxy; inward: 30 um FPC Al) and
+     helper `tiling_baseplate_bottom_z()`, used by the sensor/corrugation reference helpers, inward
+     epoxy z, bridge-FPC z, AncASIC z and the prototype stack start (`stack_start_offset`, also the
+     initial `thickness_so_far` for the sensitive-surface inner/outer thickness).
+  5. Bridge FPC: Kapton always on the front (sensor side) of the baseplate; Al on the front for
+     outward modules, on the back of the baseplate (same x-y footprint) for inward modules. AncASIC
+     sits on Kapton+Al (outward) or Kapton (inward).
+  Module envelope: outward 80+150+max(60+50, 110+380) = 720 um; inward 30+150+max(110, 80+380) = 640 um.
+- `compact/tracking/silicon_disks_modules.xml`: six `module_placements` -> `20261110_ES/rsu_opt`;
+  `SiEndcapTilingRSUInactiveSi_thickness` 36 -> 33.5 um; `SiEndcapTilingInwardModule_z_clearance`
+  0.0325 -> 0; `SiEndcapTilingOppositeFacing_z_offset` 0.230 -> 0 (20261001 would need 0.230);
+  comments on all three plus the FPC-split note (physics reason, provider suggestion, x/X0 unchanged).
+- `compact/tracking/silicon_disks_tiling/README.md` (active delivery) and `20261110_ES/README.md`.
+
+Local z intervals relative to the corrugation surface (+ = module normal, toward the carbon for inward):
+- Inward: epoxy -0.080..0, Kapton -0.080..0 (touch only), Al -0.260..-0.230, baseplate -0.230..-0.080,
+  film -0.080..-0.020, sensor -0.020..+0.030 (Cu +0.0275..+0.030); sensor ref = +0.030 = CSV.
+- Outward: epoxy 0..0.080, baseplate 0.080..0.230, sensor ref +0.340 = CSV; FPC 0.230..0.340.
+Delivered placements are used without any added translation.
+
+Compile: `cmake --build build` inside 26.09.0-stable, no errors/warnings in the tail
+(`proj_svt_disk_tiling/tmp/step11b_compile/build.log`).
+
+Run scripts (written by a helper agent, reviewed): `logs/make_svt_scenario_overlay_step11d.sh`
+(rsu6 overlay XML from the install, provenance sidecar), `logs/check_svt_20261110_step11d.sh`
+(validator, build/install, export + ROOT overlaps per scenario), `logs/check_svt_20261110_geant_step11e.sh`
++ `submit_svt_20261110_geant_step11e.sh` (Slurm array: 0 rsu_opt, 1 rsu6), `logs/make_svt_visual_root_step11e.sh`.
+Note from that review: `resolve_input_file()` tries the path relative to the CWD before
+`$DETECTOR_PATH`, so running from the repo root reads source-tree CSVs; the new scripts run from
+their report directories.
+
+### Step 11c: source-level validator for the 20261110 delivery (2026-11-11)
+
+`logs/validate_svt_delivery_20261110_step11c.py` (host, conda `tracking`; written by a helper agent,
+re-run and spot-checked by me) -> `logs/validate_svt_delivery_20261110_step11c.txt`: **35/35 PASS**.
+Constants are hard-coded in the script (Step 11b stack), not read from the XML.
+1. Files/headers/keys complete; rsu_opt 2164 modules/12 types, rsu6 2150/8; 430 rows each, identical.
+2. NEGATIVE == old RIGHT, POSITIVE == old LEFT for every type_id; other catalogue columns identical.
+3. With the 50 um (33.5+14+2.5) sensor: outward |z_sensor-z_baseplate| = 0.340, (z_baseplate-facet_z)*n
+   = +0.230 for all 1109/1104 outward; inward 0.030 and z_baseplate == facet_z for all 1055/1046.
+   Inward normals point to the disk mid-plane, outward away. Observation (not stated by the provider):
+   0.230 mm = 80 um epoxy + 150 um baseplate of an inward module.
+4. rsu_opt: x, y, type identical to 20261001 for all 2164. rsu6 vs old all_6rsu: 10 rows changed
+   from 3 modules (x ~ +65 and ~ +-132..140) to 2 modules at x = +-127.996: ED3 r1/r46, ED2 r46,
+   ED0 r3/r22, HD0 r3/r22, HD2 r46, HD4 r1/r45. HD0 row 3 also changed facing (old B600/B610/B601,
+   new B611/B601). Everything else only has the outward +0.230 z shift.
+5. Rows vs reconstructed lattice: facet_z - z_center = -surface_offset (rows.csv facet_z is the module
+   mounting plane; the old table gave the carbon flat at the row y, on the opposite surface).
+   A rows are not a regular lattice: adjacent spacing 16.53-19.23 mm with half_pitch 18 (e.g. HD4
+   rows 8/9 are 16.53 mm apart); B rows shift by up to 0.039 mm on HD3/HD4. x_outer_mm = half chord
+   at row_y. BLOCKED == the row band |row_y - cy| < half_pitch + b overlaps an opening primitive
+   (0 mismatches).
+6. Bridge-FPC vs neighbouring REC-film audit (Step 8d logic): old all_6rsu reproduces the 7 pairs;
+   new rsu6 and rsu_opt: 0. The 7 pairs were exactly in rows that rsu6 now fills with 2 modules.
+7. Inward FPC vs carbon: Kapton -0.080..0 (touch), Al -0.260..-0.230; per-module check of 2110
+   (rsu_opt) / 2092 (rsu6) inward FPC rectangles passes. y overlap of inward FPCs with straight
+   flats centred on rows i+-1 (record only, harmless now): B max 0.219 mm, A max 1.902 mm
+   (HD4 row 8 mod 0, A611 left FPC), larger than the 1.79 mm of the 2026-11-05 review because of
+   the irregular A rows.
+
+### Step 11d: build, export, ROOT overlaps (2026-11-11 20:01-20:04 local)
+
+`refplanes/eic_exec.sh "bash .../logs/check_svt_20261110_step11d.sh"` -> `logs/check_svt_20261110_step11d.txt`,
+run dir `tmp/svt_20261110_step11d_20261112T040156Z/` (the validator line shows SKIP there because the
+validator was not yet written; it was run separately, Step 11c). Results:
+- `git diff --check` clean; configure/build/install OK; installed XML == source; 6/6 placements
+  select `20261110_ES/rsu_opt`; inactive Si 33.5 um installed; both scenarios' CSVs installed.
+- rsu6 tested through the overlay `tmp/scenario_overlay/rsu6/` (provenance.txt there).
+- dd_web_display export: 0 SiEndcapModuleTracker warnings, 0 skipped modules for both scenarios.
+- ROOT checkOverlaps (option m, 0.01 mm): tracking-only rsu_opt 0, tracking-only rsu6 0,
+  full epic_craterlake (rsu_opt) 0 illegal overlaps/extrusions.
+- `logs/inspect_svt_export_step11d.py` on the exports -> `logs/inspect_svt_export_step11d.txt`:
+  placed modules rsu_opt 2164, rsu6 2150 (= delivery). Prototype local z (um), inward B610:
+  Al -320..-290 | CF -290..-140 | epoxy & Kapton -140..-60 | film -140..-80 | inactive Si -80..-46.5 |
+  active -46.5..-32.5 | Cu -32.5..-30 | AncASIC glue -60..20, AncASIC 20..320. Corrugation reference
+  (inward) = -60 -> Kapton/epoxy top flush with the carbon surface, Cu outer face +30 um = CSV.
+  Outward B600: epoxy -360..-280 | CF -280..-130 | Kapton -130..-50 | Al -50..-20 | Cu outer -20
+  (= -360 + 340).
+
+Visualization ROOT files (Step 11e): `tmp/visual_step11e/epic_craterlake_tracking_only_rsu_opt_20261112T040514Z.root`
+and `..._rsu6_20261112T040519Z.root` (`logs/make_svt_visual_root_step11e.sh <scenario>`).
+
+Visualization helper (user request, 2026-11-11): `logs/make_svt_visualize.sh <step> [scenario]` runs
+`dd_web_display -o out/visualize_<step>[_<scenario>].root --export $DETECTOR_PATH/epic_craterlake_tracking_only_disk_tiles_new.xml`
+(host: re-execs itself through `refplanes/eic_exec.sh`); a non-installed scenario goes through an overlay
+copy in `tmp/scenario_overlay/<scenario>/` (6/6 placements switched, checked); writes `.log` and
+`.provenance.txt` next to the ROOT file; runs from `out/` so CSVs resolve through `$DETECTOR_PATH`.
+Made: `out/visualize_step11b_rsu_opt.root`, `out/visualize_step11b_rsu6.root` (0 builder warnings).
+
+### Step 11e: Geant4 overlap checks, 20261110_ES rsu_opt and rsu6 (2026-11-11)
+
+`sbatch logs/submit_svt_20261110_geant_step11e.sh` -> Slurm array 61153763 (0 rsu_opt, 1 rsu6), both
+COMPLETED 20:08-20:30 local (21.5 min each), exit 0. `scripts/checkOverlaps.py -t 0.1` on the
+tracking-only XML (rsu_opt installed, rsu6 overlay), run from `tmp/geant_step11e_<s>/`.
+Summaries `logs/check_svt_20261110_geant_step11e_{rsu_opt,rsu6}.txt`, raw
+`logs/check_svt_20261110_geant_raw_step11e_{rsu_opt,rsu6}.txt`:
+**PASS** for both: 0 GeomVol1002, 0 G4Exception, 0 skipped modules, "Geometry overlaps check completed".
+(The script prints only warnings, no per-volume list, same as the accepted Step 8q run; tolerance
+0.1 mm, so the inward Kapton/epoxy surface contact with the carbon is not resolvable as an overlap
+either way — ROOT at 0.01 mm also found 0, Step 11d.)
+
+### Step 11f: the 20261110-r package (all facings flipped; systematic studies) (2026-11-11)
+
+User request: implement `ES_material/20261110-r` (primarily for systematic studies) and run all tests.
+No README in the package; each scenario has `flip_facing_build.log` ("[<disk>] flipped" x10).
+
+Staging: `logs/stage_svt_tiling_20261110r_step11f.sh` -> `compact/tracking/silicon_disks_tiling/20261110-r_ES/{rsu_opt,rsu6}`
+(64 files, byte-identical; report `.txt`), plus `20261110-r_ES/README.md`. Production XML unchanged
+(`20261110_ES/rsu_opt`); -r is loaded only through overlays. No code change needed.
+
+Validator `logs/validate_svt_delivery_20261110r_step11f.py` (helper agent; imports the 11c validator;
+re-run and spot-checked by me) -> `.txt`: **54/54 PASS**.
+- vs 20261110_ES: same keys, x, y (max diff 0); each type -> opposite facing AND chirality
+  (A600<->A611, A601<->A610, A610<->A601... one-to-one, rsu_count/width unchanged); rows.csv,
+  disk_geometry_used.csv byte-identical; catalogue identical as a set; no metadata key differs.
+- z rules unchanged (inward z_baseplate = facet_z, 0.030; outward 0.340, +0.230). Facing labels stay
+  consistent: inward normals still point to the disk mid-plane.
+- Physical meaning: every module keeps its row/mounting face and is turned over; its sensor plane
+  moves by 0.60 mm (facet-relative -0.03 <-> +0.57 mm; spot check ED4 r1 m0: B601 z_sensor
+  -1016.43 -> B610 -1017.03, facet -1017). The two sensor planes per face are unchanged; only their
+  occupancy swaps. Inward/outward totals: rsu_opt 1055/1109 -> 1109/1055, rsu6 1046/1104 -> 1104/1046
+  (imbalance on ED2, HD1-HD4 reverses).
+- FPC/end-film audit and a wider all-facing pair audit (FPC Kapton/Al, LEC/REC films, AncASIC, plus a
+  rough body-slab audit): 0 intersections for ES and -r. (A first version with full-area outward
+  epoxy gave 1677/1664 false pairs; rejected, the builder uses 2.5 mm edge lines.) Not covered by the
+  source model: Step 8j y flip of electronics, RSU tile pattern, corrugated carbon (except FPC check).
+- Inward FPC vs carbon: Al -0.260..-0.230, Kapton -0.080..0 for all 2218/2208 inward FPC rectangles.
+
+Run scripts (new, generic): `logs/make_svt_overlay.sh <delivery> <scenario>` (generalised 11d
+generator; on 20261110_ES rsu6 it reproduces the 11d overlay), `logs/check_svt_20261110r_step11f.sh`,
+`logs/check_svt_geant_step11f.sh <delivery> <scenario>` + `submit_svt_geant_step11f.sh`;
+`make_svt_visualize.sh` accepts `<delivery>/<scenario>`. The 11d/11e scripts were left untouched
+because queued jobs used them.
+
+Container checks (`check_svt_20261110r_step11f.sh` -> `logs/check_svt_20261110r_step11f.txt`, run dir
+`tmp/svt_20261110r_step11f_20261112T043117Z/`): reinstall OK, production XML unchanged, both -r scenarios
+installed, overlays OK; exports 0 builder warnings; placed modules 2164 / 2150 (type counts mirror
+the flip mapping); ROOT checkOverlaps (m, 0.01 mm) tracking-only and full craterlake: 0 / 0 for
+-r rsu_opt and 0 / 0 for -r rsu6.
+Visualization: `out/visualize_step11f_20261110-r_ES_{rsu_opt,rsu6}.root` (0 warnings).
+Geant4 (0.1 mm, tracking-only): Slurm array 61154441 submitted; result below.
+Geant4 result: Slurm array 61154441, both COMPLETED (18.9/19.0 min, exit 0); overlays in
+`tmp/geant_step11f_overlay/20261110-r_ES_<s>/` (6/6 placements select 20261110-r_ES/<s>, checked).
+`logs/check_svt_geant_step11f_20261110-r_ES_{rsu_opt,rsu6}.txt` (raw: `check_svt_geant_raw_step11f_*`):
+**PASS** for both: 0 GeomVol1002, 0 G4Exception, check completed.
+
+Step 11 morning summary: `logs/summary_step11_20261112.md`. Nothing committed; awaiting user review
+(visual check), then Step 12 (corrugation from rows.csv) and the per-scenario reruns.
+
+## Step 12: commit Step 11; corrugation from <disk>_rows.csv; FPC split on all modules (2026-11-12)
+
+User (after visual review of Step 11): commit the package files (keep -r), build the corrugation from
+the delivered `*_rows.csv` with no dependency on external scripts, apply the FPC split to outward
+modules too.
+
+Commit 1: `ed30b5ef9` "Adopt the 2026-11-10 SVT endcap tiling delivery" (20261110_ES and
+20261110-r_ES packages, tiling README, silicon_disks_modules.xml, SiEndcapModuleTracker_geo.cpp;
+the unrelated `scripts/material_map/run_material_map_validation.sh` change stays uncommitted).
+
+Provider information on flat edges: none. The packages (rows.csv, reports, module_cad_export.py) and
+`ES_material/20261016-Module Definitions.pdf` (coordinate conventions only; text extracted with a
+scratch-installed pypdf) do not define flat widths for irregular row spacing.
+
+Code (`src/SiEndcapModuleTracker_geo.cpp`):
+- `CorrugatedFrameConfig::delivered_rows_file/_center_z`; the detector builder sets them when a frame
+  has no `rowwise_placement` and the placements are a tiling directory: `<dir>/<disk>_rows.csv`
+  (HD3/HD3b fallback), center z from `<disk>_metadata.txt`. Missing file -> exception.
+- `load_delivered_corrugation_flats()`: reads row_index, row_y, facet_z, half_pitch; the flat at
+  row_y is on the surface opposite facet_z: surface_offset = center_z - facet_z, required |.| = h/2;
+  rows must alternate surfaces with distinct y; adds boundary flats at the end rows -+ half_pitch
+  (opposite surface, names flat-1000-<row>), clipped by the existing disk-boundary code.
+- Explicit-flat builder generalised to asymmetric flats (half_low/half_high). Delivered rows:
+  half extent toward a neighbour = (spacing - W)/2, W = (h - t)/tan(45 deg) = 5.85 mm, i.e. each
+  45 deg web centered halfway between row centers (ASSUMPTION, documented in the XML). Legacy table:
+  flat_width/2 both sides (unchanged). Bend trimming (R = 5 mm, T = 2.071 mm) unchanged.
+- FPC: Al on the back of the baseplate for outward modules too; AncASIC on the Kapton for all;
+  outward `baseplate_bottom_offset = max(epoxy 80, Al 30) = 80 um` (Al within the epoxy layer,
+  between the edge lines; the FPC y range stops at the lower line's inner edge and the RSU-referenced
+  top edge is below the upper line).
+XML: `rowwise_placement` removed from the 10 frames; new corrugation-rows comment; FPC note updated.
+`20261110_ES/README.md` updated. Old 20261001 rebuild needs `rowwise_placement` re-added (and the
+0.230 outward offset).
+
+Carbon change vs the 20261001 lattice (rsu_opt rows; host python): ED1/HD1 identical; A-region disks
+17-34 flats moved per disk, max edge shift 0.68-0.78 mm; sharp-corner widths 10.63-12.67 mm (was
+10.65/12.15). ED0/HD0: the rows files include empty end rows (y = +-206.25), so the boundary flats now
+sit at +-222.75 mm (R = 230): 2 extra rim flats per disk vs the old table (which stopped at the last
+module row). rsu_opt and rsu6 now get identical carbon (rows are identical).
+
+Checks (`logs/check_svt_step12.sh` -> `logs/check_svt_step12.txt`, run dir `tmp/svt_step12_20261112T155205Z/`):
+first run `logs/check_svt_step12_run1_checker_bugs.txt` had 5 checker FAILs (grep matched the XML
+comment; PyROOT LocalToMaster call) — fixed, geometry unchanged, rerun all PASS:
+- install OK; no frame `rowwise_placement`; 10 rows files installed per geometry.
+- Four geometries (20261110_ES rsu_opt/rsu6, 20261110-r_ES rsu_opt/rsu6): 0 builder warnings; modules
+  2164/2150/2164/2150; `logs/inspect_svt_corrugation_step12.py` (independent recomputation of every
+  straight flat from rows.csv, rule above + bend trims, vs exported Box pieces, merged over x/y=0
+  splits): 450 flats per geometry, max |dy| 0.000 um, surfaces correct, no missing/extra flats;
+  ROOT checkOverlaps (m, 0.01 mm) tracking-only and full craterlake: 0 for all eight.
+- Outward B600 stack (local um): epoxy -345..-265 | Al -295..-265 | CF -265..-115 | Kapton -115..-35 |
+  Cu outer -5 (= -345 + 340). Inward unchanged from Step 11b.
+Visualization: `out/visualize_step12{,_rsu6,_20261110-r_ES_rsu_opt,_20261110-r_ES_rsu6}.root` (0 warnings).
+Geant4: `check_svt_geant_step11f.sh` gained `GEANT_STEP` (output-name tag, default step11f);
+`logs/submit_svt_geant_step12.sh` = Slurm array 61174283 (4 geometries); result below.
+Geant4 result: Slurm array 61174283, all 4 COMPLETED (17.6-18.7 min, exit 0):
+`logs/check_svt_geant_step12_{20261110_ES_rsu_opt,20261110_ES_rsu6,20261110-r_ES_rsu_opt,20261110-r_ES_rsu6}.txt`
+**PASS** for all four: 0 GeomVol1002, 0 G4Exception, check completed.
+
+## Step 13: module handedness audit against the 20261016 Module Definitions (2026-11-12)
+
+Read-only audit; no geometry change yet. Sources: `ES_material/20261016-Module Definitions.pdf`
+(PDF author not named; not the tiling provider) and the tiling provider's (Ernst S.)
+`ES_material/20261110/transition/module_cad_export.py`. "Provider" below means the tiling provider only.
+
+Tiling-provider convention (CAD script, delivery frame): local x = LEC -> REC, sx = -sign(x_origin)
+(toward the disk centre); local y, sy = +sign(y_origin) (away from y = 0); local z = away from
+the carbon, sz = -face_sign*facing_sign. POSITIVE <=> sx*sy*sz = +1. Every delivered module
+satisfies this (100 %, all four geometries). Combined with the PDF drawings (ED1 back face, top
+half: every bridge-FPC tail points to +y), the physical rule is: the bridge FPC protrudes away
+from y = 0 for every module, both chiralities; the chirality then follows from the LEC side and the facing.
+
+Findings:
+
+1. The PDF's labels are internally inconsistent. Slides 9-12 all say "sx*sy*sz = 1, Left Chirality";
+   that product is the determinant of any proper rotation, so it is always 1. Applying the
+   tiling provider's rule to the drawings, slides 9 and 12 are POSITIVE and slides 10 and 11 NEGATIVE. The PDF's slide 13
+   proposes "FPC to +y = right handed", i.e. POSITIVE = right; the 20261001 catalogue called
+   POSITIVE "LEFT" (and slide 9, FPC at +y, says Left). The naming needs confirming; the data
+   (type_id <-> parity) is consistent.
+2. The PDF global frame (right-handed, y up, ED at -z) is the EPIC frame, yet the delivered
+   openings (ED3/ED4 at -x, HD2-HD4 at +x) are on the opposite x side from the EPIC beam pipe.
+   The builder therefore applies x_EPIC = -x_engineer with chirality swap (Step 7s). The EPIC
+   model is the x-mirror of the provider's layout. Either the provider's beam pipe or their
+   frame statement is mirrored; to be confirmed with the provider.
+3. Bridge-FPC direction (real discrepancy). `logs/check_svt_handedness_step13.sh` ->
+   `check_svt_handedness_step13.txt`: LEC at the outer x end and sensor normal agree for 100 % of
+   modules, but the FPC protrudes toward global -y on every module (local FPC top at the RSU
+   top edge, 24.5 mm down; Step 8j reversed the electronics for y <= 0 to look "upright").
+   y <= 0 rows: 1087/1087 correct; y > 0 rows: 0/1077 correct (rsu_opt; same split for rsu6
+   and -r). Before Step 8j all modules pointed toward y = 0 (all wrong, but symmetric).
+   Since the placement maps local +y to sign(y_origin), the fix is to use the reversed
+   electronics y for every tiling row (FPC protrudes toward local +y). Pending user decision.
+
+### Step 13b: bridge FPC away from y = 0 on every module (2026-11-12)
+
+User decision: take the tiling provider's (Ernst S.) convention as true. Convention write-up and
+the clashes with the Module Definitions PDF: `logs/module_handedness_convention_20261112.md`.
+
+Change (`src/SiEndcapModuleTracker_geo.cpp`): the y-reversed bridge-FPC/AncASIC prototype
+(Step 8j: y <= 0 rows only, flag `upright_electronics_y`) is now used for every tiling row
+(flag renamed `reverse_electronics_y`). The placement maps local +y to sign(y_origin), so every FPC
+tail now points away from y = 0. Silicon tiles/IDs, rotations, z stacks unchanged. Also added a
+one-line comment on the corrugation midpoint assumption (flats absorb the irregular spacing).
+
+Checks: `logs/run_svt_step13_all.sh` (driver) -> `check_svt_step13.sh` -> `check_svt_step13.txt`
+(run dir `tmp/svt_step13_20261112T233901Z`). All four geometries PASS: build, 0 builder warnings,
+placed modules = delivery, corrugation vs rows (450 flats, 0.000 um), handedness audit 100 %
+(LEC side, normal, FPC away from y = 0, built parity = -source label), ROOT 0 overlaps at 0.01 mm
+on tracking-only and full craterlake. Geant4 0.1 mm: Slurm 61198813 (`submit_svt_geant_step13.sh`),
+reports `check_svt_geant_step13_*.txt`. Visualization: `out/visualize_step13{,_rsu6,
+_20261110-r_ES_rsu_opt,_20261110-r_ES_rsu6}.root`.
+Geant4 result: 4/4 PASS, 0 GeomVol1002 warnings at 0.1 mm (Slurm 61198813, 17-19 min each).
+
+### Step 13c: type-name chirality swap noted; Step 13 committed; overnight downstream reruns (2026-11-12)
+
+- Known, not changed: because of the x mirror (x_EPIC = -x_engineer), every placed volume keeps its
+  delivered type ID while being built as the mirror part at the mirror slot, so the chirality digit of
+  every name is opposite to the physical part in the EPIC frame (xx0 <-> xx1, all pairs). Geometry is
+  correct by the tiling rule in the EPIC frame. User: nothing to fix until Ernst answers (convention
+  note section 3.6 / section 4).
+- Convention note section 4 updated (FPC fix done; name swap). Step 13 committed (EPIC src only; project
+  logs). Downstream reruns approved for 20261110_ES/rsu_opt only (no -r): ACTS material map, disk
+  material scan, acceptance campaign acceptance_v4_step13 (copy of v3 settings) + recon with the Step 13
+  map, refplane efficiency and tracking performance vs v3. Results in the sections below.

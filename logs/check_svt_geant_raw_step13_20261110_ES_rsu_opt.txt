@@ -1,0 +1,257 @@
+Info in <TGeoManager::TGeoManager>: Geometry default, Detector Geometry created
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
+XMLLoader        INFO  +++ Processing XML file: file:/global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/epic_craterlake_tracking_only.xml
+Info in <TGeoManager::SetTopVolume>: Top volume is world_volume. Master volume is world_volume
+Compact          INFO  ++ Created successfully world volume 'world_volume'. shape: TGeoBBox material:Air.
+Detector         INFO  *********** Use Top Node from manager as world volume [TGeoBBox].  Material: Air BBox: 3000 3000 10000
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/detector
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    144 100    144   0      0    609      0                              0100    144 100    144   0      0    563      0                              0100    144 100    144   0      0    528      0                              0
+FileLoader       INFO  downloading calibrations/bic_edepToNpe_layer.lut as hash fa5e882a88465bd4 with curl --retry 5 --location --fail https://raw.githubusercontent.com/eic/epic-data/700fa7f92568311408137b2002b513346b66277d/bic_edepToNpe_layer.lut --output calibrations/fa5e882a88465bd4
+Compact          INFO  ++ Converted successfully parallelworld_volume tracking_volume. anchor: /world vis:invisible.
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+Compact          INFO  ++ Converted field: Successfully created field GlobalSolenoid [FieldMapB]
+Utilities        INFO  +++ setDetectorTypeFlags for detector: VertexBarrelSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:VertexBarrelSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: InnerSiTrackerSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:InnerSiTrackerSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: MiddleSiBarrelSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:MiddleSiBarrelSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: OuterSiBarrelSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:OuterSiBarrelSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: MiddleSiEndcapSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:MiddleSiEndcapSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: OuterSiEndcapSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:OuterSiEndcapSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: EndcapMPGDSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:EndcapMPGDSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: InnerMPGDBarrelSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:InnerMPGDBarrelSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: EndcapTOFSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:EndcapTOFSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: BarrelTOFSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:BarrelTOFSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: OuterBarrelMPGDSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:OuterBarrelMPGDSubAssembly of type DD4hep_SubdetectorAssembly 
+Utilities        INFO  +++ setDetectorTypeFlags for detector: B0TrackerSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:B0TrackerSubAssembly of type DD4hep_SubdetectorAssembly 
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+Compact          INFO  ++ Converted subdetector:VertexBarrel of type epic_CylinderSVTBarrel [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ VertexBarrel -> layer_pattern: str = VertexBarrel_layer\d
+Compact          INFO  ++ Converted subdetector:SVT_IB_Support_L2 of type epic_SupportServiceMaterial 
+Compact          INFO  ++ Converted subdetector:SVT_IB_Support_L1 of type epic_SupportServiceMaterial 
+Compact          INFO  ++ Converted subdetector:SVT_IB_Support_L0_L1 of type epic_SupportServiceMaterial 
+Compact          INFO  ++ Converted subdetector:SagittaSiBarrel of type epic_CurvedTrackerBarrel [tracker]
+Compact          INFO  ++ Converted subdetector:OuterSiBarrel of type epic_CurvedTrackerBarrel [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ SagittaSiBarrel -> layer_pattern: str = SagittaSiBarrel_layer\d
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ OuterSiBarrel -> layer_pattern: str = OuterSiBarrel_layer\d
+Compact          INFO  ++ Converted subdetector:InnerMPGDBarrel of type epic_CylinderMPGDBarrel [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ InnerMPGDBarrel -> layer_pattern: str = InnerMPGDBarrel_layer\d
+Compact          INFO  ++ Converted subdetector:InnerTrackerSupport of type epic_SupportServiceMaterial 
+Compact          INFO  ++ Converted subdetector:MPGDOuterBarrel of type epic_OuterMPGDBarrel [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ MPGDOuterBarrel -> layer_pattern: str = MPGDOuterBarrel_layer\d
+Compact          INFO  ++ Converted subdetector:ForwardMPGD of type epic_TrapEndcapTracker [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ ForwardMPGD -> layer_pattern: str = ForwardMPGD_layer\d_P
+Compact          INFO  ++ Converted subdetector:BackwardMPGD of type epic_TrapEndcapTracker [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ BackwardMPGD -> layer_pattern: str = BackwardMPGD_layer\d_N
+Compact          INFO  ++ Converted subdetector:InnerTrackerEndcapP of type epic_SiEndcapModuleTracker [tracker]
+Compact          INFO  ++ Converted subdetector:InnerTrackerEndcapN of type epic_SiEndcapModuleTracker [tracker]
+Compact          INFO  ++ Converted subdetector:MiddleTrackerEndcapP of type epic_SiEndcapModuleTracker [tracker]
+Compact          INFO  ++ Converted subdetector:MiddleTrackerEndcapN of type epic_SiEndcapModuleTracker [tracker]
+Compact          INFO  ++ Converted subdetector:OuterTrackerEndcapP of type epic_SiEndcapModuleTracker [tracker]
+Compact          INFO  ++ Converted subdetector:OuterTrackerEndcapN of type epic_SiEndcapModuleTracker [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ MiddleTrackerEndcapP -> layer_pattern: str = MiddleTrackerEndcapP_layer\d_P
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ MiddleTrackerEndcapN -> layer_pattern: str = MiddleTrackerEndcapN_layer\d_N
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ InnerTrackerEndcapP -> layer_pattern: str = InnerTrackerEndcapP_layer\d_P
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ InnerTrackerEndcapN -> layer_pattern: str = InnerTrackerEndcapN_layer\d_N
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ OuterTrackerEndcapP -> layer_pattern: str = OuterTrackerEndcapP_layer\d_P
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ OuterTrackerEndcapN -> layer_pattern: str = OuterTrackerEndcapN_layer\d_N
+Compact          INFO  ++ Converted subdetector:BarrelTOF of type epic_TOFBarrel [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ BarrelTOF -> layer_pattern: str = BarrelTOF_layer\d
+Compact          INFO  ++ Converted subdetector:BackwardTOF of type epic_CompositeTracker 
+Compact          INFO  ++ Converted subdetector:ForwardTOF of type epic_TOFEndcap [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ ForwardTOF -> layer_pattern: str = ForwardTOF_layer\d
+Compact          INFO  ++ Overwriting/updating Header structure is dangerous. Try to avoid this.
+Compact          INFO  ++     Header definition in: file:///global/cfs/cdirs/m3763/pdatta/epic/install/share/epic/compact/ecal/bic_layer1_only.xml
+Utilities        INFO  +++ setDetectorTypeFlags for detector: EcalBarrelTrackerSubAssembly not set.
+Compact          INFO  ++ Converted subdetector:EcalBarrelTrackerSubAssembly of type DD4hep_SubdetectorAssembly 
+Compact          INFO  ++ Converted subdetector:EcalBarrelImaging of type epic_EcalBarrelImaging [calorimeter]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ EcalBarrelImaging -> layer_pattern: str = envelope1
+Compact          INFO  ++ Converted subdetector:BeamPipe of type IP6BeamPipe 
+Compact          INFO  ++ Converted subdetector:B0PF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:B0APF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Q1APF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Q1BPF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Q2PF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:B1PF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:B1APF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:BeamPipeB0 of type forwardBeamPipeBrazil 
+Compact          INFO  ++ Converted subdetector:B0Window of type B0Window 
+Compact          INFO  ++ Converted subdetector:Pipe_cen_to_pos of type BeamPipeChain 
+Compact          INFO  ++ Converted subdetector:Q0EF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Q1EF_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted field: Successfully created field Q0EF_field [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Q1EF_field [MultipoleMagnet]
+Compact          INFO  ++ Converted subdetector:B0TrackerCompanion of type epic_CompositeTracker 
+Compact          INFO  ++ Converted subdetector:B0Tracker of type ip6_B0Tracker [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ B0Tracker -> layer_pattern: str = B0Tracker_layer\d
+Compact          INFO  ++ Converted subdetector:B0ECal of type B0_ECAL [calorimeter]
+Compact          INFO  ++ Converted subdetector:ForwardOffMTracker_station_1 of type ip6_OffMomentumTracker [tracker]
+Compact          INFO  ++ Converted subdetector:ForwardOffMTracker_station_2 of type ip6_OffMomentumTracker [tracker]
+Compact          INFO  ++ Converted subdetector:ForwardOffMTracker_station_3 of type ip6_OffMomentumTracker [tracker]
+Compact          INFO  ++ Converted subdetector:ForwardOffMTracker_station_4 of type ip6_OffMomentumTracker [tracker]
+Compact          INFO  ++ Converted subdetector:HcalFarForwardZDC_SiPMonTile of type ZeroDegreeCalorimeterSiPMonTile [calorimeter]
+Compact          INFO  ++ Converted subdetector:ZDC_Crystal of type ZDC_Crystal [calorimeter]
+Compact          INFO  ++ Converted subdetector:ForwardRomanPot_Station_1 of type ip6_ForwardRomanPot [tracker]
+Compact          INFO  ++ Converted subdetector:ForwardRomanPot_Station_2 of type ip6_ForwardRomanPot [tracker]
+Compact          INFO  ++ Converted subdetector:VacuumMagnetElement of type magnetElementInnerVacuum 
+Compact          INFO  ++ Converted field: Successfully created field B0PF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field B0APF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Q1APF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Q1BPF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Q2PF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field B1PF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field B1APF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field B2PF_Magnet [MultipoleMagnet]
+Compact          INFO  ++ Converted subdetector:Q1ER_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Q2ER_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Magnets_Q3eR of type CylindricalMagnetChain 
+Compact          INFO  ++ Converted subdetector:Q1APR_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Q1BPR_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted subdetector:Q2PR_BeamlineMagnet of type ip6_CryostatMagnet 
+Compact          INFO  ++ Converted field: Successfully created field Magnet_Q1eR_Field [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Magnet_Q2eR_Field [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Magnet_Q3eR_Field [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Magnet_B2AeR_Field [MultipoleMagnet]
+Compact          INFO  ++ Converted field: Successfully created field Magnet_B2BeR_Field [MultipoleMagnet]
+Compact          INFO  ++ Converted subdetector:Pipe_Q1eR_to_B2BeR of type BeamPipeChain 
+Compact          INFO  ++ Converted subdetector:BackwardsTaggerVacuum of type FarBackwardVacuum 
+Compact          INFO  ++ Converted subdetector:BackwardsTaggerStation of type BackwardsTagger [tracker]
+ParametersPlugin INFO  +++ Applying 2 parameters
+ParametersPlugin INFO  +++ BackwardsTaggerStation -> layer_pattern: str = Tagger\d
+Compact          INFO  ++ Converted subdetector:LumiWindow of type LumiWindow 
+Compact          INFO  ++ Converted subdetector:LumiCollimator of type LumiCollimator 
+Compact          INFO  ++ Converted subdetector:SweeperMag of type LumiMagnets 
+Compact          INFO  ++ Converted subdetector:AnalyzerMag of type LumiMagnets 
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  cache /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+Compact          INFO  ++ Converted field: Successfully created field LumiSweeperField [FieldMapB]
+FileLoader       INFO  $DETECTOR_CACHE -> /opt/software/linux-x86_64_v2/epic-26.09.0-pmubbcuiy3odcuulbptolbbv5gdefwl7/share/epic
+FileLoader       INFO  link fieldmaps/LumiDipoleMapping_2023_09_15_XYZ_coords_cm_T.txt -> hash f027cf3429b02a82 already exists
+Compact          INFO  ++ Converted field: Successfully created field LumiAnalyzerField [FieldMapB]
+Compact          INFO  ++ Converted subdetector:LumiSpecTracker of type LumiSpecTracker [tracker]
+Compact          INFO  ++ Converted subdetector:LumiSpecCAL of type EcalLumiSpecWScFi [calorimeter]
+Compact          INFO  ++ Converted subdetector:LumiPhotonChamber of type LumiPhotonChamber 
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Error in <TGeoVoxelFinder::SortAll>: Wrong bounding box for volume envelope26
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 9, max placements = 480
+Info in <TGeoManager::CloseGeometry>: 1585619 nodes/ 4659 volume UID's in Detector Geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+Compact          INFO  ++ Converted subdetector:LumiDirectPCAL of type LumiDirectPCAL [calorimeter]
+Detector         INFO  +++ Patching names of anonymous shapes....
+Geant4Kernel           OutputLevel:  2
+Geant4Kernel           UI:           UI
+Geant4Kernel           NumEvents:    10
+Geant4Kernel           NumThreads:   0
+Geant4UI         INFO  +++ UI> Install Geant4 control directory:/ddg4/UI/
+Geant4Kernel     INFO  ++ Registered global action UI of type dd4hep::sim::Geant4UIManager
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-01 [MT]   (13-March-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+Geant4UI         INFO  +++ Geant4RunManager> Install Geant4 control directory:/ddg4/Geant4RunManager/
+Geant4RunManager WARN  +++ Configured run manager of type: G4RunManager.
+Geant4Kernel     WARN  +++ Multi-threaded mode requested, but not supported by this compilation of Geant4.
+Geant4Kernel     WARN  +++ Falling back to single threaded mode.
+Geant4UI         INFO  +++ DetectorConstructionAction> Install Geant4 control directory:/ddg4/DetectorConstructionAction/
+Geant4Exec       WARN  +++ Building default Geant4DetectorConstruction for single threaded compatibility.
+Geant4UI         INFO  +++ PhysicsList> Install Geant4 control directory:/ddg4/PhysicsList/
+G4PhysListFactory::GetReferencePhysList <QGSP_BERT>
+<<< Geant4 Physics List simulation engine: QGSP_BERT
+
+
+UserInitialization INFO  +++ Executing Geant4UserActionInitialization::Build. Context:0x555fd0dd7cb0 Kernel:0x555fd0d69440 [-1]
+SignalHandler    INFO  ++ Re-apply signal handlers
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4. [  0.569 seconds]
+Geant4VolumeManager       +++ Populating Geant4 volume manager.
+Geant4VolumeManager       +++ Geant4 volume manager populated with 309005 sensitive path entries.
+Geant4UI         INFO  +++ ConstructGeometry> Install Geant4 control directory:/ddg4/ConstructGeometry/
+
+ hInelastic QGSP_BERT  Thresholds: 
+    1) between BERT  and FTF/P over the interval 3 to 6 GeV. 
+    2) between FTF/P and QGS/P over the interval 12 to 25 GeV. 
+  -- quasiElastic: 1 for QGS  and 0 for FTF
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+UI               INFO  ++ Executing pre-run statement: /geometry/test/resolution 10000
+UI               INFO  ++ Executing pre-run statement: /geometry/test/tolerance 0.1
+UI               INFO  ++ Executing pre-run statement: /geometry/test/verbosity 0
+UI               INFO  ++ Executing pre-run statement: /geometry/test/run
+Running geometry overlaps check...
+Geometry overlaps check completed !
+
+Geant4Kernel     INFO  ++ Terminate Geant4 and delete associated actions.

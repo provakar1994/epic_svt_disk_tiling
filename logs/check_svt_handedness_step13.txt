@@ -1,0 +1,128 @@
+
+== 20261110_ES/rsu_opt
+ED4: placed 256/256  source label==parity 256/256  REC toward centre 256/256  FPC away from y=0 128/256  normal 256/256  built parity == -label 128/256  far matches 0
+      FPC away from y=0 by half: y>0 0/128, y<=0 128/128
+ED3: placed 258/258  source label==parity 258/258  REC toward centre 258/258  FPC away from y=0 129/258  normal 258/258  built parity == -label 129/258  far matches 0
+      FPC away from y=0 by half: y>0 0/129, y<=0 129/129
+ED2: placed 259/259  source label==parity 259/259  REC toward centre 259/259  FPC away from y=0 129/259  normal 259/259  built parity == -label 129/259  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 129/129
+ED1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+ED0: placed 78/78  source label==parity 78/78  REC toward centre 78/78  FPC away from y=0 39/78  normal 78/78  built parity == -label 39/78  far matches 0
+      FPC away from y=0 by half: y>0 0/39, y<=0 39/39
+HD0: placed 78/78  source label==parity 78/78  REC toward centre 78/78  FPC away from y=0 39/78  normal 78/78  built parity == -label 39/78  far matches 0
+      FPC away from y=0 by half: y>0 0/39, y<=0 39/39
+HD1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+HD2: placed 259/259  source label==parity 259/259  REC toward centre 259/259  FPC away from y=0 129/259  normal 259/259  built parity == -label 129/259  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 129/129
+HD3: placed 254/254  source label==parity 254/254  REC toward centre 254/254  FPC away from y=0 130/254  normal 254/254  built parity == -label 130/254  far matches 0
+      FPC away from y=0 by half: y>0 0/124, y<=0 130/130
+HD4: placed 250/250  source label==parity 250/250  REC toward centre 250/250  FPC away from y=0 128/250  normal 250/250  built parity == -label 128/250  far matches 0
+      FPC away from y=0 by half: y>0 0/122, y<=0 128/128
+
+Examples (ED1 rows 0-1; EPIC frame; source x shown in engineer frame):
+  ED1 row 0 mod 0 B501 OUTWARD BACK  x_src   -98.59 y +371.25 | EPIC LEC x  +100.84 rec_dir -1 fpc_dir -1 (dy -2.18) normal +1 parity +1 label +1
+  ED1 row 0 mod 1 B511 INWARD  BACK  x_src   +98.59 y +371.25 | EPIC LEC x  -100.84 rec_dir +1 fpc_dir -1 (dy -2.18) normal -1 parity +1 label +1
+  ED1 row 1 mod 0 B511 INWARD  FRONT x_src  -143.00 y +354.75 | EPIC LEC x  +145.25 rec_dir -1 fpc_dir -1 (dy -2.18) normal +1 parity +1 label +1
+  ED1 row 1 mod 1 B501 OUTWARD FRONT x_src   +54.16 y +354.75 | EPIC LEC x   -56.41 rec_dir +1 fpc_dir -1 (dy -2.18) normal -1 parity +1 label +1
+  ED1 row 1 mod 2 B510 INWARD  FRONT x_src  +143.00 y +354.75 | EPIC LEC x  -145.25 rec_dir +1 fpc_dir -1 (dy -2.18) normal +1 parity -1 label -1
+
+TOTAL 2164 modules: rec_ok 2164, fpc_ok 1087, normal_ok 2164, parity_is_mirror_of_label 1087, source_label_ok 2164, unmatched 0; FPC away from y=0: y>0 0/1077, y<=0 1087/1087
+FAIL: 2154 deviations from the provider convention (after x mirror)
+
+== 20261110_ES/rsu6
+ED4: placed 252/252  source label==parity 252/252  REC toward centre 252/252  FPC away from y=0 126/252  normal 252/252  built parity == -label 126/252  far matches 0
+      FPC away from y=0 by half: y>0 0/126, y<=0 126/126
+ED3: placed 256/256  source label==parity 256/256  REC toward centre 256/256  FPC away from y=0 128/256  normal 256/256  built parity == -label 128/256  far matches 0
+      FPC away from y=0 by half: y>0 0/128, y<=0 128/128
+ED2: placed 258/258  source label==parity 258/258  REC toward centre 258/258  FPC away from y=0 128/258  normal 258/258  built parity == -label 128/258  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 128/128
+ED1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+ED0: placed 76/76  source label==parity 76/76  REC toward centre 76/76  FPC away from y=0 38/76  normal 76/76  built parity == -label 38/76  far matches 0
+      FPC away from y=0 by half: y>0 0/38, y<=0 38/38
+HD0: placed 76/76  source label==parity 76/76  REC toward centre 76/76  FPC away from y=0 38/76  normal 76/76  built parity == -label 38/76  far matches 0
+      FPC away from y=0 by half: y>0 0/38, y<=0 38/38
+HD1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+HD2: placed 258/258  source label==parity 258/258  REC toward centre 258/258  FPC away from y=0 128/258  normal 258/258  built parity == -label 128/258  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 128/128
+HD3: placed 254/254  source label==parity 254/254  REC toward centre 254/254  FPC away from y=0 130/254  normal 254/254  built parity == -label 130/254  far matches 0
+      FPC away from y=0 by half: y>0 0/124, y<=0 130/130
+HD4: placed 248/248  source label==parity 248/248  REC toward centre 248/248  FPC away from y=0 127/248  normal 248/248  built parity == -label 127/248  far matches 0
+      FPC away from y=0 by half: y>0 0/121, y<=0 127/127
+
+Examples (ED1 rows 0-1; EPIC frame; source x shown in engineer frame):
+  ED1 row 0 mod 0 B601 OUTWARD BACK  x_src   -98.59 y +371.25 | EPIC LEC x  +100.84 rec_dir -1 fpc_dir -1 (dy -2.18) normal +1 parity +1 label +1
+  ED1 row 0 mod 1 B611 INWARD  BACK  x_src   +98.59 y +371.25 | EPIC LEC x  -100.84 rec_dir +1 fpc_dir -1 (dy -2.18) normal -1 parity +1 label +1
+  ED1 row 1 mod 0 B611 INWARD  FRONT x_src  -143.00 y +354.75 | EPIC LEC x  +145.25 rec_dir -1 fpc_dir -1 (dy -2.18) normal +1 parity +1 label +1
+  ED1 row 1 mod 1 B601 OUTWARD FRONT x_src   +65.00 y +354.75 | EPIC LEC x   -67.25 rec_dir +1 fpc_dir -1 (dy -2.18) normal -1 parity +1 label +1
+  ED1 row 1 mod 2 B610 INWARD  FRONT x_src  +143.00 y +354.75 | EPIC LEC x  -145.25 rec_dir +1 fpc_dir -1 (dy -2.18) normal +1 parity -1 label -1
+
+TOTAL 2150 modules: rec_ok 2150, fpc_ok 1079, normal_ok 2150, parity_is_mirror_of_label 1079, source_label_ok 2150, unmatched 0; FPC away from y=0: y>0 0/1071, y<=0 1079/1079
+FAIL: 2142 deviations from the provider convention (after x mirror)
+
+== 20261110-r_ES/rsu_opt
+ED4: placed 256/256  source label==parity 256/256  REC toward centre 256/256  FPC away from y=0 128/256  normal 256/256  built parity == -label 128/256  far matches 0
+      FPC away from y=0 by half: y>0 0/128, y<=0 128/128
+ED3: placed 258/258  source label==parity 258/258  REC toward centre 258/258  FPC away from y=0 129/258  normal 258/258  built parity == -label 129/258  far matches 0
+      FPC away from y=0 by half: y>0 0/129, y<=0 129/129
+ED2: placed 259/259  source label==parity 259/259  REC toward centre 259/259  FPC away from y=0 129/259  normal 259/259  built parity == -label 129/259  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 129/129
+ED1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+ED0: placed 78/78  source label==parity 78/78  REC toward centre 78/78  FPC away from y=0 39/78  normal 78/78  built parity == -label 39/78  far matches 0
+      FPC away from y=0 by half: y>0 0/39, y<=0 39/39
+HD0: placed 78/78  source label==parity 78/78  REC toward centre 78/78  FPC away from y=0 39/78  normal 78/78  built parity == -label 39/78  far matches 0
+      FPC away from y=0 by half: y>0 0/39, y<=0 39/39
+HD1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+HD2: placed 259/259  source label==parity 259/259  REC toward centre 259/259  FPC away from y=0 129/259  normal 259/259  built parity == -label 129/259  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 129/129
+HD3: placed 254/254  source label==parity 254/254  REC toward centre 254/254  FPC away from y=0 130/254  normal 254/254  built parity == -label 130/254  far matches 0
+      FPC away from y=0 by half: y>0 0/124, y<=0 130/130
+HD4: placed 250/250  source label==parity 250/250  REC toward centre 250/250  FPC away from y=0 128/250  normal 250/250  built parity == -label 128/250  far matches 0
+      FPC away from y=0 by half: y>0 0/122, y<=0 128/128
+
+Examples (ED1 rows 0-1; EPIC frame; source x shown in engineer frame):
+  ED1 row 0 mod 0 B510 INWARD  BACK  x_src   -98.59 y +371.25 | EPIC LEC x  +100.84 rec_dir -1 fpc_dir -1 (dy -2.18) normal -1 parity -1 label -1
+  ED1 row 0 mod 1 B500 OUTWARD BACK  x_src   +98.59 y +371.25 | EPIC LEC x  -100.84 rec_dir +1 fpc_dir -1 (dy -2.18) normal +1 parity -1 label -1
+  ED1 row 1 mod 0 B500 OUTWARD FRONT x_src  -143.00 y +354.75 | EPIC LEC x  +145.25 rec_dir -1 fpc_dir -1 (dy -2.18) normal -1 parity -1 label -1
+  ED1 row 1 mod 1 B510 INWARD  FRONT x_src   +54.16 y +354.75 | EPIC LEC x   -56.41 rec_dir +1 fpc_dir -1 (dy -2.18) normal +1 parity -1 label -1
+  ED1 row 1 mod 2 B501 OUTWARD FRONT x_src  +143.00 y +354.75 | EPIC LEC x  -145.25 rec_dir +1 fpc_dir -1 (dy -2.18) normal -1 parity +1 label +1
+
+TOTAL 2164 modules: rec_ok 2164, fpc_ok 1087, normal_ok 2164, parity_is_mirror_of_label 1087, source_label_ok 2164, unmatched 0; FPC away from y=0: y>0 0/1077, y<=0 1087/1087
+FAIL: 2154 deviations from the provider convention (after x mirror)
+
+== 20261110-r_ES/rsu6
+ED4: placed 252/252  source label==parity 252/252  REC toward centre 252/252  FPC away from y=0 126/252  normal 252/252  built parity == -label 126/252  far matches 0
+      FPC away from y=0 by half: y>0 0/126, y<=0 126/126
+ED3: placed 256/256  source label==parity 256/256  REC toward centre 256/256  FPC away from y=0 128/256  normal 256/256  built parity == -label 128/256  far matches 0
+      FPC away from y=0 by half: y>0 0/128, y<=0 128/128
+ED2: placed 258/258  source label==parity 258/258  REC toward centre 258/258  FPC away from y=0 128/258  normal 258/258  built parity == -label 128/258  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 128/128
+ED1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+ED0: placed 76/76  source label==parity 76/76  REC toward centre 76/76  FPC away from y=0 38/76  normal 76/76  built parity == -label 38/76  far matches 0
+      FPC away from y=0 by half: y>0 0/38, y<=0 38/38
+HD0: placed 76/76  source label==parity 76/76  REC toward centre 76/76  FPC away from y=0 38/76  normal 76/76  built parity == -label 38/76  far matches 0
+      FPC away from y=0 by half: y>0 0/38, y<=0 38/38
+HD1: placed 236/236  source label==parity 236/236  REC toward centre 236/236  FPC away from y=0 118/236  normal 236/236  built parity == -label 118/236  far matches 0
+      FPC away from y=0 by half: y>0 0/118, y<=0 118/118
+HD2: placed 258/258  source label==parity 258/258  REC toward centre 258/258  FPC away from y=0 128/258  normal 258/258  built parity == -label 128/258  far matches 0
+      FPC away from y=0 by half: y>0 0/130, y<=0 128/128
+HD3: placed 254/254  source label==parity 254/254  REC toward centre 254/254  FPC away from y=0 130/254  normal 254/254  built parity == -label 130/254  far matches 0
+      FPC away from y=0 by half: y>0 0/124, y<=0 130/130
+HD4: placed 248/248  source label==parity 248/248  REC toward centre 248/248  FPC away from y=0 127/248  normal 248/248  built parity == -label 127/248  far matches 0
+      FPC away from y=0 by half: y>0 0/121, y<=0 127/127
+
+Examples (ED1 rows 0-1; EPIC frame; source x shown in engineer frame):
+  ED1 row 0 mod 0 B610 INWARD  BACK  x_src   -98.59 y +371.25 | EPIC LEC x  +100.84 rec_dir -1 fpc_dir -1 (dy -2.18) normal -1 parity -1 label -1
+  ED1 row 0 mod 1 B600 OUTWARD BACK  x_src   +98.59 y +371.25 | EPIC LEC x  -100.84 rec_dir +1 fpc_dir -1 (dy -2.18) normal +1 parity -1 label -1
+  ED1 row 1 mod 0 B600 OUTWARD FRONT x_src  -143.00 y +354.75 | EPIC LEC x  +145.25 rec_dir -1 fpc_dir -1 (dy -2.18) normal -1 parity -1 label -1
+  ED1 row 1 mod 1 B610 INWARD  FRONT x_src   +65.00 y +354.75 | EPIC LEC x   -67.25 rec_dir +1 fpc_dir -1 (dy -2.18) normal +1 parity -1 label -1
+  ED1 row 1 mod 2 B601 OUTWARD FRONT x_src  +143.00 y +354.75 | EPIC LEC x  -145.25 rec_dir +1 fpc_dir -1 (dy -2.18) normal -1 parity +1 label +1
+
+TOTAL 2150 modules: rec_ok 2150, fpc_ok 1079, normal_ok 2150, parity_is_mirror_of_label 1079, source_label_ok 2150, unmatched 0; FPC away from y=0: y>0 0/1071, y<=0 1079/1079
+FAIL: 2142 deviations from the provider convention (after x mirror)
