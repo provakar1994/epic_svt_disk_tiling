@@ -4142,3 +4142,20 @@ have no compact/, so the install copy is used; the module count from the same cw
   rsu6 map: `matmap/step13_rsu6_20261113T143431Z/material-map_map.cbor` sha256
   c4cf9a3a575e2f963cec3f142f67bbaed5647799ea4d5ecee46c88efb046a415; provenance lists the rsu6 tracking overlay
   453fda16…. 
+
+## Handover sync (2026-11-13)
+
+User request: bring all repositories up to date with their remotes and write a handoff note (project
+handed over for about six weeks).
+- EPIC `si_disk_hole`: the remote had one pre-commit.ci formatting commit (2de521f02, 2026-11-06) on lines
+  that ed30b5ef9..78ade4686 later rewrote. Merged (conflict resolved to our version), commit `3b2065e76`;
+  `git diff 78ade4686 3b2065e76` is empty, so the install and every Step 13/14 result stay valid. Pushed
+  (via SSH URL; the configured https remote has no credentials). Scripts that gate on HEAD 78ade4686 now
+  need a new expected HEAD when copied for a new step.
+- Project repo: Steps 11-12 (bd35332) and 13-14 (496ca61) committed; `simrec/run_v4_step13{,_rsu6}_phase3.sh`
+  were gitignored and are now tracked; `epic_local/` holds copies of EPIC-local helpers and the conda env spec.
+  Pushed to `provakar1994/epic_svt_disk_tiling` main (upstream now set).
+- `/pscratch/sd/p/pdatta`: o+x; `svt_disk_tiling/` tree o+rX (user granted read for all).
+- Not touched in the EPIC checkout (user's own): modified `scripts/material_map/run_material_map_validation.sh`,
+  untracked `tmp.md`, the screenshot, `setup_local.sh`, `scripts/out/`.
+- Entry point for the successor: `HANDOFF.md`.
