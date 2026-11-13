@@ -258,3 +258,46 @@ Reconstruction job 60936753: 300/300 tasks completed (5 min 50 s), every rec log
   above-requirement resolution and the >1 pulls are not caused by it. Caveat: identical results could also
   mean the two maps hardly differ inside the tracker; a run with no material map would show how much the
   map matters at all.
+
+### 2026-11-13: v4 (acceptance_v4_step13, Step 13 map) analysis prepared, not run
+
+No rec files yet. New: `run_v4_step13_analysis_20261113.sh STEP13_MAP_SHA256 [--check-only]` (same
+outputs as v3: `out/v4_fine_vz0_50files/`, `out/v4_pwg_vz0_50files/`,
+`out/v3_vs_v4_pwg_vz0_50files/{pwg_resol_{dp,qop}_v3_vs_v4.png,compare_v3_v4.txt}`; cache
+`reduced_acceptance_v4_step13/`). It refuses unless `check_rec_campaign_ready.sh` passes (100 vz = 0 rec
+files, no *.tmp.*, every rec log has the given map sha256, a map-loading line and "Finished:"), rejects
+the Step 8q sha256, and refuses to overwrite outputs. `compare_v3_v4_20261113.py`: sigma and pull-width
+ratios, efficiency per p bin (1 < |eta| < 3.8) with binomial difference errors, forward dip 1.6-1.85 and
+references 1.35-1.55, 2.1-2.4 (p > 2 GeV). Tests: gate PASS on v3 with b5ce1f2e..., FAIL with a wrong
+sha256 and on the running v4 campaign; compare script v3-vs-v3 reproduces the v3 efficiency-check table
+and dip 0.7743 with zero differences. Driver: `../run_v4_step13_phase3.sh` (see Step 13f in
+acceptance_study_20261026.md). Expected runtime ~15 min (v3 log).
+
+### 2026-11-13: v4 (Step 13 geometry and map) vs v3
+
+Recon 61217238 (300/300, map sha256 cba82219…). `out/v3_vs_v4_pwg_vz0_50files/compare_v3_v4.txt`:
+sigma(v4)/sigma(v3) median 0.986-1.006 everywhere; efficiency per p bin within 0.0024; forward dip
+0.7743 -> 0.7773 (+0.0030 +- 0.0010), references +0.0010 / -0.0005. No change in substance.
+
+### 2026-11-13: efficiency definition and the EICrecon chain behind it (written up for the eta 1.7 dip)
+
+Efficiency (`endcap_tracking_performance.py`, `reduce_file` + `efficiency_vs_eta`):
+- Denominator: every MCParticle with generatorStatus == 1 and charge != 0 (= the one gun pi+ per event),
+  binned in its generated eta and p. No acceptance, hit-count, decay or interaction requirement.
+- Numerator: the same particle with >= 1 entry in CentralCKFTrackAssociations whose rec side is in
+  CentralCKFTracks and sim side is that MCParticle (collection IDs from podio_metadata). Any weight > 0
+  counts: no purity, chi2, nMeasurements, charge or momentum-agreement cut. Duplicates are not penalised.
+- Errors: Wilson 68% interval.
+EICrecon chain (read from EICrecon v1.40.0-32 source in /global/cfs/cdirs/m3763/shujie/EICrecon, read-only;
+the container runs 1.41.0, defaults not re-checked there):
+- Seeds (CentralTrackSeeds, ACTS orthogonal seeder) from CentralTrackingRecHits = SiBarrelVertex, SiBarrel,
+  SiEndcapTracker, MPGDBarrel, OuterMPGDBarrel, Backward/ForwardMPGDEndcap hits, restricted to
+  r <= 440 mm and -1500 <= z <= 1700 mm (TrackSeedingConfig defaults; also deltaR, impactMax 3 mm,
+  minPt ~ 3.7 MeV, B = 1.7 T used for seeding).
+- CKF (CentralCKFTrajectories) uses CentralTrackerMeasurements = all of the above + TOFBarrel + TOFEndcap
+  cluster hits, chi2 cut 15, max 10 compatible measurements per surface. A track is silently dropped
+  (debug-level message only) if track finding, smoothing or the extrapolation to the perigee fails, or if it
+  has < 4 measurements.
+- Ambiguity solver: max 1 shared hit, >= 4 measurements.
+- Association weight (ActsToTracks): fraction of the track's measurements (outliers excluded) whose sim hit
+  belongs to the MCParticle; barrel, MPGD and TOF hits all count.
